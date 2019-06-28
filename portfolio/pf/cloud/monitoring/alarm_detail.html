@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>클라우드</title>
+    <link rel="stylesheet" type="text/css" href="../css/font/notosans.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../css/common.css" media="all">
+    <!-- 참고: UI확인용으로 퍼블리싱 미리보기용 CSS, JS 소스들입니다 -->
+    <script type="text/javascript" src="../js/jquery-1.12.1.min.js"></script>
+    <script type="text/javascript" src="../js/ui.js"></script>
+    <script type="text/javascript" src="https://img.echosting.cafe24.com/js/plugin/jquery-ui.js"></script>
+</head>
+<body id="popup" size="760, 800"><!-- 참고 : size 속성은 팝업 가로/세로 체크용입니다. 개발진행시에 팝업사이즈에 적용해주시고, size 는 삭제해주세요. -->
+    <div id="popupWrap">
+        <div class="headingArea">
+            <div class="mTitle">
+                <h1>알람 내역</h1>
+            </div>
+        </div>
+        <div class="section">
+            <div class="mTitle">
+                <h2>알람 발송 내역</h2>
+            </div>
+            <div class="periodArea">
+                <div class="btnDate">
+                    <button type="button" class="button selected">1일</button><!-- 참고: 클릭시 .selected 추가 -->
+                    <button type="button" class="button">7일</button>
+                    <button type="button" class="button">1개월</button>
+                    <button type="button" class="button">1년</button>
+                </div>
+                <div class="mForm typeCalendar gSideM">
+                    <span class="fCalendar">
+                        <input type="text" value="2017.08.08" class="datepicker">
+                    </span>
+                    <span class="bar"></span>
+                    <span class="fCalendar">
+                        <input type="text" value="2017.08.08" class="datepicker">
+                    </span>
+                </div>
+                <button type="button" class="btnNormalS em gSideS">검색</button>
+            </div>
+            <div class="mBoard typeView">
+                <table border="1">
+                    <caption>알람 발송 내역</caption>
+                    <colgroup>
+                        <col style="width:180px;">
+                        <col style="width:200px;">
+                        <col style="width:190px;">
+                        <col style="width:170px;">
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th scope="col">발송 일시</th>
+                        <th scope="col">수신방법</th>
+                        <th scope="col">제목</th>
+                        <th scope="col">내용</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>2017-08-08 12:00:00</td>
+                        <td>SMS, E-mail</td>
+                        <td class="left">인스턴스 에러</td>
+                        <td>
+                            <div class="mTooltip typeButton ePosTarget posLeft posBottom">
+                                <button type="button" class="btnNormalS em ePosClick">내용보기</button>
+                                <div class="tooltip ePosLayer">
+                                    <p>CPU 사용량이 임계치에 도달했습니다. (99%)</p>
+                                    <button type="button" class="btnClose eClose"></button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2017-08-08 12:00:00</td>
+                        <td>SMS, E-mail, 텔레그램</td>
+                        <td class="left">스토리지 용량 임박</td>
+                        <td>
+                            <div class="mTooltip typeButton ePosTarget posLeft posBottom">
+                                <button type="button" class="btnNormalS em ePosClick">내용보기</button>
+                                <div class="tooltip ePosLayer">
+                                    <p>CPU 사용량이 임계치에 도달했습니다. (99%)</p>
+                                    <button type="button" class="btnClose eClose"></button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="footer">
+            <button type="button" class="btnNormalL strong">확인</button>
+        </div>
+    </div>
+    
+<script>
+    // ※ 개발작업시 datepicker 플러그인 수정요청: 최상위에 mCalendar 클래스를 추가해주세요.
+    $( function() {
+        //한글설정
+        $.datepicker.regional['ko'] = {
+            closeText: '닫기',
+            prevText: '이전달',
+            nextText: '다음달',
+            currentText: '오늘',
+            monthNames: ['1월','2월','3월','4월','5월','6월',
+                '7월','8월','9월','10월','11월','12월'],
+            monthNamesShort: ['1월','2월','3월','4월','5월','6월',
+                '7월','8월','9월','10월','11월','12월'],
+            dayNames: ['일','월','화','수','목','금','토'],
+            dayNamesShort: ['일','월','화','수','목','금','토'],
+            dayNamesMin: ['일','월','화','수','목','금','토'],
+            weekHeader: 'Wk',
+            dateFormat: 'yy.mm.dd',
+            firstDay: 1,
+            isRTL: false,
+            duration:200,
+            showAnim:'show',
+            yearSuffix: ''
+        };
+        $.datepicker.setDefaults($.datepicker.regional['ko']);
+        $( ".datepicker" ).datepicker({
+            changeMonth: true,
+            changeYear: true
+        });
+        $('.typeCalendar .fCalendar').on('click', function() {
+            $(this).find('.datepicker').datepicker('show');
+        });
+
+    } );
+</script>
+</body>
+</html>

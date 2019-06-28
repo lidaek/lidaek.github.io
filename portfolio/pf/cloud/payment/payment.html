@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>클라우드</title>
+    <link rel="stylesheet" type="text/css" href="../css/font/notosans.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../css/common.css" media="all">
+    <script type="text/javascript" src="../js/jquery-1.12.1.min.js"></script>
+    <script type="text/javascript" src="../js/ui.js"></script>
+    <script type="text/javascript" src="https://img.echosting.cafe24.com/js/plugin/jquery-ui.js"></script>
+</head>
+<body>
+<div id="wrap">
+    <div id="skipNavigation">
+        <a href="#sidebar">대메뉴 바로가기</a>
+        <a href="#contents">본문 바로가기</a>
+    </div>
+    <hr class="layout">
+    <div id="header">
+        <h1 class="logo">
+            <a href="#none"><img src="../images/h1_logo_cafe24.png" alt="카페24"></a>
+            <a href="#none"><img src="../images/h1_logo_hosting.png" alt="호스팅센터"></a>
+            <a href="#none"><img src="../images/h1_logo_cloud.png" alt="클라우드"></a>
+        </h1>
+        <div class="mDropdown typeRegion"><!-- 참고: 클릭시 selected 클래스 toggle -->
+            <div class="fNow">
+                <span class="region">
+                    <span class="name">Region B cafe24-004</span>
+                    <span class="state bad">생성불가</span>
+                </span>
+            </div>
+            <button type="button" class="fButton eDropdown">옵션 변경</button>
+            <div class="select">
+                <ul>
+                    <li>
+                        <a href="#none" class="link">
+                            <span class="region">
+                                <span class="name">Region B cafe24-001</span>
+                                <span class="state bad">생성불가</span>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none" class="link">
+                            <span class="region">
+                                <span class="name">Region C cafe24-002</span>
+                                <span class="state good">쾌적</span>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none" class="link">
+                            <span class="region">
+                                <span class="name">Region D cafe24-004</span>
+                                <span class="state caution">보통</span>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="util">
+            <div class="userInfo eMymenu">
+                <a href="#none" class="message"><strong class="user">홍길동님</strong> 환영합니다.</a>
+                <ul class="menu">
+                    <li><a href="#none">결제관리</a></li>
+                    <li><a href="#none">알림관리</a></li>
+                    <li><a href="#none">보안키 등록</a></li>
+                    <li><a href="#none">1:1문의</a></li>
+                    <li><a href="#none">로그아웃</a></li>
+                </ul>
+            </div>
+            <a href="#none" class="btnManual">사용 매뉴얼</a>
+        </div>
+    </div>
+    <div id="container">
+        <div id="sidebar">
+            <ul class="lnb">
+                <li class="server parent"><!-- 참고 : 선택시 .selected, 하위 메뉴 있을 시 .root -->
+                    <a href="#none" class="eFold">cafe24 클라우드 서버</a>
+                    <ul class="children">
+                        <li><a href="#none" class="eFold">가상서버</a></li><!-- 참고 : 선택시 .selected -->
+                        <li><a href="#none" class="eFold">오토스케일</a></li>
+                        <li><a href="#none" class="eFold">오토스케일</a></li>
+                    </ul>
+                </li>
+                <li class="storage parent">
+                    <a href="#none" class="eFold">스토리지</a>
+                    <ul class="children">
+                        <li><a href="#none" class="eFold">블록 스토리지</a></li>
+                        <li><a href="#none" class="eFold">블록 스토리지 스냅샷</a></li>
+                    </ul>
+                </li>
+                <li class="network parent">
+                    <a href="#none" class="eFold">네트워킹</a>
+                    <ul class="children">
+                        <li><a href="#none" class="eFold">로드밸런서</a></li>
+                        <li><a href="#none" class="eFold">DNS</a></li>
+                    </ul>
+                </li>
+                <li class="security parent">
+                    <a href="#none" class="eFold">보안서비스</a>
+                    <ul class="children">
+                        <li><a href="#none" class="eFold">방화벽</a></li>
+                        <li><a href="#none" class="eFold">SSH키페어</a></li>
+                    </ul>
+                </li>
+                <!--
+                <li class="monitoring"><a href="#none" class="eFold">모니터링</a></li> -->
+                <li class="cs parent">
+                    <a href="#none" class="eFold">고객지원</a>
+                    <ul class="children">
+                        <li><a href="#none" class="eFold">공지사항</a></li>
+                        <li><a href="#none" class="eFold">자주 찾는 질문</a></li>
+                        <li><a href="#none" class="eFold">1:1 문의</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        
+        <div id="contents">
+            <div class="section">
+                <div class="mTitle gBorder">
+                    <h2>결제관리</h2>
+                </div>
+                <div class="mTitle">
+                    <h3>결제정보</h3>
+                </div>
+                <div class="mBoard typeView gRow">
+                    <table border="1">
+                        <caption>결제정보</caption>
+                        <colgroup>
+                            <col style="width:200px;">
+                            <col style="width:830px;">
+                        </colgroup>
+                        <tbody>
+                        <tr>
+                            <th scope="row">결제자 정보</th>
+                            <td>홍길동</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">결제일</th>
+                            <td>매월 2일</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">결제 방식</th>
+                            <td>
+                                신용카드 자동 납부
+                                <a href="#none" class="btnNormalS gSideS">신용카드관리</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mTitle">
+                    <h3>요금 현황</h3>
+                </div>
+                <div class="mTitle">
+                    <strong class="title">실시간 요금 현황</strong>
+                    <span class="txtLight">2017. 08. 01 ~ 2017. 08. 31까지의 8월 사용분입니다.</span>
+                    <a href="#none" class="btnNormalS">상세내역</a>
+                </div>
+
+                <div class="mCharge">
+                    <div class="item">
+                        <strong class="title">서버</strong>
+                        <div class="list">
+                            <table border="1">
+                                <caption>서버 합계</caption>
+                                <colgroup>
+                                    <col style="width:33%;">
+                                    <col style="width:33%;">
+                                    <col style="width:33%;">
+                                </colgroup>
+                                <tbody class="foot">
+                                <tr>
+                                    <td class="left" colspan="2">합계</td>
+                                    <td class="right"><strong class="sum">66,960원</strong></td>
+                                </tr>
+                                </tbody>
+                                <tbody>
+                                <tr>
+                                    <td class="left">가상서버</td>
+                                    <td>1개</td>
+                                    <td class="right">20,480원</td>
+                                </tr>
+                                <tr>
+                                    <td class="left">스냅샷</td>
+                                    <td>2개</td>
+                                    <td class="right">20,480원</td>
+                                </tr>
+                                <tr>
+                                    <td class="left">스냅샷</td>
+                                    <td>2개</td>
+                                    <td class="right">20,480원</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <strong class="title">스토리지</strong>
+                        <div class="list">
+                            <table border="1">
+                                <caption>서버 합계</caption>
+                                <colgroup>
+                                    <col style="width:33%;">
+                                    <col style="width:33%;">
+                                    <col style="width:33%;">
+                                </colgroup>
+                                <tbody class="foot">
+                                <tr>
+                                    <td class="left" colspan="2">합계</td>
+                                    <td class="right"><strong class="sum">26,480원</strong></td>
+                                </tr>
+                                </tbody>
+                                <tbody>
+                                <tr>
+                                    <td class="left">블록 스토리지</td>
+                                    <td>1개</td>
+                                    <td class="right">20,480원</td>
+                                </tr>
+                                <tr>
+                                    <td class="left">스냅샷</td>
+                                    <td>2개</td>
+                                    <td class="right">20,480원</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <strong class="title">네트워크</strong>
+                        <div class="list">
+                            <table border="1">
+                                <caption>서버 합계</caption>
+                                <colgroup>
+                                    <col style="width:33%;">
+                                    <col style="width:33%;">
+                                    <col style="width:33%;">
+                                </colgroup>
+                                <tbody class="foot">
+                                <tr>
+                                    <td class="left" colspan="2">합계</td>
+                                    <td class="right"><strong class="sum">26,480원</strong></td>
+                                </tr>
+                                </tbody>
+                                <tbody>
+                                <tr>
+                                    <td class="left">로드밸런서</td>
+                                    <td>1개</td>
+                                    <td class="right">20,480원</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <p class="mList typeInfo">실시간 요금 현황은 참고용입니다. 정기 결제일의 요금과 다를 수 있습니다.</p>
+
+                <div class="mTotal typeDetail">
+                    <table border="1">
+                        <caption>요금 현황</caption>
+                        <colgroup>
+                            <col style="width:67%">
+                            <col style="width:16.5%">
+                            <col style="width:16.5%">
+                        </colgroup>
+                        <tbody>
+                        <tr>
+                            <th scope="row" rowspan="3">총 이용금액</th>
+                            <td>전체 이용요금 합계</td>
+                            <td class="right"><strong class="sum">101,520원</strong></td>
+                        </tr>
+                        <tr>
+                            <td>미납금액</td>
+                            <td class="right"><strong class="sum txtWarn">230원</strong></td>
+                        </tr>
+                        <tr>
+                            <td>절사금액</td>
+                            <td class="right"><strong class="sum">0원</strong></td>
+                        </tr>
+                        <tr class="foot">
+                            <th scope="row">청구 예상 요금 <span class="txtLight gSideM">today 기준</span></th>
+                            <td colspan="2" class="right"><strong class="sum">101,750원</strong></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mTitle">
+                    <strong class="title">결제 내역</strong>
+                    <span class="txtLight">2017-07까지의 요금 납부 내역입니다.</span>
+                </div>
+                <div class="mBoard typeView">
+                    <table border="1">
+                        <caption>결제 내역</caption>
+                        <colgroup>
+                            <col style="width:85px;">
+                            <col style="width:80px;">
+                            <col style="width:135px;">
+                            <col style="width:70px;">
+                            <col style="width:160px;">
+                            <col style="width:80px;">
+                            <col style="width:90px;">
+                            <col style="width:80px;">
+                            <col style="width:90px;">
+                            <col style="width:80px;">
+                            <col style="width:80px;">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th scope="col">결제구분</th>
+                            <th scope="col">결제방식</th>
+                            <th scope="col">결제번호</th>
+                            <th scope="col">청구월</th>
+                            <th scope="col">이용기간</th>
+                            <th scope="col">결제일</th>
+                            <th scope="col">청구금액</th>
+                            <th scope="col">할인액</th>
+                            <th scope="col">최종결제금액</th>
+                            <th scope="col">미납액</th>
+                            <th scope="col">상세내역</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>정기</td>
+                            <td>신용카드</td>
+                            <td>20170702-2043957</td>
+                            <td>2017.07</td>
+                            <td>2017.07.01 ~ 2017.07.30</td>
+                            <td>2017.07.02</td>
+                            <td>1,333,200</td>
+                            <td>50</td>
+                            <td>1,333,200</td>
+                            <td>-</td>
+                            <td><a href="#none" class="btnNormalS em">보기</a></td>
+                        </tr>
+                        <tr>
+                            <td>정기</td>
+                            <td>가상계좌</td>
+                            <td>20170702-2043957</td>
+                            <td>2017.07</td>
+                            <td>2017.07.01 ~ 2017.07.30</td>
+                            <td>2017.07.02</td>
+                            <td>1,333,200</td>
+                            <td>50</td>
+                            <td>1,333,200</td>
+                            <td>
+                                <span class="txtWarn">30,000</span><br>
+                                <a href="#none" class="btnNormal mini gBlankS">납부</a>
+                            </td>
+                            <td><a href="#none" class="btnNormalS em">보기</a></td>
+                        </tr>
+                        <tr>
+                            <td>정기</td>
+                            <td>신용카드</td>
+                            <td>20170702-2043957</td>
+                            <td>2017.07</td>
+                            <td>2017.07.01 ~ 2017.07.30</td>
+                            <td>2017.07.02</td>
+                            <td>1,333,200</td>
+                            <td>50</td>
+                            <td>1,333,200</td>
+                            <td>
+                                입금대기
+                                <div class="mTooltip ePosTarget">
+                                    <button type="button" class="btnWarn ePosClick"></button>
+                                    <div class="tooltip ePosLayer">
+                                        <strong class="tooltipTitle">결제 내역</strong>
+                                        <table border="1">
+                                            <caption>결제 내역</caption>
+                                            <colgroup>
+                                                <col style="width:75px;">
+                                                <col>
+                                            </colgroup>
+                                            <tbody>
+                                            <tr>
+                                                <th scope="row">
+                                                    <span class="inner">은행명</span>
+                                                </th>
+                                                <td>클라우드은행</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">
+                                                    <span class="inner">계좌번호</span>
+                                                </th>
+                                                <td>1234-1234-1234-12345</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">
+                                                    <span class="inner">이름</span>
+                                                </th>
+                                                <td>cafe24 클라우드</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">
+                                                    <span class="inner">납부기한</span>
+                                                </th>
+                                                <td>2017-08-08 00:00</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                        <p class="mList typeInfo txtWarn">납부기한내 납부하지 않으면 결제완료가 되지 않습니다.</p>
+                                        <button type="button" class="btnClose eClose"></button>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><a href="#none" class="btnNormalS em">보기</a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mPaginate">
+                    <a href="#none" class="btnPrev disabled"></a><!-- 참고: 이전,다음 페이지가 없는 경우, class "disabled" 추가. -->
+                    <span class="page">
+                        <a href="#none" class="selected" title="현재페이지">1</a>
+                        <a href="#none">2</a>
+                        <a href="#none">3</a>
+                        <a href="#none">4</a>
+                        <a href="#none">5</a>
+                        <a href="#none">6</a>
+                        <a href="#none">7</a>
+                        <a href="#none">8</a>
+                        <a href="#none">9</a>
+                        <a href="#none">10</a>
+                    </span>
+                    <a href="#none" class="btnNext"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="layout">
+    <div id="footer">
+        <p class="copyright">Copyright&copy; Cafe24 corp. All Rights Reserved.</p>
+    </div>
+</div>
+
+<script>
+    // ※ 개발작업시 datepicker 플러그인 수정요청: 최상위에 mCalendar 클래스를 추가해주세요.
+    $( function() {
+        //한글설정
+        $.datepicker.regional['ko'] = {
+            closeText: '닫기',
+            prevText: '이전달',
+            nextText: '다음달',
+            currentText: '오늘',
+            monthNames: ['1월','2월','3월','4월','5월','6월',
+                '7월','8월','9월','10월','11월','12월'],
+            monthNamesShort: ['1월','2월','3월','4월','5월','6월',
+                '7월','8월','9월','10월','11월','12월'],
+            dayNames: ['일','월','화','수','목','금','토'],
+            dayNamesShort: ['일','월','화','수','목','금','토'],
+            dayNamesMin: ['일','월','화','수','목','금','토'],
+            weekHeader: 'Wk',
+            dateFormat: 'yy.mm.dd',
+            firstDay: 1,
+            isRTL: false,
+            duration:200,
+            showAnim:'show',
+            yearSuffix: ''
+        };
+        $.datepicker.setDefaults($.datepicker.regional['ko']);
+        $( ".datepicker" ).datepicker({
+            changeMonth: true,
+            changeYear: true
+        });
+        $('.typeCalendar .fCalendar').on('click', function() {
+            $(this).find('.datepicker').datepicker('show');
+        });
+
+    } );
+</script>
+</body>
+</html>

@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>클라우드</title>
+    <link rel="stylesheet" type="text/css" href="../css/font/notosans.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../css/common.css" media="all">
+    <!-- 참고: UI확인용으로 퍼블리싱 미리보기용 CSS, JS 소스들입니다 -->
+    <script type="text/javascript" src="../js/jquery-1.12.1.min.js"></script>
+    <script type="text/javascript" src="../js/ui.js"></script>
+    <script type="text/javascript" src="https://img.echosting.cafe24.com/js/plugin/jquery-ui.js"></script>
+</head>
+<body>
+<div id="wrap">
+    <div id="skipNavigation">
+        <a href="#navigation">대메뉴 바로가기</a>
+        <a href="#contents">본문 바로가기</a>
+    </div>
+    <hr class="layout">
+    <div id="header">
+        <h1 class="logo">
+            <a href="#none"><img src="../images/h1_logo_cafe24.png" alt="카페24"></a>
+            <a href="#none"><img src="../images/h1_logo_hosting.png" alt="호스팅센터"></a>
+            <a href="#none"><img src="../images/h1_logo_cloud.png" alt="클라우드"></a>
+        </h1>
+        <div class="util">
+            <div class="userInfo">
+                <a href="#none" class="msg"><strong class="user">홍길동님</strong> 환영합니다.</a>
+                <ul class="menu">
+                    <li><a href="#none">결제관리</a></li>
+                    <li><a href="#none">알림관리</a></li>
+                    <li><a href="#none">보안키 등록</a></li>
+                    <li><a href="#none">1:1문의</a></li>
+                    <li><a href="#none">로그아웃</a></li>
+                </ul>
+            </div>
+            <a href="#none" class="btnManual">사용 매뉴얼</a>
+        </div>
+    </div>
+    <style>
+        #container { width:1000px; margin:0 auto; padding:80px 0 0; background:#fff !important; }
+        .mLayer { display:block !important; position:relative !important; top:0; z-index:1 !important;margin:20px 0 50px; }
+        .layerTitle { display:block; font-size:15px; }
+    </style>
+    <div id="container">
+        
+        <!-- 참고 : 방화벽 삭제 -->
+        <strong class="layerTitle">방화벽 삭제</strong>
+        <div id="layerSecurity4" class="mLayer gMedium">
+            <h2>적용 서버 해제</h2>
+            <div class="wrap">
+                <div class="section">
+                    <div class="mTitle">
+                        <h3>현재 방화벽</h3>
+                    </div>
+                    <div class="mBoard typeView">
+                        <table border="1">
+                            <caption>현재 방화벽</caption>
+                            <colgroup>
+                                <col style="">
+                                <col style="width:170px;">
+                                <col style="width:170px;">
+                                <col style="width:150px;">
+                            </colgroup>
+                            <thead>
+                            <tr>
+                                <th scope="col">이름</th>
+                                <th scope="col">연결된 가상서버</th>
+                                <th scope="col">연결된 로드밸런서</th>
+                                <th scope="col">생성일시</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>내 방화벽 A</td>
+                                <td>
+                                    내 가상서버 A<br>
+                                    내 가상서버 A<br>
+                                    <button type="button" class="btnNormalS warn gBlankS">연결 해제</button>
+                                </td>
+                                <td>
+                                    내 로드밸런서 A<br>
+                                    내 로드밸런서 A<br>
+                                    내 로드밸런서 A<br>
+                                    <button type="button" class="btnNormalS warn gBlankS">연결 해제</button>
+                                </td>
+                                <td>2017-08-08 12:00:00</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="mList typeInfo txtWarn">로드밸런서를 삭제할 시, 복구가 불가능함을 알려 드립니다.</p>
+                    <span class="mForm gSideM">
+                        <label class="gLabelClear"><input type="checkbox" class="fChk checked" checked=""><span class="fLabel">상기 내용에 동의합니다.</span></label>
+                    </span>
+                    <div class="mTooltip ePosTarget">
+                        <button type="button" class="btnWarn ePosClick"></button>
+                        <div class="tooltip ePosLayer">
+                            <ul class="detail">
+                                <li>툴팁내용</li>
+                            </ul>
+                            <button type="button" class="btnClose eClose"></button>
+                        </div>
+                    </div>
+                    <div class="mTitle">
+                        <h3>본인 확인</h3>
+                        <div class="mTooltip ePosTarget">
+                            <button type="button" class="btnWarn ePosClick"></button>
+                            <div class="tooltip ePosLayer">
+                                <ul class="detail">
+                                    <li>툴팁내용</li>
+                                </ul>
+                                <button type="button" class="btnClose eClose"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mBoard typeEdit gCell">
+                        <table border="1">
+                            <caption>본인 확인</caption>
+                            <colgroup>
+                                <col style="width:110px;">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <th scope="row">비밀번호</th>
+                                <td>
+                                    <span class="fTextEdit">
+                                        <input type="password" placeholder="비밀번호를 입력해 주세요." style="width:236px;">
+                                        <button type="button" class="btnReset"></button>
+                                    </span>
+                                    <button type="button" class="btnNormalS gSideS">입력 확인</button>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="mList typeInfo txtWarn">연결된 서버들을 먼저 해제해 주시기 바랍니다.</p>
+                </div>
+            </div>
+            <div class="footer">
+                <a href="#none" class="btnNormalL strong">방화벽 삭제</a>
+            </div>
+            <button type="button" class="btnClose eClose"></button>
+        </div>
+        <!-- //참고 : 방화벽 삭제 -->
+
+        <strong class="layerTitle">보안 정책 설정</strong>
+        <!-- 참고 : 보안 정책 설정 -->
+        <div id="layerSecurity3" class="mLayer gMedium">
+            <h2>보안 정책 설정</h2>
+            <div class="wrap">
+                <div class="section">
+                    <div class="mBox typeInfo">
+                        <dl>
+                            <dt>현재 방화벽</dt>
+                            <dd class="txtEm">방화벽 A</dd>
+                        </dl>
+                    </div>
+                    <div class="mTitle">
+                        <h3>보안 정책 설정(INBOUND)</h3>
+                        <div class="utility">
+                            <a href="#none" class="btnNormalM strong">추가</a>
+                        </div>
+                    </div>
+                    <div class="mBoard typeView">
+                        <table border="1">
+                            <caption>INBOUND</caption>
+                            <colgroup>
+                                <col style="width:150px;">
+                                <col style="width:150px;">
+                                <col style="width:150px;">
+                                <col style="">
+                                <col style="width:130px;">
+                            </colgroup>
+                            <thead>
+                            <tr>
+                                <th scope="col">서비스</th>
+                                <th scope="col">프로토콜</th>
+                                <th scope="col">포트범위</th>
+                                <th scope="col">원격지IP</th>
+                                <th scope="col">기능</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <select class="fSelect" style="width:100%;">
+                                        <option selected="">DNS</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="fSelect" style="width:100%;">
+                                        <option selected="">TCP</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <input type="text" class="fText">
+                                </td>
+                                <td>
+                                    <input type="text" class="fText" value="123.123.123.123">
+                                </td>
+                                <td>
+                                    <a href="#none" class="btnNormalS">삭제</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <select class="fSelect" style="width:100%;">
+                                        <option selected="">DNS</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="fSelect" style="width:100%;">
+                                        <option selected="">TCP</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <input type="text" class="fText">
+                                </td>
+                                <td>
+                                    <input type="text" class="fText" value="123.123.123.123">
+                                </td>
+                                <td>
+                                    <a href="#none" class="btnNormalS em">완료</a>
+                                    <a href="#none" class="btnNormalS warn">취소</a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <div class="mEmpty">
+                            보안정보를 설정해 주시기 바랍니다.
+                        </div>
+                    </div>
+                    <div class="mTitle">
+                        <h3>보안 정책 설정(OUTBOUND)</h3>
+                        <div class="utility">
+                            <a href="#none" class="btnNormalM strong">추가</a>
+                        </div>
+                    </div>
+                    <div class="mBoard typeView">
+                        <table border="1">
+                            <caption>OUTBOUND</caption>
+                            <colgroup>
+                                <col style="width:150px;">
+                                <col style="width:150px;">
+                                <col style="width:150px;">
+                                <col style="">
+                                <col style="width:130px;">
+                            </colgroup>
+                            <thead>
+                            <tr>
+                                <th scope="col">서비스</th>
+                                <th scope="col">프로토콜</th>
+                                <th scope="col">포트범위</th>
+                                <th scope="col">원격지IP</th>
+                                <th scope="col">기능</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <select class="fSelect" style="width:100%;">
+                                        <option selected="">DNS</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="fSelect" style="width:100%;">
+                                        <option selected="">TCP</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <input type="text" class="fText">
+                                </td>
+                                <td>
+                                    <input type="text" class="fText" value="123.123.123.123">
+                                </td>
+                                <td>
+                                    <a href="#none" class="btnNormalS">삭제</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <select class="fSelect" style="width:100%;">
+                                        <option selected="">DNS</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="fSelect" style="width:100%;">
+                                        <option selected="">TCP</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <input type="text" class="fText">
+                                </td>
+                                <td>
+                                    <input type="text" class="fText" value="123.123.123.123">
+                                </td>
+                                <td>
+                                    <a href="#none" class="btnNormalS em">완료</a>
+                                    <a href="#none" class="btnNormalS warn">취소</a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <div class="mEmpty">
+                            보안정보를 설정해 주시기 바랍니다.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <a href="#none" class="btnNormalL strong">생성하기</a>
+            </div>
+            <button type="button" class="btnClose eClose"></button>
+        </div>
+        <!-- //참고 : 보안 정책 설정 -->
+
+        <strong class="layerTitle">가상서버, 로드밸런서 연결/해제</strong>
+        <!-- 참고 : 가상서버, 로드밸런서 연결/해제 -->
+        <div id="layerSecurity2" class="mLayer gMedium">
+            <h2>적용 서버 해제</h2>
+            <div class="wrap">
+                <div class="section">
+                    <div class="mTitle">
+                        <h3>현재 방화벽</h3>
+                    </div>
+
+                    <div class="mBoard typeView">
+                        <table border="1">
+                            <caption>현재 방화벽</caption>
+                            <colgroup>
+                                <col style="">
+                                <col style="width:220px;">
+                                <col style="width:220px;">
+                            </colgroup>
+                            <thead>
+                            <tr>
+                                <th scope="col">이름</th>
+                                <th scope="col">IP</th>
+                                <th scope="col">생성일시</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>방화벽 A</td>
+                                <td>123.123.123.123</td>
+                                <td>2017-08-08 12:00:00</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mTitle">
+                        <h3>가상서버 연결/해제</h3>
+                    </div>
+                    <div class="mForm">
+                        <label class="gLabel"><input type="radio" class="fRadio checked" checked=""><span class="fLabel">연결하기</span></label>
+                        <label class="gLabel"><input type="radio" class="fRadio"><span class="fLabel">해제하기</span></label>
+                    </div>
+                    <div class="mBoard typeView eBoard"><!-- 참고 : 선택할 수 있는 테이블 .eBoard 부여 -->
+                        <table border="1" class="eChkColor">
+                            <caption>가상서버 연결/해제</caption>
+                            <colgroup>
+                                <col style="width:50px;">
+                                <col style="">
+                                <col style="">
+                                <col style="width:120px;">
+                                <col style="width:150px;">
+                            </colgroup>
+                            <thead>
+                            <tr>
+                                <th scope="col">
+                                    <label class="gLabel">
+                                        <input type="checkbox" class="fChk allChk"><span class="fLabel"></span>
+                                    </label>
+                                </th>
+                                <th scope="col">이름</th>
+                                <th scope="col">ID</th>
+                                <th scope="col">IP</th>
+                                <th scope="col">생성일시</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <label class="gLabel">
+                                        <input type="checkbox" class="fChk rowChk"><span class="fLabel"></span>
+                                    </label>
+                                </td>
+                                <td>가상서버 A</td>
+                                <td>dev_dnkl_srv1</td>
+                                <td>123.123.123.123</td>
+                                <td>2017-08-08 12:00:00</td>
+                            </tr>
+                            <tr class="selected">
+                                <td>
+                                    <label class="gLabel">
+                                        <input type="checkbox" class="fChk rowChk checked" checked=""><span class="fLabel"></span>
+                                    </label>
+                                </td>
+                                <td>로드밸런서 A</td>
+                                <td>dev_dnkl_srv1</td>
+                                <td>123.123.123.123</td>
+                                <td>2017-08-08 12:00:00</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <a href="#none" class="btnNormalL strong">적용</a>
+            </div>
+            <button type="button" class="btnClose eClose"></button>
+        </div>
+        <!-- //참고 : 가상서버, 로드밸런서 연결/해제 -->
+
+        <strong class="layerTitle">방화벽 신청-신규</strong>
+        <!-- 참고 : 방화벽 신청-신규 -->
+        <div id="layerSecurity1" class="mLayer gMedium">
+            <h2>방화벽 생성</h2>
+            <div class="wrap">
+                <div class="section">
+                    <div class="mTitle">
+                        <h3>기본정보 입력</h3>
+                    </div>
+                    <div class="mBoard typeView gRow">
+                        <table border="1">
+                            <caption>기본정보 입력</caption>
+                            <colgroup>
+                                <col style="width:190px;">
+                                <col style="">
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <th scope="row">방화벽 이름</th>
+                                <td>
+                                    <input type="text" class="fText" placeholder="이름을 입력해 주세요." style="width:250px;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">방화벽 설명</th>
+                                <td>
+                                    <textarea cols="78" rows="5" class="fTextarea"></textarea>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="mTitle">
+                        <h3>보안 정책 설정(INBOUND)</h3>
+                        <div class="utility">
+                            <a href="#none" class="btnNormalM strong">추가</a>
+                        </div>
+                    </div>
+                    <div class="mBoard typeView">
+                        <table border="1">
+                            <caption>INBOUND</caption>
+                            <colgroup>
+                                <col style="width:150px;">
+                                <col style="width:150px;">
+                                <col style="width:150px;">
+                                <col style="">
+                                <col style="width:75px;">
+                            </colgroup>
+                            <thead>
+                            <tr>
+                                <th scope="col">서비스</th>
+                                <th scope="col">프로토콜</th>
+                                <th scope="col">포트범위</th>
+                                <th scope="col">원격지IP</th>
+                                <th scope="col">기능</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <select class="fSelect" style="width:100%;">
+                                        <option selected="">DNS</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="fSelect" style="width:100%;">
+                                        <option selected="">TCP</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <input type="text" class="fText">
+                                </td>
+                                <td>
+                                    <input type="text" class="fText" value="123.123.123.123">
+                                </td>
+                                <td>
+                                    <a href="#none" class="btnNormalS">삭제</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <select class="fSelect" style="width:100%;">
+                                        <option selected="">DNS</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="fSelect" style="width:100%;">
+                                        <option selected="">TCP</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <input type="text" class="fText">
+                                </td>
+                                <td>
+                                    <input type="text" class="fText" value="123.123.123.123">
+                                </td>
+                                <td>
+                                    <a href="#none" class="btnNormalS warn">취소</a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <div class="mEmpty">
+                            보안정보를 설정해 주시기 바랍니다.
+                        </div>
+                    </div>
+                    <div class="mTitle">
+                        <h3>보안 정책 설정(OUTBOUND)</h3>
+                        <div class="utility">
+                            <a href="#none" class="btnNormalM strong">추가</a>
+                        </div>
+                    </div>
+                    <div class="mBoard typeView">
+                        <table border="1">
+                            <caption>OUTBOUND</caption>
+                            <colgroup>
+                                <col style="width:150px;">
+                                <col style="width:150px;">
+                                <col style="width:150px;">
+                                <col style="">
+                                <col style="width:75px;">
+                            </colgroup>
+                            <thead>
+                            <tr>
+                                <th scope="col">서비스</th>
+                                <th scope="col">프로토콜</th>
+                                <th scope="col">포트범위</th>
+                                <th scope="col">원격지IP</th>
+                                <th scope="col">설정</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <select class="fSelect" style="width:100%;">
+                                        <option selected="">DNS</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="fSelect" style="width:100%;">
+                                        <option selected="">TCP</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <input type="text" class="fText">
+                                </td>
+                                <td>
+                                    <input type="text" class="fText" value="123.123.123.123">
+                                </td>
+                                <td>
+                                    <a href="#none" class="btnNormalS">삭제</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <select class="fSelect" style="width:100%;">
+                                        <option selected="">DNS</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="fSelect" style="width:100%;">
+                                        <option selected="">TCP</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <input type="text" class="fText">
+                                </td>
+                                <td>
+                                    <input type="text" class="fText" value="123.123.123.123">
+                                </td>
+                                <td>
+                                    <a href="#none" class="btnNormalS warn">취소</a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <div class="mEmpty">
+                            보안정보를 설정해 주시기 바랍니다.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <a href="#none" class="btnNormalL strong">설정</a>
+            </div>
+            <button type="button" class="btnClose eClose"></button>
+        </div>
+        <!-- //참고 : 방화벽 신청-신규 -->
+        
+    </div>
+    <hr class="layout">
+    <div id="footer">
+        <p class="copyright">Copyright&copy; Cafe24 corp. All Rights Reserved.</p>
+    </div>
+</div>
+
+<script>
+    // ※ 개발작업시 datepicker 플러그인 수정요청: 최상위에 mCalendar 클래스를 추가해주세요.
+    $( function() {
+        //한글설정
+        $.datepicker.regional['ko'] = {
+            closeText: '닫기',
+            prevText: '이전달',
+            nextText: '다음달',
+            currentText: '오늘',
+            monthNames: ['1월','2월','3월','4월','5월','6월',
+                '7월','8월','9월','10월','11월','12월'],
+            monthNamesShort: ['1월','2월','3월','4월','5월','6월',
+                '7월','8월','9월','10월','11월','12월'],
+            dayNames: ['일','월','화','수','목','금','토'],
+            dayNamesShort: ['일','월','화','수','목','금','토'],
+            dayNamesMin: ['일','월','화','수','목','금','토'],
+            weekHeader: 'Wk',
+            dateFormat: 'yy.mm.dd',
+            firstDay: 1,
+            isRTL: false,
+            duration:200,
+            showAnim:'show',
+            yearSuffix: ''
+        };
+        $.datepicker.setDefaults($.datepicker.regional['ko']);
+        $( ".datepicker" ).datepicker({
+            changeMonth: true,
+            changeYear: true
+        });
+        $('.typeCalendar .fCalendar').on('click', function() {
+            $(this).find('.datepicker').datepicker('show');
+        });
+
+    } );
+</script>
+</body>
+</html>

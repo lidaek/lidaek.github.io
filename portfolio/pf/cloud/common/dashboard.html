@@ -1,0 +1,906 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>클라우드</title>
+    <link rel="stylesheet" type="text/css" href="../css/font/notosans.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../css/common.css" media="all">
+    <script type="text/javascript" src="../js/jquery-1.12.1.min.js"></script>
+    <script type="text/javascript" src="../js/ui.js"></script>
+    <script type="text/javascript" src="https://img.echosting.cafe24.com/js/plugin/jquery-ui.js"></script>
+</head>
+<body>
+<div id="wrap">
+    <div id="skipNavigation">
+        <a href="#sidebar">대메뉴 바로가기</a>
+        <a href="#contents">본문 바로가기</a>
+    </div>
+    <hr class="layout">
+    <div id="header">
+        <h1 class="logo">
+            <a href="#none"><img src="../images/h1_logo_cafe24.png" alt="카페24"></a>
+            <a href="#none"><img src="../images/h1_logo_hosting.png" alt="호스팅센터"></a>
+            <a href="#none"><img src="../images/h1_logo_cloud.png" alt="클라우드"></a>
+        </h1>
+        <div class="mDropdown typeRegion"><!-- 참고: 클릭시 selected 클래스 toggle -->
+            <div class="fNow">
+                <span class="region">
+                    <span class="name">Region B cafe24-004</span>
+                    <span class="state bad">생성불가</span>
+                </span>
+            </div>
+            <button type="button" class="fButton eDropdown">옵션 변경</button>
+            <div class="select">
+                <ul>
+                    <li>
+                        <a href="#none" class="link">
+                            <span class="region">
+                                <span class="name">Region B cafe24-001</span>
+                                <span class="state bad">생성불가</span>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none" class="link">
+                            <span class="region">
+                                <span class="name">Region C cafe24-002</span>
+                                <span class="state good">쾌적</span>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none" class="link">
+                            <span class="region">
+                                <span class="name">Region D cafe24-004</span>
+                                <span class="state caution">보통</span>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="util">
+            <div class="userInfo eMymenu">
+                <a href="#none" class="message"><strong class="user">홍길동님</strong> 환영합니다.</a>
+                <ul class="menu">
+                    <li><a href="#none">결제관리</a></li>
+                    <li><a href="#none">알림관리</a></li>
+                    <li><a href="#none">보안키 등록</a></li>
+                    <li><a href="#none">1:1문의</a></li>
+                    <li><a href="#none">로그아웃</a></li>
+                </ul>
+            </div>
+            <a href="#none" class="btnManual">사용 매뉴얼</a>
+        </div>
+    </div>
+    <div id="container">
+        <div id="sidebar">
+            <ul class="lnb">
+                <li class="server parent"><!-- 참고 : 선택시 .selected, 하위 메뉴 있을 시 .root -->
+                    <a href="#none" class="eFold">cafe24 클라우드 서버</a>
+                    <ul class="children">
+                        <li><a href="#none" class="eFold">가상서버</a></li><!-- 참고 : 선택시 .selected -->
+                        <li><a href="#none" class="eFold">오토스케일</a></li>
+                        <li><a href="#none" class="eFold">오토스케일</a></li>
+                    </ul>
+                </li>
+                <li class="storage parent">
+                    <a href="#none" class="eFold">스토리지</a>
+                    <ul class="children">
+                        <li><a href="#none" class="eFold">블록 스토리지</a></li>
+                        <li><a href="#none" class="eFold">블록 스토리지 스냅샷</a></li>
+                    </ul>
+                </li>
+                <li class="network parent">
+                    <a href="#none" class="eFold">네트워킹</a>
+                    <ul class="children">
+                        <li><a href="#none" class="eFold">로드밸런서</a></li>
+                        <li><a href="#none" class="eFold">DNS</a></li>
+                    </ul>
+                </li>
+                <li class="security parent">
+                    <a href="#none" class="eFold">보안서비스</a>
+                    <ul class="children">
+                        <li><a href="#none" class="eFold">방화벽</a></li>
+                        <li><a href="#none" class="eFold">SSH키페어</a></li>
+                    </ul>
+                </li>
+                <!--
+                <li class="monitoring"><a href="#none" class="eFold">모니터링</a></li> -->
+                <li class="cs parent">
+                    <a href="#none" class="eFold">고객지원</a>
+                    <ul class="children">
+                        <li><a href="#none" class="eFold">공지사항</a></li>
+                        <li><a href="#none" class="eFold">자주 찾는 질문</a></li>
+                        <li><a href="#none" class="eFold">1:1 문의</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        
+        <div id="contents">
+            <div class="section dashboard">
+                <div class="mTitle">
+                    <h2>나의 서비스</h2>
+                    <div class="utility">
+                        <a href="#none" class="btnLink">히스토리 보기</a>
+                    </div>
+                </div>
+    
+                <div class="gridSet">
+                    <div class="grid">
+                        <div class="mDashboard typePrice">
+                            <strong class="title">이달의 예상 요금</strong>
+                            <p class="price"><strong class="num">101,750</strong> 원</p>
+                            <p class="info">2017-08-08~2017-08-31 까지의 예상 요금입니다.<br>이번달 요금 명세서와 다를 수 있습니다.</p>
+                            <button type="button" class="btnMore">상세보기</button>
+                        </div>
+                    </div>
+                    <div class="grid gSideM">
+                        <div class="mDashboard typeNotice">
+                            <strong class="title">공지사항</strong>
+                            <ul class="notice">
+                                <li>
+                                    <a href="#none" class="title" target="_blank" title="새창 열림">클라우드가 생성됨에 따라 서비스를 이용할수클라우드가 생성됨에 따라 서비스를 이용할수클라우드가 생성됨에 따라 서비스를 이용할수클라우드가 생성됨에 따라 서비스를 이용할수</a>
+                                    <span class="date">2018.01.15</span>
+                                </li>
+                                <li>
+                                    <a href="#none" class="title" target="_blank" title="새창 열림">클라우드가 생성됨에 따라 서비스를 이용할수클라우드가 생성됨에 따라 서비스를 이용할수클라우드가 생성됨에 따라 서비스를 이용할수클라우드가 생성됨에 따라 서비스를 이용할수</a>
+                                    <span class="date">2018.01.15</span>
+                                </li>
+                                <li>
+                                    <a href="#none" class="title" target="_blank" title="새창 열림">클라우드가 생성됨에 따라 서비스를 이용할수클라우드가 생성됨에 따라 서비스를 이용할수클라우드가 생성됨에 따라 서비스를 이용할수클라우드가 생성됨에 따라 서비스를 이용할수</a>
+                                    <span class="date">2018.01.15</span>
+                                </li>
+                            </ul>
+                            <div class="button">
+                                <a href="#none" class="link" target="_blank" title="새창 열림">1:1 문의하기</a>
+                                <a href="#none" class="link" target="_blank" title="새창 열림">고객지원</a>
+                            </div>
+                            <button type="button" class="btnMore">상세보기</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mTitle typeDashboard">
+                    <h3>리전 가용 현황</h3>
+                </div>
+    
+                <div class="mBoard typeView gBreakXL">
+                    <table border="1">
+                        <caption>위험 트래픽</caption>
+                        <colgroup>
+                            <col style="width:260px;">
+                            <col style="width:350px;">
+                            <col style="width:210px;">
+                            <col style="width:210px;">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th scope="col">리전 이름</th>
+                            <th scope="col">지원되는 IP 대역</th>
+                            <th scope="col">상태</th>
+                            <th scope="col">신규 서비스 생성</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>리전 A - 카페24 IDC 32F 24G</td>
+                            <td>aaa.bbb.ccc.ddd ~ aaa.bbb.ccc.ddd</td>
+                            <td><span class="txtGood">쾌적</span></td>
+                            <td>가능</td>
+                        </tr>
+                        <tr>
+                            <td>리전 A - 카페24 IDC 32F 24G</td>
+                            <td>aaa.bbb.ccc.ddd ~ aaa.bbb.ccc.ddd</td>
+                            <td><span class="txtCaution">보통</span></td>
+                            <td>가능</td>
+                        </tr>
+                        <tr>
+                            <td>리전 A - 카페24 IDC 32F 24G</td>
+                            <td>aaa.bbb.ccc.ddd ~ aaa.bbb.ccc.ddd</td>
+                            <td><span class="txtWarn">혼잡</span></td>
+                            <td><span class="txtWarn">불가</span></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+    
+                <div class="mTab typeTab eTab">
+                    <ul>
+                        <li class="selected"><a href="#none">Region A</a></li>
+                        <li><a href="#none">Region B</a></li>
+                        <li><a href="#none">Region C</a></li>
+                    </ul>
+                </div>
+                
+                <div class="mTitle typeDashboard">
+                    <h3>현재 사용하고 있는 서비스</h3>
+                </div>
+    
+                <div class="mService">
+                    <ul class="service">
+                        <li class="using">
+                            <a href="#none" class="link">1</a>
+                            <strong class="title">가상서버</strong>
+                        </li>
+                        <li class="using">
+                            <a href="#none" class="link">2</a>
+                            <strong class="title">블록 스토리지</strong>
+                        </li>
+                        <li>
+                            <a href="#none" class="link"></a>
+                            <strong class="title">로드밸런서</strong>
+                        </li>
+                        <li>
+                            <a href="#none" class="link"></a>
+                            <strong class="title">방화벽</strong>
+                        </li>
+                        <li class="using">
+                            <a href="#none" class="link">5</a>
+                            <strong class="title">오토스케일</strong>
+                        </li>
+                        <li>
+                            <a href="#none" class="link"></a>
+                            <strong class="title">DNS</strong>
+                        </li>
+                    </ul>
+                </div>
+                
+                
+                <div class="mTitle typeDashboard">
+                    <h3>트래픽 모니터링</h3>
+                    <button type="button" class="btnUpdate"></button>
+                </div>
+
+                <div class="mDashboard typeTraffic">
+                    <div class="mBox typeGraph gBreakL" id="chartStick" style="height:360px;"></div>
+                    <p class="mTitle">
+                        <strong class="title">위험 트래픽</strong>
+                    </p>
+                    <div class="mBoard typeView">
+                        <table border="1">
+                            <caption>위험 트래픽</caption>
+                            <colgroup>
+                                <col style="width:25%;">
+                                <col style="width:25%;">
+                                <col style="width:25%;">
+                                <col style="width:25%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">가상서버 이름</th>
+                                    <th scope="col">사용 트래픽</th>
+                                    <th scope="col">제한 트래픽</th>
+                                    <th scope="col">상태</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>가상서버A</td>
+                                    <td>11G</td>
+                                    <td>10G</td>
+                                    <td><span class="txtWarn">초과</span></td>
+                                </tr>
+                                <tr>
+                                    <td>가상서버A</td>
+                                    <td>11G</td>
+                                    <td>10G</td>
+                                    <td><span class="txtCaution">임박</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="gridSet">
+                    <div class="grid">
+                        <div class="mTitle typeDashboard">
+                            <h3>가상서버 모니터링</h3>
+                            <select class="fSelect" style="width:120px;">
+                                <option>내인스턴스A</option>
+                            </select>
+                        </div>
+                        <div class="mDashboard typeMonitoring">
+                            <div class="gridSet gCenter">
+                                <div class="grid">
+                                    <div class="chartTitle">
+                                        <strong class="title">CPU</strong>
+                                        <button type="button" class="btnUpdate"></button>
+                                    </div>
+                                    <div class="mBox typeGraph" id="chartCircle" style="height:145px;"></div>
+                                </div>
+                                <div class="grid gSideM">
+                                    <div class="chartTitle">
+                                        <strong class="title">Memory</strong>
+                                        <button type="button" class="btnUpdate"></button>
+                                    </div>
+                                    <div class="mBox typeGraph" id="chartCircle2"  style="height:145px;"></div>
+                                </div>
+                            </div>
+                            <button type="button" class="btnMore">상세보기</button>
+                        </div>
+                    </div>
+                    <div class="grid gSideM">
+                        <div class="mTitle typeDashboard">
+                            <h3>사용중인 네임서버</h3>
+                        </div>
+                        <div class="mBoard typeView gRow">
+                            <table border="1">
+                                <caption>사용중인 네임서버</caption>
+                                <colgroup>
+                                    <col style="width:160px;">
+                                    <col style="width:auto">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1차</th>
+                                        <td>
+                                            <ul class="server">
+                                                <li class="host">ns-1000.cafe24cloud.com</li>
+                                                <li class="ip">123.123.123.123</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2차</th>
+                                        <td>
+                                            <ul class="server">
+                                                <li class="host">ns-1000.cafe24cloud.com</li>
+                                                <li class="ip">123.123.123.123</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3차</th>
+                                        <td>
+                                            <ul class="server">
+                                                <li class="host">ns-1000.cafe24cloud.com</li>
+                                                <li class="ip">123.123.123.123</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">4차</th>
+                                        <td>
+                                            <ul class="server">
+                                                <li class="host">ns-1000.cafe24cloud.com</li>
+                                                <li class="ip">123.123.123.123</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <hr class="layout">
+    
+    <div id="footer">
+        <p class="copyright">Copyright&copy; Cafe24 corp. All Rights Reserved.</p>
+    </div>
+</div>
+<script>
+    // ※ 개발작업시 datepicker 플러그인 수정요청: 최상위에 mCalendar 클래스를 추가해주세요.
+    $( function() {
+        //한글설정
+        $.datepicker.regional['ko'] = {
+            closeText: '닫기',
+            prevText: '이전달',
+            nextText: '다음달',
+            currentText: '오늘',
+            monthNames: ['1월','2월','3월','4월','5월','6월',
+                '7월','8월','9월','10월','11월','12월'],
+            monthNamesShort: ['1월','2월','3월','4월','5월','6월',
+                '7월','8월','9월','10월','11월','12월'],
+            dayNames: ['일','월','화','수','목','금','토'],
+            dayNamesShort: ['일','월','화','수','목','금','토'],
+            dayNamesMin: ['일','월','화','수','목','금','토'],
+            weekHeader: 'Wk',
+            dateFormat: 'yy.mm.dd',
+            firstDay: 1,
+            isRTL: false,
+            duration:200,
+            showAnim:'show',
+            yearSuffix: ''
+        };
+        $.datepicker.setDefaults($.datepicker.regional['ko']);
+        $( ".datepicker" ).datepicker({
+            changeMonth: true,
+            changeYear: true
+        });
+        $('.typeCalendar .fCalendar').on('click', function() {
+            $(this).find('.datepicker').datepicker('show');
+        });
+
+    } );
+</script>
+
+<!-- amCharts javascript sources -->
+<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+<script type="text/javascript" src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script type="text/javascript" src="https://www.amcharts.com/lib/3/serial.js"></script>
+<script type="text/javascript" src="https://www.amcharts.com/lib/3/pie.js"></script>
+<!-- amCharts javascript code -->
+<script type="text/javascript">
+    /* 대시보드 트래픽 모니터링 선형 차트 */
+    AmCharts.makeChart("chartStick",
+        {
+            "type": "serial",
+            "categoryField": "category",
+            "rotate": true,
+            "autoMarginOffset": 0,
+            "marginBottom": 34,
+            "marginLeft": 35,
+            "marginRight": 25,
+            "marginTop": 17,
+            "startDuration": 1,
+            "color": "#555555",
+            "fontSize": 12,
+            "categoryAxis": {
+                "gridPosition": "start",
+                "gridThickness": 0,
+                "minorGridAlpha": 0
+            },
+            "chartCursor": {
+                "enabled": true,
+                "cursorColor": "#3A4A69",
+                "cursorPosition": "mouse"
+            },
+            "trendLines": [],
+            "graphs": [
+                {
+                    "balloonText": "[[title]] of [[category]]:[[value]]",
+                    "columnWidth": 0.48,
+                    "fillAlphas": 1,
+                    "fillColors": "#D36168",
+                    "id": "AmGraph-1",
+                    "lineThickness": 0,
+                    "title": "graph 1",
+                    "type": "column",
+                    "valueField": "column-1"
+                }
+            ],
+            "guides": [],
+            "valueAxes": [
+                {
+                    "id": "ValueAxis-1",
+                    "gridAlpha": 1,
+                    "gridColor": "#E1E1E1",
+                    "title": ""
+                }
+            ],
+            "allLabels": [],
+            "balloon": {},
+            "titles": [],
+            "dataProvider": [
+                {
+                    "category": "category 1",
+                    "column-1": 8
+                },
+                {
+                    "category": "category 2",
+                    "column-1": 6
+                },
+                {
+                    "category": "category 3",
+                    "column-1": 2
+                },
+                {
+                    "category": "category 4",
+                    "column-1": "8"
+                },
+                {
+                    "category": "category 5",
+                    "column-1": "1"
+                },
+                {
+                    "category": "category 6",
+                    "column-1": "4"
+                },
+                {
+                    "category": "category 7",
+                    "column-1": "5"
+                },
+                {
+                    "category": "category 8",
+                    "column-1": "5"
+                },
+                {
+                    "category": "category 9",
+                    "column-1": "9"
+                },
+                {
+                    "category": "category 10",
+                    "column-1": "7"
+                }
+            ]
+        }
+    );
+    /* 대시보드 가상서버 모니터링 > CPU 원형 차트 */
+    AmCharts.makeChart("chartCircle",
+        {
+            "type": "pie",
+            "balloonText": "[[title]]<br><span style='font-size:14px'> ([[percents]]%)</span>",
+            "innerRadius": "40%",
+            "labelRadius": -30,
+            "labelText": "[[percents]]%",
+            "pullOutRadius": "0%",
+            "startRadius": "0%",
+            "baseColor": "#3E87E6",
+            "labelColorField": "#FFFFFF",
+            "labelTickAlpha": 0,
+            "labelTickColor": "#FFFFFF",
+            "pullOutEffect": "easeOutSine",
+            "startEffect": "easeOutSine",
+            "titleField": "category",
+            "valueField": "column-1",
+            "color": "#FFFFFF",
+            "fontSize": 16,
+            "percentPrecision": 0,
+            "allLabels": [],
+            "balloon": {
+                "borderColor": "#3A4A69",
+                "fillAlpha": 0.73,
+                "fontSize": 8,
+                "pointerOrientation": "left"
+            },
+            "titles": [],
+            "dataProvider": [
+                {
+                    "category": "category 1",
+                    "column-1": 8
+                },
+                {
+                    "category": "category 2",
+                    "column-1": 6
+                }
+            ]
+        }
+    );
+    /* 대시보드 가상서버 모니터링 > Memory 원형 차트 */
+    AmCharts.makeChart("chartCircle2",
+        {
+            "type": "pie",
+            "balloonText": "[[title]]<br><span style='font-size:14px'> ([[percents]]%)</span>",
+            "innerRadius": "40%",
+            "labelRadius": -30,
+            "labelText": "[[percents]]%",
+            "pullOutRadius": "0%",
+            "startRadius": "0%",
+            "baseColor": "#3E87E6",
+            "labelColorField": "#FFFFFF",
+            "labelTickAlpha": 0,
+            "labelTickColor": "#FFFFFF",
+            "pullOutEffect": "easeOutSine",
+            "startEffect": "easeOutSine",
+            "titleField": "category",
+            "valueField": "column-1",
+            "color": "#FFFFFF",
+            "fontSize": 16,
+            "percentPrecision": 0,
+            "allLabels": [],
+            "balloon": {
+                "borderColor": "#3A4A69",
+                "fillAlpha": 0.73,
+                "fontSize": 8,
+                "pointerOrientation": "left"
+            },
+            "titles": [],
+            "dataProvider": [
+                {
+                    "category": "category 1",
+                    "column-1": 8
+                },
+                {
+                    "category": "category 2",
+                    "column-1": 6
+                }
+            ]
+        }
+    );
+    /* 가상서버 별 모니터링 선형 차트 */
+    AmCharts.makeChart("chartLine",
+        {
+            "type": "serial",
+            "categoryField": "category",
+            "autoMarginOffset": 0,
+            "sequencedAnimation": false,
+            "startDuration": 1,
+            "startEffect": "easeOutSine",
+            "color": "#555555",
+            "fontSize": 12,
+            "categoryAxis": {
+                "gridPosition": "start",
+                "axisAlpha": 0,
+                "axisColor": "#D8D8D8",
+                "gridAlpha": 0.38,
+                "gridColor": "#E1E1E1",
+                "minHorizontalGap": 150
+            },
+            "chartCursor": {
+                "enabled": true,
+                "categoryBalloonColor": "#3A4A69",
+                "color": "#D8D8D8",
+                "cursorColor": "#3A4A69",
+                "graphBulletAlpha": 0,
+                "selectionAlpha": 0
+            },
+            "trendLines": [],
+            "graphs": [
+                {
+                    "balloonColor": "#3E87E6",
+                    "fillColors": "",
+                    "id": "AmGraph-1",
+                    "lineColor": "#3E87E6",
+                    "title": "CPU 사용량",
+                    "useLineColorForBulletBorder": true,
+                    "valueField": "column-1"
+                },
+                {
+                    "balloonColor": "#61CB85",
+                    "id": "AmGraph-4",
+                    "lineColor": "#61CB85",
+                    "title": "graph 4",
+                    "valueField": "column-2"
+                }
+            ],
+            "guides": [],
+            "valueAxes": [
+                {
+                    "id": "ValueAxis-1",
+                    "title": "Axis title"
+                }
+            ],
+            "allLabels": [],
+            "balloon": {},
+            "titles": [],
+            "dataProvider": [
+                {
+                    "category": "2017-07-07 12:00",
+                    "column-1": "145.7596591",
+                    "column-2": 727
+                },
+                {
+                    "category": "2017-07-07 12:30",
+                    "column-1": "3700.384375",
+                    "column-2": 493
+                },
+                {
+                    "category": "2017-07-07 13:00",
+                    "column-1": "4728.931298",
+                    "column-2": 4005
+                },
+                {
+                    "category": "2017-07-07 13:30",
+                    "column-1": "627.0563591",
+                    "column-2": 3630
+                },
+                {
+                    "category": "2017-07-07 14:00",
+                    "column-1": "3554.110325",
+                    "column-2": 2268
+                },
+                {
+                    "category": "2017-07-07 14:30",
+                    "column-1": "2178.570361",
+                    "column-2": 232
+                },
+                {
+                    "category": "2017-07-07 15:00",
+                    "column-1": "5262.481776",
+                    "column-2": 4657
+                },
+                {
+                    "category": "2017-07-07 15:30",
+                    "column-1": "760.6038138",
+                    "column-2": 3743
+                },
+                {
+                    "category": "2017-07-07 16:00",
+                    "column-1": "3939.404422",
+                    "column-2": 2003
+                },
+                {
+                    "category": "2017-07-07 16:30",
+                    "column-1": "931.2392998",
+                    "column-2": 639
+                },
+                {
+                    "category": "2017-07-07 17:00",
+                    "column-1": "2529.943343",
+                    "column-2": 5573
+                },
+                {
+                    "category": "2017-07-07 17:30",
+                    "column-1": "1255.050034",
+                    "column-2": 1026
+                },
+                {
+                    "category": "2017-07-07 18:00",
+                    "column-1": "144.7876288",
+                    "column-2": 4033
+                },
+                {
+                    "category": "2017-07-07 18:30",
+                    "column-1": "2288.634033",
+                    "column-2": 1452
+                },
+                {
+                    "category": "2017-07-07 19:00",
+                    "column-1": "7588.78551",
+                    "column-2": 1991
+                },
+                {
+                    "category": "2017-07-07 19:30",
+                    "column-1": "8846.17046",
+                    "column-2": 2970
+                },
+                {
+                    "category": "2017-07-07 20:00",
+                    "column-1": "5765.918709",
+                    "column-2": 2220
+                },
+                {
+                    "category": "2017-07-07 20:30",
+                    "column-1": "4340.441547",
+                    "column-2": 2984
+                },
+                {
+                    "category": "2017-07-07 21:00",
+                    "column-1": "795.0517948",
+                    "column-2": 1966
+                },
+                {
+                    "category": "2017-07-07 21:30",
+                    "column-1": "6414.737099",
+                    "column-2": 49
+                },
+                {
+                    "category": "2017-07-07 22:00",
+                    "column-1": "2504.844677",
+                    "column-2": 3933
+                },
+                {
+                    "category": "2017-07-07 22:30",
+                    "column-1": "3637.390159",
+                    "column-2": 959
+                },
+                {
+                    "category": "2017-07-07 23:00",
+                    "column-1": "4947.506735",
+                    "column-2": 688
+                },
+                {
+                    "category": "2017-07-07 23:30",
+                    "column-1": "367.9963579",
+                    "column-2": 4116
+                },
+                {
+                    "category": "2017-07-08 0:00",
+                    "column-1": "1721.283177",
+                    "column-2": 1153
+                },
+                {
+                    "category": "2017-07-08 0:30",
+                    "column-1": "2378.02927",
+                    "column-2": 5146
+                },
+                {
+                    "category": "2017-07-08 1:00",
+                    "column-1": "2808.500058",
+                    "column-2": 3567
+                },
+                {
+                    "category": "2017-07-08 1:30",
+                    "column-1": "5889.274519",
+                    "column-2": 2943
+                },
+                {
+                    "category": "2017-07-08 2:00",
+                    "column-1": "485.5463315",
+                    "column-2": 1430
+                },
+                {
+                    "category": "2017-07-08 2:30",
+                    "column-1": "2483.694534",
+                    "column-2": 1408
+                },
+                {
+                    "category": "2017-07-08 3:00",
+                    "column-1": "3619.902718",
+                    "column-2": 579
+                },
+                {
+                    "category": "2017-07-08 3:30",
+                    "column-1": "1768.606248",
+                    "column-2": 3460
+                },
+                {
+                    "category": "2017-07-08 4:00",
+                    "column-1": "715.4546984",
+                    "column-2": 1693
+                },
+                {
+                    "category": "2017-07-08 4:30",
+                    "column-1": "4297.932008",
+                    "column-2": 3942
+                },
+                {
+                    "category": "2017-07-08 5:00",
+                    "column-1": "1149.764079",
+                    "column-2": 5721
+                },
+                {
+                    "category": "2017-07-08 5:30",
+                    "column-1": "3814.309174",
+                    "column-2": 1249
+                },
+                {
+                    "category": "2017-07-08 6:00",
+                    "column-1": "3327.448979",
+                    "column-2": 5455
+                },
+                {
+                    "category": "2017-07-08 6:30",
+                    "column-1": "8221.398149",
+                    "column-2": 2639
+                },
+                {
+                    "category": "2017-07-08 7:00",
+                    "column-1": "1950.540238",
+                    "column-2": 1153
+                },
+                {
+                    "category": "2017-07-08 7:30",
+                    "column-1": "6194.104016",
+                    "column-2": 3494
+                },
+                {
+                    "category": "2017-07-08 8:00",
+                    "column-1": "5735.776332",
+                    "column-2": 5980
+                },
+                {
+                    "category": "2017-07-08 8:30",
+                    "column-1": "2330.598104",
+                    "column-2": 2796
+                },
+                {
+                    "category": "2017-07-08 9:00",
+                    "column-1": "1219.195884",
+                    "column-2": 867
+                },
+                {
+                    "category": "2017-07-08 9:30",
+                    "column-1": "2964.713373",
+                    "column-2": 4749
+                },
+                {
+                    "category": "2017-07-08 10:00",
+                    "column-1": "69.52817615",
+                    "column-2": 5143
+                },
+                {
+                    "category": "2017-07-08 10:30",
+                    "column-1": "3090.109686",
+                    "column-2": 1058
+                },
+                {
+                    "category": "2017-07-08 11:00",
+                    "column-1": "324.1261729",
+                    "column-2": 1088
+                }
+            ]
+        }
+    );
+</script>
+
+</body>
+</html>

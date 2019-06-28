@@ -1,0 +1,1582 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+    <title>호스팅센터 | 카페24</title>
+    <link rel="stylesheet" type="text/css" href="../css/base.css" media="all">
+</head>
+<body>
+<div id="skipNavigation">
+    <p><a href="#navigation">대메뉴 바로가기</a></p>
+    <p><a href="#container">본문 바로가기</a></p>
+</div>
+<hr class="layout">
+<div id="wrap">
+    <header id="header">
+        <h1 class="logo"><a href="#none" title="메인으로 이동">카페24 호스팅센터</a></h1>
+        <button type="button" class="btnNav eOpenNav">네비게이션 열기</button><!-- 참고: eOpenNav 클릭시, wrap에 class="openNav" 추가. -->
+        <div class="button">
+            <a href="#none" class="btnInquiry">1:1문의</a>
+            <a href="#none" class="btnMy">나의 서비스 관리</a>
+        </div>
+    </header>
+    <hr class="layout">
+    <nav id="sidebar">
+        <h2 class="blind">대메뉴</h2>
+        <div class="head">
+            <div class="inner">
+                <!-- 참고: 로그인 후
+                <div class="userInfo">
+                    <strong class="name">홍길동몇글자일까aaaaaaaaaaaaaaaa</strong>님
+                </div>
+                <!-- //참고 -->
+                
+                <!-- 참고: 로그인 전 -->
+                <a href="#none" class="btnLogin">로그인 및 회원가입</a>
+            </div>
+        </div>
+        <h3 class="blind">고객 서비스</h3>
+        <ul class="lnb customer">
+            <li class="my parent">
+                <a href="#none" class="link eFold">나의 서비스 관리</a>
+                <ul class="children">
+                    <li><a href="#none" class="link">서비스관리</a></li>
+                    <li><a href="#none" class="link">도메인관리</a></li>
+                    <li><a href="#none" class="link">마이캐쉬</a></li>
+                    <li><a href="#none" class="link">입금조회</a></li>
+                </ul>
+            </li>
+            <li class="help parent">
+                <a href="#none" class="link eFold">고객센터</a>
+                <ul class="children">
+                    <li><a href="#none" class="link">고객센터 홈</a></li>
+                    <li><a href="#none" class="link">FAQ</a></li>
+                    <li><a href="#none" class="link">공지사항</a></li>
+                    <li><a href="#none" class="link">1:1 문의</a></li>
+                    <li><a href="#none" class="link">매뉴얼</a></li>
+                </ul>
+            </li>
+        </ul>
+        
+        <h3 class="title">호스팅 서비스</h3>
+        <ul class="lnb service">
+            <li class="parent">
+                <a href="#none" class="link eFold">웹호스팅</a>
+                <ul class="children">
+                    <li><a href="#none" target="_blank" class="link">10G 광아우토반 Full SSD</a></li>
+                    <li><a href="#none" target="_blank" class="link">10G 자이언트 플러스</a></li>
+                    <li class="more"><a href="#none" target="_blank" class="link">상품 더보기 <i class="icoAngle2 right"></i></a></li>
+                </ul>
+            </li>
+            <li class="parent">
+                <a href="#none" class="link eFold">서버호스팅/IDC</a>
+                <ul class="children">
+                    <li><a href="#none" target="_blank" class="link">퀵서버호스팅</a></li>
+                    <li><a href="#none" target="_blank" class="link">단독웹호스팅</a></li>
+                    <li><a href="#none" target="_blank" class="link">단독웹호스팅</a></li>
+                    <li class="more"><a href="#none" target="_blank" class="link">상품 더보기 <i class="icoAngle2 right"></i></a></li>
+                </ul>
+            </li>
+            <li><a href="#none" target="_blank" class="link">도메인</a></li>
+            <li class="parent">
+                <a href="#none" class="link eFold">비즈솔루션</a>
+                <ul class="children">
+                    <li><a href="#none" target="_blank" class="link">웹메일</a></li>
+                    <li><a href="#none" target="_blank" class="link">SMS</a></li>
+                    <li><a href="#none" target="_blank" class="link">그룹웨어</a></li>
+                    <li class="more"><a href="#none" target="_blank" class="link">상품 더보기 <i class="icoAngle2 right"></i></a></li>
+                </ul>
+            </li>
+        </ul>
+        <button type="button" class="btnClose eCloseNav">대메뉴 닫기</button>
+    </nav>
+    <div class="dimmed eCloseNav" title="대메뉴 닫기"></div>
+
+    <hr class="layout">
+    
+    <div id="container">
+    <style>
+
+        body.hidden { position:static; }
+
+        .notice { padding:10px; color:#fff; background:#666; }
+        .notice a { color:#fff; text-decoration:underline; }
+        .guideModule { display:block; position:relative; padding:0 0 25px; vertical-align:top; transition:0.1s ease; }
+        .guideModule > h1 { padding:10px 5px 7px; border-top:1px solid rgba(0,0,0,.3); font-size:20px; color:#fff; background:#666; }
+        .guideModule > .alert { padding:0 5px 7px; color:#fff; background:#666; }
+        .guideModule > .alert li:before { content:'※'; margin-right:5px; }
+        .guideModule > .inner { margin:10px; }
+        .guideModule > .inner.gSideClear { margin:10px 0; }
+
+        .guideModule > .btnTitle { position:absolute; right:0; top:0; width:100%; height:44px; padding:0 15px 0 0; text-align:right; }
+        .guideModule > .btnTitle span { display:block; width:0; height:0; overflow:hidden; }
+        .guideModule > .btnTitle:after { content:'\2212'; font-weight:bold; font-size:24px; font-family:'doutm', sans-serif; color:#fff; }
+        .guideModule.fold > .btnTitle:after {content:'\2b'; }
+
+        .guideModule .inner > h2 { position:relative; padding:5px 0 ; margin:40px 0 5px; font-size:15px; color:#666; }
+        .guideModule .inner > h2:before { content:''; position:absolute; left:0; top:1px; width:14px; height:2px; background:#3666c8; }
+        .guideModule .inner.gSideClear > h2 { margin-left:10px; }
+        .guideModule .inner > h2 .guide { display:inline-block; font-weight:normal; font-size:13px; vertical-align:top; }
+        .guideModule .inner > h2 a { text-decoration:underline; }
+
+        .guideModule.fold { overflow:hidden; height:44px; padding:0; }
+        .linkMenu { overflow:hidden; overflow-x:auto; z-index:1000; padding:7px 7px 10px; position:fixed; top:0; left:0; right:0; white-space:nowrap; background:#a3d2ff; }
+        .linkMenu a { display:inline-block; height:18px; line-height:18px; padding:0 5px; margin:0 4px 2px 0; border:1px solid #e1e0cc; vertical-align:top; font-size:11px; background:#fdfcf0; -webkit-border-radius:2px; border-radius:2px; }
+        nav { position:fixed; overflow-y:auto; }
+        #sidebar .lnb.customer,
+        #sidebar .head { display:none; }
+        .lnb li a { display:block; padding:5px 14px; font-weight:600; color:#666; }
+    </style>
+        <div class="headingArea gCenter">
+            <div class="mTitle">
+                <h2>컴포넌트</h2>
+            </div>
+        </div>
+
+        <div id="guide">
+            <div id="mTitle" class="guideModule">
+                <h1>mTitle</h1>
+                <div class="inner gSideClear">
+                    <h2>mTitle > h2 <span class="guide">container 최상단의 headingArea안에서만 사용</span></h2>
+                    <div class="mTitle">
+                        <h2>h2. 대제목</h2>
+                    </div>
+                    <h2>mTitle > h3</h2>
+                    <div style="background:#c7d9ff;"><!-- 참고: 영역을 표시하기 위한 스타일 -->
+                        <div class="mTitle">
+                            <h3>h3. 중제목</h3>
+                        </div>
+                    </div>
+                    <h2>mTitle > h4</h2>
+                    <div style="background:#c7d9ff;"><!-- 참고: 영역을 표시하기 위한 스타일 -->
+                        <div class="mTitle">
+                            <h4>h4. 소제목</h4>
+                        </div>
+                    </div>
+                    <h2>mTitle > h2, h3 + append
+                        <span class="guide">
+                            타이틀 주변의 텍스트나, 부연 기능을 넣을때 사용<br>
+                            오른쪽 끝에 있음
+                        </span>
+                    </h2>
+                    <div style="background:#c7d9ff;"><!-- 참고: 영역을 표시하기 위한 스타일 -->
+                        <div class="mTitle">
+                            <h3>h3. 중제목</h3>
+                            <div class="append">
+                                <a href="#none" class="txtLink mini">전체내역보기</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mTitle">
+                        <h3>h3. 중제목</h3>
+                        <div class="append">
+                            <a href="#none" class="btnStrong mini">문의하기</a>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btnTitle"><span>접기/펼치기</span></button>
+            </div>
+
+            <div id="gridSet" class="guideModule">
+                <h1>gridSet</h1>
+                <div class="inner">
+                    <h2>gridSet <span class="guide">gridSet의 grid와 grid 사이의 기본 여백 5px</span></h2>
+                    <div class="gridSet">
+                        <div class="grid gFlex1">
+                            <input type="text" class="fText">
+                        </div>
+                        <div class="grid">
+                            <button type="button" class="btnEm">확인</button>
+                        </div>
+                    </div>
+                    <h2>gridSet + gDoubleSpace <span class="guide">gDoubleSpace : grid와 grid 사이의 여백 10px</span></h2>
+                    <div class="gridSet gDoubleSpace">
+                        <div class="grid gFlex1">
+                            <input type="text" class="fText">
+                        </div>
+                        <div class="grid">
+                            <button type="button" class="btnEm">확인</button>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btnTitle"><span>접기/펼치기</span></button>
+            </div>
+
+            <div id="blank" class="guideModule">
+                <h1>blank</h1>
+                <div class="inner">
+                    <h2>blank
+                        <span class="guide">
+                            여백체계 클래스<br>
+                            <strong class="txtEm">b상x우x하x좌</strong><br>
+                            ex) b10x12x15x30 상단여백10, 오른쪽여백12, 하단여백15, 왼쪽여백30<br><br>
+                            <span class="txtEm">상하 여백이 같으면 하단여백 생략가능</span><br>
+                             ex) b10x12x10 상하단여백10, 오른쪽여백12, 왼쪽여백30
+                        </span>
+                    </h2>
+                    <div class="gridSet b0x15x20">
+                        <div class="grid gFlex1">
+                            <input type="text" class="fText">
+                        </div>
+                        <div class="grid">
+                            <button type="button" class="btnEm">확인</button>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btnTitle"><span>접기/펼치기</span></button>
+            </div>
+
+            <div id="text" class="guideModule">
+                <h1>text</h1>
+                <div class="inner">
+                    <!--<span class="txtNormal">* txtNormal: 기본값 재선언</span><br><br>-->
+                    <span class="txtEm">* txtEm: 일반적인 주목 #3666c8</span><br><br>
+                    <span class="txtWarn">* txtWarn: 일반적인 경고 #f5504e</span><br><br>
+                    <span class="txtLight">* txtLight: #939393</span><br><br>
+                </div>
+                <button type="button" class="btnTitle"><span>접기/펼치기</span></button>
+            </div>
+
+            <div id="icon" class="guideModule">
+                <h1>icon</h1>
+                <div class="inner">
+                    <h2>CSS 아이콘 <span class="guide">i태그를 사용한다</span></h2>
+                    <div class="mTable gVer">
+                        <table border="1">
+                            <caption>컴포넌트 예시 테이블</caption>
+                            <colgroup>
+                                <col style="width:80px;">
+                                <col style="width:60px;">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <th scope="row">icoAngle</th>
+                                <td>14*9</td>
+                                <td>
+                                    <i class="icoAngle up"></i>
+                                    <i class="icoAngle down"></i>
+                                    <i class="icoAngle right"></i>
+                                    <i class="icoAngle left"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">icoAngle + theme1</th>
+                                <td>14*9</td>
+                                <td>
+                                    <i class="icoAngle up theme1"></i>
+                                    <i class="icoAngle down theme1"></i>
+                                    <i class="icoAngle right theme1"></i>
+                                    <i class="icoAngle left theme1"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">icoAngle2</th>
+                                <td>9*6</td>
+                                <td>
+                                    <i class="icoAngle2 up"></i>
+                                    <i class="icoAngle2 down"></i>
+                                    <i class="icoAngle2 right"></i>
+                                    <i class="icoAngle2 left"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">icoAngle2 + theme1</th>
+                                <td>9*6</td>
+                                <td>
+                                    <i class="icoAngle2 up theme1"></i>
+                                    <i class="icoAngle2 down theme1"></i>
+                                    <i class="icoAngle2 right theme1"></i>
+                                    <i class="icoAngle2 left theme1"></i>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <h2>이미지 sprite 아이콘 <span class="guide">span태그를 사용, icoSFIX 공통 클래스 사용</span></h2>
+                </div>
+                <button type="button" class="btnTitle"><span>접기/펼치기</span></button>
+            </div>
+
+            <div id="form" class="guideModule">
+                <h1>form</h1>
+                <div class="inner">
+                    <h2>기본형 <span class="guide">텍스트 없이 사용</span></h2>
+                    <label class="gLabel">
+                        <input type="radio" name="default" class="fRadio" checked>
+                        <span class="fLabel"></span>
+                    </label>
+                    <label class="gLabel">
+                        <input type="radio" name="default" class="fRadio">
+                        <span class="fLabel"></span>
+                    </label>
+
+                    <label class="gLabel">
+                        <input type="checkbox" class="fChk" checked>
+                        <span class="fLabel"></span>
+                    </label>
+                    <label class="gLabel">
+                        <input type="checkbox" class="fChk">
+                        <span class="fLabel"></span>
+                    </label>
+
+                    <h2>fRadio <span class="guide">size:14px</span></h2>
+                    <label class="gLabel">
+                        <input type="radio" name="radio" class="fRadio" checked>
+                        <span class="fLabel"><span class="text">라디오</span></span>
+                    </label>
+                    <label class="gLabel">
+                        <input type="radio" name="radio" class="fRadio">
+                        <span class="fLabel"><span class="text">라디오</span></span>
+                    </label>
+                    <label class="gLabel">
+                        <input type="radio" name="radio" class="fRadio" disabled>
+                        <span class="fLabel"><span class="text">라디오</span></span>
+                    </label>
+
+                    <h2>fChk <span class="guide">size:14px</span></h2>
+                    <label class="gLabel">
+                        <input type="checkbox" class="fChk" checked>
+                        <span class="fLabel"><span class="text">체크박스</span></span>
+                    </label>
+                    <label class="gLabel">
+                        <input type="checkbox" class="fChk">
+                        <span class="fLabel"><span class="text">체크박스</span></span>
+                    </label>
+                    <label class="gLabel">
+                        <input type="checkbox" class="fChk" disabled>
+                        <span class="fLabel"><span class="text">체크박스</span></span>
+                    </label>
+
+                    <h2>gLabel + gFull</h2>
+                    <label class="gLabel gFull">
+                        <input type="checkbox" class="fChk">
+                        <span class="fLabel"><span class="text">체크박스</span></span>
+                    </label>
+
+                    <h2>gLabel + gReverse <span class="guide">텍스트의 오른쪽에 폼디자인요소가 들어가 있음</span></h2>
+                    <label class="gLabel gReverse">
+                        <input type="radio" name="radio33" class="fRadio" checked>
+                        <span class="fLabel"><span class="text">라디오</span></span>
+                    </label>
+                    <br><br>
+                    <label class="gLabel gFull gReverse">
+                        <input type="checkbox" class="fChk">
+                        <span class="fLabel"><span class="text">체크박스</span></span>
+                    </label>
+
+                    <h2>fText</h2>
+                    <input type="text" placeholder="힌트" class="fText">
+                    <br><br>
+                    <input type="text" placeholder="힌트" class="fText" disabled>
+                    <br><br>
+                    <input type="text" placeholder="힌트" class="fText disabled" readonly>
+                    <h2>fTextarea</h2>
+                    <textarea cols="10" rows="8" placeholder="힌트" class="fTextarea"></textarea>
+
+                    <h2>gFile</h2>
+                    <span class="gFile">
+                        <input type="file" class="file">
+                        <span class="btnEm"><span>파일 선택</span></span>
+                    </span>
+                    <br><br>
+                    <div class="gridSet">
+                        <div class="grid">
+                            <span class="gFile">
+                                <input type="file" class="file">
+                                <span class="btnEm"><span>파일 선택</span></span>
+                            </span>
+                        </div>
+                        <div class="grid gFlex1">
+                            <input type="text" class="fText disabled" readonly="" value="선택된 파일 없음">
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btnTitle"><span>접기/펼치기</span></button>
+            </div>
+
+            <div id="mForm" class="guideModule">
+                <h1>mForm</h1>
+                <div class="inner">
+                    <h2>mForm + gVer</h2>
+                    <ul class="mForm gVer">
+                        <li>
+                            <label class="gLabel">
+                                <input type="radio" name="sort1" class="fRadio">
+                                <span class="fLabel">
+                                <span class="text">빠른 만기일순</span>
+                            </span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="gLabel">
+                                <input type="radio" name="sort1" class="fRadio">
+                                <span class="fLabel">
+                                <span class="text">늦은 만기일순</span>
+                            </span>
+                            </label>
+                        </li>
+                    </ul>
+                    <h2>mForm + gField</h2>
+                    <ul class="mForm gField">
+                        <li>
+                            <input type="text" class="fText" value="test111" disabled="">
+                        </li>
+                        <li>
+                            <input type="password" class="fText" placeholder="비밀번호">
+                        </li>
+                    </ul>
+                </div>
+                <button type="button" class="btnTitle"><span>접기/펼치기</span></button>
+            </div>
+
+            <div id="select" class="guideModule">
+                <h1>select</h1>
+                <div class="inner">
+                    <h2>select.fSelect
+                        <span class="guide">
+                            selectbox는  인라인 스타일로 width값을 줄 수 있다.<br>
+                            기본값은 <span class="txtEm">100%</span>이다.
+                        </span>
+                    </h2>
+                    <select class="fSelect" style="width:100px;">
+                        <option>1년</option>
+                        <option>2년</option>
+                    </select>
+                    <br><br>
+                    <select class="fSelect">
+                        <option>1년</option>
+                        <option>2년</option>
+                    </select>
+                </div>
+                <button type="button" class="btnTitle"><span>접기/펼치기</span></button>
+            </div>
+
+            <div id="button" class="guideModule">
+                <h1>button</h1>
+                <div class="inner">
+                    <h2>btn$NAME 주요버튼 <span class="guide">h:37, size:12px, bold</span></h2>
+                    <a href="#none" class="btnStrong">btnStrong</a>
+                    <a href="#none" class="btnNormal">btnNormal</a>
+                    <a href="#none" class="btnEm">btnEm</a>
+
+                    <h2>btn$NAME + large <span class="guide">h:40, size:14px, bold  화면 맨 하단에 사용</span></h2>
+                    <a href="#none" class="btnStrong large">btnStrong</a>
+                    <a href="#none" class="btnNormal large">btnNormal</a>
+                    <a href="#none" class="btnEm large">btnEm</a>
+
+                    <h2>btn$NAME + mini <span class="guide">h:29, size:12px</span></h2>
+                    <a href="#none" class="btnStrong mini">신청</a>
+                    <a href="#none" class="btnNormal mini">취소</a>
+                    <a href="#none" class="btnEm mini">확인</a>
+
+                    <!--
+                    <h2>btn$NAME + disabled</h2>
+                    <a href="#none" class="btnStrong disabled">btnStrong</a>
+                    <a href="#none" class="btnNormal disabled">btnNormal</a>
+                    <a href="#none" class="btnEm disabled">btnEm</a>
+                    -->
+
+                    <h2>btnMore</h2>
+                    <button type="button" class="btnMore">더보기 <i class="icoAngle down theme1"></i></button>
+
+                    <h2>txtLink
+                        <span class="guide">
+                            2가지 유형: font-size:13px / font-size:13px - mini<br>
+                            오른쪽 화살표의 크기에 따라 default/mini로 나뉜다<br>
+                            mini버전은 타이틀 옆에 사용된다.
+                        </span>
+                    </h2>
+                    <a href="#none" class="txtLink">서버환경 선택 가능</a>
+                    <br>
+                    <a href="#none" class="txtLink mini">더보기</a>
+
+
+
+                    <h2>단독 아이콘 버튼 <span class="guide">클릭시 레이어 팝업 노출</span></h2>
+                    도움말 아이콘 버튼<a href="#none" class="btnTip"></a>
+                    <br><br>
+                    <a href="#none" class="btnSort"></a> 소팅 아이콘 버튼
+
+                    <h2>btnCover버튼 <span class="guide">부모를 기준 전체를 덮는 버튼, 면클릭시 사용</span></h2>
+                    <p style="position:relative; background:#ebafff">bntCover는 부모의 전체영역을 면클릭할때 사용합니다.<a href="#none" class="btnCover"></a></p>
+                </div>
+                <button type="button" class="btnTitle"><span>접기/펼치기</span></button>
+            </div>
+
+            <div id="mButton" class="guideModule">
+                <h1>mButton</h1>
+                <div class="inner gSideClear">
+                    <h2>mButton <span class="guide">기본형</span></h2>
+                    <div class="mButton">
+                        <a href="#none" class="btnStrong">신청</a>
+                        <a href="#none" class="btnNormal">취소</a>
+                        <a href="#none" class="btnEm">확인</a>
+                    </div>
+                    <h2>mButton + gFull <span class="guide">버튼의 넓이가 100%일때 사용</span></h2>
+                    <div class="mButton gFull">
+                        <a href="#none" class="btnStrong">신청</a>
+                        <a href="#none" class="btnNormal">취소</a>
+                    </div>
+                    <h2>mButton + gLeft <span class="guide">왼쪽정렬</span></h2>
+                    <div class="mButton gLeft">
+                        <a href="#none" class="btnEm mini">신청</a>
+                        <a href="#none" class="btnStrong mini">취소</a>
+                    </div>
+                    <h2>mButton + gRight <span class="guide">오른쪽정렬</span></h2>
+                    <div class="mButton gRight">
+                        <a href="#none" class="btnEm mini">신청</a>
+                        <a href="#none" class="btnStrong mini">취소</a>
+                    </div>
+                    <h2>mButton + gCenter <span class="guide">중앙정렬</span></h2>
+                    <div class="mButton gCenter">
+                        <a href="#none" class="btnEm mini">신청</a>
+                        <a href="#none" class="btnStrong mini">취소</a>
+                    </div>
+                </div>
+                <button type="button" class="btnTitle"><span>접기/펼치기</span></button>
+            </div>
+
+            <div id="mSearch" class="guideModule">
+                <h1>mSearch</h1>
+                <div class="inner">
+                    <div class="mSearch">
+                        <input type="search" title="도메인 검색" placeholder="www.도메인 검색" class="fSearch">
+                        <button type="submit" class="btnSearch"></button>
+                    </div>
+                </div>
+                <button type="button" class="btnTitle"><span>접기/펼치기</span></button>
+            </div>
+
+            <div id="mTab" class="guideModule">
+                <h1>mTab (eTab)</h1>
+                <div class="inner gSideClear">
+                    <h2>mTab + typeNav <span class="guide">메뉴의 텍스트 길이에 따라 하단 언더라인이 들어간다.</span></h2>
+                    <div class="mTab typeNav">
+                        <div class="inner">
+                            <ul class="tab">
+                                <li class="selected"><a href="#none">사용현황</a></li>
+                                <li><a href="#none">호스팅 관리</a></li>
+                                <li><a href="#none">도메인 관리</a></li>
+                                <li><a href="#none">마이캐쉬</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h2>mTab + typeNav + gFixed <span class="guide">메뉴갯수대로 n등분되고 텍스트 길이가 등분된 값에 따라 하단 언더라인이 들어간다.</span></h2>
+                    <div class="mTab typeNav gFixed">
+                        <div class="inner">
+                            <ul class="tab">
+                                <li class="selected"><a href="#none">사용현황</a></li>
+                                <li><a href="#none">호스팅 관리</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!--
+                    <div class="mTab typeNav gSwipe">
+                        <div class="inner">
+                            <ul class="tab">
+                                <li class="selected"><a href="#none">사용현황</a></li>
+                                <li><a href="#none">호스팅 관리</a></li>
+                                <li><a href="#none">도메인 관리</a></li>
+                                <li><a href="#none">마이캐쉬</a></li>
+                                <li><a href="#none">입금조회</a></li>
+                                <li><a href="#none">입금조회1</a></li>
+                                <li><a href="#none">입금조회2</a></li>
+                                <li><a href="#none">입금조회3</a></li>
+                                <li><a href="#none">입금조회4</a></li>
+                            </ul>
+                        </div>
+                        <button type="button" class="btnPrev">이전 메뉴</button>
+                        <button type="button" class="btnNext">다음 메뉴</button>
+                    </div>
+                    - 스와이프 버튼: btnPrev / btnNext
+                    <br><br>
+                    -->
+
+                    <h2>mTab + typeTab</h2>
+                    <div class="mTab typeTab eTab">
+                        <div class="inner">
+                            <ul class="tab">
+                                <li class="alarm selected"><a href="#tab1">서비스 현황 <span class="num">5</span></a></li>
+                                <li><a href="#tab2">도메인 연결관리</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h2>mTab + typeButton</h2>
+                    <div class="mTab typeButton eTab">
+                        <div class="inner">
+                            <ul class="tab">
+                                <li class="selected"><a href="#tabSpec">서비스 사양</a></li>
+                                <li><a href="#tabFeature">특징</a></li>
+                                <li><a href="#tabBenefit">무료혜택</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="tabSpec" class="tabCont" style="display:block; ">
+                        <div class="function">
+                            <div class="inner">
+                                tab내용 상단에 정보가 들어갈때 .function을 사용합니다.
+                            </div>
+                        </div>
+                        <div style="color:#fff;background:#3666c8">
+                            tabCont1<br>
+                            서비스 사양 내용
+                        </div>
+                    </div>
+                    <div id="tabFeature" class="tabCont">
+                        <div style="color:#fff;background:green">
+                            tabCont2<br>
+                            특징 내용
+                        </div>
+                    </div>
+                    <div id="tabBenefit" class="tabCont">
+                        <div style="color:#fff;background:pink">
+                            tabCont3<br>
+                            무료혜택 내용
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btnTitle"><span>접기/펼치기</span></button>
+            </div>
+
+            <div id="mBox" class="guideModule">
+                <h1>mBox</h1>
+                <div class="inner gSideClear">
+                    <h2>mBox <span class="guide">기본형은 레이아웃안에서 사용되며 borer-top, border-bottom만 있다.</span></h2>
+                    <div class="mBox"></div>
+
+                    <h2>mBox+gClear <span class="guide">여백, 패딩 모두 없음</span></h2>
+                    <div class="mBox gClear"></div>
+
+                    <h2>mBox+theme1 <span class="guide">배경색상</span></h2>
+                    <div class="mBox theme1">
+                        backgroud-color:#f4f4f4;
+                    </div>
+                </div>
+                <button type="button" class="btnTitle"><span>접기/펼치기</span></button>
+            </div>
+
+            <div id="mTable" class="guideModule">
+                <h1>mTable</h1>
+                <div class="inner">
+                   <h2>mTable + gVer <span class="guide">위여백:4px, 아래 여백:4px</span></h2>
+                    <div class="mTable gVer">
+                        <table border="1">
+                            <caption>테이블 예시: 캡션 꼭 바꿔주세요</caption>
+                            <colgroup>
+                                <col style="width:120px;">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <th scope="row">기본</th>
+                                <td>내용</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">오른쪽 배치</th>
+                                <td class="right">내용</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">중간 배치</th>
+                                <td class="center">내용</td>
+                            </tr>
+                            <tr class="field"><!-- 참고 : fText, fSelect의 폼요소가 들어갈때 field 클래스 부여 -->
+                                <th scope="row">폼요소</th>
+                                <td>
+                                    <div class="gridSet middle">
+                                        <div class="grid gFlex1">
+                                            <input type="text" class="fText right">
+                                        </div>
+                                        <div class="grid">원</div>
+                                    </div>
+                                    <p class="txtInfo">~ 2019-11-24 까지</p>
+                                </td>
+                            </tr>
+                            <tr class="result"><!-- 참고 : 최종 잔액 표시 같은 강조시 사용 -->
+                                <th scope="row">result(#333)</th>
+                                <td class="right"><strong class="txtEm">100,000원</strong></td>
+                            </tr>
+                            <tr class="field separate"><!-- 참고 : 테이블 tr 분리 -->
+                                <th scope="row">separate 분리</th>
+                                <td>
+                                    <div class="gridSet middle">
+                                        <div class="grid gFlex1">
+                                            <input type="text" class="fText right">
+                                        </div>
+                                        <div class="grid">원</div>
+                                    </div>
+                                    <p class="txtInfo">~ 2019-11-24 까지</p>
+                                </td>
+                            </tr>
+                            <tr class="separate">
+                                <th scope="row">separate 분리</th>
+                                <td class="right">분리</td>
+                            </tr>
+                            <tr class="option">
+                                <td colspan="2">
+                                    <strong class="title">옵션</strong>
+                                    <ul class="optionList">
+                                        <li>
+                                            <strong class="label">HDD 용량추가 (100M)</strong>
+                                            <span class="value">
+                                                <strong>28,000</strong>원
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <strong class="label">POP E-mail 추가 (5)</strong>
+                                            <span class="value">
+                                                <strong>28,000</strong>원
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            </tbody>
+                            <tbody class="extendTerm"><!-- 서비스 연장신청 > 연장기간 -->
+                            <tr class="field">
+                                <th scope="row" class="middle">연장기간</th>
+                                <td>
+                                    <select class="fSelect">
+                                        <option>옵션1</option>
+                                        <option>옵션2</option>
+                                        <option>옵션</option>
+                                    </select>
+                                    <p class="txtInfo">~ 2019-11-24 까지</p>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h2>mTable + gVer + gNarrow <span class="guide">위여백:3px, 아래 여백:3px</span></h2>
+                    <div class="mTable gVer gNarrow">
+                        <table border="1">
+                            <caption>테이블 예시: 캡션 꼭 바꿔주세요</caption>
+                            <colgroup>
+                                <col style="width:120px;">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <th scope="row">기본</th>
+                                <td>내용</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">오른쪽 배치</th>
+                                <td class="right">내용</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">중간 배치</th>
+                                <td class="center">내용</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+                <button type="button" class="btnTitle"><span>접기/펼치기</span></button>
+            </div>
+
+            <div id="mList" class="guideModule">
+                <h1>mList</h1>
+                <div class="inner">
+                    <h2>mList + typeExclam
+                        <span class="guide">
+                            <img src="../images/common/@guide_icon1.png" alt="" width="14">
+                        </span>
+                    </h2>
+                    <ul class="mList typeExclam">
+                        <li>느낌표 도움말</li>
+                        <li>느낌표 도움말</li>
+                    </ul>
+                    <h2>mList + typeExclam+theme1
+                        <span class="guide">
+                            <img src="../images/common/@guide_icon2.png" alt="" width="14">
+                        </span>
+                    </h2>
+                    <ul class="mList typeExclam theme1">
+                        <li>파란 느낌표 도움말</li>
+                        <li>파란 느낌표 도움말</li>
+                    </ul>
+                    <h2>mList + typeList
+                        <span class="guide">
+                            list형으로 ol, ul타입이 있다. / 레이어팝업 도메인리스트에 사용<br>
+                            btnCover는 리스트메뉴를 면클릭하기 위해 사용된다.
+                        </span>
+                    </h2>
+                    <ul class="mList typeList">
+                        <li>
+                            <span class="subject">타이틀/주제</span>
+                            <a href="#none" class="btnCover" target="_blank"></a><!-- 참고: 클릭영역이 없을 때 삭제 -->
+                        </li>
+                        <li>
+                            <span class="subject">ul 타입</span>
+                            <a href="#none" class="btnCover" target="_blank"></a>
+                        </li>
+                    </ul>
+                    <br>
+                    <ol class="mList typeList">
+                        <li>
+                            <span class="subject">타이틀/주제</span>
+                            <a href="#none" class="btnCover" target="_blank"></a>
+                        </li>
+                        <li>
+                            <span class="subject">ol타입은 숫자가 들어간다.</span>
+                            <a href="#none" class="btnCover" target="_blank"></a>
+                        </li>
+                    </ol>
+                    <h2>mList + typeDot <span class="guide">현재 도움말 레이어팝업에서만 사용</span></h2>
+                    <ul class="mList typeDot">
+                        <li>내용</li>
+                        <li>내용</li>
+                    </ul>
+                </div>
+
+                <button type="button" class="btnTitle"><span>접기/펼치기</span></button>
+            </div>
+
+            <div id="mPaginate" class="guideModule">
+                <h1>mPaginate</h1>
+                <div class="inner">
+                    <h2>mPaginate + typeList</h2>
+                    <div class="mPaginate typeList">
+                        <a href="#none" class="btnFirst">첫 페이지</a>
+                        <a href="#none" class="btnPrev">이전 페이지</a>
+                        <ul class="page">
+                            <li><button type="button">1</button></li>
+                            <li class="current"><button type="button">2</button></li>
+                            <li><button type="button">3</button></li>
+                        </ul>
+                        <a href="#none" class="btnNext">다음 페이지</a>
+                        <a href="#none" class="btnLast">마지막 페이지</a>
+                    </div>
+                </div>
+                <div class="inner gSideClear">
+                    <h2>mPaginate + typeBoard</h2>
+                    <div class="mPaginate typeBoard">
+                        <ul class="page">
+                            <li>
+                                <span class="label">이전글</span>
+                                <a href="#none" class="link">[긴급] CPU 보안 취약점 패치</a>
+                            </li>
+                            <li>
+                                <span class="label">다음글</span>
+                                <a href="#none" class="link">[필독] 카페24 사칭 메일 주의 안내</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="mServiceList" class="guideModule">
+                <h1>mServiceList</h1>
+                <div class="inner gSideClear">
+                    <h2>mServiceList</h2>
+                    <ul class="mServiceList">
+                        <li>
+                            <a href="#none" class="link">
+                                <strong class="name">10G 광아우토반 FullSSD 비즈니스</strong>
+                                <span class="id">stest001</span>
+                                <span class="date dday">2018-11-25 (D-15)</span><!-- 참고:d-day 날짜에 dday 클래스 추가 -->
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#none" class="link">
+                                <strong class="name">서비스명</strong>
+                                <span class="id">아이디명</span>
+                                <span class="date">2018-11-25</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <button type="button" class="btnTitle"><span>접기/펼치기</span></button>
+            </div>
+
+            <div id="mLegend" class="guideModule">
+                <h1>mLegend</h1>
+                <div class="inner">
+                    <h2>mLegend</h2>
+                    <div class="mLegend">
+                        <ul class="legend">
+                            <li class="cate1">현재 사용량</li>
+                            <li class="cate2">남은 사용량</li>
+                        </ul>
+                    </div>
+                </div>
+                <button type="button" class="btnTitle"><span>접기/펼치기</span></button>
+            </div>
+
+
+
+            <div id="mItemList" class="guideModule">
+                <h1>mItemList</h1>
+                <div class="inner gSideClear">
+                    <h2>mItemList</h2>
+                    <div class="mItemList">
+                        <div class="item">
+                            <div class="head">
+                                <strong class="subject">웹트래픽 용량</strong>
+                                <div class="append">
+                                    <a href="#none" class="txtLink mini">더보기</a>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <div class="mBox gClear">
+                                    <img src="../images/common/@sample_graph.png" alt="" width="290" style="display:block; margin:0 auto;"><!-- 참고: 그래프는 개발영역 -->
+                                </div>
+                                <div class="mTable gVer">
+                                    <table border="1">
+                                        <caption>웹하드 용량</caption>
+                                        <colgroup>
+                                            <col style="width:95px;">
+                                            <col>
+                                        </colgroup>
+                                        <tbody>
+                                        <tr>
+                                            <th scope="row">현재 사용량</th>
+                                            <td class="right">276M</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">남은 사용량</th>
+                                            <td class="right">9824M</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="head">
+                                <strong class="subject">웹트래픽 용량</strong>
+                            </div>
+                            <div class="content">
+                                <div class="mBox gClear">
+                                    <img src="../images/common/@sample_graph.png" alt="" width="290" style="display:block; margin:0 auto;"><!-- 참고: 그래프는 개발영역 -->
+                                </div>
+                                <div class="mTable gVer">
+                                    <table border="1">
+                                        <caption>웹트래픽 용량</caption>
+                                        <colgroup>
+                                            <col style="width:95px;">
+                                            <col>
+                                        </colgroup>
+                                        <tbody>
+                                        <tr>
+                                            <th scope="row">기간</th>
+                                            <td class="right">
+                                                <strong>2018-11-01 ~ 2018-11-30</strong>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">현재 사용량/월</th>
+                                            <td class="right">
+                                                <strong>425GBytes</strong>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">남은 사용량/월</th>
+                                            <td class="right">
+                                                <strong>9575GBytes</strong>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="head">
+                                <strong class="subject">웹트래픽 용량</strong>
+                                <div class="append">
+                                    <a href="#none" class="txtLink">사용량 확인</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="head">
+                                <strong class="subject">트래픽 자동 리셋 설정</strong>
+                                <div class="append">
+                                    <a href="#layerTrafficAutoReset" class="txtLink eModal"><strong class="txtEm">사용함</strong></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btnTitle"><span>접기/펼치기</span></button>
+            </div>
+
+            <div id="mDeposit" class="guideModule">
+                <h1>mDeposit</h1>
+                <div class="inner gSideClear">
+                    <h2>mDeposit</h2>
+                    <div class="mDeposit">
+                        <div class="deposit">
+                            <span class="date">2018-11-13</span>
+                            <span class="info">
+                               <span class="txtEm">입금완료(결제완료)</span>
+                               <span class="userId">stest001</span>
+                           </span>
+                            <strong class="subject">10G 광아우토반 Full SSD 비즈니스형</strong>
+                            <div class="mTable gVer gNarrow">
+                                <table border="1">
+                                    <caption>입금/결제 정보</caption>
+                                    <colgroup>
+                                        <col style="width:90px;">
+                                        <col>
+                                    </colgroup>
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row">결제수단</th>
+                                        <td>무통장(공용)</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">입금계좌정보</th>
+                                        <td>
+                                            우리은행 382-222254-13-001<br>
+                                            입금자 : 홍길동
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <a href="#layerDepositDetail" class="btnLayer eModal"></a>
+                        </div>
+                        <dl class="amount">
+                            <dt>입금하실 금액</dt>
+                            <dd>50,000원</dd>
+                        </dl>
+                    </div>
+                    <div class="mDeposit">
+                        <div class="deposit">
+                            <span class="date">2018-11-13</span>
+                            <span class="info">
+                               <span class="txtEm">입금완료(결제완료)</span>
+                               <span class="userId">stest001</span>
+                           </span>
+                            <strong class="subject">10G 광아우토반 Full SSD 비즈니스형</strong>
+                            <div class="mTable gVer gNarrow">
+                                <table border="1">
+                                    <caption>입금/결제 정보</caption>
+                                    <colgroup>
+                                        <col style="width:90px;">
+                                        <col>
+                                    </colgroup>
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row">결제수단</th>
+                                        <td>무통장(공용)</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">입금계좌정보</th>
+                                        <td>
+                                            우리은행 382-222254-13-001<br>
+                                            입금자 : 홍길동
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <a href="#layerDepositDetail" class="btnLayer eModal"></a>
+                        </div>
+                        <dl class="amount">
+                            <dt>입금하실 금액</dt>
+                            <dd>50,000원</dd>
+                        </dl>
+                    </div>
+                </div>
+                <button type="button" class="btnTitle"><span>접기/펼치기</span></button>
+            </div>
+
+            <div id="mTotalSum" class="guideModule">
+                <h1>mTotalSum</h1>
+                <div class="inner gSideClear">
+                    <h2>mTotalSum</h2>
+                    <div class="mTotalSum">
+                        <dl>
+                            <dt>사용료(1년)</dt>
+                            <dd>396,000원</dd>
+                        </dl>
+                        <dl>
+                            <dt>할인 (10%)</dt>
+                            <dd>-39,600원</dd>
+                        </dl>
+                        <dl class="detail">
+                            <dt>옵션</dt>
+                            <dd>
+                                <dl>
+                                    <dt>HDD 용량추가 (100M)</dt>
+                                    <dd>28,000원</dd>
+                                </dl>
+                                <dl>
+                                    <dt>POP E-mail 추가 (5)</dt>
+                                    <dd>28,000원</dd>
+                                </dl>
+                            </dd>
+                        </dl>
+                        <dl class="total">
+                            <dt>총 결제금액</dt>
+                            <dd>356,4000원</dd>
+                        </dl>
+                    </div>
+                    <br>
+                    <div class="mTotalSum">
+                        <dl>
+                            <dt>충전금액</dt>
+                            <dd>356,4000원</dd>
+                        </dl>
+                        <dl class="total">
+                            <dt>총 결제금액</dt>
+                            <dd>356,4000원</dd>
+                        </dl>
+                    </div>
+                </div>
+                <button type="button" class="btnTitle"><span>접기/펼치기</span></button>
+            </div>
+
+            <div id="mInfo" class="guideModule">
+                <h1>mInfo</h1>
+                <div class="inner">
+                    <h2>mInfo + typeEmpty</h2>
+                    <div class="mInfo typeEmpty">
+                        <img src="../images/common/img_exclam.png" width="41" alt="" class="image">
+                        <p class="text">검색결과가 없습니다.</p>
+                    </div>
+
+                    <h2>mInfo + typeResult</h2>
+                    <div class="mInfo typeResult">
+                        <img src="../images/common/img_check.png" width="41" alt="" class="image">
+                        <p class="text">
+                            <strong>서비스 연장</strong> 결제신청이<br><strong>완료</strong>되었습니다.
+                        </p>
+                    </div>
+                </div>
+                <button type="button" class="btnTitle"><span>접기/펼치기</span></button>
+            </div>
+
+            <div id="mBoardList" class="guideModule">
+                <h1>mBoardList</h1>
+                <div class="inner gSideClear">
+                    <h2>mBoardList + typeList </h2>
+                    <ul class="mBoardList typeList">
+                        <li>
+                            <a href="#none" class="link">
+                                <span class="inner">
+                                    <strong class="subject">최근 1:1문의 내역 노출</strong>
+                                </span>
+                                <span class="append">답변대기</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#none" class="link">
+                                <span class="inner">
+                                    <strong class="subject">최근 1:1문의 내역 노출</strong>
+                                </span>
+                                <span class="append">2018-11-20</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#none" class="link">
+                                <span class="num">99</span>
+                                <span class="inner">
+                                    <strong class="subject">최근 1:1문의 내역 노출</strong>
+                                </span>
+                                <span class="append">2018-11-20</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <h2>mBoardList + typeList + faq <span class="guide">자주묻는질문 게시판은 faq 클래스 추가</span></h2>
+                    <ul class="mBoardList typeList faq">
+                        <li>
+                            <a href="#none" class="link">
+                                <span class="inner">
+                                    <strong class="subject">최근 1:1문의 내역 노출</strong>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <button type="button" class="btnTitle"><span>접기/펼치기</span></button>
+            </div>
+
+            <div id="mMenuList" class="guideModule">
+                <h1>mMenuList</h1>
+                <div class="inner gSideClear">
+                    <h2>mMenuList</h2>
+                    <ul class="mMenuList">
+                        <li><a href="#none" class="link">메뉴</a></li>
+                        <li><a href="#none" class="link">메뉴</a></li>
+                        <li><a href="#none" class="link">메뉴</a></li>
+                        <li><a href="#none" class="link">메뉴</a></li>
+                    </ul>
+                </div>
+                <button type="button" class="btnTitle"><span>접기/펼치기</span></button>
+            </div>
+
+            <div id="mBoardView" class="guideModule">
+                <h1>mBoardView</h1>
+                <div class="inner gSideClear">
+                    <h2>mBoardView</h2>
+                    <div class="mBoardView">
+                        <div class="head">
+                            <div class="info">
+                                <span class="label">웹호스팅</span>
+                                <span class="date">2018-01-05</span>
+                            </div>
+                            <h3 class="subject">게시물 제목이 노출됩니다.</h3>
+                        </div>
+                        <div class="content">
+                            <div class="gEditor"><!-- 참고: 에디터에서 작성한 문구가 들어가는 영역 -->
+                                게시물 내용
+                            </div>
+                            <div class="mButton gRight"><!-- 참고: 1:1 문의 -->
+                                <a href="#none" class="btnEm mini">수정</a>
+                                <a href="#none" class="btnStrong mini">삭제</a>
+                            </div>
+                            <div class="inquiry">
+                                <p class="text">궁금하신 사항은 언제든지<br>고객센터 1:1게시판으로 문의해주세요.</p>
+                                <a href="#none" class="btnStrong mini">문의</a>
+                            </div>
+                        </div>
+                        <div class="content answer"><!-- 참고: 1:1 문의 답변 -->
+                            <div class="info">
+                                <span class="label">답변완료</span>
+                                <span class="date">2018-01-05</span>
+                            </div>
+                            <div class="gEditor"><!-- 참고: 에디터에서 작성한 문구가 들어가는 영역 -->
+                                댓글 에디터 내용들어감
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btnTitle"><span>접기/펼치기</span></button>
+            </div>
+
+            <div id="mLayer" class="guideModule">
+                <h1>mLayer</h1>
+                <ul class="alert">
+                    <li>레이어 id명 "layer$NAME"</li>
+                    <li>container 하단에 위치한다.</li>
+                </ul>
+                <div class="inner">
+                    <!-- <a href="#layerSampleClick" class="btnNormal eLayerClick"><span>Click 레이어보기</span></a> -->
+                    <a href="#layerSampleModal" class="btnNormal eModal"><span>Modal 레이어보기</span></a>
+                    <a href="#layerSampleModal2" class="btnNormal eModal"><span>Modal2 레이어보기</span></a>
+                </div>
+                <button type="button" class="btnTitle"><span>접기/펼치기</span></button>
+            </div>
+
+            <div id="mProcess" class="guideModule">
+                <h1>mProcess</h1>
+                <div class="inner">
+                    <div class="mProcess">
+                        <ol>
+                            <li class="done"><span>아이디 등록</span></li>
+                            <li class="selected"><span>정보입력</span></li><!-- 참고: 활성화시, class="selected" 추가-->
+                            <li><span>결제</span></li>
+                            <li><span>신청완료</span></li>
+                        </ol>
+                        <p class="message">결제신청이 <strong>완료</strong>되었습니다.</p>
+                    </div>
+                </div>
+                <button type="button" class="btnTitle"><span>접기/펼치기</span></button>
+            </div>
+        </div>
+    </div>
+
+    <hr class="layout">
+
+    <footer id="footer">
+        <div class="util gTop">
+            <a href="#none">로그인</a>
+            <a href="#none">전체서비스</a>
+        </div>
+        <h2 class="logo">cafe24</h2>
+        <div class="familysite">
+            <button type="button">FAMILY SITE</button>
+            <ul>
+                <li><a href="http://cafe24corp.com" target="_blank" title="새창 열림">카페24</a></li>
+                <li><a href="http://echosting.cafe24.com" target="_blank" title="새창 열림">쇼핑몰센터</a></li>
+                <li><a href="http://hosting.cafe24.com" target="_blank" title="새창 열림">호스팅센터</a></li>
+                <li><a href="http://cmc.cafe24.com" target="_blank" title="새창 열림">마케팅센터</a></li>
+                <li><a href="http://soho.cafe24.com" target="_blank" title="새창 열림">창업센터</a></li>
+                <li><a href="http://edu.cafe24.com" target="_blank" title="새창 열림">교육센터</a></li>
+                <li><a href="http://d.cafe24.com" target="_blank" title="새창 열림">디자인센터</a></li>
+                <li><a href="http://dbank.cafe24.com" target="_blank" title="새창 열림">디자인뱅크</a></li>
+                <li><a href="http://www.cafe24.com/?controller=domain_main" target="_blank" title="새창 열림">도메인센터</a></li>
+                <li><a href="http://home.cafe24.com" target="_blank" title="새창 열림">홈페이지제작센터</a></li>
+                <li><a href="http://biz.cafe24.com" target="_blank" title="새창 열림">BIZ솔루션</a></li>
+                <li><a href="http://reseller.cafe24.com" target="_blank" title="새창 열림">리셀러</a></li>
+            </ul>
+        </div>
+        <div class="util gBottom">
+            <a href="http://simplexi.com/" target="_blank" title="새창 열림">회사소개</a>
+            <a href="http://echosting.cafe24.com/Terms/?url=Member" target="_blank" title="새창 열림">이용약관</a>
+            <a href="http://www.cafe24.com/?controller=clause_agreement&amp;method=infoAgreement" target="_blank" title="새창 열림"><strong>개인정보처리방침</strong></a><br>
+            <a href="http://www.cafe24.com/?controller=clause_agreement&amp;method=protectAgreement" target="_blank" title="새창 열림">청소년보호정책</a>
+            <a href="https://echosting.cafe24.com/php/psPop.php" target="_blank" title="새창 열림">제휴문의</a>
+            <a href="#none" target="_blank" title="새창 열림">PC버전</a>
+        </div>
+        <div class="address">
+            <strong class="company">카페24(주) 사업자정보
+                <button type="button" class="btnCover">열기</button>
+            </strong>
+            <div class="info">
+                <dl>
+                    <dt>대표이사</dt>
+                    <dd>이재석</dd>
+                </dl>
+                <dl>
+                    <dt>소재지</dt>
+                    <dd>서울특별시 동작구 보래매로5길 15(신대방동, 전문 건설회관)</dd>
+                </dl>
+                <dl>
+                    <dt>고객센터</dt>
+                    <dd>
+                        (호스팅센터) 1588-3284<br>
+                        (쇼핑몰센터) 1588-3413
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>팩스</dt>
+                    <dd>02-6280-0331</dd>
+                </dl>
+                <dl>
+                    <dt>전자우편</dt>
+                    <dd>hosting@cafe24corp.com</dd>
+                </dl>
+                <dl>
+                    <dt>사업자등록번호</dt>
+                    <dd>118-81-20586</dd>
+                </dl>
+                <dl>
+                    <dt>통신판매업신고</dt>
+                    <dd>
+                        동작 제 02-680-078호<br>
+                        <a href="http://www.ftc.go.kr/info/bizinfo/communicationList.jsp" class="btnBizinfo" target="_blank" title="새창 열림">사업자 정보 확인</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>개인정보보호책임자</dt>
+                    <dd>정태영 (privac@cafe24corp.com)</dd>
+                </dl>
+                <dl>
+                    <dt>호스팅 제공</dt>
+                    <dd>카페24(주)</dd>
+                </dl>
+            </div>
+        </div>
+        <div class="association">
+            <a href="http://www.khada.kr/" target="_blank" title="새창 열림"><img src="../images/common/img_khada.png" alt="KHADA (사)한국호스팅도메인협회" height="14"></a>
+            <a href="http://www.kolsa.or.kr/neopress/index.php" target="_blank" title="새창 열림"><img src="../images/common/img_kolsa.png" alt="KOLSA 사단법인 한국온라인쇼핑협회" height="14"></a>
+            <a href="http://m-img.cafe24.com/images/contract/common/isms/index.html" target="_blank" title="새창 열림"><img src="../images/common/img_isms.png" alt="KISA 한국인터넷진흥원" height="19"></a>
+        </div>
+        <p class="copyright">copyright&copy; Cafe24 Corp. All right Reserved.</p>
+    </footer>
+</div>
+
+<!-- 참고: 샘플 모달 레이어 팝업 -->
+<section id="layerSampleModal" class="mLayer typeModal">
+    <h2>타이틀</h2>
+    <div class="wrap" >
+        <p class="desc">레이어 팝업 내용이 들어갑니다</p>
+        레이어 팝업의 btn$NAME 주요버튼 mini: h:37px, size:13px<br>
+        <a href="#none" class="btnNormal mini">btnNormal mini</a>
+        <a href="#none" class="btnEm mini">btnEm mini</a>
+        <a href="#none" class="btnStrong mini">btnStrong mini</a>
+        <br><br>
+        레이어 팝업의 btnMore
+        <a href="#none" class="btnMore">더보기 <i class="icoAngle down"></i></a>
+        <br><br>
+        레이어 팝업의 form 요소: size:13px<br>
+        <label class="gLabel">
+            <input type="radio" class="fRadio">
+            <span class="fLabel">
+                <span class="text">라디오</span>
+            </span>
+        </label>
+        <label class="gLabel">
+            <input type="checkbox" class="fChk">
+            <span class="fLabel">
+                <span class="text">체크박스</span>
+            </span>
+        </label>
+    </div>
+    <footer class="footer">
+        레이어팝업 footer
+        <div class="mButton">
+            <a href="#none" class="btnNormal">취소</a>
+            <a href="#none" class="btnStrong">확인</a>
+        </div>
+    </footer>
+    <button type="button" class="btnClose eClose">닫기</button>
+</section>
+
+<!-- 참고: 샘플 모달 레이어 팝업 -->
+<section id="layerSampleModal2" class="mLayer typeModal gClear">
+    <h2>타이틀</h2>
+    <div class="wrap">
+        <p class="desc">
+            레이어 팝업 안에 문장만 들어갈 때 mLayer gClear를 사용합니다. <br>
+            gClear를 사용하면 mLayer의 h2 하단의 border와 여백이 reset됩니다.
+        </p>
+    </div>
+    <footer class="footer">
+        <div class="mButton">
+            <a href="#none" class="btnNormal">취소</a>
+            <a href="#none" class="btnStrong">확인</a>
+        </div>
+    </footer>
+    <button type="button" class="btnClose eClose">닫기</button>
+</section>
+
+<!--
+    참고: 서비스 관리 > 부가 설정 관리 > 트래픽 자동 리셋 설정
+-->
+<strong class="layerTitle">서비스 관리 > 부가 설정 관리 > 트래픽 자동 리셋 설정</strong>
+<section id="layerTrafficAutoReset" class="mLayer typeModal">
+    <h2>트래픽 자동 리셋 설정</h2>
+    <div class="wrap">
+        <div class="mTable gVer">
+            <table border="1">
+                <caption>트래픽 자동 리셋 설정</caption>
+                <colgroup>
+                    <col style="width:72px;">
+                    <col>
+                </colgroup>
+                <tbody>
+                <tr>
+                    <th scope="row">사용여부</th>
+                    <td>
+                        <label class="gLabel">
+                            <input type="radio" name="use1" class="fRadio" checked="">
+                            <span class="fLabel"><span class="text">사용안함</span></span>
+                        </label>
+                        <label class="gLabel">
+                            <input type="radio" name="use1" class="fRadio">
+                            <span class="fLabel"><span class="text">사용함</span></span>
+                        </label>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="agree">
+            <label class="gLabel">
+                <input type="checkbox" class="fChk">
+                <span class="fLabel">
+                    <span class="text">트래픽 초과시 마이캐쉬로 트래픽을 자동 리셋하는 것에 동의합니다.</span>
+                </span>
+            </label>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="mButton">
+            <a href="#none" class="btnNormal">취소</a>
+            <a href="#none" class="btnStrong">확인</a>
+        </div>
+    </footer>
+    <button type="button" class="btnClose eClose">닫기</button>
+</section>
+
+<!--
+    참고: 입금조회 > 입금신청상세
+-->
+<strong class="layerTitle">입금조회 > 입금신청상세</strong>
+<section id="layerDepositDetail" class="mLayer typeModal">
+    <h2>입금신청상세</h2>
+    <div class="wrap">
+        <div class="mTable gVer">
+            <table border="1">
+                <caption>입금신청상세</caption>
+                <colgroup>
+                    <col style="width:80px;">
+                    <col>
+                </colgroup>
+                <tbody>
+                <tr>
+                    <th scope="row">결제번호</th>
+                    <td>20161010_328083311</td>
+                </tr>
+                <tr>
+                    <th scope="row">영수증</th>
+                    <td>세금계산서</td>
+                </tr>
+                <tr>
+                    <th scope="row">상호(기관)명</th>
+                    <td>기관명</td>
+                </tr>
+                <tr>
+                    <th scope="row">대표자명</th>
+                    <td>홍길동</td>
+                </tr>
+                <tr>
+                    <th scope="row">사업자<br>등록번호</th>
+                    <td>123-45-12345</td>
+                </tr>
+                <tr>
+                    <th scope="row" class="middle">주소</th>
+                    <td>
+                        (123-12)<br>
+                        서울특별시 동작구 보라매로12 빌딩 3층
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">업태</th>
+                    <td>인터넷서비스업</td>
+                </tr>
+                <tr>
+                    <th scope="row">업종</th>
+                    <td>인터넷서비스업</td>
+                </tr>
+                <tr>
+                    <th scope="row">담당자명</th>
+                    <td>홍길동</td>
+                </tr>
+                <tr>
+                    <th scope="row">받는분 메일</th>
+                    <td>abcd123@mail.com</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="mButton gFull">
+            <a href="#none" class="btnEm">신청취소</a>
+        </div>
+    </footer>
+    <button type="button" class="btnClose eClose">닫기</button>
+</section>
+
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script src="../js/plugins.js"></script>
+<script src="../js/sly.js"></script>
+<script src="../js/slick.js"></script>
+<script src="../js/ui2.js"></script>
+
+<script>
+// 템플릿용
+$(document).ready(function(){
+    // linkMenu
+    var linkMenu="";
+    $(".guideModule").each(function(){
+        linkMenu = linkMenu+"<li><a href='#"+$(this).attr("id") +"'>"+ $(this).attr("id")+"</a></li>";
+        $("#sidebar > h3.title").text('모듈 목록');
+        $("html ul.lnb.service").html(linkMenu);
+    });
+
+    $('.guideModule > .btnTitle').click(function(){
+        $(this).parents('.guideModule').toggleClass('fold');
+    });
+});
+
+</script>
+</body>
+</html>
+

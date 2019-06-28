@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>클라우드</title>
+    <link rel="stylesheet" type="text/css" href="../css/font/notosans.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../css/common.css" media="all">
+    <script type="text/javascript" src="../js/jquery-1.12.1.min.js"></script>
+    <script type="text/javascript" src="../js/ui.js"></script>
+    <script type="text/javascript" src="https://img.echosting.cafe24.com/js/plugin/jquery-ui.js"></script>
+</head>
+<body>
+<div id="wrap">
+    <div id="skipNavigation">
+        <a href="#sidebar">대메뉴 바로가기</a>
+        <a href="#contents">본문 바로가기</a>
+    </div>
+    <hr class="layout">
+    <div id="header">
+        <h1 class="logo">
+            <a href="#none"><img src="../images/h1_logo_cafe24.png" alt="카페24"></a>
+            <a href="#none"><img src="../images/h1_logo_hosting.png" alt="호스팅센터"></a>
+            <a href="#none"><img src="../images/h1_logo_cloud.png" alt="클라우드"></a>
+        </h1>
+        <div class="mDropdown typeRegion"><!-- 참고: 클릭시 selected 클래스 toggle -->
+            <div class="fNow">
+                <span class="region">
+                    <span class="name">Region B cafe24-004</span>
+                    <span class="state bad">생성불가</span>
+                </span>
+            </div>
+            <button type="button" class="fButton eDropdown">옵션 변경</button>
+            <div class="select">
+                <ul>
+                    <li>
+                        <a href="#none" class="link">
+                            <span class="region">
+                                <span class="name">Region B cafe24-001</span>
+                                <span class="state bad">생성불가</span>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none" class="link">
+                            <span class="region">
+                                <span class="name">Region C cafe24-002</span>
+                                <span class="state good">쾌적</span>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none" class="link">
+                            <span class="region">
+                                <span class="name">Region D cafe24-004</span>
+                                <span class="state caution">보통</span>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="util">
+            <div class="userInfo eMymenu">
+                <a href="#none" class="message"><strong class="user">홍길동님</strong> 환영합니다.</a>
+                <ul class="menu">
+                    <li><a href="#none">결제관리</a></li>
+                    <li><a href="#none">알림관리</a></li>
+                    <li><a href="#none">보안키 등록</a></li>
+                    <li><a href="#none">1:1문의</a></li>
+                    <li><a href="#none">로그아웃</a></li>
+                </ul>
+            </div>
+            <a href="#none" class="btnManual">사용 매뉴얼</a>
+        </div>
+    </div>
+    <div id="container">
+        <div id="sidebar">
+            <ul class="lnb">
+                <li class="server parent"><!-- 참고 : 선택시 .selected, 하위 메뉴 있을 시 .root -->
+                    <a href="#none" class="eFold">cafe24 클라우드 서버</a>
+                    <ul class="children">
+                        <li><a href="#none" class="eFold">가상서버</a></li><!-- 참고 : 선택시 .selected -->
+                        <li><a href="#none" class="eFold">오토스케일</a></li>
+                        <li><a href="#none" class="eFold">오토스케일</a></li>
+                    </ul>
+                </li>
+                <li class="storage parent">
+                    <a href="#none" class="eFold">스토리지</a>
+                    <ul class="children">
+                        <li><a href="#none" class="eFold">블록 스토리지</a></li>
+                        <li><a href="#none" class="eFold">블록 스토리지 스냅샷</a></li>
+                    </ul>
+                </li>
+                <li class="network parent">
+                    <a href="#none" class="eFold">네트워킹</a>
+                    <ul class="children">
+                        <li><a href="#none" class="eFold">로드밸런서</a></li>
+                        <li><a href="#none" class="eFold">DNS</a></li>
+                    </ul>
+                </li>
+                <li class="security parent">
+                    <a href="#none" class="eFold">보안서비스</a>
+                    <ul class="children">
+                        <li><a href="#none" class="eFold">방화벽</a></li>
+                        <li><a href="#none" class="eFold">SSH키페어</a></li>
+                    </ul>
+                </li>
+                <!--
+                <li class="monitoring"><a href="#none" class="eFold">모니터링</a></li> -->
+                <li class="cs parent">
+                    <a href="#none" class="eFold">고객지원</a>
+                    <ul class="children">
+                        <li><a href="#none" class="eFold">공지사항</a></li>
+                        <li><a href="#none" class="eFold">자주 찾는 질문</a></li>
+                        <li><a href="#none" class="eFold">1:1 문의</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        
+        <div id="contents">
+            <div class="section">
+                <div class="mTitle gBorder">
+                    <h2>고객지원</h2>
+                </div>
+                <div class="mTitle">
+                    <h3>1:1 문의</h3>
+                </div>
+                <div class="mTitle">
+                    <strong class="title">나의 문의 내역</strong>
+                </div>
+                <div class="mBoard typeView">
+                    <table border="1">
+                        <caption>나의 문의 내역</caption>
+                        <colgroup>
+                            <col style="width:120px;">
+                            <col style="width:140px;">
+                            <col style="width:120px;">
+                            <col style="width:410px;">
+                            <col style="width:120px;">
+                            <col style="width:120px;">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th scope="col">접수번호</th>
+                            <th scope="col">문의유형</th>
+                            <th scope="col">분류</th>
+                            <th scope="col">제목</th>
+                            <th scope="col">접수일자</th>
+                            <th scope="col">상태</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>2017-014</td>
+                            <td>클라우드 웹콘솔</td>
+                            <td>가상서버</td>
+                            <td>로그인이 안되는데 어떡하나요? 로그인이 잘 되는 방법을 알려주세요.</td>
+                            <td>2017-08-08</td>
+                            <td>
+                                <span class="txtWarn">재문의중</span>
+                                <div class="mTooltip ePosTarget posLeft posBottom">
+                                    <button type="button" class="btnWarn ePosClick"></button>
+                                    <div class="tooltip ePosLayer" style="display:none; width:182px;">
+                                        <p>
+                                            현재 문의가 접수되어 담당자<br>
+                                            배정을 기다리고 있습니다.
+                                        </p>
+                                        <button type="button" class="btnClose eClose"></button>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mComment">
+                    <ul class="comment">
+                        <li class="viewContent">
+                            <strong class="title">선택 입력 정보</strong>
+                            <p>
+                                리전 정보 : 리전 A<br>
+                                가상서버명 : 내 가상서버 A<br>
+                                로드밸런서명 : 내 로드밸런서 A<br>
+                                오토스케일명 : 내 오토스케일 A
+                            </p>
+                        </li>
+                        <li>
+                            <strong class="title">1차 문의</strong>
+                            <p>
+                                가상서버 제작이 안되네요. 메뉴얼이 있나요?<br>
+                                그리고 클라우드는 무엇인가요? 네이버 클라우드와 다른점은 무엇인가요?<br>
+                                빠른 답변 부탁드려요.
+                            </p>
+                            <div class="mAttach gridSet">
+                                <span class="total">첨부파일 :</span>
+                                <ul class="attach grid">
+                                    <li><a href="#none">Label.jpg</a></li>
+                                    <li><a href="#none">Label.jpg</a></li>
+                                    <li><a href="#none">Label.jpg</a></li>
+                                    <li><a href="#none">Label.jpg</a></li>
+                                    <li><a href="#none">Label.jpg</a></li>
+                                    <li><a href="#none">Label.jpg</a></li>
+                                    <li><a href="#none">Label.jpg</a></li>
+                                    <li><a href="#none">Label.jpg</a></li>
+                                    <li><a href="#none">Label.jpg</a></li>
+                                    <li><a href="#none">Label.jpg</a></li>
+                                    <li><a href="#none">Label.jpg</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="answer">
+                            <strong class="title">1차 답변</strong>
+                            <p>
+                                안녕하세요? 카페24 클라우드 서비스 담당자 입니다.<br>
+                                데이터를 인터넷과 연결된 중앙컴퓨터에 저장해서 인터넷에 접속하기만 하면 언제 어디서든 데이터를 이용할 수 있는 것이 클라우드입니다.<br>
+                                오토스케일명 : 내 오토스케일A
+                            </p>
+                            <span class="txtDate">2017-08-10</span>
+                        </li>
+                        <li>
+                            <strong class="title">2차 문의</strong>
+                            <p>
+                                가상서버 제작이 안되네요. 메뉴얼이 있나요?<br>
+                                그리고 클라우드는 무엇인가요? 네이버 클라우드와 다른점은 무엇인가요?<br>
+                                빠른 답변 부탁드려요.
+                            </p>
+                        </li>
+                        <li class="answer">
+                            <strong class="title">2차 답변</strong>
+                            <p>
+                                안녕하세요? 카페24 클라우드 서비스 담당자 입니다.<br>
+                                데이터를 인터넷과 연결된 중앙컴퓨터에 저장해서 인터넷에 접속하기만 하면 언제 어디서든 데이터를 이용할 수 있는 것이 클라우드입니다.<br>
+                                오토스케일명 : 내 오토스케일A
+                            </p>
+                            <span class="txtDate">2017-08-10</span>
+                        </li>
+                    </ul>
+                    <div class="register">
+                        <strong class="title">재문의</strong>
+                        <textarea cols="30" rows="10" class="fTextarea" placeholder="답변으로 해결이 되지 않으셨다면 재문의를 남겨주시기 바랍니다."></textarea>
+                        <button type="button" class="btnRegister">등록</button>
+                        <div class="gBlankL">
+                            <span class="fFile">
+                                <label for="file1" class="btnFile">파일선택</label>
+                                <span class="name">선택된 파일 없음</span>
+                                <input type="file" id="file1" title="파일첨부">
+                            </span>
+                            <ul class="mList typeInfo">
+                                <li>이미지 최대 업로드 용량 10 MB / 업로드 가능 확장자 jpg,gif,png,jpeg</li>
+                                <li>지나치게 큰 이미지의 크기는 조정될 수 있습니다.</li>
+                            </ul>
+                            <div class="mAttach">
+                                <ul class="attach">
+                                    <li>Label.jpg <button type="button" class="btnDel"></button></li>
+                                    <li>Label.jpg <button type="button" class="btnDel"></button></li>
+                                    <li>Label.jpg <button type="button" class="btnDel"></button></li>
+                                    <li>Label.jpg <button type="button" class="btnDel"></button></li>
+                                    <li>Label.jpg <button type="button" class="btnDel"></button></li>
+                                    <li>Label.jpg <button type="button" class="btnDel"></button></li>
+                                    <li>Label.jpg <button type="button" class="btnDel"></button></li>
+                                    <li>Label.jpg <button type="button" class="btnDel"></button></li>
+                                    <li>Label.jpg <button type="button" class="btnDel"></button></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mButton">
+                    <div class="right">
+                        <button type="button" class="btnNormalM">삭제</button>
+                        <a href="#none" class="btnNormalM">목록</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="layout">
+    <div id="footer">
+        <p class="copyright">Copyright&copy; Cafe24 corp. All Rights Reserved.</p>
+    </div>
+</div>
+
+<script>
+    // ※ 개발작업시 datepicker 플러그인 수정요청: 최상위에 mCalendar 클래스를 추가해주세요.
+    $( function() {
+        //한글설정
+        $.datepicker.regional['ko'] = {
+            closeText: '닫기',
+            prevText: '이전달',
+            nextText: '다음달',
+            currentText: '오늘',
+            monthNames: ['1월','2월','3월','4월','5월','6월',
+                '7월','8월','9월','10월','11월','12월'],
+            monthNamesShort: ['1월','2월','3월','4월','5월','6월',
+                '7월','8월','9월','10월','11월','12월'],
+            dayNames: ['일','월','화','수','목','금','토'],
+            dayNamesShort: ['일','월','화','수','목','금','토'],
+            dayNamesMin: ['일','월','화','수','목','금','토'],
+            weekHeader: 'Wk',
+            dateFormat: 'yy.mm.dd',
+            firstDay: 1,
+            isRTL: false,
+            duration:200,
+            showAnim:'show',
+            yearSuffix: ''
+        };
+        $.datepicker.setDefaults($.datepicker.regional['ko']);
+        $( ".datepicker" ).datepicker({
+            changeMonth: true,
+            changeYear: true
+        });
+        $('.typeCalendar .fCalendar').on('click', function() {
+            $(this).find('.datepicker').datepicker('show');
+        });
+
+    } );
+</script>
+</body>
+</html>

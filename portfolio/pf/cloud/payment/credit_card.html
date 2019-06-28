@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>클라우드</title>
+    <link rel="stylesheet" type="text/css" href="../css/font/notosans.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../css/common.css" media="all">
+    <script type="text/javascript" src="../js/jquery-1.12.1.min.js"></script>
+    <script type="text/javascript" src="../js/ui.js"></script>
+    <script type="text/javascript" src="https://img.echosting.cafe24.com/js/plugin/jquery-ui.js"></script>
+</head>
+<body>
+<div id="wrap">
+    <div id="skipNavigation">
+        <a href="#sidebar">대메뉴 바로가기</a>
+        <a href="#contents">본문 바로가기</a>
+    </div>
+    <hr class="layout">
+    <div id="header">
+        <h1 class="logo">
+            <a href="#none"><img src="../images/h1_logo_cafe24.png" alt="카페24"></a>
+            <a href="#none"><img src="../images/h1_logo_hosting.png" alt="호스팅센터"></a>
+            <a href="#none"><img src="../images/h1_logo_cloud.png" alt="클라우드"></a>
+        </h1>
+        <div class="mDropdown typeRegion"><!-- 참고: 클릭시 selected 클래스 toggle -->
+            <div class="fNow">
+                <span class="region">
+                    <span class="name">Region B cafe24-004</span>
+                    <span class="state bad">생성불가</span>
+                </span>
+            </div>
+            <button type="button" class="fButton eDropdown">옵션 변경</button>
+            <div class="select">
+                <ul>
+                    <li>
+                        <a href="#none" class="link">
+                            <span class="region">
+                                <span class="name">Region B cafe24-001</span>
+                                <span class="state bad">생성불가</span>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none" class="link">
+                            <span class="region">
+                                <span class="name">Region C cafe24-002</span>
+                                <span class="state good">쾌적</span>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none" class="link">
+                            <span class="region">
+                                <span class="name">Region D cafe24-004</span>
+                                <span class="state caution">보통</span>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="util">
+            <div class="userInfo eMymenu">
+                <a href="#none" class="message"><strong class="user">홍길동님</strong> 환영합니다.</a>
+                <ul class="menu">
+                    <li><a href="#none">결제관리</a></li>
+                    <li><a href="#none">알림관리</a></li>
+                    <li><a href="#none">보안키 등록</a></li>
+                    <li><a href="#none">1:1문의</a></li>
+                    <li><a href="#none">로그아웃</a></li>
+                </ul>
+            </div>
+            <a href="#none" class="btnManual">사용 매뉴얼</a>
+        </div>
+    </div>
+    <div id="container">
+        <div id="sidebar">
+            <ul class="lnb">
+                <li class="server parent"><!-- 참고 : 선택시 .selected, 하위 메뉴 있을 시 .root -->
+                    <a href="#none" class="eFold">cafe24 클라우드 서버</a>
+                    <ul class="children">
+                        <li><a href="#none" class="eFold">가상서버</a></li><!-- 참고 : 선택시 .selected -->
+                        <li><a href="#none" class="eFold">오토스케일</a></li>
+                        <li><a href="#none" class="eFold">오토스케일</a></li>
+                    </ul>
+                </li>
+                <li class="storage parent">
+                    <a href="#none" class="eFold">스토리지</a>
+                    <ul class="children">
+                        <li><a href="#none" class="eFold">블록 스토리지</a></li>
+                        <li><a href="#none" class="eFold">블록 스토리지 스냅샷</a></li>
+                    </ul>
+                </li>
+                <li class="network parent">
+                    <a href="#none" class="eFold">네트워킹</a>
+                    <ul class="children">
+                        <li><a href="#none" class="eFold">로드밸런서</a></li>
+                        <li><a href="#none" class="eFold">DNS</a></li>
+                    </ul>
+                </li>
+                <li class="security parent">
+                    <a href="#none" class="eFold">보안서비스</a>
+                    <ul class="children">
+                        <li><a href="#none" class="eFold">방화벽</a></li>
+                        <li><a href="#none" class="eFold">SSH키페어</a></li>
+                    </ul>
+                </li>
+                <!--
+                <li class="monitoring"><a href="#none" class="eFold">모니터링</a></li> -->
+                <li class="cs parent">
+                    <a href="#none" class="eFold">고객지원</a>
+                    <ul class="children">
+                        <li><a href="#none" class="eFold">공지사항</a></li>
+                        <li><a href="#none" class="eFold">자주 찾는 질문</a></li>
+                        <li><a href="#none" class="eFold">1:1 문의</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        
+        <div id="contents">
+            <div class="section">
+                <div class="mTitle gBorder">
+                    <h2>신용카드 관리</h2>
+                </div>
+                <div class="mTitle">
+                    <h3>결제정보</h3>
+                </div>
+                <div class="mBoard typeView gRow">
+                    <table border="1">
+                        <caption>결제정보</caption>
+                        <colgroup>
+                            <col style="width:200px;">
+                            <col style="width:830px;">
+                        </colgroup>
+                        <tbody>
+                        <tr>
+                            <th scope="row">결제자 정보</th>
+                            <td>홍길동</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">결제일</th>
+                            <td>매월 2일</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">결제 방식</th>
+                            <td>
+                                신용카드 자동 납부
+                                <a href="#none" class="btnNormalS gSideS">신용카드관리</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mTitle">
+                    <h3>등록 카드 목록</h3>
+                    <div class="utility">
+                        <a href="#none" class="btnNormalM strong"><span class="icoSFIX icoPlus"></span> 카드추가</a>
+                    </div>
+                </div>
+                <div class="mBoard typeView">
+                    <table border="1">
+                        <caption>결제 내역</caption>
+                        <colgroup>
+                            <col style="width:65px;">
+                            <col style="width:150px;">
+                            <col style="width:240px;">
+                            <col style="width:200px;">
+                            <col style="width:225px;">
+                            <col style="width:150px;">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">결제순위</th>
+                            <th scope="col">이름</th>
+                            <th scope="col">등록일</th>
+                            <th scope="col">상태</th>
+                            <th scope="col">카드 정보</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <label class="gLabel">
+                                    <input type="checkbox" class="fChk"><span class="fLabel"></span>
+                                </label>
+                            </td>
+                            <td>1</td>
+                            <td>나의카드A</td>
+                            <td>2017.08.08</td>
+                            <td>정상</td>
+                            <td><a href="#none" class="btnNormalS em">조회</a></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="gLabel">
+                                    <input type="checkbox" class="fChk"><span class="fLabel"></span>
+                                </label>
+                            </td>
+                            <td>1</td>
+                            <td>나의카드A</td>
+                            <td>2017.08.08</td>
+                            <td><span class="txtWarn">비정상</span></td>
+                            <td><a href="#none" class="btnNormalS em">조회</a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mButton">
+                    <div class="left">
+                        <button type="button" class="btnNormalS">선택삭제</button>
+                    </div>
+                </div>
+                <div class="mHelp">
+                    <h3>신용카드 등록 안내</h3>
+                    <ol class="detail">
+                        <li>신용카드 자동결제가 분실, 한도 초과 등의 사유로 실패하면 반드시 수동으로 결제하거나, 결제가 가능한 신용카드를 등록하여 사용해야 합니다.</li>
+                        <li>납부기한(매월 2일)까지 비용이 납부되지 않으면 매월 3일에 서비스가 정지됩니다.</li>
+                        <li>신용카드 정보는 PG사에 암호화되어 안전하게 저장되며, 카페24에서는 어떠한 카드 정보도 저장하지 않습니다.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="layout">
+    <div id="footer">
+        <p class="copyright">Copyright&copy; Cafe24 corp. All Rights Reserved.</p>
+    </div>
+</div>
+
+<script>
+    // ※ 개발작업시 datepicker 플러그인 수정요청: 최상위에 mCalendar 클래스를 추가해주세요.
+    $( function() {
+        //한글설정
+        $.datepicker.regional['ko'] = {
+            closeText: '닫기',
+            prevText: '이전달',
+            nextText: '다음달',
+            currentText: '오늘',
+            monthNames: ['1월','2월','3월','4월','5월','6월',
+                '7월','8월','9월','10월','11월','12월'],
+            monthNamesShort: ['1월','2월','3월','4월','5월','6월',
+                '7월','8월','9월','10월','11월','12월'],
+            dayNames: ['일','월','화','수','목','금','토'],
+            dayNamesShort: ['일','월','화','수','목','금','토'],
+            dayNamesMin: ['일','월','화','수','목','금','토'],
+            weekHeader: 'Wk',
+            dateFormat: 'yy.mm.dd',
+            firstDay: 1,
+            isRTL: false,
+            duration:200,
+            showAnim:'show',
+            yearSuffix: ''
+        };
+        $.datepicker.setDefaults($.datepicker.regional['ko']);
+        $( ".datepicker" ).datepicker({
+            changeMonth: true,
+            changeYear: true
+        });
+        $('.typeCalendar .fCalendar').on('click', function() {
+            $(this).find('.datepicker').datepicker('show');
+        });
+
+    } );
+</script>
+</body>
+</html>

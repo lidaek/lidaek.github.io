@@ -1,0 +1,479 @@
+<!-- amCharts javascript sources -->
+<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+<script type="text/javascript" src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script type="text/javascript" src="https://www.amcharts.com/lib/3/serial.js"></script>
+<script type="text/javascript" src="https://www.amcharts.com/lib/3/pie.js"></script>
+<!-- amCharts javascript code -->
+<script type="text/javascript">
+    /* 대시보드 트래픽 모니터링 선형 차트 */
+    AmCharts.makeChart("chartStick",
+        {
+            "type": "serial",
+            "categoryField": "category",
+            "rotate": true,
+            "autoMarginOffset": 0,
+            "marginBottom": 34,
+            "marginLeft": 35,
+            "marginRight": 25,
+            "marginTop": 17,
+            "startDuration": 1,
+            "color": "#555555",
+            "fontSize": 12,
+            "categoryAxis": {
+                "gridPosition": "start",
+                "gridThickness": 0,
+                "minorGridAlpha": 0
+            },
+            "chartCursor": {
+                "enabled": true,
+                "cursorColor": "#3A4A69",
+                "cursorPosition": "mouse"
+            },
+            "trendLines": [],
+            "graphs": [
+                {
+                    "balloonText": "[[title]] of [[category]]:[[value]]",
+                    "columnWidth": 0.48,
+                    "fillAlphas": 1,
+                    "fillColors": "#D36168",
+                    "id": "AmGraph-1",
+                    "lineThickness": 0,
+                    "title": "graph 1",
+                    "type": "column",
+                    "valueField": "column-1"
+                }
+            ],
+            "guides": [],
+            "valueAxes": [
+                {
+                    "id": "ValueAxis-1",
+                    "gridAlpha": 1,
+                    "gridColor": "#E1E1E1",
+                    "title": ""
+                }
+            ],
+            "allLabels": [],
+            "balloon": {},
+            "titles": [],
+            "dataProvider": [
+                {
+                    "category": "category 1",
+                    "column-1": 8
+                },
+                {
+                    "category": "category 2",
+                    "column-1": 6
+                },
+                {
+                    "category": "category 3",
+                    "column-1": 2
+                },
+                {
+                    "category": "category 4",
+                    "column-1": "8"
+                },
+                {
+                    "category": "category 5",
+                    "column-1": "1"
+                },
+                {
+                    "category": "category 6",
+                    "column-1": "4"
+                },
+                {
+                    "category": "category 7",
+                    "column-1": "5"
+                },
+                {
+                    "category": "category 8",
+                    "column-1": "5"
+                },
+                {
+                    "category": "category 9",
+                    "column-1": "9"
+                },
+                {
+                    "category": "category 10",
+                    "column-1": "7"
+                }
+            ]
+        }
+    );
+    /* 대시보드 가상서버 모니터링 > CPU 원형 차트 */
+    AmCharts.makeChart("chartCircle",
+        {
+            "type": "pie",
+            "balloonText": "[[title]]<br><span style='font-size:14px'> ([[percents]]%)</span>",
+            "innerRadius": "40%",
+            "labelRadius": -30,
+            "labelText": "[[percents]]%",
+            "pullOutRadius": "0%",
+            "startRadius": "0%",
+            "baseColor": "#3E87E6",
+            "labelColorField": "#FFFFFF",
+            "labelTickAlpha": 0,
+            "labelTickColor": "#FFFFFF",
+            "pullOutEffect": "easeOutSine",
+            "startEffect": "easeOutSine",
+            "titleField": "category",
+            "valueField": "column-1",
+            "color": "#FFFFFF",
+            "fontSize": 16,
+            "percentPrecision": 0,
+            "allLabels": [],
+            "balloon": {
+                "borderColor": "#3A4A69",
+                "fillAlpha": 0.73,
+                "fontSize": 8,
+                "pointerOrientation": "left"
+            },
+            "titles": [],
+            "dataProvider": [
+                {
+                    "category": "category 1",
+                    "column-1": 8
+                },
+                {
+                    "category": "category 2",
+                    "column-1": 6
+                }
+            ]
+        }
+    );
+    /* 대시보드 가상서버 모니터링 > Memory 원형 차트 */
+    AmCharts.makeChart("chartCircle2",
+        {
+            "type": "pie",
+            "balloonText": "[[title]]<br><span style='font-size:14px'> ([[percents]]%)</span>",
+            "innerRadius": "40%",
+            "labelRadius": -30,
+            "labelText": "[[percents]]%",
+            "pullOutRadius": "0%",
+            "startRadius": "0%",
+            "baseColor": "#3E87E6",
+            "labelColorField": "#FFFFFF",
+            "labelTickAlpha": 0,
+            "labelTickColor": "#FFFFFF",
+            "pullOutEffect": "easeOutSine",
+            "startEffect": "easeOutSine",
+            "titleField": "category",
+            "valueField": "column-1",
+            "color": "#FFFFFF",
+            "fontSize": 16,
+            "percentPrecision": 0,
+            "allLabels": [],
+            "balloon": {
+                "borderColor": "#3A4A69",
+                "fillAlpha": 0.73,
+                "fontSize": 8,
+                "pointerOrientation": "left"
+            },
+            "titles": [],
+            "dataProvider": [
+                {
+                    "category": "category 1",
+                    "column-1": 8
+                },
+                {
+                    "category": "category 2",
+                    "column-1": 6
+                }
+            ]
+        }
+    );
+    /* 가상서버 별 모니터링 선형 차트 */
+    AmCharts.makeChart("chartLine",
+        {
+            "type": "serial",
+            "categoryField": "category",
+            "autoMarginOffset": 0,
+            "sequencedAnimation": false,
+            "startDuration": 1,
+            "startEffect": "easeOutSine",
+            "color": "#555555",
+            "fontSize": 12,
+            "categoryAxis": {
+                "gridPosition": "start",
+                "axisAlpha": 0,
+                "axisColor": "#D8D8D8",
+                "gridAlpha": 0.38,
+                "gridColor": "#E1E1E1",
+                "minHorizontalGap": 150
+            },
+            "chartCursor": {
+                "enabled": true,
+                "categoryBalloonColor": "#3A4A69",
+                "color": "#D8D8D8",
+                "cursorColor": "#3A4A69",
+                "graphBulletAlpha": 0,
+                "selectionAlpha": 0
+            },
+            "trendLines": [],
+            "graphs": [
+                {
+                    "balloonColor": "#3E87E6",
+                    "fillColors": "",
+                    "id": "AmGraph-1",
+                    "lineColor": "#3E87E6",
+                    "title": "CPU 사용량",
+                    "useLineColorForBulletBorder": true,
+                    "valueField": "column-1"
+                },
+                {
+                    "balloonColor": "#61CB85",
+                    "id": "AmGraph-4",
+                    "lineColor": "#61CB85",
+                    "title": "graph 4",
+                    "valueField": "column-2"
+                }
+            ],
+            "guides": [],
+            "valueAxes": [
+                {
+                    "id": "ValueAxis-1",
+                    "title": "Axis title"
+                }
+            ],
+            "allLabels": [],
+            "balloon": {},
+            "titles": [],
+            "dataProvider": [
+                {
+                    "category": "2017-07-07 12:00",
+                    "column-1": "145.7596591",
+                    "column-2": 727
+                },
+                {
+                    "category": "2017-07-07 12:30",
+                    "column-1": "3700.384375",
+                    "column-2": 493
+                },
+                {
+                    "category": "2017-07-07 13:00",
+                    "column-1": "4728.931298",
+                    "column-2": 4005
+                },
+                {
+                    "category": "2017-07-07 13:30",
+                    "column-1": "627.0563591",
+                    "column-2": 3630
+                },
+                {
+                    "category": "2017-07-07 14:00",
+                    "column-1": "3554.110325",
+                    "column-2": 2268
+                },
+                {
+                    "category": "2017-07-07 14:30",
+                    "column-1": "2178.570361",
+                    "column-2": 232
+                },
+                {
+                    "category": "2017-07-07 15:00",
+                    "column-1": "5262.481776",
+                    "column-2": 4657
+                },
+                {
+                    "category": "2017-07-07 15:30",
+                    "column-1": "760.6038138",
+                    "column-2": 3743
+                },
+                {
+                    "category": "2017-07-07 16:00",
+                    "column-1": "3939.404422",
+                    "column-2": 2003
+                },
+                {
+                    "category": "2017-07-07 16:30",
+                    "column-1": "931.2392998",
+                    "column-2": 639
+                },
+                {
+                    "category": "2017-07-07 17:00",
+                    "column-1": "2529.943343",
+                    "column-2": 5573
+                },
+                {
+                    "category": "2017-07-07 17:30",
+                    "column-1": "1255.050034",
+                    "column-2": 1026
+                },
+                {
+                    "category": "2017-07-07 18:00",
+                    "column-1": "144.7876288",
+                    "column-2": 4033
+                },
+                {
+                    "category": "2017-07-07 18:30",
+                    "column-1": "2288.634033",
+                    "column-2": 1452
+                },
+                {
+                    "category": "2017-07-07 19:00",
+                    "column-1": "7588.78551",
+                    "column-2": 1991
+                },
+                {
+                    "category": "2017-07-07 19:30",
+                    "column-1": "8846.17046",
+                    "column-2": 2970
+                },
+                {
+                    "category": "2017-07-07 20:00",
+                    "column-1": "5765.918709",
+                    "column-2": 2220
+                },
+                {
+                    "category": "2017-07-07 20:30",
+                    "column-1": "4340.441547",
+                    "column-2": 2984
+                },
+                {
+                    "category": "2017-07-07 21:00",
+                    "column-1": "795.0517948",
+                    "column-2": 1966
+                },
+                {
+                    "category": "2017-07-07 21:30",
+                    "column-1": "6414.737099",
+                    "column-2": 49
+                },
+                {
+                    "category": "2017-07-07 22:00",
+                    "column-1": "2504.844677",
+                    "column-2": 3933
+                },
+                {
+                    "category": "2017-07-07 22:30",
+                    "column-1": "3637.390159",
+                    "column-2": 959
+                },
+                {
+                    "category": "2017-07-07 23:00",
+                    "column-1": "4947.506735",
+                    "column-2": 688
+                },
+                {
+                    "category": "2017-07-07 23:30",
+                    "column-1": "367.9963579",
+                    "column-2": 4116
+                },
+                {
+                    "category": "2017-07-08 0:00",
+                    "column-1": "1721.283177",
+                    "column-2": 1153
+                },
+                {
+                    "category": "2017-07-08 0:30",
+                    "column-1": "2378.02927",
+                    "column-2": 5146
+                },
+                {
+                    "category": "2017-07-08 1:00",
+                    "column-1": "2808.500058",
+                    "column-2": 3567
+                },
+                {
+                    "category": "2017-07-08 1:30",
+                    "column-1": "5889.274519",
+                    "column-2": 2943
+                },
+                {
+                    "category": "2017-07-08 2:00",
+                    "column-1": "485.5463315",
+                    "column-2": 1430
+                },
+                {
+                    "category": "2017-07-08 2:30",
+                    "column-1": "2483.694534",
+                    "column-2": 1408
+                },
+                {
+                    "category": "2017-07-08 3:00",
+                    "column-1": "3619.902718",
+                    "column-2": 579
+                },
+                {
+                    "category": "2017-07-08 3:30",
+                    "column-1": "1768.606248",
+                    "column-2": 3460
+                },
+                {
+                    "category": "2017-07-08 4:00",
+                    "column-1": "715.4546984",
+                    "column-2": 1693
+                },
+                {
+                    "category": "2017-07-08 4:30",
+                    "column-1": "4297.932008",
+                    "column-2": 3942
+                },
+                {
+                    "category": "2017-07-08 5:00",
+                    "column-1": "1149.764079",
+                    "column-2": 5721
+                },
+                {
+                    "category": "2017-07-08 5:30",
+                    "column-1": "3814.309174",
+                    "column-2": 1249
+                },
+                {
+                    "category": "2017-07-08 6:00",
+                    "column-1": "3327.448979",
+                    "column-2": 5455
+                },
+                {
+                    "category": "2017-07-08 6:30",
+                    "column-1": "8221.398149",
+                    "column-2": 2639
+                },
+                {
+                    "category": "2017-07-08 7:00",
+                    "column-1": "1950.540238",
+                    "column-2": 1153
+                },
+                {
+                    "category": "2017-07-08 7:30",
+                    "column-1": "6194.104016",
+                    "column-2": 3494
+                },
+                {
+                    "category": "2017-07-08 8:00",
+                    "column-1": "5735.776332",
+                    "column-2": 5980
+                },
+                {
+                    "category": "2017-07-08 8:30",
+                    "column-1": "2330.598104",
+                    "column-2": 2796
+                },
+                {
+                    "category": "2017-07-08 9:00",
+                    "column-1": "1219.195884",
+                    "column-2": 867
+                },
+                {
+                    "category": "2017-07-08 9:30",
+                    "column-1": "2964.713373",
+                    "column-2": 4749
+                },
+                {
+                    "category": "2017-07-08 10:00",
+                    "column-1": "69.52817615",
+                    "column-2": 5143
+                },
+                {
+                    "category": "2017-07-08 10:30",
+                    "column-1": "3090.109686",
+                    "column-2": 1058
+                },
+                {
+                    "category": "2017-07-08 11:00",
+                    "column-1": "324.1261729",
+                    "column-2": 1088
+                }
+            ]
+        }
+    );
+</script>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko" style="">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>Daum 카페 - 쪽지대화</title>
+<link rel="stylesheet" href="css/messenger.css" type="text/css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.8.3.min.js "></script>
+<script type="text/javascript">
+   		$(window).bind( 'load resize ' ,function ( ) { 
+
+   	 	 console.log("$( window ).height();" + $(window).height());
+         console.log("$( document ).height();" + $(document).height());
+         console.log("$(window).height() - (75 + 88)" + ($(window).height() - (75 + 88)) );
+         $("body").css({'height':($(window).height())+'px'});
+         $(".wrap_talk").css({'height':($(window).height() - (75 + 88))+'px'});
+
+         console.log($(".wrap_talk").height());
+            
+    }) ;
+    $(document).ready(function() {
+        $('.btn_sticker').click(function(){
+           $(this).parents('.wrap_sticker').toggleClass('sticker_on');
+        });
+        $('.layer_sticker .item_sticker .link_select').click(function(){
+            var targetItem = $(this).parents('li');
+            var targetItemSiblings = $(this).parents('li').siblings('li');
+            
+            targetItemSiblings.removeClass('on');
+            targetItem.addClass('on');
+            
+        });
+        
+        $('.btn_set').click(function(){
+           $(this).parents('.wrap_btn').toggleClass('wrap_on');
+        });
+        
+        $('.btn_noti').click(function(){
+           $(this).toggleClass('btn_noti btn_release');;
+        });
+    });
+</script>
+</head>
+<body>
+	<div id="daumIndex"><!-- 웹접근성용 바로가기 링크 모음 -->
+	    <a href="#daumBody">본문 바로가기</a>
+	</div>
+	<div id="daumWrap" class="note_type note_type1"><!-- 카페 개인 쪽지 대화창에 note_type1 클래스 부여 -->
+	    <div id="daumHead" role="banner">
+	    		<div class="inner_head">
+		        <h1 class="screen_out">다음 카페 쪽지 대화</h1>
+		        <div class="thumb_info">
+                    <a href="#none" class="link_thumb">
+                        <img src="http://cfile269.uf.daum.net/image/2306F94A529FC519168ADD" alt="내 쪽지 대표 이미지" width="41" height="41">
+                        <span class="frame_g"></span>
+                    </a>
+                    <div class="cont_info">
+                        <span class="tit_nickname"><span class="screen_out">카페 별명</span><a href="#none" class="link_nickname">고양이를 부탁해</a></span>
+                        <span class="tit_cafename"><span class="screen_out">카페 이름</span><a href="#none" class="link_cafename">고양이 주식회사</a></span>
+                    </div>
+		        </div> 
+		        <div class="wrap_btn"><!-- btn_set 클릭시 wrap_btn에  wrap_on 클래스 부여 -->
+                    <button type="button" class="btn_talk btn_noti">알림차단하기</button>
+                    <!--<button type="button" class="btn_talk btn_release">알림차단해제하기</button> btn_noti 클릭시 <button type="button" class="btn_talk btn_noti">알림차단하기</button> 와 토글로 마크업에 들어갑니다. -->
+                    <div class="alret_note"><span class="ico_talk ico_active"></span></div>
+                    <button type="button" class="btn_talk btn_set">설정하기</button>
+                    <ul class="set_layer">
+                        <li><a href="#none" class="btn_ban">차단하기</a></li>
+                        <li><a href="#none" class="btn_remove">삭제하기</a></li>
+                    </ul>
+		        </div>
+	        </div>
+	    </div>
+	    <hr class="hide">
+	    <div id="daumContent" role="main">
+	        <div id="cMain">
+	            <div id="mArticle">
+	                <h2 id="daumBody" class="screen_out">개인 쪽지 대화 창</h2>
+	              	<div class="wrap_talk"><!-- 임시 css 페이지가 리사이즈 될때마다 height값 변경: 창 height값-헤더높이값(75px)-대화입력창높이(88px)  -->
+		              	<div class="chat_list">
+		              		<h3 class="screen_out">대화 내용</h3>
+		              		<div class="item_chat item_note1">		              		
+			              		<div class="inner_chat">
+		              				<div class="info_chat">
+			              				<img src="images/img_neo_big.png" width="120" height="120" alt="나 오늘 상큼한데?" class="img_sticker">
+			              				<span class="wrap_chat">
+			              					<span class="desc_chat">
+				              					.
+				              				</span>
+				              				<span class="bg_chat bg_radius1"></span>
+				              				<span class="bg_chat bg_radius2"></span>
+				              				<span class="bg_chat bg_radius3"></span>
+			              					<span class="bg_chat bg_radius4"></span>
+			              				</span>
+			              				<span class="wrap_chat">
+			              					<span class="desc_chat">
+				              					<a href="http://cafe.daum.net/_c21_/bbs_list?grpid=1QR20&fldid=F8bHhttp://cafe.daum.net/_c21_/bbs_list?grpid=1QR20&fldid=F8bHhttp://cafe.daum.net/_c21_/bbs_list?grpid=1QR20&fldid=F8bH" class="link_note">http://cafe.daum.net/_c21_/bbs_list?grpid=1QR20&fldid=F8bHhttp://cafe.daum.net/_c21_/bbs_list?grpid=1QR20&fldid=F8bHhttp://cafe.daum.net/_c21_/bbs_list?grpid=1QR20&fldid=F8bH</a> <!-- 2015-05-11 추가 -->
+				              				</span>
+				              				<span class="bg_chat bg_radius1"></span>
+				              				<span class="bg_chat bg_radius2"></span>
+				              				<span class="bg_chat bg_radius3"></span>
+			              					<span class="bg_chat bg_radius4"></span>
+			              				</span>
+		              					<span class="wrap_chat">
+			              					<span class="desc_chat">
+				              					어제 수요미식회 봤어? 반포에 마늘치킨 엄청나게 맛있대! 우리 거기 한번 가볼래? 우리 언제 가까?
+				              				</span>
+				              				<span class="bg_chat bg_radius1"></span>
+				              				<span class="bg_chat bg_radius2"></span>
+				              				<span class="bg_chat bg_radius3"></span>
+			              					<span class="bg_chat bg_radius4"></span>
+			              				</span>
+										<span class="wrap_chat">
+			              					<span class="desc_chat">
+				              					어제 수요미식회 봤어? 반포에 마늘치킨 엄청나게 맛있대! 우리 거기 한번 가볼래? 우리 언제 가까?
+				              				</span>
+				              				<span class="bg_chat bg_radius1"></span>
+				              				<span class="bg_chat bg_radius2"></span>
+				              				<span class="bg_chat bg_radius3"></span>
+			              					<span class="bg_chat bg_radius4"></span>
+			              				</span>
+										<span class="wrap_chat">
+			              					<span class="desc_chat">
+				              					어제 수요미식회 봤어? 반포에 마늘치킨 엄청나게 맛있대! 우리 거기 한번 가볼래? 우리 언제 가까?
+				              				</span>
+				              				<span class="bg_chat bg_radius1"></span>
+				              				<span class="bg_chat bg_radius2"></span>
+				              				<span class="bg_chat bg_radius3"></span>
+			              					<span class="bg_chat bg_radius4"></span>
+			              				</span>
+										<span class="wrap_chat">
+			              					<span class="desc_chat">
+				              					어제 수요미식회 봤어? 반포에 마늘치킨 엄청나게 맛있대! 우리 거기 한번 가볼래? 우리 언제 가까?
+				              				</span>
+				              				<span class="bg_chat bg_radius1"></span>
+				              				<span class="bg_chat bg_radius2"></span>
+				              				<span class="bg_chat bg_radius3"></span>
+			              					<span class="bg_chat bg_radius4"></span>
+			              				</span>
+			              			</div>
+			              			<span class="info_append">읽음 <span class="time_chat">12:31 PM</span></span><!-- 2015-04-22 수정/ 읽지않은 상태는 읽음에서 안읽음으로 텍스트 변경 -->
+			              		</div>
+		              		</div>
+		              		<div class="wrap_line">
+		              			<span class="info_message">2015년 3월 15일</span>
+		              		</div>
+		              		<div class="item_chat item_note2">		              		
+			              		<div class="inner_chat inner_sticker">
+		              				<div class="info_chat">
+			              				<img src="images/img_neo_big.png" width="120" height="120" alt="나 오늘 기분 좋은듯~" class="img_sticker">
+		              					<span class="wrap_chat">	              					
+			              					<span class="desc_chat">
+				              					.
+				              				</span>
+			              					<span class="bg_chat bg_radius6"></span>
+				              				<span class="bg_chat bg_radius7"></span>
+				              				<span class="bg_chat bg_radius8"></span>
+			              					<span class="bg_chat bg_radius9"></span>
+			              				</span>
+		              					<span class="wrap_chat">	              					
+			              					<span class="desc_chat">
+				              					어제 수요미식회 봤어? 반포에 마늘치킨 엄청나게 맛있대! 우리 거기 한번 가볼래? 우리 언제 가까?
+				              					<a href="#none" class="link_note">https://instagram.com/roadcat</a>
+				              				</span>
+			              					<span class="bg_chat bg_radius6"></span>
+				              				<span class="bg_chat bg_radius7"></span>
+				              				<span class="bg_chat bg_radius8"></span>
+			              					<span class="bg_chat bg_radius9"></span>
+			              				</span>		              				
+			              			</div>
+			              			<span class="info_append">읽음 <span class="time_chat">12:31 PM</span></span><!-- 2015-04-22 수정/ 읽지않은 상태는 읽음에서 안읽음으로 텍스트 변경 -->
+			              		</div>
+		              		</div>
+		              		<div class="wrap_line">
+		              			<span class="info_message">여기까지 읽었습니다</span>
+		              		</div>			              		
+		              	</div>
+	              	</div><!-- wrap_talk -->
+	              	<div class="wrap_form wrap_sticker"><!-- 스티커를 보내는 기능이 있으면 wrap_sticker 클래스 부여 wrap_sticker가 부여되어야 btn_sticker 가 보입니다. 탈퇴한 회원인 경우 dimmed_note 클래스 추가 -->
+                        <form action="#" method="post">
+                            <fieldset>
+                                <legend class="screen_out">쪽지 대화 입력 폼</legend>
+                                <button type="button" class="btn_talk btn_sticker">스티커 선택하기</button><!-- 클릭시 wrap_sticker에 sticker_on 클래스 부여되고 스티커 팝업 생성. 스티커 팝업이 사라지면 sticker_on 클래스 삭제 -->
+                                 <div class="sticker_note">
+                                    <img src="images/img_neo_big.png" width="120" height="120" alt="나 오늘 기분 좋은걸~" class="img_sticker">
+                                    <a href="#none" class="btn_cancel"><span class="ico_talk ico_cancel">선택 취소</span></a>
+                                 </div>
+                                <textarea name="tfNote" id="tfNote" class="tf_note"></textarea>
+                                <button type="submit" class="btn_send">전송</button>
+                            </fieldset>
+                        </form>
+                
+                        <div class="layer_sticker">
+                            <div class="layer_head">
+                                <h1 class="screen_out">스티커 선택</h1>
+                            </div>
+                            <div class="layer_body"> 
+                            <strong class="screen_out">스티커 종류 선택 리스트</strong>       			
+                            <ul class="tab_sticker">
+                                <li class="on"><a href="#none" class="link_sticker"><img src="http://t1.daumcdn.net/thumb/R40x40/?fname=http%3A%2F%2Fi1.search.daumcdn.net%2Fs%2Fknowledge4_re%2Fb_good_1_55.png" alt="XX스티커" width="30" height="30"></a></li>        			
+                                <li><a href="#none" class="link_sticker"><img src="http://t1.daumcdn.net/thumb/R40x40/?fname=http%3A%2F%2Fi1.search.daumcdn.net%2Fs%2Fknowledge4_re%2Fb_good_1_55.png" alt="XX스티커" width="30" height="30" ></a></li>
+                            </ul>
+                            <div class="item_sticker">
+                                <strong class="screen_out">선택한 스티커 목록 리스트</strong>
+                                <ul class="list_sticker">
+                                    <li>
+                                        <a href="#none" class="link_select">
+                                            <img src="images/img_neo.png" width="72" height="72" alt="나오늘 상태 좋은 듯~" >
+                                            <span class="frame_g"></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#none" class="link_select">
+                                            <img src="images/img_neo.png" width="72" height="72" alt="나오늘 상태 좋은 듯~" >
+                                            <span class="frame_g"></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#none" class="link_select">
+                                            <img src="images/img_neo.png" width="72" height="72" alt="나오늘 상태 좋은 듯~" >
+                                            <span class="frame_g"></span>
+                                        </a>
+                                    </li><!-- 선택된 스티커에 on클래스 부여, 스티커 선택 후 inner_talk_layer1 레이어 활성화  -->
+
+                                    <li>
+                                        <a href="#none" class="link_select">
+                                            <img src="images/img_neo.png" width="72" height="72" alt="나오늘 상태 좋은 듯~" >
+                                            <span class="frame_g"></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#none" class="link_select">
+                                            <img src="images/img_neo.png" width="72" height="72" alt="나오늘 상태 좋은 듯~" >
+                                            <span class="frame_g"></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#none" class="link_select">
+                                            <img src="images/img_neo.png" width="72" height="72" alt="나오늘 상태 좋은 듯~" >
+                                            <span class="frame_g"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+</body>
+</html>
