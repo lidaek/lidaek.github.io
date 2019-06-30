@@ -1,0 +1,82 @@
+    </div>
+    <hr class="layout">
+    <footer id="footer">
+        <p class="copyright">Copyright&copy; Cafe24 corp. All Rights Reserved.</p>
+    </footer>
+    <!-- 참고: header > 이용언어 -->
+    <div id="layerLanguage" class="mLayer typeModal">
+        <h2>이용언어</h2>
+        <div class="wrap useLanguage">
+            <p class="txtNotice">사이트 이용 시 사용할 언어를 선택하세요.<br>사용자가 입력한 문구는 변경되지 않습니다.</p>
+            <ul class="mForm typeLanguage">
+                <li><label class="gLabel"><input type="radio"><span class="fLabel">KOREAN</span></label></li>
+                <li><label class="gLabel"><input type="radio"><span class="fLabel">ENGLISH</span></label></li>
+                <li><label class="gLabel"><input type="radio"><span class="fLabel">JAPANESE</span></label></li>
+                <li><label class="gLabel"><input type="radio"><span class="fLabel">CHINESE (简体)</span></label></li>
+                <li><label class="gLabel"><input type="radio"><span class="fLabel">CHINESE (繁体)</span></label></li>
+            </ul>
+        </div>
+        <button type="button" class="btnClose eClose">닫기</button>
+    </div><!-- //참고: header > 이용언어 -->
+</div>
+<!-- 참고: UI확인용으로 퍼블리싱 미리보기용 CSS, JS 소스들입니다 -->
+<script type="text/javascript" src="/js/jquery-1.12.1.min.js"></script>
+<script type="text/javascript" src="/js/plugin/jquery-ui.js"></script>
+<script type="text/javascript" src="/js/plugin/lightslider.js"></script>
+<script type="text/javascript" src="/img.echosting.cafe24.com/api/recipe/js/ui.js"></script>
+<script type="text/javascript" src="/img.echosting.cafe24.com/api/recipe/js/ui_layout.js"></script>
+<script type="text/javascript" src="/img.echosting.cafe24.com/api/recipe/js/ui_main.js"></script>
+<script type="text/javascript" src="/img.echosting.cafe24.com/api/recipe/js/ui_content_register.js"></script>
+<script type="text/javascript" src="/img.echosting.cafe24.com/api/recipe/js/ui_content_my.js"></script>
+<script type="text/javascript" src="/img.echosting.cafe24.com/api/recipe/js/ui_content_setting.js"></script>
+<script type="text/javascript" src="/img.echosting.cafe24.com/api/recipe/js/ui_content_search.js"></script>
+<script type="text/javascript" src="/img.echosting.cafe24.com/api/recipe/js/ui_content_customer.js"></script>
+<script type="text/javascript" src="/js/plugin/selectPack.js"></script>
+<!-- 참고: UI개발팀 퍼블리싱 정합성 체크용 JS. 실서비스 배포 절대금지(★개발 작업시 삭제해주세요.) -->
+<script>
+    $(document).ready(function(){
+        // 로컬 내부에서만 동작하는 디버깅js
+        var localServer = window.location.hostname.indexOf("cafe24test.com");
+        if(localServer > 0){
+            $.getScript("//fe-front.cafe24test.com/debugging/js/common.js");
+            $.getScript("/img.echosting.cafe24.com/api/recipe/js/debug.js"); // ★ 해당 프로젝트의 디버깅 JS
+        }
+    });
+</script><!-- //참고 -->
+<script>
+    // ※ 개발작업시 datepicker 플러그인 수정요청: 최상위에 mCalendar 클래스를 추가해주세요.
+    $( function() {
+        //한글설정
+        $.datepicker.regional['ko'] = {
+            closeText: '닫기',
+            prevText: '이전달',
+            nextText: '다음달',
+            currentText: '오늘',
+            monthNames: ['1월','2월','3월','4월','5월','6월',
+                '7월','8월','9월','10월','11월','12월'],
+            monthNamesShort: ['1월','2월','3월','4월','5월','6월',
+                '7월','8월','9월','10월','11월','12월'],
+            dayNames: ['일','월','화','수','목','금','토'],
+            dayNamesShort: ['일','월','화','수','목','금','토'],
+            dayNamesMin: ['일','월','화','수','목','금','토'],
+            weekHeader: 'Wk',
+            dateFormat: 'yy.mm.dd',
+            firstDay: 1,
+            isRTL: false,
+            duration:200,
+            showAnim:'show',
+            yearSuffix: ''
+        };
+        $.datepicker.setDefaults($.datepicker.regional['ko']);
+        $( ".datepicker" ).datepicker({
+            changeMonth: true,
+            changeYear: true
+        });
+       $('.typeCalendar .fCalendar').on('click', function() {
+           $(this).find('.datepicker').datepicker('show');
+       });
+
+    } );
+</script>
+</body>
+</html>

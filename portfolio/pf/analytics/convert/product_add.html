@@ -1,0 +1,652 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>접속통계 | 카페24</title>
+    <link rel="stylesheet" type="text/css" href="../css/analytics.css" media="all">
+</head>
+<body id="popup"><!-- 참고 : size 속성은 팝업 가로/세로 체크용입니다. 개발진행시에 팝업사이즈에 적용해주시고, size 는 삭제해주세요. -->
+    <div id="wrap">
+        <div class="mTitle">
+            <h1>상품추가</h1>
+        </div>
+        <div class="mTab typeBasic eTab">
+            <ul class="tab">
+                <li class="selected"><a href="#tabCont1_1">상품군</a></li>
+                <li><a href="#tabCont1_2">상품</a></li>
+            </ul>
+            <style>
+            .mSearch .keyword { display:none; border:1px solid #c3c3c8; }
+            .mSearch .keyword .titKeyword { font-size:12px; color:#999eb0; }
+            .mSearch .keyword .listKeyword {}
+            .mSearch .listKeyword li { border-top:1px solid #ededf3; }
+            .mSearch .listKeyword .linkKeyword { }
+            </style>
+            <div id="tabCont1_1" class="tabCont" style="display:block;">
+                <div class="mSearch write"><!-- 참고 글자가 하나라도 적혔을때 .write 추가 -->
+                    <input type="search" placeholder="궁금한 상품군을 검색해보세요">
+                    <button type="button" class="btnDel"><span>검색어 삭제</span></button>
+                    <button type="submit" class="btnSearch"><span>검색</span></button>
+                    <div class="keyword" style="display:block; ">
+                        <strong class="titKeyword">최근 검색어</strong>
+                        <ul class="listKeyword">
+                            <li><a href="#none" class="linkKeyword">블랙 땡땡이 원피스</a><button type="button" class="btnDel"><span>삭제</span></button></li>
+                            <li><a href="#none" class="linkKeyword">글자가 길어져라 길어져라 글자가 길어져라 길어져라 글자가 길어져라 길어져라 글자가 길어져라 길어져라</a><button type="button" class="btnDel"><span>삭제</span></button></li>
+                            <li><a href="#none" class="linkKeyword">abcdefghijkabcdefghijkabcdefghijkabcdefghijkabcdefghijkabcdefghijkabcdefghijkabcdefghijk</a><button type="button" class="btnDel"><span>삭제</span></button></li>
+                            <li><a href="#none" class="linkKeyword">트위트 청자켓</a><button type="button" class="btnDel"><span>삭제</span></button></li>
+                            <li><a href="#none" class="linkKeyword">소녀시대 7컬러 면바지</a><button type="button" class="btnDel"><span>삭제</span></button></li>
+                            <li><a href="#none" class="linkKeyword">원피스</a><button type="button" class="btnDel"><span>삭제</span></button></li>
+                            <li><a href="#none" class="linkKeyword">원피스</a><button type="button" class="btnDel"><span>삭제</span></button></li>
+                            <li><a href="#none" class="linkKeyword">원피스</a><button type="button" class="btnDel"><span>삭제</span></button></li>
+                            <li><a href="#none" class="linkKeyword">원피스</a><button type="button" class="btnDel"><span>삭제</span></button></li>
+                            <li><a href="#none" class="linkKeyword">원피스</a><button type="button" class="btnDel"><span>삭제</span></button></li>
+                            <li><a href="#none" class="linkKeyword">원피스</a><button type="button" class="btnDel"><span>삭제</span></button></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div id="tabCont1_2" class="tabCont" style="display:none;">
+                <strong class="blind">주 설정</strong>
+                <ul class="mPeriod typeCheck">
+                    <li>
+                        <label>
+                            <input type="radio" class="fRadio">
+                            <em class="title">최근 7일</em>
+                            <span class="date">3월 5일 - 3월 9일</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" class="fRadio">
+                            <em class="title">이번 주</em>
+                            <span class="date">3월 5일 - 3월 11일</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" class="fRadio">
+                            <em class="title">지난 주</em>
+                            <span class="date">2월 26일 - 3월 4일</span>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mDetails">
+            <div class="mButton typeToggle">
+                <button type="button">전체</button><!-- 참고: 클릭시 .selected 추가 -->
+                <button type="button">웹</button>
+                <button type="button">모바일웹</button>
+                <button type="button">모바일앱</button>
+            </div>
+            <div class="wrap_chart">
+                <div id="div_vis_smr_pvd_vie_chart" class="mChart"> <!-- 참고 : 그래프에 따른 고유한 클래스명 추가 -->
+                </div>
+                <p class="empty">데이터가 없습니다.</p>
+            </div>
+            <div class="mSort">
+                <div class="gLeft">
+                    <a href="#none" class="btnNormal btnTable">코딩확인용</a>
+                </div>
+                <button type="button" class="btnNormal RWIB">플랫폼별 보기</button><!-- 참고: 플랫폼별 보기/일자별 보기 텍스트 toggle -->
+                <div class="mSelect RWIB"><!-- 참고: 클릭시 .open 추가 -->
+                    <a href="#none" class="selected">20개씩 보기</a>
+                    <ul class="option">
+                        <li><a href="#none">20개씩 보기</a></li>
+                        <li><a href="#none">40개씩 보기</a></li>
+                        <li><a href="#none">60개씩 보기</a></li>
+                        <li><a href="#none">80개씩 보기</a></li>
+                        <li><a href="#none">100개씩 보기</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mData day"><!-- 참고: 세그먼트에서 플랫폼 세그먼트 선택시 typePlatform, 일자형일때 .day 부여 -->
+                <div class="mBoard">
+                    <table border="1">
+                        <caption>상세보기</caption>
+                        <colgroup>
+                            <!--참고 : 모바일 col -->
+                            <col class="RMB">
+                            <col class="RMB">
+                            <!--참고 : PC col -->
+                            <col style="width:300px" class="RW">
+                            <col class="RW">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th scope="col">시간(시)</th>
+                            <th scope="col">방문자수(명)</th>
+                        </tr>
+                        </thead>
+                        <tbody class="total">
+                        <tr class="sum">
+                            <th scope="row">합계</th>
+                            <td>999,999,999,999</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">웹</th>
+                            <td>555,555,555,555</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">모바일웹</th>
+                            <td>222,222,222,222</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">모바일앱</th>
+                            <td>111,111,111,111</td>
+                        </tr>
+                        </tbody>
+                        <tbody class="part">
+                        <tr class="sum">
+                            <th scope="row">00~01</th>
+                            <td>122,254</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">웹</th>
+                            <td>12,254</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">모바일웹</th>
+                            <td>77,354</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">모바일앱</th>
+                            <td>77,354</td>
+                        </tr>
+                        </tbody>
+                        <tbody class="part">
+                        <tr class="sum">
+                            <th scope="row">00~01</th>
+                            <td>122,254</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">웹</th>
+                            <td>12,254</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">모바일웹</th>
+                            <td>77,354</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">모바일앱</th>
+                            <td>77,354</td>
+                        </tr>
+                        </tbody>
+                        <tbody class="part">
+                        <tr class="sum">
+                            <th scope="row">00~01</th>
+                            <td>122,254</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">웹</th>
+                            <td>12,254</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">모바일웹</th>
+                            <td>77,354</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">모바일앱</th>
+                            <td>77,354</td>
+                        </tr>
+                        </tbody>
+                        <tbody class="part">
+                        <tr class="sum">
+                            <th scope="row">00~01</th>
+                            <td>122,254</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">웹</th>
+                            <td>12,254</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">모바일웹</th>
+                            <td>77,354</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">모바일앱</th>
+                            <td>77,354</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <button type="button" class="btnView RMB"><span></span>더보기</button>
+                <div class="mPaginate RW">
+                    <a href="#none" class="btnPrev"><span>이전 10페이지</span></a>
+                    <ol>
+                        <li><a href="#none">1</a></li>
+                        <li><a href="#none">2</a></li>
+                        <li><strong title="현재페이지">3</strong></li>
+                        <li><a href="#none">4</a></li>
+                        <li><a href="#none">5</a></li>
+                        <li><a href="#none">6</a></li>
+                        <li><a href="#none">7</a></li>
+                        <li><a href="#none">8</a></li>
+                        <li><a href="#none">9</a></li>
+                        <li><a href="#none">10</a></li>
+                    </ol>
+                    <a href="#none" class="btnNext"><span>다음 10페이지</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    
+    <section id="layerPeriod" class="mLayer typeRMB">
+        <div class="inner">
+            <h1 class="title">기간설정</h1>
+            <div class="contents">
+                <div class="mTab typeBasic eTab">
+                    <ul class="tab">
+                        <li class="selected"><a href="#tabCont1_1">일</a></li>
+                        <li><a href="#tabCont1_2">주</a></li>
+                        <li><a href="#tabCont1_3">월</a></li>
+                        <li><a href="#tabCont1_4">직접설정</a></li>
+                    </ul>
+                    <div id="tabCont1_1" class="tabCont" style="display:block;">
+                        <strong class="blind">일 설정</strong>
+                        <ul class="mPeriod typeCheck">
+                            <li>
+                                <label>
+                                    <input type="radio" class="fRadio">
+                                    <em class="title">오늘</em>
+                                    <span class="date">3월 10일 금요일</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="radio" class="fRadio">
+                                    <em class="title">어제</em>
+                                    <span class="date">3월 9일 목요일</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="tabCont1_2" class="tabCont" style="display:none;">
+                        <strong class="blind">주 설정</strong>
+                        <ul class="mPeriod typeCheck">
+                            <li>
+                                <label>
+                                    <input type="radio" class="fRadio">
+                                    <em class="title">최근 7일</em>
+                                    <span class="date">3월 5일 - 3월 9일</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="radio" class="fRadio">
+                                    <em class="title">이번 주</em>
+                                    <span class="date">3월 5일 - 3월 11일</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="radio" class="fRadio">
+                                    <em class="title">지난 주</em>
+                                    <span class="date">2월 26일 - 3월 4일</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="tabCont1_3" class="tabCont" style="display:none;">
+                        <strong class="blind">월 설정</strong>
+                        <ul class="mPeriod typeRadio">
+                            <li>
+                                <label>
+                                    <input type="radio" class="fRadio">
+                                    <em class="title">최근 30일</em>
+                                    <span class="date">2월 8일 - 3월 9일</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="radio" class="fRadio">
+                                    <em class="title">이번 달</em>
+                                    <span class="date">3월 1일 - 3월 31일</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="radio" class="fRadio">
+                                    <em class="title">지난 달</em>
+                                    <span class="date">2월 1일 - 2월 28일</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="tabCont1_4" class="tabCont" style="display:none;">
+                        <strong class="blind">직접 설정</strong>
+                        <ul class="mPeriod typeDirect">
+                            <li>
+                                <label>
+                                    <input type="date" class="fDate">
+                                    <em class="title">시작일</em>
+                                    <span class="date">2017년 4월 28일 금요일</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="date" class="fDate">
+                                    <em class="title">종료일</em>
+                                    <span class="date">2017년 6월 13일 월요일</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="mButton">
+                <button type="button" class="btnSubmit eClose">적용하기</button>
+            </div>
+            <button type="button" class="btnClose eClose">닫기</button>
+        </div>
+    </section>
+
+    <section id="layerSegment" class="mLayer">
+        <div class="inner">
+            <h1 class="title">세그먼트 설정</h1>
+            <div class="contents">
+                <div class="section">
+                    <div class="mTitle">
+                        <h2>플랫폼</h2>
+                    </div>
+                    <ul class="mChoice typePlatform">
+                        <li class="web"><label class="gLabel"><input type="checkbox" class="fChk"><span class="txt">웹</span><span class="icon"></span></label></li>
+                        <li class="mobileWeb"><label class="gLabel"><input type="checkbox" class="fChk"><span class="txt">모바일웹</span><span class="icon"></span></label></li>
+                        <li class="mobileApp"><label class="gLabel"><input type="checkbox" class="fChk"><span class="txt">모바일앱</span><span class="icon"></span></label></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mButton typeBasic">
+                <button type="button" class="btnSubmit eClose">적용하기</button>
+            </div>
+            <button type="button" class="btnClose eClose">닫기</button>
+        </div>
+    </section>
+    
+        <section class="mLayer typeRW period">
+        <div class="inner">
+            <div class="calendarArea">
+                <strong class="blind">기간 설정</strong>
+                <a href="#none" class="btnMonthPrev"><span>이전달</span></a>
+                <div class="mCalendar">
+                    <div class="header">
+                        <span class="year">2016</span>
+                        <strong class="month">9<span class="txtNormal">월</span></strong>
+                    </div>
+                    <table border="1">
+                        <caption>날짜 선택</caption>
+                        <colgroup>
+                            <col style="width:23px;" />
+                            <col style="width:25px;" />
+                            <col style="width:25px;" />
+                            <col style="width:25px;" />
+                            <col style="width:25px;" />
+                            <col style="width:25px;" />
+                            <col style="width:23px;" />
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th scope="col">일</th>
+                            <th scope="col">월</th>
+                            <th scope="col">화</th>
+                            <th scope="col">수</th>
+                            <th scope="col">목</th>
+                            <th scope="col">금</th>
+                            <th scope="col">토</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>01</td>
+                            <td>02</td>
+                            <td>03</td>
+                        </tr>
+                        <tr>
+                            <td>04</td>
+                            <td>05</td>
+                            <td>06</td>
+                            <td>07</td>
+                            <td>08</td>
+                            <td>09</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td class="range first">11</td><!-- 참고: 조회기간 시작날짜 .first 부여 -->
+                            <td class="range">12</td>
+                            <td class="range">13</td>
+                            <td class="range">14</td>
+                            <td class="range">15</td>
+                            <td class="range">16</td>
+                            <td class="range">17</td>
+                        </tr>
+                        <tr>
+                            <td class="range">18</td>
+                            <td class="range">19</td>
+                            <td class="range">20</td>
+                            <td class="range">21</td>
+                            <td class="range">22</td>
+                            <td class="range">23</td>
+                            <td class="range">24</td>
+                        </tr>
+                        <tr>
+                            <td class="range">25</td>
+                            <td class="range">26</td>
+                            <td class="range">27</td>
+                            <td class="range">28</td>
+                            <td class="range">29</td>
+                            <td class="range">30</td>
+                            <td class="range"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mCalendar">
+                    <div class="header">
+                        <span class="year">2016</span>
+                        <strong class="month">10<span class="txtNormal">월</span></strong>
+                    </div>
+                    <table border="1">
+                        <caption>날짜 선택</caption>
+                        <colgroup>
+                            <col style="width:23px;" />
+                            <col style="width:25px;" />
+                            <col style="width:25px;" />
+                            <col style="width:25px;" />
+                            <col style="width:25px;" />
+                            <col style="width:25px;" />
+                            <col style="width:23px;" />
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th scope="col">일</th>
+                            <th scope="col">월</th>
+                            <th scope="col">화</th>
+                            <th scope="col">수</th>
+                            <th scope="col">목</th>
+                            <th scope="col">금</th>
+                            <th scope="col">토</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="range"></td>
+                            <td class="range"></td>
+                            <td class="range"></td>
+                            <td class="range"></td>
+                            <td class="range"></td>
+                            <td class="range"></td>
+                            <td class="range last">01</td><!-- 참고: 조회기간 마지막 날짜 .last 부여 -->
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td>03</td>
+                            <td>04</td>
+                            <td>05</td>
+                            <td>06</td>
+                            <td>07</td>
+                            <td>08</td>
+                        </tr>
+                        <tr>
+                            <td>09</td>
+                            <td>10</td>
+                            <td>11</td>
+                            <td>12</td>
+                            <td>13</td>
+                            <td>14</td>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td>17</td>
+                            <td>18</td>
+                            <td>19</td>
+                            <td>20</td>
+                            <td>21</td>
+                            <td>22</td>
+                        </tr>
+                        <tr>
+                            <td>23</td>
+                            <td>24</td>
+                            <td>25</td>
+                            <td>26</td>
+                            <td>27</td>
+                            <td>28</td>
+                            <td>29</td>
+                        </tr>
+                        <tr>
+                            <td>30</td>
+                            <td>31</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mCalendar">
+                    <div class="header">
+                        <span class="year">2016</span>
+                        <strong class="month">11<span class="txtNormal">월</span></strong>
+                    </div>
+                    <table border="1">
+                        <caption>날짜 선택</caption>
+                        <colgroup>
+                            <col style="width:23px;" />
+                            <col style="width:25px;" />
+                            <col style="width:25px;" />
+                            <col style="width:25px;" />
+                            <col style="width:25px;" />
+                            <col style="width:25px;" />
+                            <col style="width:23px;" />
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th scope="col">일</th>
+                            <th scope="col">월</th>
+                            <th scope="col">화</th>
+                            <th scope="col">수</th>
+                            <th scope="col">목</th>
+                            <th scope="col">금</th>
+                            <th scope="col">토</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>01</td>
+                            <td>02</td>
+                            <td>03</td>
+                            <td>04</td>
+                            <td>05</td>
+                        </tr>
+                        <tr>
+                            <td>06</td>
+                            <td>07</td>
+                            <td>08</td>
+                            <td>09</td>
+                            <td>10</td>
+                            <td>11</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>14</td>
+                            <td>15</td>
+                            <td>16</td>
+                            <td>17</td>
+                            <td>18</td>
+                            <td>19</td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td>21</td>
+                            <td>22</td>
+                            <td>23</td>
+                            <td>24</td>
+                            <td>25</td>
+                            <td>26</td>
+                        </tr>
+                        <tr>
+                            <td>27</td>
+                            <td>28</td>
+                            <td>29</td>
+                            <td>30</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <a href="#none" class="btnMonthNext"><span>다음달</span></a>
+                <div class="mSet">
+                    <strong class="title">조회기간</strong>
+                    <select name="gigan" id="gigan" class="fSelect" style="width:102px;">
+                        <option value="맞춤">맞춤</option>
+                        <option value="gigan_d">오늘</option>
+                        <option value="gigan_1d">어제</option>
+                        <option value="gigan_7d">최근 7일</option>
+                        <option value="gigan_w">이번 주</option>
+                        <option value="gigan_1w">지난 주</option>
+                        <option value="gigan_30d">최근 30일</option>
+                        <option value="gigan_m">이번 달</option>
+                        <option value="gigan_1m">지난 달</option>
+                    </select>
+                    <input type="text" name="date1" id="date1" class="fText center" value="2017.05.18"><span class="bar"></span><input type="text" name="date2" id="date2" class="fText center" value="2017.05.18">
+                    <button type="button" class="btnRefresh"><span>초기화</span></button>
+                    <button type="button" class="btnSubmit">적용하기</button>
+                </div>
+                <button type="button" class="btnClose eClose">닫기</button>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer">
+        <button type="button" class="btnClose"><span>닫기</span></button>
+    </div>
+
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script src="../js/ui_mobile.js"></script>
+</body>
+</html>

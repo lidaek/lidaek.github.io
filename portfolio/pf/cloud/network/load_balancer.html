@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>클라우드</title>
+    <link rel="stylesheet" type="text/css" href="../css/font/notosans.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../css/common.css" media="all">
+    <script type="text/javascript" src="../js/jquery-1.12.1.min.js"></script>
+    <script type="text/javascript" src="../js/ui.js"></script>
+    <script type="text/javascript" src="https://img.echosting.cafe24.com/js/plugin/jquery-ui.js"></script>
+</head>
+<body>
+<div id="wrap">
+    <div id="skipNavigation">
+        <a href="#sidebar">대메뉴 바로가기</a>
+        <a href="#contents">본문 바로가기</a>
+    </div>
+    <hr class="layout">
+    <div id="header">
+        <h1 class="logo">
+            <a href="#none"><img src="../images/h1_logo_cafe24.png" alt="카페24"></a>
+            <a href="#none"><img src="../images/h1_logo_hosting.png" alt="호스팅센터"></a>
+            <a href="#none"><img src="../images/h1_logo_cloud.png" alt="클라우드"></a>
+        </h1>
+        <div class="mDropdown typeRegion"><!-- 참고: 클릭시 selected 클래스 toggle -->
+            <div class="fNow">
+                <span class="region">
+                    <span class="name">Region B cafe24-004</span>
+                    <span class="state bad">생성불가</span>
+                </span>
+            </div>
+            <button type="button" class="fButton eDropdown">옵션 변경</button>
+            <div class="select">
+                <ul>
+                    <li>
+                        <a href="#none" class="link">
+                            <span class="region">
+                                <span class="name">Region B cafe24-001</span>
+                                <span class="state bad">생성불가</span>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none" class="link">
+                            <span class="region">
+                                <span class="name">Region C cafe24-002</span>
+                                <span class="state good">쾌적</span>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none" class="link">
+                            <span class="region">
+                                <span class="name">Region D cafe24-004</span>
+                                <span class="state caution">보통</span>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="util">
+            <div class="userInfo eMymenu">
+                <a href="#none" class="message"><strong class="user">홍길동님</strong> 환영합니다.</a>
+                <ul class="menu">
+                    <li><a href="#none">결제관리</a></li>
+                    <li><a href="#none">알림관리</a></li>
+                    <li><a href="#none">보안키 등록</a></li>
+                    <li><a href="#none">1:1문의</a></li>
+                    <li><a href="#none">로그아웃</a></li>
+                </ul>
+            </div>
+            <a href="#none" class="btnManual">사용 매뉴얼</a>
+        </div>
+    </div>
+    <div id="container">
+        <div id="sidebar">
+            <ul class="lnb">
+                <li class="server parent"><!-- 참고 : 선택시 .selected, 하위 메뉴 있을 시 .root -->
+                    <a href="#none" class="eFold">cafe24 클라우드 서버</a>
+                    <ul class="children">
+                        <li><a href="#none" class="eFold">가상서버</a></li><!-- 참고 : 선택시 .selected -->
+                        <li><a href="#none" class="eFold">오토스케일</a></li>
+                        <li><a href="#none" class="eFold">오토스케일</a></li>
+                    </ul>
+                </li>
+                <li class="storage parent">
+                    <a href="#none" class="eFold">스토리지</a>
+                    <ul class="children">
+                        <li><a href="#none" class="eFold">블록 스토리지</a></li>
+                        <li><a href="#none" class="eFold">블록 스토리지 스냅샷</a></li>
+                    </ul>
+                </li>
+                <li class="network parent">
+                    <a href="#none" class="eFold">네트워킹</a>
+                    <ul class="children">
+                        <li><a href="#none" class="eFold">로드밸런서</a></li>
+                        <li><a href="#none" class="eFold">DNS</a></li>
+                    </ul>
+                </li>
+                <li class="security parent">
+                    <a href="#none" class="eFold">보안서비스</a>
+                    <ul class="children">
+                        <li><a href="#none" class="eFold">방화벽</a></li>
+                        <li><a href="#none" class="eFold">SSH키페어</a></li>
+                    </ul>
+                </li>
+                <!--
+                <li class="monitoring"><a href="#none" class="eFold">모니터링</a></li> -->
+                <li class="cs parent">
+                    <a href="#none" class="eFold">고객지원</a>
+                    <ul class="children">
+                        <li><a href="#none" class="eFold">공지사항</a></li>
+                        <li><a href="#none" class="eFold">자주 찾는 질문</a></li>
+                        <li><a href="#none" class="eFold">1:1 문의</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        
+        <div id="contents">
+            <div class="section">
+                <div class="mTitle">
+                    <h2>로드밸런서</h2>
+                    <div class="utility">
+                        <a href="#none" class="btnNormalM strong"><span class="icoSFIX icoPlus"></span> 새로운 인스턴스생성</a>
+                    </div>
+                </div>
+                <div class="mBoard typeView eBoard"><!-- 참고 : 선택할 수 있는 테이블 .eBoard 부여 -->
+                    <table border="1">
+                        <caption>로드밸런서</caption>
+                        <colgroup>
+                            <col style="width:150px;">
+                            <col style="width:120px;">
+                            <col>
+                            <col>
+                            <col style="width:150px;">
+                            <col>
+                            <col>
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th scope="col">이름</th>
+                            <th scope="col">IP주소</th>
+                            <th scope="col">연결된 가상서버 수</th>
+                            <th scope="col">설정된 방화벽</th>
+                            <th scope="col">생성일시</th>
+                            <th scope="col">로드밸런서 상태</th>
+                            <th scope="col">모니터링</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="selected"><!-- 참고: 선택시 .selected 부여 -->
+                            <td>로드밸런서 A</td>
+                            <td>123.123.123.123</td>
+                            <td>3</td>
+                            <td>방화벽 A</td>
+                            <td>2017-08-08 20:35:00</td>
+                            <td>운영중</td>
+                            <td><button type="button" class="btnNormalS em">보기</button></td>
+                        </tr>
+                        <tr>
+                            <td>로드밸런서 B</td>
+                            <td>123.123.123.123</td>
+                            <td>2</td>
+                            <td>방화벽 B</td>
+                            <td>2017-08-08 20:35:00</td>
+                            <td>오류 발생</td>
+                            <td><button type="button" class="btnNormalS em">보기</button></td>
+                        </tr>
+                        <tr>
+                            <td>로드밸런서 C</td>
+                            <td>123.123.123.123</td>
+                            <td>1</td>
+                            <td>방화벽 A</td>
+                            <td>2017-08-08 20:35:00</td>
+                            <td>생성 대기</td>
+                            <td><button type="button" class="btnNormalS em">보기</button></td>
+                        </tr>
+                        <tr>
+                            <td>로드밸런서 D</td>
+                            <td>123.123.123.123</td>
+                            <td>1</td>
+                            <td>방화벽 B</td>
+                            <td>2017-08-08 20:35:00</td>
+                            <td>업데이트 대기</td>
+                            <td><button type="button" class="btnNormalS em">보기</button></td>
+                        </tr>
+                        <tr>
+                            <td>로드밸런서 E</td>
+                            <td>123.123.123.123</td>
+                            <td>0</td>
+                            <td>방화벽 A</td>
+                            <td>2017-08-08 20:35:00</td>
+                            <td>삭제 대기</td>
+                            <td><button type="button" class="btnNormalS em">보기</button></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mPaginate">
+                    <a href="#none" class="btnPrev disabled"></a><!-- 참고: 이전,다음 페이지가 없는 경우, class "disabled" 추가. -->
+                    <span class="page">
+                        <a href="#none" class="selected" title="현재페이지">1</a>
+                        <a href="#none">2</a>
+                        <a href="#none">3</a>
+                        <a href="#none">4</a>
+                        <a href="#none">5</a>
+                        <a href="#none">6</a>
+                        <a href="#none">7</a>
+                        <a href="#none">8</a>
+                        <a href="#none">9</a>
+                        <a href="#none">10</a>
+                    </span>
+                    <a href="#none" class="btnNext"></a>
+                </div>
+            </div>
+            <div class="section gResult">
+                <div class="mTitle">
+                    <h3>로드밸런서 A</h3>
+                    <button type="button" class="btnEdit"></button>
+                    <span class="gForm" style=""><!-- 참고:btnEdit버튼 클릭시 display:block, 적용버튼 클릭시 display:none -->
+                        <span class="fTextEdit">
+                            <input type="text" value="로드밸런서 A" style="width:200px;">
+                            <button type="button" class="btnReset"></button>
+                        </span>
+                        <button type="button" class="btnNormalM em">적용</button>
+                    </span>
+                </div>
+                <div class="mTab typeTab eTab">
+                    <ul>
+                        <li class="selected"><a href="#tabCont1_1">상세 정보</a></li>
+                        <li><a href="#tabCont1_2">월별 사용 내역</a></li>
+                    </ul>
+                </div>
+                <div id="tabCont1_1" class="tabCont gBox" style="display:block;">
+                    <div class="mTitle">
+                        <strong class="title">로드밸런서 정보</strong>
+                    </div>
+                    <div class="mBoard typeView gRow">
+                        <table border="1">
+                            <caption>로드밸런서 정보</caption>
+                            <colgroup>
+                                <col style="width:190px;">
+                                <col style="width:295px;">
+                                <col style="width:190px;">
+                                <col style="width:295px;">
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <th scope="row">로드밸런서 ID</th>
+                                <td>dnv_92hkvl_245n</td>
+                                <th scope="row">로드밸런서 IP</th>
+                                <td>123.123.123.123</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">로드밸런서 생성일시</th>
+                                <td>2017년 8월 8일 15시 30분</td>
+                                <th scope="row">소속 가상서버 상태</th>
+                                <td>작동 중</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">로드밸런서 사용시간</th>
+                                <td>3일 13시간 27분</td>
+                                <th scope="row">연결된 가상서버</th>
+                                <td><button type="button" class="btnNormalS em">보기</button></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">로드밸런서 설명</th>
+                                <td colspan="3">
+                                    <p class="fTextarea">
+                                        이 인스턴스는 1970년에 시작된 인스턴스로 새로운 인스턴스를 24시간 내에 만들지 않을 시 분열하여
+                                        돈을 두배로 내게 만드는 전설적인 인스턴스 임을 밝힙니다. <button type="button" class="btnEdit"></button>
+                                    </p>
+                                    <textarea cols="111" rows="5" class="fTextarea">이 인스턴스는 1970년에 시작된 인스턴스로 새로운 인스턴스를 24시간 내에 만들지 않을 시 분열하여 돈을 두배로 내게 만드는 전설적인 인스턴스 임을 밝힙니다.</textarea>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="mTitle">
+                        <strong class="title">로드밸런서 기능</strong>
+                    </div>
+                    <div class="mBoard typeView gRow">
+                        <table border="1">
+                            <caption>로드밸런서 기능</caption>
+                            <colgroup>
+                                <col style="width:190px;">
+                                <col style="width:295px;">
+                                <col style="width:190px;">
+                                <col style="width:295px;">
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <th scope="row">포워딩룰</th>
+                                <td><a href="#none" class="btnNormalS em">설정</a></td>
+                                <th scope="row">방화벽 설정</th>
+                                <td><a href="#layerSample5" class="btnNormalS em">설정</a></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">가상서버 연결</th>
+                                <td><a href="#none" class="btnNormalS em">연결</a></td>
+                                <th scope="row">가상서버 해제</th>
+                                <td><a href="#none" class="btnNormalS em">해제</a></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">로드밸런서 삭제</th>
+                                <td><a href="#none" class="btnNormalS warn">로드밸런서 삭제</a></td>
+                                <th scope="row"></th>
+                                <td></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="tabCont1_2" class="tabCont gBox" style="display:none;">
+                    <p class="txtNormal">2018-08월의 통계 자료입니다.</p>
+                    <div class="mBoard typeView gBlankM">
+                        <table border="1">
+                            <caption>월별 사용 내역</caption>
+                            <colgroup>
+                                <col style="">
+                                <col style="">
+                                <col style="">
+                                <col style="">
+                                <col style="">
+                            </colgroup>
+                            <thead>
+                            <tr>
+                                <th scope="col">가상서버 이름</th>
+                                <th scope="col">가상서버 IP 주소</th>
+                                <th scope="col">시작시간</th>
+                                <th scope="col">종료시간</th>
+                                <th scope="col">사용시간</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>가상서버 A</td>
+                                <td>123.123.123.123</td>
+                                <td>2018-08-08 01:01:00</td>
+                                <td>2018-08-09 01:01:01</td>
+                                <td>24h</td>
+                            </tr>
+                            <tr>
+                                <td>가상서버 B</td>
+                                <td>123.123.123.123</td>
+                                <td>2018-08-08 01:01:00</td>
+                                <td>2018-08-09 01:01:01</td>
+                                <td>24h</td>
+                            </tr>
+                            <tr>
+                                <td>가상서버 C</td>
+                                <td>123.123.123.123</td>
+                                <td>2018-08-08 01:01:00</td>
+                                <td>2018-08-09 01:01:01</td>
+                                <td>24h</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 참고 : 적용 서버 해제 -->
+    <div id="layerSample5" class="mLayer gMedium">
+        <h2>적용 서버 해제</h2>
+        <div class="wrap">
+            <div class="section">
+                <div class="mTitle">
+                    <h3>현재 방화벽</h3>
+                </div>
+                <div class="mBoard typeView">
+                    <table border="1">
+                        <caption>현재 방화벽</caption>
+                        <colgroup>
+                            <col style="">
+                            <col style="">
+                            <col style="">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">이름</th>
+                                <th scope="col">IP</th>
+                                <th scope="col">생성일시</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>방화벽 A</td>
+                                <td>123.123.123.123</td>
+                                <td>2017-08-08 12:00:00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mTitle">
+                    <h3>방화벽 연결</h3>
+                </div>
+                <div class="mBoard typeView eBoard"><!-- 참고 : 선택할 수 있는 테이블 .eBoard 부여 -->
+                    <table border="1">
+                        <caption>방화벽 연결</caption>
+                        <colgroup>
+                            <col style="width:96px;">
+                            <col style="">
+                            <col style="">
+                            <col style="">
+                            <col style="">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">
+                                    <label class="gLabel">
+                                        <input type="checkbox" class="fChk"><span class="fLabel"></span>
+                                    </label>
+                                </th>
+                                <th scope="col">이름</th>
+                                <th scope="col">ID</th>
+                                <th scope="col">IP</th>
+                                <th scope="col">생성일시</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <label class="gLabel">
+                                        <input type="checkbox" class="fChk"><span class="fLabel"></span>
+                                    </label>
+                                </td>
+                                <td>가상서버 A</td>
+                                <td>dev_dnkl_srv1</td>
+                                <td>123.123.123.123</td>
+                                <td>2017-08-08 12:00:00</td>
+                            </tr>
+                            <tr class="selected">
+                                <td>
+                                    <label class="gLabel">
+                                        <input type="checkbox" class="fChk checked" checked><span class="fLabel"></span>
+                                    </label>
+                                </td>
+                                <td>가상서버 B</td>
+                                <td>dev_dnkl_srv1</td>
+                                <td>123.123.123.123</td>
+                                <td>2017-08-08 12:00:00</td>
+                            </tr>
+                            <tr class="selected">
+                                <td>
+                                    <label class="gLabel">
+                                        <input type="checkbox" class="fChk checked" checked><span class="fLabel"></span>
+                                    </label>
+                                </td>
+                                <td>가상서버 C</td>
+                                <td>dev_dnkl_srv1</td>
+                                <td>123.123.123.123</td>
+                                <td>2017-08-08 12:00:00</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="gLabel">
+                                        <input type="checkbox" class="fChk"><span class="fLabel"></span>
+                                    </label>
+                                </td>
+                                <td>가상서버 D</td>
+                                <td>dev_dnkl_srv1</td>
+                                <td>123.123.123.123</td>
+                                <td>2017-08-08 12:00:00</td>
+                            </tr>
+                            <tr class="selected">
+                                <td>
+                                    <label class="gLabel">
+                                        <input type="checkbox" class="fChk checked" checked><span class="fLabel"></span>
+                                    </label>
+                                </td>
+                                <td>가상서버 E</td>
+                                <td>dev_dnkl_srv1</td>
+                                <td>123.123.123.123</td>
+                                <td>2017-08-08 12:00:00</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="gLabel">
+                                        <input type="checkbox" class="fChk"><span class="fLabel"></span>
+                                    </label>
+                                </td>
+                                <td>가상서버 F</td>
+                                <td>dev_dnkl_srv1</td>
+                                <td>123.123.123.123</td>
+                                <td>2017-08-08 12:00:00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="gridSet">
+                        <div class="right">
+                            <a href="#none" class="btnLink">가상버서 관리로 이동</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <a href="#none" class="btnNormalL strong">생성하기</a>
+        </div>
+        <button type="button" class="btnClose eClose"></button>
+    </div>
+    <!-- //참고 : 적용 서버 해제 -->
+
+    <hr class="layout">
+    <div id="footer">
+        <p class="copyright">Copyright&copy; Cafe24 corp. All Rights Reserved.</p>
+    </div>
+</div>
+
+<script>
+    // ※ 개발작업시 datepicker 플러그인 수정요청: 최상위에 mCalendar 클래스를 추가해주세요.
+    $( function() {
+        //한글설정
+        $.datepicker.regional['ko'] = {
+            closeText: '닫기',
+            prevText: '이전달',
+            nextText: '다음달',
+            currentText: '오늘',
+            monthNames: ['1월','2월','3월','4월','5월','6월',
+                '7월','8월','9월','10월','11월','12월'],
+            monthNamesShort: ['1월','2월','3월','4월','5월','6월',
+                '7월','8월','9월','10월','11월','12월'],
+            dayNames: ['일','월','화','수','목','금','토'],
+            dayNamesShort: ['일','월','화','수','목','금','토'],
+            dayNamesMin: ['일','월','화','수','목','금','토'],
+            weekHeader: 'Wk',
+            dateFormat: 'yy.mm.dd',
+            firstDay: 1,
+            isRTL: false,
+            duration:200,
+            showAnim:'show',
+            yearSuffix: ''
+        };
+        $.datepicker.setDefaults($.datepicker.regional['ko']);
+        $( ".datepicker" ).datepicker({
+            changeMonth: true,
+            changeYear: true
+        });
+        $('.typeCalendar .fCalendar').on('click', function() {
+            $(this).find('.datepicker').datepicker('show');
+        });
+
+    } );
+</script>
+</body>
+</html>

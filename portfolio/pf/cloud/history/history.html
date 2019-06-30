@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>클라우드</title>
+    <link rel="stylesheet" type="text/css" href="../css/font/notosans.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../css/common.css" media="all">
+    <!-- 참고: UI확인용으로 퍼블리싱 미리보기용 CSS, JS 소스들입니다 -->
+    <script type="text/javascript" src="../js/jquery-1.12.1.min.js"></script>
+    <script type="text/javascript" src="../js/ui.js"></script>
+    <script type="text/javascript" src="https://img.echosting.cafe24.com/js/plugin/jquery-ui.js"></script>
+    <script type="text/javascript" src="../js/ui.js"></script>
+</head>
+<body id="popup" size="1000, 800"><!-- 참고 : size 속성은 팝업 가로/세로 체크용입니다. 개발진행시에 팝업사이즈에 적용해주시고, size 는 삭제해주세요. -->
+    <div id="popupWrap">
+        <div class="headingArea">
+            <div class="mTitle">
+                <h1>히스토리</h1>
+            </div>
+        </div>
+        <div class="section">
+            <div class="mTitle">
+                <h2>히스토리 내역</h2>
+            </div>
+            <div class="periodArea">
+                <div class="btnDate">
+                    <button type="button" class="button selected">1일</button><!-- 참고: 클릭시 .selected 추가 -->
+                    <button type="button" class="button">3일</button>
+                    <button type="button" class="button">7일</button>
+                    <button type="button" class="button">1개월</button>
+                    <button type="button" class="button">3개월</button>
+                    <button type="button" class="button">1년</button>
+                </div>
+                <div class="mForm typeCalendar gSideM">
+                    <span class="fCalendar">
+                        <input type="text" value="2017.08.08" class="datepicker">
+                    </span>
+                    <span class="bar"></span>
+                    <span class="fCalendar">
+                        <input type="text" value="2017.08.08" class="datepicker">
+                    </span>
+                </div>
+                <button type="button" class="btnNormalS em gSideS">검색</button>
+            </div>
+            <div class="mForm">
+                <strong class="title">리전 선택 :</strong>
+                <label class="gLabel"><input type="checkbox" class="fChk checked" checked=""><span class="fLabel">전체</span></label>
+                <label class="gLabel"><input type="checkbox" class="fChk"><span class="fLabel">cafe24 cloud region A-50</span></label>
+                <label class="gLabel"><input type="checkbox" class="fChk"><span class="fLabel">cafe24 cloud region A-51</span></label>
+                <label class="gLabel"><input type="checkbox" class="fChk"><span class="fLabel">cafe24 cloud region A-52</span></label>
+            </div>
+            <div class="mBoard typeView">
+                <table border="1">
+                    <caption>히스토리 내역</caption>
+                    <colgroup>
+                        <col style="width:200px;">
+                        <col style="width:auto;">
+                        <col style="width:120px">
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th scope="col">발생 일시</th>
+                        <th scope="col">내용</th>
+                        <th scope="col">주체</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>2017-08-08 12:00:00</td>
+                        <td class="left">인스턴스 A에서 가상서버 스냅샷 스냅샷 A가 생성되었습니다.</td>
+                        <td>김담당</td>
+                    </tr>
+                    <tr>
+                        <td>2017-08-08 12:00:00</td>
+                        <td class="left">인스턴스 A에서 가상서버 스냅샷 스냅샷 A가 생성되었습니다.</td>
+                        <td>이담당</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="mPaginate">
+                <a href="#none" class="btnPrev disabled"></a><!-- 참고: 이전,다음 페이지가 없는 경우, class "disabled" 추가. -->
+                <span class="page">
+                    <a href="#none" class="selected" title="현재페이지">1</a>
+                    <a href="#none">2</a>
+                    <a href="#none">3</a>
+                    <a href="#none">4</a>
+                    <a href="#none">5</a>
+                </span>
+                <a href="#none" class="btnNext"></a>
+            </div>
+        </div>
+        <div class="footer">
+            <button type="button" class="btnNormalL strong">확인</button>
+        </div>
+    </div>
+    <!-- 참고 : 기존 SSH 키페어 등록 -->
+    <div id="layerSSH1" class="mLayer gMedium">
+        <h2>기존 SSH 키페어 등록</h2>
+        <div class="wrap">
+            <div class="section">
+                <div class="mBoard typeEdit gCell gBlankL">
+                    <table border="1">
+                        <caption>기존 SSH 키페어 등록</caption>
+                        <colgroup>
+                            <col style="width:110px">
+                            <col style="">
+                        </colgroup>
+                        <tbody>
+                        <tr>
+                            <th scope="row">이름 입력</th>
+                            <td><input type="text" class="fText" placeholder="SSH 키페어의 이름을 입력해 주시기 바랍니다."></td>
+                        </tr>
+                        <tr>
+                            <th scope="col">공개키 입력</th>
+                            <td><textarea cols="30" rows="10" class="fTextarea" placeholder="공개키를 입력하세요."></textarea></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="mList typeInfo">저장된 키페어는 계정정보 &gt; 보안키 등록에서 확인할 수 있습니다.</p>
+            </div>
+        </div>
+        <div class="footer">
+            <a href="#none" class="btnNormalL strong">등록하기</a>
+        </div>
+        <button type="button" class="btnClose eClose"></button>
+    </div>
+    <!-- //참고 : 기존 SSH 키페어 등록 -->
+    <!-- 참고 : SSH 키페어 새로 등록 -->
+    <div id="layerSSH2" class="mLayer gMedium">
+        <h2>SSH 키페어 새로 등록</h2>
+        <div class="wrap">
+            <div class="section">
+                <div class="mBoard typeEdit gCell gBlankL">
+                    <table border="1">
+                        <caption>SSH 키페어 새로 등록</caption>
+                        <colgroup>
+                            <col style="width:110px">
+                            <col style="">
+                        </colgroup>
+                        <tbody>
+                        <tr>
+                            <th scope="row">이름 입력</th>
+                            <td><input type="text" class="fText" placeholder="SSH 키페어의 이름을 입력해 주시기 바랍니다."></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <ul class="mList typeInfo">
+                    <li>저장된 키페어는 계정정보 &gt; 보안키 등록에서 확인할 수 있습니다.</li>
+                    <li>개인키는 생성 버튼을 눌렀을 때 자동으로 다운로드 됩니다.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer">
+            <a href="#none" class="btnNormalL strong">키페어 생성</a>
+        </div>
+        <button type="button" class="btnClose eClose"></button>
+    </div>
+    <!-- //참고 : SSH 키페어 새로 등록 -->
+    
+<script>
+    // ※ 개발작업시 datepicker 플러그인 수정요청: 최상위에 mCalendar 클래스를 추가해주세요.
+    $( function() {
+        //한글설정
+        $.datepicker.regional['ko'] = {
+            closeText: '닫기',
+            prevText: '이전달',
+            nextText: '다음달',
+            currentText: '오늘',
+            monthNames: ['1월','2월','3월','4월','5월','6월',
+                '7월','8월','9월','10월','11월','12월'],
+            monthNamesShort: ['1월','2월','3월','4월','5월','6월',
+                '7월','8월','9월','10월','11월','12월'],
+            dayNames: ['일','월','화','수','목','금','토'],
+            dayNamesShort: ['일','월','화','수','목','금','토'],
+            dayNamesMin: ['일','월','화','수','목','금','토'],
+            weekHeader: 'Wk',
+            dateFormat: 'yy.mm.dd',
+            firstDay: 1,
+            isRTL: false,
+            duration:200,
+            showAnim:'show',
+            yearSuffix: ''
+        };
+        $.datepicker.setDefaults($.datepicker.regional['ko']);
+        $( ".datepicker" ).datepicker({
+            changeMonth: true,
+            changeYear: true
+        });
+        $('.typeCalendar .fCalendar').on('click', function() {
+            $(this).find('.datepicker').datepicker('show');
+        });
+
+    } );
+</script>
+</body>
+</html>

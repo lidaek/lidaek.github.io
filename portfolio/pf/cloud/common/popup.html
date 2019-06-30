@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>클라우드</title>
+    <link rel="stylesheet" type="text/css" href="../css/font/notosans.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../css/common.css" media="all">
+    <!-- 참고: UI확인용으로 퍼블리싱 미리보기용 CSS, JS 소스들입니다 -->
+    <script type="text/javascript" src="../js/jquery-1.12.1.min.js"></script>
+    <script type="text/javascript" src="../js/ui.js"></script>
+    <script type="text/javascript" src="https://img.echosting.cafe24.com/js/plugin/jquery-ui.js"></script>
+</head>
+<body id="popup" size="760, 800"><!-- 참고 : size 속성은 팝업 가로/세로 체크용입니다. 개발진행시에 팝업사이즈에 적용해주시고, size 는 삭제해주세요. -->
+    <div id="popupWrap">
+        <p class="regionAlert bad"><!-- 참고 : 복잡 - bad  -->
+            Region A - 카페24 IDC-A 24F - 25G (불가 - 신규 서비스 생성이 불가능합니다.)
+        </p>
+        <p class="regionAlert caution"><!-- 참고 : 혼잡 - caution -->
+            Region A - 카페24 IDC-A 24F - 25G (보통 - 신규 서비스 생성이 가능합니다.)
+        </p>
+        <p class="regionAlert good"><!-- 참고 : 쾌적 - good -->
+            Region A - 카페24 IDC-A 24F - 25G (쾌적 - 신규 서비스 생성이 가능합니다.)
+        </p>
+        <div class="headingArea">
+            <div class="mTitle">
+                <h1>가상서버 생성하기</h1>
+            </div>
+        </div>
+        <div class="section">
+            <div class="mTitle">
+                <h2>OS 이미지 선택</h2>
+                <div class="mTooltip ePosTarget">
+                    <button type="button" class="btnTip ePosClick"></button>
+                    <div class="tooltip ePosLayer">
+                        <ul class="detail">
+                            <li>툴팁내용</li>
+                        </ul>
+                        <button type="button" class="btnClose eClose"></button>
+                    </div>
+                </div>
+                <span class="txtLight">OS 이미지를 선택하시기 바랍니다.</span>
+            </div>
+            <div class="mForm">
+                <label class="gLabel"><input type="radio" class="fRadio checked" checked><span class="fLabel">새로 설치</span></label>
+                <label class="gLabel"><input type="radio" class="fRadio"><span class="fLabel">스냅샷에서 설치</span></label>
+            </div>
+            <!-- 참고 : 새로 설치 -->
+            <div class="mBoard typeView eBoard">
+                <table border="1">
+                    <caption>새로 설치</caption>
+                    <colgroup>
+                        <col style="width:80px;">
+                        <col style="width:250px;">
+                        <col style="">
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th scope="col">No.</th>
+                        <th scope="col">OS 이미지 타입</th>
+                        <th scope="col">버전</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="selected"><!-- 참고: 선택시 .selected 부여 -->
+                        <td>1</td>
+                        <td>
+                            <span class="osFrame">
+                                <img src="../images/img_os_ubuntu.png" width="26" alt=""> Ubuntu
+                            </span>
+                        </td>
+                        <td>x64_47_2984_23.2917284.405872</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- //참고 : 새로 설치 -->
+            <!-- 참고 : 스냅샷에서 설치 -->
+            <div class="mBoard typeView eBoard">
+                <table border="1">
+                    <caption>스냅샷에서 설치</caption>
+                    <colgroup>
+                        <col style="width:180px;">
+                        <col style="width:150px;">
+                        <col style="width:140px;">
+                        <col style="">
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th scope="col">이름</th>
+                        <th scope="col">생성일시</th>
+                        <th scope="col">OS 이미지 타입</th>
+                        <th scope="col">버전</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="selected"><!-- 참고: 선택시 .selected 부여 -->
+                        <td>내 스냅샷</td>
+                        <td>2017-08-08 12:08:56</td>
+                        <td>
+                            <span class="osFrame">
+                                <img src="../images/img_os_ubuntu.png" width="26" alt=""> Ubuntu
+                            </span>
+                        </td>
+                        <td>x64_47_2984_23.2917284.405872</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- //참고 : 스냅샷에서 설치 -->
+            <div class="mPaginate">
+                <a href="#none" class="btnPrev disabled"></a><!-- 참고: 이전,다음 페이지가 없는 경우, class "disabled" 추가. -->
+                <span class="page">
+                    <a href="#none" class="selected" title="현재페이지">1</a>
+                    <a href="#none">2</a>
+                    <a href="#none">3</a>
+                    <a href="#none">4</a>
+                    <a href="#none">5</a>
+                    <a href="#none">6</a>
+                    <a href="#none">7</a>
+                    <a href="#none">8</a>
+                    <a href="#none">9</a>
+                    <a href="#none">10</a>
+                </span>
+                <a href="#none" class="btnNext"></a>
+            </div>
+        </div>
+        <div class="section">
+            <div class="mTitle">
+                <h2>하드웨어 상품 선택</h2>
+                <div class="mTooltip ePosTarget">
+                    <button type="button" class="btnTip ePosClick"></button>
+                    <div class="tooltip ePosLayer">
+                        <ul class="detail">
+                            <li>툴팁내용</li>
+                        </ul>
+                        <button type="button" class="btnClose eClose"></button>
+                    </div>
+                </div>
+                <span class="txtLight">하드웨어 상품을 선택하시기 바랍니다.</span>
+            </div>
+            <div class="mBoard typeView eBoard">
+                <table border="1">
+                    <caption>하드웨어 상품 선택</caption>
+                    <colgroup>
+                        <col style="">
+                        <col style="">
+                        <col style="">
+                        <col style="">
+                        <col style="">
+                        <col style="width:150px;">
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th scope="col">하드웨어 사양</th>
+                        <th scope="col">CPU</th>
+                        <th scope="col">RAM</th>
+                        <th scope="col">DISK</th>
+                        <th scope="col">트래픽</th>
+                        <th scope="col">요금</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>절약형 상품</td>
+                        <td>2 cores</td>
+                        <td>2 GB</td>
+                        <td>200 GB</td>
+                        <td>100 GB</td>
+                        <td>1,000원/월,20원/시</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="section">
+            <div class="mTitle">
+                <h2>가상서버 설정</h2>
+                <span class="txtLight">가상서버의 이름과 설명을 설정해 주세요.</span>
+            </div>
+            <div class="mBoard typeView gRow">
+                <table border="1">
+                    <caption>가상서버 설정</caption>
+                    <colgroup>
+                        <col style="width:190px;">
+                        <col style="">
+                    </colgroup>
+                    <tbody>
+                    <tr>
+                        <th scope="row">이름</th>
+                        <td>
+                            <input type="text" class="fText" placeholder="가상서버의 이름을 입력해 주세요." style="width:250px;">
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="section">
+            <div class="mTitle">
+                <h2>블록 스토리지 생성<span class="txtLight">(선택사양)</span></h2>
+                <span class="txtLight">본 항목은 선택 사양입니다. 생성하시려면 생성 버튼을 눌러 주세요.</span>
+                <div class="utility">
+                    <button type="button" class="btnNormalM em eCreate">생성하기</button>
+                </div>
+            </div>
+
+            <div class="mBox typeBasic"><!-- 참고: 생성하기 버튼 클릭시 .gHidden 삭제, 취소하기 버튼 클릭시 .gHidden 추가  -->
+                <div class="mForm">
+                    <label class="gLabel"><input type="radio" class="fRadio" checked=""><span class="fLabel">직접 입력</span></label>
+                    <label class="gLabel"><input type="radio" class="fRadio"><span class="fLabel">블록 스토리지 스냅샷에서 스토리지 생성</span></label>
+                </div>
+                <!-- 참고: 직접 입력 -->
+                <div class="mBoard typeView">
+                    <table border="1">
+                        <caption>블록 스토리지 생성(직접 입력)</caption>
+                        <colgroup>
+                            <col style="">
+                            <col style="">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th scope="col">용량</th>
+                            <th scope="col">사용료</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <input type="text" class="fText right" style="width:75px;"> GB
+                            </td>
+                            <td>
+                                1,000원/월<span class="icoBar">|</span>10원/시
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="mList typeInfo">용량은 10GB 이상 100GB 이내이며 10단위로 입력해 주세요.</p>
+                <!-- //참고: 직접 입력 -->
+                <!-- 참고: 블록 스토리지 스냅샷에서 스토리지 생성 -->
+                <div class="mBoard typeView eBoard">
+                    <table border="1">
+                        <caption>블록 스토리지 생성(블록 스토리지 스냅샷에서 스토리지 생성)</caption>
+                        <colgroup>
+                            <col style="width:283px;">
+                            <col style="width:150px;">
+                            <col style="width:80px;">
+                            <col style="width:150px;">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th scope="col">이름</th>
+                            <th scope="col">생성일시</th>
+                            <th scope="col">용량</th>
+                            <th scope="col">요금</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="selected">
+                            <td>내 스냅샷</td>
+                            <td>2017-08-08 12:00:00</td>
+                            <td>100GB</td>
+                            <td>1,000원/월, 20원/시</td>
+                        </tr>
+                        <tr>
+                            <td>내 스냅샷</td>
+                            <td>2017-08-08 12:00:00</td>
+                            <td>100GB</td>
+                            <td>1,000원/월, 20원/시</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mPaginate">
+                    <a href="#none" class="btnPrev disabled"></a><!-- 참고: 이전,다음 페이지가 없는 경우, class "disabled" 추가. -->
+                    <span class="page">
+                        <a href="#none" class="selected" title="현재페이지">1</a>
+                        <a href="#none">2</a>
+                        <a href="#none">3</a>
+                        <a href="#none">4</a>
+                        <a href="#none">5</a>
+                        <a href="#none">6</a>
+                        <a href="#none">7</a>
+                        <a href="#none">8</a>
+                        <a href="#none">9</a>
+                        <a href="#none">10</a>
+                    </span>
+                    <a href="#none" class="btnNext"></a>
+                </div>
+                <!-- //참고: 블록 스토리지 스냅샷에서 스토리지 생성 -->
+            </div>
+        </div>
+        <div class="section">
+            <div class="mTitle">
+                <h2>SSH 키 페어 생성<span class="txtLight">(선택사양)</span></h2>
+                <p class="txtLight">본 항목은 선택 사양입니다. 키페어를 발급하지 않으시면 등록하신 E-mail로 임시 root 비밀번호가 발송됩니다.<br>등록하시려면 다음 등록 버튼을 눌러 주세요. 이 작업은 가상서버 생성 이후에도 진행할 수 있습니다.</p>
+                <div class="utility">
+                    <button type="button" class="btnNormalM em eCreate">등록하기</button>
+                </div>
+            </div>
+            <div class="mBox typeBasic"><!-- 참고: 생성하기 버튼 클릭시 .gHidden 삭제, 취소하기 버튼 클릭시 .gHidden 추가  -->
+                <ul class="mForm">
+                    <li>
+                        <label class="gLabelClear"><input type="radio" class="fRadio"><span class="fLabel">기존에 등록되어 있는 키페어를 사용합니다.</span></label>
+                    </li>
+                    <li>
+                        <label class="gLabelClear"><input type="radio" class="fRadio"><span class="fLabel">사용중인 공개키를 등록합니다.</span></label>
+                        <a href="#layerSSH1" class="btnNormalS gSideS eModal">등록하기</a>
+                    </li>
+                    <li>
+                        <label class="gLabelClear"><input type="radio" class="fRadio"><span class="fLabel">새로운 공개키를 만듭니다.</span></label>
+                        <a href="#layerSSH2" class="btnNormalS gSideS eModal">새로만들기</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+            <div class="mTitle">
+                <h2>예상 요금 계산</h2>
+            </div>
+            <div class="mBoard typeView">
+                <table border="1">
+                    <caption>예상 요금 계산</caption>
+                    <colgroup>
+                        <col style="">
+                        <col style="">
+                        <col style="">
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th scope="col">서비스명</th>
+                        <th scope="col">상품</th>
+                        <th scope="col">요금</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>절약형 상품</td>
+                        <td>2 cores</td>
+                        <td>
+                            5,500원/월<span class="icoBar">|</span>15원/시
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <dl class="mTotal typeSum">
+                    <dt>합계</dt>
+                    <dd>11,000원/월<span class="icoBar">|</span>30원/시</dd>
+                </dl>
+            </div>
+        </div>
+        <div class="footer">
+            <button type="button" class="btnNormalL strong">가상서버 생성</button>
+        </div>
+    </div>
+    <!-- 참고 : 기존 SSH 키페어 등록 -->
+    <div id="layerSSH1" class="mLayer gMedium">
+        <h2>기존 SSH 키페어 등록</h2>
+        <div class="wrap">
+            <div class="section">
+                <div class="mBoard typeEdit gCell gBlankL">
+                    <table border="1">
+                        <caption>기존 SSH 키페어 등록</caption>
+                        <colgroup>
+                            <col style="width:110px">
+                            <col style="">
+                        </colgroup>
+                        <tbody>
+                        <tr>
+                            <th scope="row">이름 입력</th>
+                            <td><input type="text" class="fText" placeholder="SSH 키페어의 이름을 입력해 주시기 바랍니다."></td>
+                        </tr>
+                        <tr>
+                            <th scope="col">공개키 입력</th>
+                            <td><textarea cols="30" rows="10" class="fTextarea" placeholder="공개키를 입력하세요."></textarea></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="mList typeInfo">저장된 키페어는 계정정보 &gt; 보안키 등록에서 확인할 수 있습니다.</p>
+            </div>
+        </div>
+        <div class="footer">
+            <a href="#none" class="btnNormalL strong">등록하기</a>
+        </div>
+        <button type="button" class="btnClose eClose"></button>
+    </div>
+    <!-- //참고 : 기존 SSH 키페어 등록 -->
+    <!-- 참고 : SSH 키페어 새로 등록 -->
+    <div id="layerSSH2" class="mLayer gMedium">
+        <h2>SSH 키페어 새로 등록</h2>
+        <div class="wrap">
+            <div class="section">
+                <div class="mBoard typeEdit gCell gBlankL">
+                    <table border="1">
+                        <caption>SSH 키페어 새로 등록</caption>
+                        <colgroup>
+                            <col style="width:110px">
+                            <col style="">
+                        </colgroup>
+                        <tbody>
+                        <tr>
+                            <th scope="row">이름 입력</th>
+                            <td><input type="text" class="fText" placeholder="SSH 키페어의 이름을 입력해 주시기 바랍니다."></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <ul class="mList typeInfo">
+                    <li>저장된 키페어는 계정정보 &gt; 보안키 등록에서 확인할 수 있습니다.</li>
+                    <li>개인키는 생성 버튼을 눌렀을 때 자동으로 다운로드 됩니다.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer">
+            <a href="#none" class="btnNormalL strong">키페어 생성</a>
+        </div>
+        <button type="button" class="btnClose eClose"></button>
+    </div>
+    <!-- //참고 : SSH 키페어 새로 등록 -->
+    
+    <script>
+        // ※ 개발작업시 datepicker 플러그인 수정요청: 최상위에 mCalendar 클래스를 추가해주세요.
+        $( function() {
+            //한글설정
+            $.datepicker.regional['ko'] = {
+                closeText: '닫기',
+                prevText: '이전달',
+                nextText: '다음달',
+                currentText: '오늘',
+                monthNames: ['1월','2월','3월','4월','5월','6월',
+                    '7월','8월','9월','10월','11월','12월'],
+                monthNamesShort: ['1월','2월','3월','4월','5월','6월',
+                    '7월','8월','9월','10월','11월','12월'],
+                dayNames: ['일','월','화','수','목','금','토'],
+                dayNamesShort: ['일','월','화','수','목','금','토'],
+                dayNamesMin: ['일','월','화','수','목','금','토'],
+                weekHeader: 'Wk',
+                dateFormat: 'yy.mm.dd',
+                firstDay: 1,
+                isRTL: false,
+                duration:200,
+                showAnim:'show',
+                yearSuffix: ''
+            };
+            $.datepicker.setDefaults($.datepicker.regional['ko']);
+            $( ".datepicker" ).datepicker({
+                changeMonth: true,
+                changeYear: true
+            });
+            $('.typeCalendar .fCalendar').on('click', function() {
+                $(this).find('.datepicker').datepicker('show');
+            });
+
+        } );
+    </script>
+</body>
+</html>

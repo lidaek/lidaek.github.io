@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>클라우드</title>
+    <link rel="stylesheet" type="text/css" href="../css/font/notosans.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../css/common.css" media="all">
+    <!-- 참고: UI확인용으로 퍼블리싱 미리보기용 CSS, JS 소스들입니다 -->
+    <script type="text/javascript" src="../js/jquery-1.12.1.min.js"></script>
+    <script type="text/javascript" src="../js/ui.js"></script>
+    <script type="text/javascript" src="https://img.echosting.cafe24.com/js/plugin/jquery-ui.js"></script>
+</head>
+<body>
+<div id="wrap">
+    <div id="skipNavigation">
+        <a href="#navigation">대메뉴 바로가기</a>
+        <a href="#contents">본문 바로가기</a>
+    </div>
+    <hr class="layout">
+    <div id="header">
+        <h1 class="logo">
+            <a href="#none"><img src="../images/h1_logo_cafe24.png" alt="카페24"></a>
+            <a href="#none"><img src="../images/h1_logo_hosting.png" alt="호스팅센터"></a>
+            <a href="#none"><img src="../images/h1_logo_cloud.png" alt="클라우드"></a>
+        </h1>
+        <div class="util">
+            <div class="userInfo">
+                <a href="#none" class="msg"><strong class="user">홍길동님</strong> 환영합니다.</a>
+                <ul class="menu">
+                    <li><a href="#none">결제관리</a></li>
+                    <li><a href="#none">알림관리</a></li>
+                    <li><a href="#none">보안키 등록</a></li>
+                    <li><a href="#none">1:1문의</a></li>
+                    <li><a href="#none">로그아웃</a></li>
+                </ul>
+            </div>
+            <a href="#none" class="btnManual">사용 매뉴얼</a>
+        </div>
+    </div>
+    <style>
+        #container { width:1000px; margin:0 auto; padding:80px 0 0; background:#fff !important; }
+        .mLayer { display:block !important; position:relative !important; top:0; z-index:1 !important;margin:20px 0 50px; }
+        .layerTitle { display:block; font-size:15px; }
+    </style>
+    <div id="container">
+        
+        <strong class="layerTitle">알람 추가</strong>
+        <!-- 참고 : 알람 설정 -->
+        <div id="layerMonitoring1" class="mLayer gMedium">
+            <h2>알람 설정</h2>
+            <div class="wrap">
+                <div class="section">
+                    <div class="mTitle">
+                        <h3>알람 정책</h3>
+                        <span class="utility">
+                            <a href="#none" class="btnNormalS em gBlankL">추가</a>
+                        </span>
+                    </div>
+                    <div class="mBoard typeView">
+                        <table border="1">
+                            <caption>알람 정책</caption>
+                            <colgroup>
+                                <col style="width:50px;">
+                                <col style="width:165px;">
+                                <col style="width:350px;">
+                                <col style="width:150px;">
+                            </colgroup>
+                            <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">알람명</th>
+                                <th scope="col">알람 조건</th>
+                                <th scope="col">관리</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="selected"><!-- 참고: 선택시 .selected 부여 -->
+                                <td><label class="gLabel"><input type="checkbox" class="fChk"><span class="fLabel"></span></label></td>
+                                <td class="left">내 알람 1</td>
+                                <td>CPU 70% 이상 30분간 지속 시</td>
+                                <td><a href="#none" class="btnNormalS em">관리</a></td>
+                            </tr>
+                            <tr>
+                                <td><label class="gLabel"><input type="checkbox" class="fChk"><span class="fLabel"></span></label></td>
+                                <td class="left">내 알람 1</td>
+                                <td>CPU 70% 이상 30분간 지속 시</td>
+                                <td><a href="#none" class="btnNormalS em">관리</a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mButton">
+                        <div class="left"><button type="button" class="btnNormalS">선택삭제</button></div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <a href="#none" class="btnNormalL strong">적용</a>
+            </div>
+            <button type="button" class="btnClose eClose"></button>
+        </div>
+        <!-- //참고 : 알람 추가 -->
+        
+    </div>
+    <hr class="layout">
+    <div id="footer">
+        <p class="copyright">Copyright&copy; Cafe24 corp. All Rights Reserved.</p>
+    </div>
+</div>
+
+<script>
+    // ※ 개발작업시 datepicker 플러그인 수정요청: 최상위에 mCalendar 클래스를 추가해주세요.
+    $( function() {
+        //한글설정
+        $.datepicker.regional['ko'] = {
+            closeText: '닫기',
+            prevText: '이전달',
+            nextText: '다음달',
+            currentText: '오늘',
+            monthNames: ['1월','2월','3월','4월','5월','6월',
+                '7월','8월','9월','10월','11월','12월'],
+            monthNamesShort: ['1월','2월','3월','4월','5월','6월',
+                '7월','8월','9월','10월','11월','12월'],
+            dayNames: ['일','월','화','수','목','금','토'],
+            dayNamesShort: ['일','월','화','수','목','금','토'],
+            dayNamesMin: ['일','월','화','수','목','금','토'],
+            weekHeader: 'Wk',
+            dateFormat: 'yy.mm.dd',
+            firstDay: 1,
+            isRTL: false,
+            duration:200,
+            showAnim:'show',
+            yearSuffix: ''
+        };
+        $.datepicker.setDefaults($.datepicker.regional['ko']);
+        $( ".datepicker" ).datepicker({
+            changeMonth: true,
+            changeYear: true
+        });
+        $('.typeCalendar .fCalendar').on('click', function() {
+            $(this).find('.datepicker').datepicker('show');
+        });
+
+    } );
+</script>
+</body>
+</html>

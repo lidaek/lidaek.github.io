@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>클라우드</title>
+    <link rel="stylesheet" type="text/css" href="../css/font/notosans.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../css/common.css" media="all">
+    <!-- 참고: UI확인용으로 퍼블리싱 미리보기용 CSS, JS 소스들입니다 -->
+    <script type="text/javascript" src="../js/jquery-1.12.1.min.js"></script>
+    <script type="text/javascript" src="../js/ui.js"></script>
+    <script type="text/javascript" src="https://img.echosting.cafe24.com/js/plugin/jquery-ui.js"></script>
+    <script type="text/javascript" src="../js/ui.js"></script>
+</head>
+<body id="popup" size="780, 800"><!-- 참고 : size 속성은 팝업 가로/세로 체크용입니다. 개발진행시에 팝업사이즈에 적용해주시고, size 는 삭제해주세요. -->
+    <div id="popupWrap">
+        <div class="headingArea">
+            <div class="mTitle">
+                <h1>결제완료</h1>
+            </div>
+        </div>
+        <div class="section">
+            <div class="mInfo">
+                <img src="../images/img_check.png" alt="" class="imgInfo">
+                <p class="description">
+                    <strong class="txtBold">결제가 성공적으로 완료</strong> 되었습니다.<br>
+                    <span class="txtLight">자세한 결제 내역을 보시려면 하단에 결제 내역 보기 버튼을 클릭해주세요.</span>
+                </p>
+            </div>
+            <div class="mTitle">
+                <h2>결제 내역</h2>
+            </div>
+            <div class="mBoard typeView gRow">
+                <table border="1">
+                    <caption>결제 내역</caption>
+                    <colgroup>
+                        <col style="width:190px;">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                    <tr>
+                        <th scope="row">결제일</th>
+                        <td>2017-08-08</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">총 결제 금액</th>
+                        <td>5,200원</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">결제 번호</th>
+                        <td>20170808 - 09294294</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">결제 수단</th>
+                        <td>무통장 입금</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">입금자명</th>
+                        <td>홍길동</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">입금기한</th>
+                        <td>
+                            2017-08-15 00:00:00
+                            <p class="mList typeInfo">
+                                결제일 내에 입금이 완료되지 않으면 재결재가 필요합니다.<br>
+                                입금기한 경과 후 입금 시 자동 입금처리가 되지 않으니 유의하시기 바랍니다.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">입금 계좌정보</th>
+                        <td>
+                            우리은행<br>
+                            382-222254-13-001<br>
+                            cafe24(주)
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="mList typeInfo">
+                설정된 무통장 입금자명과 실제 입금하시는 분의 성함이 동일해야 빠른 결제확인이 가능합니다.<br>
+                실제 입금자명이 다른 경우에는 <a href="#none">[1:1 문의]</a>를 통하여 문의하여 주시기 바랍니다.
+            </p>
+        </div>
+        <div class="footer">
+            <button type="button" class="btnNormalL em">결제 내역보기</button>
+            <button type="button" class="btnNormalL strong">결제</button>
+        </div>
+    </div>
+
+<script>
+    // ※ 개발작업시 datepicker 플러그인 수정요청: 최상위에 mCalendar 클래스를 추가해주세요.
+    $( function() {
+        //한글설정
+        $.datepicker.regional['ko'] = {
+            closeText: '닫기',
+            prevText: '이전달',
+            nextText: '다음달',
+            currentText: '오늘',
+            monthNames: ['1월','2월','3월','4월','5월','6월',
+                '7월','8월','9월','10월','11월','12월'],
+            monthNamesShort: ['1월','2월','3월','4월','5월','6월',
+                '7월','8월','9월','10월','11월','12월'],
+            dayNames: ['일','월','화','수','목','금','토'],
+            dayNamesShort: ['일','월','화','수','목','금','토'],
+            dayNamesMin: ['일','월','화','수','목','금','토'],
+            weekHeader: 'Wk',
+            dateFormat: 'yy.mm.dd',
+            firstDay: 1,
+            isRTL: false,
+            duration:200,
+            showAnim:'show',
+            yearSuffix: ''
+        };
+        $.datepicker.setDefaults($.datepicker.regional['ko']);
+        $( ".datepicker" ).datepicker({
+            changeMonth: true,
+            changeYear: true
+        });
+        $('.typeCalendar .fCalendar').on('click', function() {
+            $(this).find('.datepicker').datepicker('show');
+        });
+
+    } );
+</script>
+</body>
+</html>

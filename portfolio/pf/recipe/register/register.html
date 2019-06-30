@@ -1,0 +1,1186 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>레시피</title>
+    <link rel="shortcut icon" type="image/x-icon" href="//m-img.cafe24.com/images/bi/cafe24/recipe.ico" />
+    <link rel="stylesheet" type="text/css" href="../css/font/notosans.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../css/common.css" media="all">
+</head>
+<body>
+<div id="wrap"><!-- 참고 : 메뉴 버튼 클릭시 .sideExpand 추가 -->
+    <nav id="skipNavigation">
+        <a href="#sidebar">대메뉴 바로가기</a>
+        <a href="#content">본문 바로가기</a>
+    </nav>
+    <hr class="layout">
+    <header id="header" role="banner">
+        <div class="inner">
+            <h1 class="logo">
+                <a href="#none">
+                    <img src="../images/h1_logo_recipe_m.png" width="135" alt="카페24 레시피" class="RMB">
+                    <img src="../images/h1_logo_recipe.png" width="177" alt="카페24 레시피" class="RW">
+                </a>
+            </h1>
+            <nav class="gnb">
+                <ul>
+                    <li class="RW"><a href="#none" class="navSearch">검색</a></li>
+                    <li><a href="#none" class="navManage">레시피 관리</a></li>
+                    <li><a href="#none" class="navAlarm">알림<span class="number">1</span></a></li>
+                </ul>
+            </nav>
+            <div class="userInfo RW">
+                <a href="#none" class="user eDropDown">
+                    <span class="thumbnail">
+                        <!-- 참고 : 프로필 이미지가 있을 경우 -->
+                        <img src="//s.pstatic.net/shopping.phinf/20180103_8/7967fef6-4fd4-44d5-b1f5-f68beec7a78a.jpg" alt="" class="image"><!-- //참고 -->
+                    </span>
+                    홍길동님(hong2341)
+                </a>
+                <div class="info">
+                    <nav class="menu">
+                        <ul>
+                            <li><a href="#none" class="navProfile">프로필</a></li>
+                            <li><a href="#none" class="navChannel">채널 연결 관리</a></li>
+                            <li><a href="#none" class="navCs">고객센터</a></li>
+                            <li><a href="#none" class="navGuide">이용가이드</a></li>
+                        </ul>
+                    </nav>
+                    <div class="button">
+                        <a href="#none" class="btnLogout"><span class="icoSFIX icoLogout"></span> 로그아웃</a>
+                        <a href="#layerLanguage" class="btnLanguage eModal" title="언어선택"><span class="icoSFIX icoGlobal"></span> KOREAN</a>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="btnMake RW">레시피 만들기</button>
+            <button type="button" class="btnMenu RMB eMenu"></button>
+        </div>
+    </header>
+    <div id="container" class="">
+        <div id="sidebar">
+            <div class="userInfo">
+                <span class="thumbnail">
+                     <!-- 참고 : 프로필 이미지가 있을 경우
+                    <img src="//s.pstatic.net/shopping.phinf/20180103_8/7967fef6-4fd4-44d5-b1f5-f68beec7a78a.jpg" alt="" class="image">
+                     -->
+                </span>
+                홍길동(honghongid) 님
+            </div>
+            <nav class="lnb">
+                <ul>
+                    <li>
+                        <a href="#none" class="navAlarm">알림<span class="number">24</span></a>
+                    </li>
+                    <li><a href="#none" class="navSearch">레시피 검색</a></li>
+                    <li><a href="#none" class="navManage">레시피 관리</a></li>
+                    <li><a href="#none" class="navMake">레시피 만들기</a></li>
+                    <li><a href="#none" class="navProfile">프로필</a></li>
+                    <li><a href="#none" class="navChannel">채널 연결 관리</a></li>
+                    <li><a href="#none" class="navCs">고객센터</a></li>
+                    <li><a href="#none" class="navGuide">이용가이드</a></li>
+                </ul>
+            </nav>
+            <a href="#layerLanguage" class="btnLanguage eModal" title="언어선택"><span class="icoSFIX icoGlobal"></span> KOREAN</a>
+            <a href="#none" class="btnLogout"><span class="icoSFIX icoLogout"></span> 로그아웃</a>
+            <button type="button" class="btnClose eClose">닫기</button>
+        </div>
+        
+        <section id="contents">
+            <div class="headingArea">
+                <h2>레시피 만들기</h2>
+                <div class="mTooltip typeButton">
+                    <a href="#layerRegister" class="btnTip eLayerClick">도움말</a>
+                </div>
+            </div>
+
+            <div class="innerContents">
+                <div class="registerArea doing"><!-- 참고: 스텝 진행시 .doing 클래스 추가, 스텝이 끝나면 .done -->
+                    <div class="channelHead">
+                        <strong class="badge"><span class="step">STEP1</span>조건</strong>
+                        <p class="desc">실행하려면 발생해야 하는 조건</p>
+                    </div>
+                    <div class="channelArea complete"><!-- 참고 : 선택이 완료되면 .complete 부여 -->
+                        <span class="step">1</span>
+
+                        <div class="mChannel typeAccordion selected"><!-- 참고 : 버튼 클릭시 .selected 부여 , 전 스텝이 선택되지 않았을 경우 .disabled 부여 -->
+                            <div class="head">
+                                <!-- 참고: 채널 선택 전
+                                <span class="item">
+                                    채널 선택
+                                    <span class="txtReq">(필수)</span>
+                                </span>
+                                 -->
+                                <!-- 참고: 채널 선택 후 -->
+                                <span class="item">
+                                    <img src="../images/ico_channel_product.png" alt="" class="imgChannel">
+                                    상품
+                                </span>
+                                <button type="button" class="btnCover eAccordion"></button>
+                            </div>
+                            <div class="content">
+                                <div class="mSearch typeBg selected"><!-- 참고: 텍스트 입력중일 때 selected 추가 -->
+                                    <input type="search" class="fSearch" placeholder="채널검색">
+                                    <button type="button" class="btnDel">검색어 삭제</button>
+                                    <button type="submit" class="btnSearch">검색</button>
+                                </div>
+                                <div class="mEmpty">
+                                    검색결과가 없습니다.
+                                </div>
+                                <ul class="mForm typeThumb scroll1">
+                                    <li>
+                                        <label class="gLabel">
+                                            <input type="radio">
+                                            <span class="fLabel"><img src="../images/ico_channel_product.png" class="imgChannel" alt="">상품</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="gLabel">
+                                            <input type="radio">
+                                            <span class="fLabel"><img src="../images/ico_channel_facebook.png" class="imgChannel" alt="">페이스북페이스북페이스북페이스북페이스북</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="gLabel">
+                                            <input type="radio">
+                                            <span class="fLabel"><img src="../images/ico_channel_facebook.png" class="imgChannel" alt="">페이스북</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="gLabel">
+                                            <input type="radio">
+                                            <span class="fLabel"><img src="../images/ico_channel_instagram.png" class="imgChannel" alt="">인스타그램</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="gLabel">
+                                            <input type="radio">
+                                            <span class="fLabel"><img src="../images/ico_channel_kakaotalk.png" class="imgChannel" alt="">카카오톡</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="gLabel">
+                                            <input type="radio">
+                                            <span class="fLabel"><img src="../images/ico_channel_pinterest.png" class="imgChannel" alt="">핀터레스트</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="gLabel">
+                                            <input type="radio">
+                                            <span class="fLabel"><img src="../images/ico_channel_tumblr.png" class="imgChannel" alt="">텀블러</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="gLabel">
+                                            <input type="radio">
+                                            <span class="fLabel"><img src="../images/ico_channel_slack.png" class="imgChannel" alt="">슬랙</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="gLabel">
+                                            <input type="radio">
+                                            <span class="fLabel"><img src="../images/ico_channel_kakaostory.png" class="imgChannel" alt="">카카오스토리</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="gLabel">
+                                            <input type="radio" disabled>
+                                            <span class="fLabel"><img src="../images/ico_channel_facebook.png" class="imgChannel" alt="">회원</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="gLabel">
+                                            <input type="radio" disabled>
+                                            <span class="fLabel"><img src="../images/ico_channel_facebook.png" class="imgChannel" alt="">회원</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="gLabel">
+                                            <input type="radio" disabled>
+                                            <span class="fLabel"><img src="../images/ico_channel_facebook.png" class="imgChannel" alt="">회원</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="channelArea complete">
+                        <span class="step">2</span>
+                        <div class="mChannel typeAccordion selected">
+                            <div class="head">
+                                <span class="item">
+                                    채널 연결
+                                    <span class="txtReq">(필수)</span>
+                                </span>
+                                <span class="assist">사용할 쇼핑몰을 선택하세요</span>
+                                <button type="button" class="btnCover eAccordion"></button>
+                            </div>
+                            <div class="content">
+                                <div class="mEmpty">
+                                    채널이 연결되지 않았습니다.<br>연결 정보를 등록해주세요.
+                                </div>
+                                <ul class="mForm typeEdit">
+                                    <li class="edit"><!-- 참고: btnEdit 클릭시 .edit 부여, 저장버튼 클릭시 .edit 삭제  -->
+                                        <div class="gForm">
+                                            <label class="gLabel">
+                                                <input type="radio">
+                                                <span class="fLabel">영문몰456</span>
+                                            </label>
+                                            <button type="button" class="btnEdit eEdit">수정</button>
+                                            <span class="txtEm"><span class="icoSFIX icoCheck"></span> 정상</span>
+                                        </div>
+                                        <div class="gEdit">
+                                            <input type="text" class="fText" value="영문몰456">
+                                            <button type="button" class="btnNormal mini eSave">저장</button>
+                                            <button type="button" class="btnNormal mini eSave">취소</button>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="gForm">
+                                            <label class="gLabel">
+                                                <input type="radio">
+                                                <span class="fLabel">내가관리하는영문몰</span>
+                                            </label>
+                                            <button type="button" class="btnEdit eEdit">수정</button>
+                                            <button type="button" class="btnNormal mini">연결확인</button>
+                                        </div>
+                                        <div class="gEdit">
+                                            <input type="text" class="fText" value="내가관리하는영문몰">
+                                            <button type="button" class="btnNormal mini eSave">저장</button>
+                                            <button type="button" class="btnNormal mini eSave">취소</button>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="gForm">
+                                            <label class="gLabel">
+                                                <input type="radio">
+                                                <span class="fLabel">중문몰</span>
+                                            </label>
+                                            <button type="button" class="btnEdit eEdit">수정</button>
+                                            <span class="txtEm"><span class="icoSFIX icoCheck"></span> 정상</span>
+                                        </div>
+                                        <div class="gEdit">
+                                            <input type="text" class="fText" value="중문몰">
+                                            <button type="button" class="btnNormal mini eSave">저장</button>
+                                            <button type="button" class="btnNormal mini eSave">취소</button>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <a href="#none" target="_blank" class="btnRegister"><span class="icoSFIX icoAdd"></span> 연결정보 등록</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="channelArea complete">
+                        <span class="step">3</span>
+                        <div class="mChannel typeAccordion selected">
+                            <div class="head">
+                                <!-- 참고: 조건 선택 후
+                                <span class="item">
+                                    상품이 등록된 경우
+                                </span>
+                                <span class="value">상품이 등록될 때마다 조건이 충족됩니다.</span>
+                                -->
+                                <span class="item">
+                                    조건 선택
+                                    <span class="txtReq">(필수)</span>
+                                </span>
+                                <button type="button" class="btnCover eAccordion"></button>
+                            </div>
+                            <div class="content">
+                                <ul class="mForm typeText">
+                                    <li>
+                                        <label class="gLabel">
+                                            <input type="radio">
+                                            <span class="fLabel">
+                                                <strong class="title">상품이 등록된 경우</strong>
+                                                <span class="text">
+                                                    상품이 등록될 때마다 조건이 충족 됩니다.
+                                                </span>
+                                            </span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="gLabel">
+                                            <input type="radio">
+                                            <span class="fLabel">
+                                                <strong class="title">상품이 수정된 경우</strong>
+                                                <span class="text">
+                                                    상품이 수정될 때마다 조건이 충족됩니다. <br class="RMB">'상품 수정'으로 판단할 기준도 설정할 수 있습니다.
+                                                </span>
+                                            </span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="gLabel">
+                                            <input type="radio">
+                                            <span class="fLabel">
+                                                <strong class="title">상품이 삭제된 경우</strong>
+                                            </span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="gLabel">
+                                            <input type="radio">
+                                            <span class="fLabel">
+                                                <strong class="title">특정 상품이 조회되는 경우</strong>
+                                                <span class="text">
+                                                    레시피에 설정한 조건에 부합되는 상품이 조회될 때마다 조건이 충족됩니다.<br>(15분마다 체크)
+                                                </span>
+                                            </span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="channelArea">
+                        <span class="step">4</span>
+                        <div class="mChannel typeAccordion selected">
+                            <div class="head">
+                                <span class="item">
+                                    상세 설정
+                                    <span class="txtReq">(필수)</span>
+                                </span>
+                                <button type="button" class="btnCover eAccordion"></button>
+                            </div>
+                            <div class="content">
+                                <div class="mWrite">
+                                    <ul>
+                                        <li>
+                                            <div class="item">
+                                                <strong class="title">쇼핑몰</strong>
+                                                <span class="txtReq">(필수)</span>
+                                                <p class="txtInfo">어떤 쇼핑몰에서 발생한 조건인지 선택하세요.</p>
+                                            </div>
+                                            <div class="detail">
+                                                <select class="fSelect eSelect">
+                                                    <option>기본(디폴트) (한국어)</option>
+                                                    <option>한국어서브몰 (한국어)</option>
+                                                    <option>영문몰 (English)</option>
+                                                    <option>일문몰 (일본어)</option>
+                                                </select>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <strong class="title">필터 설정</strong>
+                                                <div class="mTooltip typeButton">
+                                                    <a href="#layerFilter3" class="btnTip eModal">도움말</a>
+                                                </div>
+                                            </div>
+                                            <div class="detail">
+                                                <div class="settingGroup">
+                                                    <strong class="title">그룹1</strong>
+                                                    <ul class="option">
+                                                        <li class="modify"><!-- .btnEdit클릭시 .modify 클래스 추가  -->
+                                                            <div class="gridSet">
+                                                                <div class="grid">
+                                                                    <select class="fSelect eSelect">
+                                                                        <option>상품분류</option>
+                                                                        <option>상품명</option>
+                                                                        <option>모델명</option>
+                                                                        <option>해시태그</option>
+                                                                        <option>상품설명</option>
+                                                                        <option>판매가</option>
+                                                                        <option>등등</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="grid bLeftS">
+                                                                    <select class="fSelect eSelect">
+                                                                        <option>포함</option>
+                                                                        <option>미포함</option>
+                                                                        <option>일치</option>
+                                                                        <option>비일치</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <p class="txtInfo">띄어쓰기 관계없이 입력한 단어가 포함 된 상품이 조회되면 조건이 충족됩니다.</p>
+                                                            <textarea cols="26" rows="3" class="fTextarea"></textarea>
+                                                            <div class="mButton">
+                                                                <button type="button" class="btnNormal mini">취소</button>
+                                                                <button type="button" class="btnNormal mini">확인</button>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="optionTitle">최소판매가 가나다라마바사</strong>
+                                                            <span class="optionValue">
+                                                                <span class="condition">미포함</span>
+                                                                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                                                            </span>
+                                                            <button type="button" class="btnEdit">수정</button>
+                                                            <button type="button" class="btnDelete">삭제</button>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="optionTitle">최소판매가</strong>
+                                                            <span class="optionValue">
+                                                                <span class="condition">일치</span>
+                                                                <span class="txtLight">미설정</span>
+                                                            </span>
+                                                            <button type="button" class="btnEdit">수정</button>
+                                                            <button type="button" class="btnDelete">삭제</button>
+                                                        </li>
+                                                    </ul>
+                                                    <button type="button" class="btnNormal full">
+                                                        <span class="icoSFIX icoAdd"></span> 설정 추가
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <button type="button" class="btnPoint bTopM full">
+                                                <span class="icoSFIX icoAdd"></span> 그룹 추가
+                                            </button>
+                                        </li>
+                                    </ul>
+                                    <div class="mButton typeFlex gBg">
+                                        <a href="#none" class="btnNormal">초기화</a>
+                                        <button type="button" class="btnEm">확인</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- //registerArea -->
+
+                <div class="registerArea"><!-- 참고: 스텝 진행시 .doing 클래스 추가, 스텝이 끝나면 .done -->
+                    <div class="channelHead">
+                        <strong class="badge"><span class="step">STEP2</span>실행</strong>
+                        <p class="desc">처리할 이벤트</p>
+                    </div>
+                    <div class="channelArea">
+                        <span class="step">1</span>
+                        <div class="mChannel typeAccordion disabled"><!-- 참고 : 버튼 클릭시 .selected 부여 , 전 스텝이 선택되지 않았을 경우 .disabled 부여 -->
+                            <div class="head">
+                                <span class="item">
+                                    채널 선택
+                                    <span class="txtReq">(필수)</span>
+                                </span>
+                                <button type="button" class="btnCover eAccordion"></button>
+                            </div>
+                            <div class="content">
+                                <div class="mSearch typeBg selected"><!-- 참고: 텍스트 입력중일 때 selected 추가 -->
+                                    <input type="search" class="fSearch" placeholder="채널검색">
+                                    <button type="button" class="btnDel">검색어 삭제</button>
+                                    <button type="submit" class="btnSearch">검색</button>
+                                </div>
+                                <div class="mEmpty">
+                                    검색결과가 없습니다.
+                                </div>
+                                <ul class="mForm typeThumb scroll1">
+                                    <li>
+                                        <label class="gLabel">
+                                            <input type="radio">
+                                            <span class="fLabel"><img src="../images/ico_channel_product.png" class="imgChannel" alt="">상품</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="gLabel">
+                                            <input type="radio">
+                                            <span class="fLabel"><img src="../images/ico_channel_facebook.png" class="imgChannel" alt="">페이스북</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="gLabel">
+                                            <input type="radio">
+                                            <span class="fLabel"><img src="../images/ico_channel_facebook.png" class="imgChannel" alt="">페이스북</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="gLabel">
+                                            <input type="radio" disabled>
+                                            <span class="fLabel"><img src="../images/ico_channel_facebook.png" class="imgChannel" alt="">주문</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="gLabel">
+                                            <input type="radio" disabled>
+                                            <span class="fLabel"><img src="../images/ico_channel_facebook.png" class="imgChannel" alt="">인스타그램</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="gLabel">
+                                            <input type="radio" disabled>
+                                            <span class="fLabel"><img src="../images/ico_channel_facebook.png" class="imgChannel" alt="">회원</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="channelArea">
+                        <span class="step">2</span>
+                        <div class="mChannel typeAccordion">
+                            <div class="head">
+                                <span class="item">
+                                    채널 연결
+                                    <span class="txtReq">(필수)</span>
+                                </span>
+                                <span class="assist">사용할 쇼핑몰을 선택하세요</span>
+                                <button type="button" class="btnCover eAccordion"></button>
+                            </div>
+                            <div class="content">
+                                <div class="mEmpty">
+                                    채널이 연결되지 않았습니다.<br>연결 정보를 등록해주세요.
+                                </div>
+                                <ul class="mForm typeEdit">
+                                    <li class="edit"><!-- 참고: btnEdit 클릭시 .edit 부여, 저장버튼 클릭시 .edit 삭제  -->
+                                        <div class="gForm">
+                                            <label class="gLabel">
+                                                <input type="radio">
+                                                <span class="fLabel">한국어몰</span>
+                                            </label>
+                                            <button type="button" class="btnEdit eEdit">수정</button>
+                                            <span class="txtEm"><span class="icoSFIX icoCheck"></span> 정상</span>
+                                        </div>
+                                        <div class="gEdit">
+                                            <input type="text" class="fText" value="한국어몰">
+                                            <button type="button" class="btnNormal mini eSave">저장</button>
+                                            <button type="button" class="btnNormal mini eSave">취소</button>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="gForm">
+                                            <label class="gLabel">
+                                                <input type="radio">
+                                                <span class="fLabel">한국어몰</span>
+                                            </label>
+                                            <button type="button" class="btnEdit eEdit">수정</button>
+                                            <button type="button" class="btnNormal mini">연결확인</button>
+                                        </div>
+                                        <div class="gEdit">
+                                            <input type="text" class="fText" value="한국어몰">
+                                            <button type="button" class="btnNormal mini eSave">저장</button>
+                                            <button type="button" class="btnNormal mini eSave">취소</button>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <a href="#none" target="_blank" class="btnRegister"><span class="icoSFIX icoAdd"></span> 연결정보 등록</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="channelArea">
+                        <span class="step">3</span>
+                        <div class="mChannel typeAccordion selected">
+                            <div class="head">
+                                 <span class="item">
+                                    사진첩에 사진 업로드
+                                </span>
+                                <span class="value">선택한 페이스북 사진첩에 사진을 업로드합니다.</span>
+                                <!-- 참고: 조건 선택 전
+                                 <span class="item">
+                                    조건 선택
+                                    <span class="txtReq">(필수)</span>
+                                </span>
+                                -->
+                                <button type="button" class="btnCover eAccordion"></button>
+                            </div>
+                            <div class="content">
+                                <ul class="mForm typeText">
+                                    <li>
+                                        <label class="gLabel">
+                                            <input type="radio">
+                                            <span class="fLabel">
+                                                <strong class="title">게시물 등록</strong>
+                                                <span class="text">
+                                                    텍스트로만 구성된 게시물을 등록합니다.
+                                                </span>
+                                            </span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="gLabel">
+                                            <input type="radio">
+                                            <span class="fLabel">
+                                                <strong class="title">사진첩에 사진 업로드</strong>
+                                                <span class="text">
+                                                    선택한 페이스북 사진첩에 사진을 업로드 합니다.
+                                                </span>
+                                            </span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="gLabel">
+                                            <input type="radio">
+                                            <span class="fLabel">
+                                                <strong class="title">링크가 포함된 게시물 등록</strong>
+                                                <span class="text">
+                                                    게시물 등록 시 URL을 포함해서 등록합니다.
+                                                </span>
+                                            </span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="gLabel">
+                                            <input type="radio">
+                                            <span class="fLabel">
+                                                <strong class="title">동영상 등록</strong>
+                                                <span class="text">
+                                                    공개된 URL에서 동영상을 가져와 페이스북에 업로드 합니다.
+                                                </span>
+                                            </span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 참고: 페이스북 > 상세 설정 >사진첩에 사진 업로드 -->
+                    <div class="channelArea error"><!-- 안에 error가 하나라도 있을 시 .error 추가  -->
+                        <span class="step">4</span>
+                        <div class="mChannel typeAccordion selected ">
+                            <div class="head">
+                                <span class="item">
+                                    상세 설정
+                                    <span class="txtReq">(필수)</span>
+                                </span>
+                                <button type="button" class="btnCover eAccordion"></button>
+                            </div>
+                            <div class="content">
+                                <div class="mWrite">
+                                    <ul>
+                                        <li>
+                                            <div class="item">
+                                                <strong class="title">사진첩</strong>
+                                                <span class="txtReq">(필수)</span>
+                                            </div>
+                                            <div class="detail">
+                                                <select class="fSelect eSelect error"><!-- 참고: 미선택시 .error 추가  -->
+                                                    <option>분류명1</option>
+                                                    <option>분류명2</option>
+                                                </select>
+                                                <p class="txtWarn txtInfo">사진첩을 선택해주세요.</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <strong class="title">사진 URL</strong>
+                                                <span class="txtReq">(필수)</span>
+                                                <p class="txtInfo">재료를 추가하거나, 누구나 접근할 수 있는 공개된 URL을 입력하면 사진을 가져와서 등록합니다.</p>
+                                            </div>
+                                            <div class="detail">
+                                                <textarea cols="26" rows="3" class="fTextarea error"></textarea><!-- 참고: 미입력시 .error 추가  -->
+                                                <div class="mButton">
+                                                    <div class="left">
+                                                        <a href="#none" class="btnNormal mini eMaterial"><span class="icoSFIX icoAdd"></span> 재료</a><!-- 참고: 클릭시 .active 추가 -->
+                                                    </div>
+                                                </div>
+                                                <?php require( $_SERVER['DOCUMENT_ROOT'].'/API/recipe/include/inc_material.html'); ?>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <strong class="title">내용</strong>
+                                                <span class="txtReq">(필수)</span>
+                                            </div>
+                                            <div class="detail">
+                                                <div class="fTextarea">
+                                                    <button type="button" class="btnMaterial">
+                                                        <img src="../images/ico_channel_product.png" alt="" class="imgMaterial">step1<span class="bar"></span>상품링크상품링크상품링크상품링크상품링크상품링크상품링크상품링크
+                                                    </button> [:DEFAULT|SHOP_NAME:] 를 하고 싶어요.
+                                                    <button type="button" class="btnMaterial">
+                                                        <img src="../images/ico_channel_person.png" alt="" class="imgMaterial">기본속성<span class="bar"></span>상품링크
+                                                    </button>
+                                                </div>
+                                                <div class="mButton">
+                                                    <div class="left">
+                                                        <a href="#layerEmpty" class="btnNormal mini eMaterial"><span class="icoSFIX icoAdd"></span> 재료</a><!-- 참고: 클릭시 .active 추가 -->
+                                                    </div>
+                                                </div>
+                                                <?php require( $_SERVER['DOCUMENT_ROOT'].'/API/recipe/include/inc_material.html'); ?>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <strong class="title">공개범위</strong>
+                                            </div>
+                                            <div class="detail">
+                                                <select class="fSelect eSelect">
+                                                    <option>전체</option>
+                                                    <option>친구의 친구</option>
+                                                    <option>친구만</option>
+                                                    <option>나만</option>
+                                                </select>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <strong class="title">실행시점</strong>
+                                            </div>
+                                            <div class="detail">
+                                                <div class="gridSet">
+                                                    <span class="bRightS">조건발생</span>
+                                                    <div class="grid">
+                                                        <select class="fSelect eSelect">
+                                                            <option>즉시</option>
+                                                            <option>30분 후</option>
+                                                            <option>1시간 후</option>
+                                                            <option>1시간 30분 후</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="mButton typeFlex gBg">
+                                        <a href="#none" class="btnNormal">초기화</a>
+                                        <button type="button" class="btnEm">확인</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- //참고: 페이스북 > 상세 설정 >사진첩에 사진 업로드 -->
+
+                    <div class="channelArea">
+                        <span class="step">5</span>
+                        <!-- 참고: 상품 > 상세 설정 > 상품 등록 -->
+                        <div class="mChannel typeAccordion selected">
+                            <div class="head">
+                                <span class="item">
+                                    상세 설정
+                                    <span class="txtReq">(필수)</span>
+                                </span>
+                                <button type="button" class="btnCover eAccordion"></button>
+                            </div>
+                            <div class="content">
+                                <div class="mWrite">
+                                    <ul>
+                                        <li>
+                                            <div class="item">
+                                                <strong class="title">상품명</strong>
+                                                <span class="txtReq">(필수)</span>
+                                            </div>
+                                            <div class="detail">
+                                                <textarea cols="26" rows="3" class="fTextarea"></textarea>
+                                                <div class="mButton">
+                                                    <div class="left">
+                                                        <a href="#none" class="btnNormal mini eMaterial"><span class="icoSFIX icoAdd"></span> 재료</a><!-- 참고: 클릭시 .active 추가 -->
+                                                    </div>
+                                                </div>
+                                                <?php require( $_SERVER['DOCUMENT_ROOT'].'/API/recipe/include/inc_material.html'); ?>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item">
+                                                <strong class="title">판매가</strong>
+                                                <span class="txtReq">(필수)</span>
+                                            </div>
+                                            <div class="detail">
+                                                <textarea cols="26" rows="3" class="fTextarea"></textarea>
+                                                <div class="mButton">
+                                                    <div class="left">
+                                                        <a href="#none" class="btnNormal mini eMaterial"><span class="icoSFIX icoAdd"></span> 재료</a><!-- 참고: 클릭시 .active 추가 -->
+                                                    </div>
+                                                </div>
+                                                <?php require( $_SERVER['DOCUMENT_ROOT'].'/API/recipe/include/inc_material.html'); ?>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="settingGroup">
+                                                <ul class="option">
+                                                    <li>
+                                                        <strong class="optionTitle">상품분류</strong>
+                                                        <span class="optionValue">진열안함</span>
+                                                        <button type="button" class="btnEdit">수정</button>
+                                                        <button type="button" class="btnDelete">삭제</button>
+                                                    </li>
+                                                    <li class="modify"><!-- .btnEdit클릭시 .modify 클래스 추가  -->
+                                                        <select class="fSelect eSelect">
+                                                            <option>상품분류</option>
+                                                            <option>모델명</option>
+                                                            <option>상품 검색어 (해시태그 설정)</option>
+                                                            <option>상품설명</option>
+                                                            <option>진열상태</option>
+                                                            <option>등등</option>
+                                                        </select>
+                                                        <p class="txtInfo">해당 상품을 쇼핑몰에 노출하려면 '진열함'으로 선택하세요</p>
+                                                        <select class="fSelect eSelect">
+                                                            <option>진열함</option>
+                                                            <option>진열안함</option>
+                                                        </select>
+                                                        <div class="mButton">
+                                                            <button type="button" class="btnNormal mini">취소</button>
+                                                            <button type="button" class="btnNormal mini">확인</button>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                <button type="button" class="btnNormal full">
+                                                    <span class="icoSFIX icoAdd"></span> 설정 추가
+                                                </button>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="mButton typeFlex gBg">
+                                        <a href="#none" class="btnNormal">초기화</a>
+                                        <button type="button" class="btnEm">확인</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- //참고: 상품 > 상세 설정 > 상품 등록 -->
+                </div><!-- //registerArea -->
+
+                <div class="removeStep">
+                    <a href="#layerModal" class="btnRemove eModal eRemove"></a>
+                </div>
+                <div class="registerArea doing"><!-- 참고: 스텝 진행시 .doing 클래스 추가, 스텝이 끝나면 .done -->
+                    <div class="channelHead">
+                        <strong class="badge"><span class="step">STEP2</span>실행</strong>
+                        <p class="desc">처리할 이벤트</p>
+                    </div>
+                    <div class="channelArea complete">
+                        <span class="step">1</span>
+                        <div class="mChannel typeAccordion disabled"><!-- 참고 : 버튼 클릭시 .selected 부여 , 전 스텝이 선택되지 않았을 경우 .disabled 부여 -->
+                            <div class="head">
+                                <span class="item">
+                                    채널 선택
+                                    <span class="txtReq">(필수)</span>
+                                </span>
+                                <button type="button" class="btnCover eAccordion"></button>
+                            </div>
+
+                            <div class="content">
+                                <div class="mSearch typeBg selected"><!-- 참고: 텍스트 입력중일 때 selected 추가 -->
+                                    <input type="search" class="fSearch" placeholder="채널검색">
+                                    <button type="button" class="btnDel">검색어 삭제</button>
+                                    <button type="submit" class="btnSearch">검색</button>
+                                </div>
+                                <div class="mEmpty">
+                                    검색결과가 없습니다.
+                                </div>
+                                <ul class="mForm typeThumb scroll1">
+                                    <li>
+                                        <label class="gLabel">
+                                            <input type="radio">
+                                            <span class="fLabel"><img src="../images/ico_channel_product.png" class="imgChannel" alt="">상품</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="gLabel">
+                                            <input type="radio">
+                                            <span class="fLabel"><img src="../images/ico_channel_facebook.png" class="imgChannel" alt="">페이스북</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="gLabel">
+                                            <input type="radio">
+                                            <span class="fLabel"><img src="../images/ico_channel_facebook.png" class="imgChannel" alt="">페이스북</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="gLabel">
+                                            <input type="radio" disabled>
+                                            <span class="fLabel"><img src="../images/ico_channel_facebook.png" class="imgChannel" alt="">주문</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="gLabel">
+                                            <input type="radio" disabled>
+                                            <span class="fLabel"><img src="../images/ico_channel_facebook.png" class="imgChannel" alt="">인스타그램</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="gLabel">
+                                            <input type="radio" disabled>
+                                            <span class="fLabel"><img src="../images/ico_channel_facebook.png" class="imgChannel" alt="">회원</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="channelArea complete">
+                        <span class="step">2</span>
+                        <div class="mChannel typeAccordion">
+                            <div class="head">
+                                <span class="item">
+                                    채널 연결
+                                    <span class="txtReq">(필수)</span>
+                                </span>
+                                <span class="assist">사용할 쇼핑몰을 선택하세요</span>
+                                <button type="button" class="btnCover eAccordion"></button>
+                            </div>
+                            <div class="content">
+                                <div class="mEmpty">
+                                    채널이 연결되지 않았습니다.<br>연결 정보를 등록해주세요.
+                                </div>
+                                <ul class="mForm typeEdit">
+                                    <li class="edit"><!-- 참고: btnEdit 클릭시 .edit 부여, 저장버튼 클릭시 .edit 삭제  -->
+                                        <div class="gForm">
+                                            <label class="gLabel">
+                                                <input type="radio">
+                                                <span class="fLabel">한국어몰</span>
+                                            </label>
+                                            <button type="button" class="btnEdit eEdit">수정</button>
+                                            <span class="txtEm"><span class="icoSFIX icoCheck"></span> 정상</span>
+                                        </div>
+                                        <div class="gEdit">
+                                            <input type="text" class="fText" value="한국어몰">
+                                            <button type="button" class="btnNormal mini eSave">저장</button>
+                                            <button type="button" class="btnNormal mini eSave">취소</button>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="gForm">
+                                            <label class="gLabel">
+                                                <input type="radio">
+                                                <span class="fLabel">한국어몰</span>
+                                            </label>
+                                            <button type="button" class="btnEdit eEdit">수정</button>
+                                            <button type="button" class="btnNormal mini">연결확인</button>
+                                        </div>
+                                        <div class="gEdit">
+                                            <input type="text" class="fText" value="한국어몰">
+                                            <button type="button" class="btnNormal mini eSave">저장</button>
+                                            <button type="button" class="btnNormal mini eSave">취소</button>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <a href="#none" target="_blank" class="btnRegister"><span class="icoSFIX icoAdd"></span> 연결정보 등록</a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- //registerArea -->
+
+                <div class="addArea">
+                    <div class="channelHead">
+                        <a href="#none" class="badge"></a>
+                        <p class="desc">
+                            실행 이벤트를 추가할 수 있습니다.
+                            <span class="txtInfo">이벤트는 순서대로 처리되며, 이전단계의 결과물을 재료로 활용할 수 있습니다.</span>
+                        </p>
+                    </div>
+                </div><!-- //addArea -->
+
+                <div class="mButton typeFlex">
+                    <a href="#none" class="btnNormal large">취소</a>
+                    <a href="#none" class="btnStrong large gWide disabled">다음</a>
+                </div>
+            </div>
+        </section>
+    </div>
+    <hr class="layout">
+    <footer id="footer">
+        <div class="inner">
+            <div class="util">
+                <a href="#none" class="menu"><strong>개인정보처리방침</strong></a>
+                <span class="bar"></span>
+                <a href="#none" class="menu">이용가이드</a>
+                <span class="bar"></span>
+                <a href="#none" class="menu">고객센터</a>
+                <span class="bar"></span>
+                <a href="#none" class="menu">채널제휴</a>
+                <span class="bar RWIB"></span>
+                <div class="menu familySite">
+                    <a href="#none" class="name eDropDown">관련사이트</a>
+                    <ul class="site">
+                        <li><a href="#none" class="link" target="_blank">My 쇼핑몰</a></li>
+                        <li><a href="#none" class="link" target="_blank">쇼핑몰관리자</a></li>
+                        <li><a href="#none" class="link" target="_blank">개발자센터</a></li>
+                        <li><a href="#none" class="link" target="_blank">마케팅센터</a></li>
+                        <li><a href="#none" class="link" target="_blank">교육센터</a></li>
+                    </ul>
+                </div>
+                <span class="bar RWIB"></span>
+                <a href="#layerLanguage" class="menu language eModal" title="언어변경"><span class="icoSFIX icoGlobal"></span> KOREAN</a>
+            </div>
+            <p class="copyright">Copyright&copy; Cafe24 corp. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <!-- 참고: header > 이용언어 -->
+    <div id="layerLanguage" class="mLayer typeModal">
+        <h2>이용언어</h2>
+        <div class="wrap useLanguage">
+            <p class="txtNotice">사이트 이용 시 사용할 언어를 선택하세요.<br>사용자가 입력한 문구는 변경되지 않습니다.</p>
+            <ul class="mForm typeLanguage">
+                <li><label class="gLabel"><input type="radio"><span class="fLabel">KOREAN</span></label></li>
+                <li><label class="gLabel"><input type="radio"><span class="fLabel">ENGLISH</span></label></li>
+                <li><label class="gLabel"><input type="radio"><span class="fLabel">JAPANESE</span></label></li>
+                <li><label class="gLabel"><input type="radio"><span class="fLabel">CHINESE (简体)</span></label></li>
+                <li><label class="gLabel"><input type="radio"><span class="fLabel">CHINESE (繁体)</span></label></li>
+            </ul>
+        </div>
+        <button type="button" class="btnClose eClose">닫기</button>
+    </div><!-- //참고: header > 이용언어 -->
+    <!-- 참고: 레시피 만들기 > 도움말 -->
+    <div id="layerRegister" class="mLayer gLarge">
+        <h2>도움말</h2>
+        <div class="wrap registerHelp">
+            <div class="mTab typeVer eTab">
+                <ul>
+                    <li class="selected"><a href="#tabCont1_1">레시피란?</a></li>
+                    <li><a href="#tabCont1_2">1. 조건 채널</a></li>
+                    <li><a href="#tabCont1_3">2. 조건 계정</a></li>
+                    <li><a href="#tabCont1_4">3. 조건 선택</a></li>
+                    <li><a href="#tabCont1_5">4. 필터</a></li>
+                    <li><a href="#tabCont1_6">5. 실행 채널</a></li>
+                    <li><a href="#tabCont1_7">6. 실행 계정</a></li>
+                    <li><a href="#tabCont1_8">7. 실행 선택</a></li>
+                </ul>
+            </div>
+            <div id="tabCont1_1" class="tabCont" style="display:block;">
+                <strong class="title">레시피(Recipe)란?</strong>
+                <span class="thumbnail">
+                    <img src="../images/img_help_register1.jpg" class="RW" alt="">
+                    <img src="../images/img_help_register1_m.jpg" class="RMB" alt="">
+                </span>
+                <p class="text">특정 "조건"이 발생될 때 원하는 동작을 <br>"실행"하도록 만들어 놓은 지시문입니다.</p>
+            </div>
+            <div id="tabCont1_2" class="tabCont" style="display:none;">
+                <strong class="title">1. 조건 채널선택</strong>
+                <span class="thumbnail">
+                    <img src="../images/img_help_register2.jpg" class="RW" alt="">
+                    <img src="../images/img_help_register2_m.jpg" class="RMB" alt="">
+                </span>
+                <p class="text">조건이 발생될 곳을 선택합니다.</p>
+            </div>
+            <div id="tabCont1_3" class="tabCont" style="display:none;">
+                <strong class="title">2. 조건 계정선택</strong>
+                <span class="thumbnail">
+                    <img src="../images/img_help_register3.jpg" class="RW" alt="">
+                    <img src="../images/img_help_register3_m.jpg" class="RMB" alt="">
+                </span>
+                <p class="text">채널에 사용할 계정을 연결후 선택합니다.<br>계정이 필요 없는 채널은 이 단계가 생략될 수 있습니다.</p>
+            </div>
+            <div id="tabCont1_4" class="tabCont" style="display:none;">
+                <strong class="title">3. 조건 선택</strong>
+                <span class="thumbnail">
+                    <img src="../images/img_help_register4.jpg" class="RW" alt="">
+                    <img src="../images/img_help_register4_m.jpg" class="RMB" alt="">
+                </span>
+                <p class="text">원하는 동작을 위하여 사전에 필요한 조건이 무엇인지 선택합니다.</p>
+            </div>
+            <div id="tabCont1_5" class="tabCont" style="display:none;">
+                <strong class="title">4. 필터</strong>
+                <span class="thumbnail">
+                    <img src="../images/img_help_register5.jpg" class="RW" alt="">
+                    <img src="../images/img_help_register5_m.jpg" class="RMB" alt="">
+                </span>
+                <p class="text">필터를 설정할 경우, 설정에 맞을 때에만 조건이 발생된 것으로 처리됩니다. 웹 사이트에서 어떤 내용을 검색할 때 원하는 결과를 얻기 위해 검색 조건을 강화하는 과정과 동일합니다.</p>
+            </div>
+            <div id="tabCont1_6" class="tabCont" style="display:none;">
+                <strong class="title">5. 실행 채널선택</strong>
+                <span class="thumbnail">
+                    <img src="../images/img_help_register6.jpg" class="RW" alt="">
+                    <img src="../images/img_help_register6_m.jpg" class="RMB" alt="">
+                </span>
+                <p class="text">원하는 동작이 실행될 곳을 선택합니다.</p>
+            </div>
+            <div id="tabCont1_7" class="tabCont" style="display:none;">
+                <strong class="title">6. 실행 계정</strong>
+                <span class="thumbnail">
+                    <img src="../images/img_help_register7.jpg" class="RW" alt="">
+                    <img src="../images/img_help_register7_m.jpg" class="RMB" alt="">
+                </span>
+                <p class="text">채널에 사용할 계정을 연결후 선택합니다.<br>계정이 필요 없는 채널은 이 단계가 생략될 수 있습니다.</p>
+            </div>
+            <div id="tabCont1_8" class="tabCont" style="display:none;">
+                <strong class="title">7. 실행 선택</strong>
+                <span class="thumbnail">
+                    <img src="../images/img_help_register8.jpg" class="RW" alt="">
+                    <img src="../images/img_help_register8_m.jpg" class="RMB" alt="">
+                </span>
+                <p class="text">해당 채널에서 실행 할 내용이 무엇인지 선택합니다.</p>
+            </div>
+            <div class="pager">
+                <button type="button" class="btnPrev">이전</button>
+                <button type="button" class="btnNext">다음</button>
+            </div>
+        </div>
+        <button type="button" class="btnClose eClose">닫기</button>
+    </div><!-- 참고: 레시피 만들기 > 도움말 -->
+    <!-- 참고: 등록 > 필터 설정 도움말 -->
+    <div id="layerFilter3" class="mLayer typeModal gLarge">
+        <h2>필터 설정 도움말</h2>
+        <div class="wrap filterHelp">
+            <div class="item">
+                <div class="gridSet top">
+                    <div class="grid">
+                        <strong class="title">1. 설정추가 (AND) </strong>
+                        <p class="text">해당 설정까지 모두 부합되는 데이터가 <br class="RMB">있을 때만 <br class="RW">조건이 발생한 것으로 처리</p>
+                    </div>
+                    <img src="../images/img_diagram_and.png" alt="" class="diagram">
+                </div>
+                <div class="figure">
+                    <img src="../images/img_filter_and.jpg" width="598" height="247" alt="" class="imgHelp RWF">
+                    <img src="../images/img_filter_and_m.jpg" width="313" height="174" alt="" class="imgHelp RMF">
+                    설정A : 다리가 4개인 동물 토끼, 거북이, 개
+                    설정B : 종류가 파충류인 동물 거북이, 뱀
+                    결과 C : 설정A와 설정B를 모두 만족하는 것은 거북이 입니다.
+                </div>
+            </div>
+            <div class="item">
+                <div class="gridSet top">
+                    <div class="grid">
+                        <strong class="title">2. 그룹추가 (OR)</strong>
+                        <p class="text">각 그룹 중에서 부합된 결과가 <br class="RMB">단 하나라도 있을 때 <br class="RW">조건 발생으로 처리</p>
+                    </div>
+                    <img src="../images/img_diagram_or.png" alt="" class="diagram">
+                </div>
+                <div class="figure">
+                    <img src="../images/img_filter_or.jpg" width="598" height="247" alt="" class="imgHelp RWF">
+                    <img src="../images/img_filter_or_m.jpg" width="313" height="174" alt="" class="imgHelp RMF">
+                    그룹A : 다리가 4개인 동물 토끼, 거북이, 개
+                    그룹B : 종류가 파충류인 동물 거북이, 뱀
+                    결과 C : 그룹A 또는 그룹B에 해당하는 것은 토끼, 거북이, 개, 뱀 입니다.
+                </div>
+            </div>
+            <div class="item addition">
+                <strong class="title">참고사항</strong>
+                <ul class="mList typeInfo">
+                    <li>필수 조건을 만족한 데이터에 필터 설정이 적용됩니다.</li>
+                    <li>그룹 내의 항목간에도 1번과 같이 AND 조건을 추가할 수 있습니다.</li>
+                </ul>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="mButton typeFlex gBg">
+                <button type="button" class="btnNormal">닫기</button>
+            </div>
+        </footer>
+        <button type="button" class="btnClose eClose">닫기</button>
+    </div><!-- //참고: 알림 > 필터 설정 도움말 -->
+    <!-- 참고: 재료 추가 > 입력값에 대한 결과 없음 -->
+    <div id="layerEmpty" class="mLayer typeMaterial">
+        <h2>재료 추가</h2>
+        <div class="wrap">
+            <div class="mSearch typeBg selected"><!-- 참고: 텍스트 입력중일 때 selected 추가 -->
+                <input type="search" class="fSearch" placeholder="모든 재료 검색">
+                <button type="button" class="btnDel">검색어 삭제</button>
+                <button type="submit" class="btnSearch">검색</button>
+            </div>
+            <div class="mEmpty typeResult">
+                <strong class="txtStrong">"$입력값"에 대한 결과가 없습니다.</strong>
+                다른 검색어로 재료를 찾아보세요.
+            </div>
+        </div>
+        <button type="button" class="btnClose eClose">닫기</button>
+    </div><!-- //참고: 재료 추가 > 입력값에 대한 결과 없음 -->
+    <!-- 참고: 레시피 등록 > 스텝 삭제 -->
+    <div id="layerModal" class="mLayer typeModal">
+        <div class="wrap">
+            <p class="txtMsg">실행 이벤트를 삭제하시겠습니까?</p>
+        </div>
+        <footer class="footer">
+            <div class="mButton typeFlex gBg">
+                <a href="#none" class="btnNormal eClose">취소</a>
+                <button type="button" class="btnEm">삭제</button>
+            </div>
+        </footer>
+    </div><!-- //참고: 레시피 등록 > 스텝 삭제 -->
+</div>
+<script type="text/javascript" src="../js/jquery-1.12.1.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui.js"></script>
+<script type="text/javascript" src="../js/lightslider.js"></script>
+<script type="text/javascript" src="../js/ui.js"></script>
+<script type="text/javascript" src="../js/ui_layout.js"></script>
+<script type="text/javascript" src="../js/ui_main.js"></script>
+<script type="text/javascript" src="../js/ui_content_register.js"></script>
+<script type="text/javascript" src="../js/ui_content_my.js"></script>
+<script type="text/javascript" src="../js/ui_content_setting.js"></script>
+<script type="text/javascript" src="../js/ui_content_search.js"></script>
+<script type="text/javascript" src="../js/ui_content_customer.js"></script>
+<script type="text/javascript" src="https://img.echosting.cafe24.com/js/plugin/selectPack.js"></script>
+</body>
+</html>

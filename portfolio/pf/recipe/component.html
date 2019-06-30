@@ -1,0 +1,2025 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>레시피</title>
+    <link rel="shortcut icon" type="image/x-icon" href="//m-img.cafe24.com/images/bi/cafe24/recipe.ico" />
+    <link rel="stylesheet" type="text/css" href="css/font/notosans.css" media="all">
+    <link rel="stylesheet" type="text/css" href="css/common.css" media="all">
+</head>
+<body>
+<div id="wrap"><!-- 참고 : 메뉴 버튼 클릭시 .sideExpand 추가 -->
+    <nav id="skipNavigation">
+        <a href="#sidebar">대메뉴 바로가기</a>
+        <a href="#content">본문 바로가기</a>
+    </nav>
+    <hr class="layout">
+    <header id="header" role="banner">
+        <div class="inner">
+            <h1 class="logo">
+                <a href="#none">
+                    <img src="images/h1_logo_recipe_m.png" width="135" alt="카페24 레시피" class="RMB">
+                    <img src="images/h1_logo_recipe.png" width="177" alt="카페24 레시피" class="RW">
+                </a>
+            </h1>
+            <nav class="gnb">
+                <ul>
+                    <li class="RW"><a href="#none" class="navSearch">검색</a></li>
+                    <li><a href="#none" class="navManage">레시피 관리</a></li>
+                    <li><a href="#none" class="navAlarm">알림<span class="number">1</span></a></li>
+                </ul>
+            </nav>
+            <div class="userInfo RW">
+                <a href="#none" class="user eDropDown">
+                    <span class="thumbnail">
+                        <!-- 참고 : 프로필 이미지가 있을 경우 -->
+                        <img src="//s.pstatic.net/shopping.phinf/20180103_8/7967fef6-4fd4-44d5-b1f5-f68beec7a78a.jpg" alt="" class="image"><!-- //참고 -->
+                    </span>
+                    홍길동님(hong2341)
+                </a>
+                <div class="info">
+                    <nav class="menu">
+                        <ul>
+                            <li><a href="#none" class="navProfile">프로필</a></li>
+                            <li><a href="#none" class="navChannel">채널 연결 관리</a></li>
+                            <li><a href="#none" class="navCs">고객센터</a></li>
+                            <li><a href="#none" class="navGuide">이용가이드</a></li>
+                        </ul>
+                    </nav>
+                    <div class="button">
+                        <a href="#none" class="btnLogout"><span class="icoSFIX icoLogout"></span> 로그아웃</a>
+                        <a href="#layerLanguage" class="btnLanguage eModal" title="언어선택"><span class="icoSFIX icoGlobal"></span> KOREAN</a>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="btnMake RW">레시피 만들기</button>
+            <button type="button" class="btnMenu RMB eMenu"></button>
+        </div>
+    </header>
+    <div id="container" class="">
+        <div id="sidebar">
+            <div class="userInfo">
+                <span class="thumbnail">
+                     <!-- 참고 : 프로필 이미지가 있을 경우
+                    <img src="//s.pstatic.net/shopping.phinf/20180103_8/7967fef6-4fd4-44d5-b1f5-f68beec7a78a.jpg" alt="" class="image">
+                     -->
+                </span>
+                홍길동(honghongid) 님
+            </div>
+            <nav class="lnb">
+                <ul>
+                    <li>
+                        <a href="#none" class="navAlarm">알림<span class="number">24</span></a>
+                    </li>
+                    <li><a href="#none" class="navSearch">레시피 검색</a></li>
+                    <li><a href="#none" class="navManage">레시피 관리</a></li>
+                    <li><a href="#none" class="navMake">레시피 만들기</a></li>
+                    <li><a href="#none" class="navProfile">프로필</a></li>
+                    <li><a href="#none" class="navChannel">채널 연결 관리</a></li>
+                    <li><a href="#none" class="navCs">고객센터</a></li>
+                    <li><a href="#none" class="navGuide">이용가이드</a></li>
+                </ul>
+            </nav>
+            <a href="#layerLanguage" class="btnLanguage eModal" title="언어선택"><span class="icoSFIX icoGlobal"></span> KOREAN</a>
+            <a href="#none" class="btnLogout"><span class="icoSFIX icoLogout"></span> 로그아웃</a>
+            <button type="button" class="btnClose eClose">닫기</button>
+        </div>
+        <style>
+            .mChannel:first-child { margin-top:16px; }
+            .mChannel > .inner { padding:16px; border-top:1px solid #e5e5e5; }
+            #contents .mTab.typeNav { position:static; }
+            #contents .mTab.typeNav ul { width:100%; }
+            .txtTitle { display:block; margin:10px 0; font-size:13px; font-weight:400; }
+            .txtStrong { font-weight:500; }
+        </style>
+        <section id="contents">
+            <div class="innerContents">
+                <div class="mChannel">
+                    <div class="head">
+                        <div class="txtStrong">아이콘 | icon </div>
+                    </div>
+                    <div class="inner">
+                        icoAdd: <span class="icoSFIX icoAdd"></span><br><br>
+                        icoFilter: <span class="icoSFIX icoFilter"></span><br><br>
+                        icoArrow: <span class="icoSFIX icoArrow"></span><br><br>
+                        icoDiscard: <span class="icoSFIX icoDiscard"></span><br><br>
+                        icoLock: <span class="icoSFIX icoLock"></span><br><br>
+                        icoCheck: <span class="icoSFIX icoCheck"></span><br><br>
+                        icoDirect: <span class="icoSFIX icoDirect" style="background-color:#716df6"></span><br><br>
+                        icoDirect2: <span class="icoSFIX icoDirect2" style="background-color:#716df6"></span><br><br>
+                        icoDirect3: <span class="icoSFIX icoDirect3"></span><br><br>
+                        icoDirect4: <span class="icoSFIX icoDirect4" style="background-color:#716df6"></span><br><br>
+                        icoDirect5: <span class="icoSFIX icoDirect5"></span><br><br>
+                        icoDirect6: <span class="icoSFIX icoDirect6"></span><br><br>
+                        icoFold: <span class="icoSFIX icoFold"></span><br><br>
+                        active icoFold: <span class="active" style="background-color:#716df6"><span class="icoSFIX icoFold"></span></span><br><br>
+                        icoCancel: <span class="icoSFIX icoCancel"></span><br><br>
+                        icoProhibit: <span class="icoSFIX icoProhibit"></span><br><br>
+                        icoGlobal: <span class="icoSFIX icoGlobal"></span><br><br>
+                        icoLogout: <span class="icoSFIX icoLogout" style="background-color:#716df6"></span><br><br>
+                        icoView: <span class="icoSFIX icoView"></span><br><br>
+                        icoRefer: <span class="icoSFIX icoRefer"></span><br><br>
+                        icoPrev: <span class="icoSFIX icoPrev"></span><br><br>
+                        icoNext: <span class="icoSFIX icoNext"></span><br><br>
+                        icoNotice: <span class="icoSFIX icoNotice"></span><br><br>
+                    </div>
+                </div>
+                <div class="mChannel">
+                    <div class="head">
+                        <div class="txtStrong">상태표시 | status icon </div>
+                    </div>
+                    <div class="inner">
+                        icon: 레시피OFF <span class="icon"><span class="icoOFF">레시피OFF</span></span><br><br>
+                        icon success: 성공 <span class="icon success"><span class="icoSuccess">성공</span></span> 채널연결
+                        <span class="icon success"><span class="icoConnect">채널연결</span></span><br><br>
+                        icon fail: 실패 <span class="icon fail"><span class="icoFail">실패</span></span>
+                        삭제 <span class="icon fail"><span class="icoRemove">삭제</span></span>
+                        채널 연결 해제 <span class="icon fail"><span class="icoRelease">채널연결해제</span></span><br><br>
+                        icon great: 레시피ON <span class="icon great"><span class="icoON">레시피ON</span></span><br><br>
+                        icon fine: 채널 연결정보 수정 <span class="icon fine"><span class="icoCorrect">채널 연결정보 수정</span></span>
+                        레시피 수정 <span class="icon fine"><span class="icoEdit">레시피 수정</span></span><br><br>
+                    </div>
+                </div>
+                <div class="mChannel">
+                    <div class="head">
+                        <div class="txtStrong">텍스트 | text</div>
+                    </div>
+                    <div class="inner">
+                        txtNormal: <span class="txtNormal">#666</span><br><br>
+                        txtEm: <span class="txtEm">#716df6</span><br><br>
+                        txtLight: <span class="txtLight">#888</span><br><br>
+                        txtWarn: <span class="txtWarn">#ce1414</span><br><br>
+                        txtInfo: <span class="txtInfo">color:#b5b5b5; font-size:12px;</span><br><br>
+                        txtReq: <span class="txtReq">color:#ff6600; font-size:12px;</span><br><br>
+                        txtStrong: <span class="txtStrong">color:#333; font-size:17px;</span><br><br>
+                        txtTotal: <span class="txtTotal">#333 미확인 알림개수</span><br><br>
+                        txtStatus: <span class="txtStatus">[조건]</span><br><br>
+                        txtStatus.success: <span class="txtStatus success">[성공]</span><br><br>
+                        txtStatus .success: <span class="txtStatus"><span class="success">[성공]</span> 사유</span><br><br>
+                        txtStatus.fail: <span class="txtStatus fail">[실패]</span><br><br>
+                        txtStatus .fail: <span class="txtStatus"><span class="fail">[실패]</span> 사유</span><br><br>
+                        txtWarn + txtInfo: <span class="txtWarn txtInfo">사진첩을 선택해주세요.</span><br><br>
+                        txtNotice: <span class="txtNotice">사진첩을 선택해주세요.</span>
+                    </div>
+                </div>
+                <div class="mChannel">
+                    <div class="head">
+                        <div class="txtStrong">폼 | form</div>
+                    </div>
+                    <div class="inner">
+                        <strong class="txtTitle">mText</strong>
+                        <span class="mText">
+                            <input type="text" class="fText" value="mText > fText">
+                        </span>
+                        <span class="mText bTopS">
+                            <input type="text" class="fText error" value="mText > fText">
+                        </span>
+                        <br>
+                        <strong class="txtTitle">fTextarea</strong>
+                        <textarea cols="26" rows="3" class="fTextarea">기본값은 100%, 상황에 맞게 width값을 인라인으로 주세요</textarea>
+                        <textarea cols="26" rows="3" class="fTextarea error bTopS">기본값은 100%, 상황에 맞게 width값을 인라인으로 주세요</textarea>
+                        <strong class="txtTitle">div.fTextarea : 재료선택에서 쓰인다. </strong>
+                        <div class="fTextarea">
+                            <button type="button" class="btnMaterial">
+                                <img src="images/ico_channel_product.png" alt="" class="imgMaterial">step1<span class="bar"></span>상품링크상품링크상품링크상품링크상품링크상품링크상품링크상품링크
+                            </button> [:DEFAULT|SHOP_NAME:] 를 하고 싶어요.
+                            <button type="button" class="btnMaterial">
+                                <img src="images/ico_channel_person.png" alt="" class="imgMaterial">기본속성<span class="bar"></span>상품링크
+                            </button>
+                        </div>
+                        <br><br>
+                        <strong class="txtTitle">드롭박스</strong>
+                        <select class="fSelect eSelect">
+                            <option>셀렉트 박스</option>
+                            <option>셀렉트 박스</option>
+                            <option>셀렉트 박스</option>
+                            <option>셀렉트 박스</option>
+                        </select>
+                        <select class="fSelect eSelect error">
+                            <option>셀렉트 박스</option>
+                            <option>셀렉트 박스</option>
+                            <option>셀렉트 박스</option>
+                            <option>셀렉트 박스</option>
+                        </select>
+                        <br><br>
+                        <strong class="txtTitle">라디오버튼</strong>
+                        <div class="mForm">
+                            <label class="gLabel">
+                                <input type="radio" class="fRadio" checked>
+                                <span class="fLabel">
+                                    라디오
+                                </span>
+                            </label>
+                            <label class="gLabel">
+                                <input type="radio" class="fRadio">
+                                <span class="fLabel">
+                                    라디오
+                                </span>
+                            </label>
+                        </div>
+                        <strong class="txtTitle">체크박스</strong>
+                        <div class="mForm">
+                            <label class="gLabel">
+                                <input type="checkbox" class="fCheck" checked>
+                                <span class="fLabel">
+                                    체크박스
+                                </span>
+                            </label>
+                            <label class="gLabel">
+                                <input type="checkbox" class="fCheck">
+                                <span class="fLabel">
+                                    체크박스
+                                </span>
+                            </label>
+                        </div>
+                        <br>
+                        <strong class="txtTitle">토글형</strong>
+                        <label class="gSwitch">
+                            <input type="checkbox" class="fSwitch">
+                            <span class="fLabel"></span>
+                        </label>
+                        <br><br>
+                        <div class="fCalendar">
+                            <input type="text" value="2017.08.08" class="datepicker">
+                        </div>
+
+                        <strong class="txtTitle">PC : datepicker 사용</strong>
+                        <!-- 참고: PC -->
+                        <div class="mForm typeCalendar">
+                            <span class="fCalendar">
+                                <input type="text" value="2017.08.08" class="datepicker">
+                            </span>
+                            <span class="bar">-</span>
+                            <span class="fCalendar">
+                                <input type="text" value="2017.08.08" class="datepicker">
+                            </span>
+                        </div>
+                        <!-- //참고: PC -->
+
+                        <strong class="txtTitle">모바일 : input[type="date"]사용</strong>
+                        <div class="mForm typeCalendar">
+                            <span class="fCalendar">
+                                <input type="date">
+                            </span>
+                            <span class="bar">-</span>
+                            <span class="fCalendar">
+                            <input type="date">
+                        </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mChannel">
+                    <div class="head">
+                        <div class="txtStrong">검색폼 | mSearch</div>
+                    </div>
+                    <div class="inner">
+                        <div class="gridSet bBottomS">
+                            <div class="grid">
+                                <div class="mSearch"><!-- 참고: 텍스트 입력중일 때 selected 추가 -->
+                                    <input type="search" class="fSearch" placeholder="Search">
+                                    <button type="button" class="btnDel">검색어 삭제</button>
+                                    <button type="submit" class="btnSearch">검색</button>
+                                </div>
+                            </div>
+                            <a href="#none" class="btnFilter eLayerClick">필터적용</a>
+                        </div>
+
+                        <div class="mSearch selected"><!-- 참고: 텍스트 입력중일 때 selected 추가 -->
+                            <input type="search" class="fSearch" placeholder="Search">
+                            <button type="button" class="btnDel">검색어 삭제</button>
+                            <button type="submit" class="btnSearch">검색</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="mChannel">
+                    <div class="head">
+                        <div class="txtStrong">선택형 | mBubble</div>
+                    </div>
+                    <div class="inner">
+                        <strong class="bBottomS" style="display:block">default</strong>
+                        <div class="mBubble">
+                            <span class="bubble">
+                                #키워드
+                            </span>
+                            <span class="bubble">
+                                #키워드
+                            </span>
+                            <span class="bubble">
+                                #키워드
+                            </span>
+                        </div>
+                        <strong class="bBottomS" style="display:block">default_button</strong>
+                        <div class="mBubble">
+                            <button type="button" class="bubble">#키워드</button>
+                            <button type="button" class="bubble">#키워드는길어질수있음길어질수있음길어질수있음</button>
+                        </div>
+                        <strong>typeEdit</strong>
+                        <div class="mBubble typeEdit">
+                            <span class="bubble">
+                                #<input type="text" class="fBubble" value="키워드" style="width:50px;" readonly><button type="button" class="btnDel">삭제</button>
+                            </span>
+                            <span class="bubble">
+                                #<input type="text" class="fBubble" value="키워드" style="width:50px;" readonly><button type="button" class="btnDel">삭제</button>
+                            </span>
+                            <span class="bubble">
+                                #<input type="text" class="fBubble" value="키워드" style="width:300px;"><button type="button" class="btnDel">삭제</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mChannel">
+                    <div class="head">
+                        <div class="txtStrong">버튼 | button</div>
+                    </div>
+                    <div class="inner">
+                        <button type="button" class="btnNormal">btnNormal</button>
+                        <button type="button" class="btnEm">btnEm</button>
+                        <a href="#none" class="btnNormal">a태그 btnNormal</a><br><br>
+                        <button type="button" class="btnNormal"><span class="icoSFIX icoAdd"></span> btnNormal</button>
+                        <button type="button" class="btnPoint"><span class="icoSFIX icoAdd"></span> btnPoint</button>
+                        <p class="txtInfo">btnPoint에서 icoAdd는 보라색입니다.</p>
+                        <br>
+                        <button type="button" class="btnNormal mini">btnNormal mini</button>
+                        <button type="button" class="btnEm mini">btnEm mini</button>
+                        <button type="button" class="btnStrong mini">btnStrong mini</button><br><br>
+                        <button type="button" class="btnNormal large">btnNormal large</button>
+                        <button type="button" class="btnEm large">btnEm large</button>
+                        <button type="button" class="btnStrong large">btnStrong large</button><br><br>
+                        <button type="button" class="btnNormal full">btnNormal full</button>
+                        <button type="button" class="btnEm full">btnEm full</button>
+                        <button type="button" class="btnStrong full">btnStrong full</button>
+                        <button type="button" class="btnPoint full">btnPoint full</button>
+                        <p class="txtInfo">.full 은 100% 입니다. full버튼은 mButton안에 쓰지 않고 단독으로 씁니다.</p>
+                        <br>
+                        <button type="button" class="btnMore">btnMore 더보기 <span class="icoSFIX icoArrow"></span></button><br><br>
+                        <button type="button" class="btnFilter"></button><br><br>
+                        <a href="#none" target="_blank" class="btnOrigin">(origin 12)</a><br><br>
+                        <button type="button" class="btnLine"><span class="text">삭제하기</span></button><br><br>
+                        <button type="button" class="btnLine"><span class="icoSFIX icoDiscard"></span><span class="text">삭제하기</span></button>
+                    </div>
+                </div>
+                <div class="mChannel">
+                    <div class="head">
+                        <div class="txtStrong">mButton</div>
+                    </div>
+                    <div class="inner">
+                        <strong class="txtTitle">default</strong>
+                        <div class="mButton">
+                            <a href="#none" class="btnNormal">초기화</a>
+                            <button type="button" class="btnEm">확인</button>
+                        </div>
+                        <strong class="txtTitle">정렬</strong>
+                        <div class="mButton">
+                            <div class="left">
+                                <a href="#none" class="btnNormal">왼쪽</a>
+                            </div>
+                            <div class="right">
+                                <a href="#none" class="btnNormal">오른쪽</a>
+                            </div>
+                        </div>
+                        <strong class="txtTitle">typeControl</strong>
+                        <div class="mButton typeControl">
+                            <div class="right">
+                                <a href="#none" class="btnNormal">초기화</a>
+                            </div>
+                        </div>
+                        <strong class="txtTitle">typeFlex</strong>
+                        <ul class="txtInfo bBottomS">
+                            <li>모바일 : 버튼이 flex되어 100%/버튼의 갯수로 넓이값을 차지</li>
+                            <li>pc : min-width을 가진 일반 버튼으로 사용</li>
+                            <li>pc 하단에 위치하는 중요도 있는 버튼의 넓이가 너무 작은 이슈가 있어서 <span class="txtWarn">.gWide</span>를 넣어 pc에서 min-width가 240px인 버튼 생성</li>
+                        </ul>
+                        <div class="mButton typeFlex">
+                            <a href="#none" class="btnNormal">초기화</a>
+                            <button type="button" class="btnEm">확인</button>
+                            <button type="button" class="btnStrong gWide">다음</button>
+                        </div>
+
+                        <strong class="txtTitle">typeFlex + gBg </strong>
+                        <p class="txtInfo bBottomS">배경이 있을 때 <span class="txtWarn">.gBg</span> 사용</p>
+                        <div class="mButton typeFlex gBg">
+                            <a href="#none" class="btnNormal">초기화</a>
+                            <button type="button" class="btnEm">확인</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="mChannel">
+                    <div class="head">
+                        <div class="txtStrong">그리드 | gridSet</div>
+                    </div>
+                    <div class="inner">
+                        <div class="gridSet">
+                            <div class="grid left">왼쪽</div>
+                            <div class="grid right">오른쪽</div>
+                        </div>
+                        <div class="gridSet">
+                            <div class="grid"><button type="button" class="btnEm full">버튼</button></div>
+                            <a href="#layerFilter2" class="btnFilter eLayerClick">필터적용</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mChannel">
+                    <div class="head">
+                        <div class="txtStrong">여백 | blank</div>
+                    </div>
+                    <div class="inner">
+                        <p class="bTopS">bTopS : 모바일 상 여백 8px / PC 상 여백 10px</p>
+                        <p class="bTopM">bTopM : 모바일 상 여백 16px / PC 상 여백 20px</p>
+                        <p class="bTopL">bTopL : 모바일 상 여백 24px / PC 상 여백 30px</p>
+                        <p class="bLeftS">bLeftS : 모바일 좌 여백 8px / PC 좌 여백 10px</p>
+                        <p class="bLeftM">bLeftM : 모바일 좌 여백 16px / PC 좌 여백 20px</p>
+                        <p class="bLeftL">bLeftL : 모바일 좌 여백 24px / PC 좌 여백 30px</p>
+                        <p class="bRightS">bRightS : 모바일 우 여백 8px / PC 우 여백 10px</p>
+                        <p class="bRightM">bRightM : 모바일 우 여백 16px / PC 우 여백 20px</p>
+                        <p class="bRightL">bRightL : 모바일 우 여백 24px / PC 우 여백 30px</p>
+                        <p class="bBottomS">bBottomS : 모바일 하 여백 8px / PC 하 여백 10px</p>
+                        <p class="bBottomM">bBottomM : 모바일 하 여백 16px / PC 하 여백 20px</p>
+                        <p class="bBottomL">bBottomL : 모바일 하 여백 24px / PC 하 여백 30px</p>
+                    </div>
+                </div>
+                <div class="mChannel">
+                    <div class="head">
+                        <div class="txtStrong">탭 | mTab</div>
+                    </div>
+                    <div class="inner">
+                        <strong class="txtTitle">default</strong>
+                        <div class="mTab typeNav eTab">
+                            <ul>
+                                <li class="selected"><a href="#none">탭메뉴1</a></li>
+                                <li><a href="#none">탭메뉴2</a></li>
+                                <li><a href="#none">탭메뉴3</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="mChannel">
+                    <div class="head">
+                        <div class="txtStrong">테이블 | mBoard </div>
+                        <a href="alarm/history.html" target="_blank" class="btnOrigin">알림 &gt; 히스토리 &gt; 수정사항 확인</a><br>
+                        <a href="my/my_detail.html" target="_blank" class="btnOrigin">MY레시피 &gt; MY레시피 상세</a>
+                    </div>
+                    <div class="inner">
+                        <div class="mBoard">
+                            <table border="1">
+                                <caption>제목</caption>
+                                <colgroup>
+                                    <col style="width:80px;">
+                                    <col style="width:auto;">
+                                </colgroup>
+                                <thead>
+                                <tr>
+                                    <th colspan="2" scope="col">변경 전</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">제목</th>
+                                        <td>내용 내용 내용 내용 내용 내용 내용 내용</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">제목</th>
+                                        <td>내용 내용</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="mButton typeControl">
+                                <div class="right">
+                                    <a href="#none" class="btnNormal mini">히스토리</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mChannel">
+                    <div class="head">
+                        <div class="txtStrong">채널 | mChannel</div>
+                    </div>
+                    <a href="#none" class="summary">
+                        <ol class="mStep">
+                            <li><img src="images/ico_channel_product.png" class="imgChannel" alt=""></li>
+                            <li><img src="images/ico_channel_facebook.png" class="imgChannel" alt=""></li>
+                        </ol>
+                        <p class="subject">상품 등록된 경우 페이스북 게시물 등록</p>
+                    </a>
+                </div>
+
+                <div class="mChannel typeInfo">
+                    <div class="head">
+                        <span class="item">
+                            <img src="images/ico_channel_product.png" class="imgChannel" alt="">
+                            <span>
+                                채널  | mChannel typeInfo<br>
+                                <span class="txtStatus">상황에 대한 설명</span>
+                            </span>
+                        </span>
+                        <span class="value">선택에 대한 권한이 없이 읽기만 가능한 경우</span>
+                    </div>
+                </div>
+
+                <div class="mChannel typeAccordion selected">
+                    <div class="head">
+                        <div class="txtStrong">채널 아코디언 가로형 | mChannel typeAccordion</div>
+                        <button type="button" class="btnCover eAccordion"></button>
+                    </div>
+                    <div class="content">
+                       내용 노출
+                    </div>
+                    <a href="#none" class="summary">
+                        <ol class="mStep">
+                            <li><img src="images/ico_channel_product.png" class="imgChannel" alt=""></li>
+                            <li><img src="images/ico_channel_facebook.png" class="imgChannel" alt=""></li>
+                        </ol>
+                        <p class="subject">상품 등록된 경우 페이스북 게시물 등록</p>
+                    </a>
+                </div>
+
+                <div class="mChannel">
+                    <div class="head">
+                        <div class="txtStrong">mTimeline</div>
+                        <a href="my/my_detail.html" target="_blank" class="btnOrigin">MY레시피 &gt; MY레시피 상세</a><br>
+                        <a href="search/other_detail.html" target="_blank" class="btnOrigin">레시피 검색_검색 전 &gt; 레시피 상세(others)</a>
+                    </div>
+                    <div class="inner">
+                        <ul class="mTimeline">
+                            <li>
+                                <img src="images/ico_channel_product.png" class="imgChannel" alt="">
+                                <span class="item">
+                                    <strong class="title">상품</strong>
+                                    <span class="txtStatus">상품이 등록된 경우</span>
+                                </span>
+                            </li>
+                            <li>
+                                <img src="images/ico_channel_product.png" class="imgChannel" alt="">
+                                <span class="item">
+                                    <strong class="title">페이스북</strong>
+                                    <span class="txtStatus">게시물에 등록</span>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mChannel">
+                    <div class="head">
+                        <div class="txtStrong">mTimeline + typeStep</div>
+                        <a href="alarm/alarm.html" target="_blank" class="btnOrigin">알림 &gt; 알림</a><br>
+                    </div>
+                    <div class="inner">
+                        <ul class="mTimeline typeStep">
+                            <li>
+                                <strong class="badge"><span class="step">STEP1</span>조건</strong>
+                                <span class="item">
+                                    <strong class="title"><img src="images/ico_channel_product.png" class="imgChannel" alt="">상품</strong>
+                                    <span class="txtStatus">
+                                        <span class="success">[성공]</span> 상품이 등록된 경우 상품이 등록된 경우 상품이 등록된 경우 상품이 등록된 경우 상품이 등록된 경우 상품이 등록된 경우 상품이 등록된 경우
+                                        <a href="#layerMaterial" class="btnFold eLayerClick">재료</a>
+                                    </span>
+                                    <span class="date">2017. 08.07 14:45 :23</span>
+                                </span>
+                            </li>
+                            <li>
+                                <strong class="badge"><span class="step">STEP2</span>실행</strong>
+                                <span class="item">
+                                    <strong class="title"><img src="images/ico_channel_product.png" class="imgChannel" alt="">페이스북</strong>
+                                     <span class="txtStatus">
+                                         <span class="fail">[실패]</span> 인스타그램에 등록
+                                         <a href="#layerMaterial" class="btnFold eLayerClick">재료</a>
+                                    </span>
+                                    <span class="date">2017. 08.07 14:45 :23</span>
+                                    <span class="txtInfo bTopS"><span class="icon mini fail"><span class="icoFail">실패</span></span> 사유 : 계정이 유효하지 않습니다.</span>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mChannel">
+                    <div class="head">
+                        <div class="txtStrong">mForm typeThumb</div>
+                    </div>
+                    <div class="inner">
+                        <ul class="mForm typeThumb">
+                            <li>
+                                <label class="gLabel">
+                                    <input type="radio">
+                                    <span class="fLabel"><img src="images/ico_channel_product.png" class="imgChannel" alt="">상품</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="gLabel">
+                                    <input type="radio">
+                                    <span class="fLabel"><img src="images/ico_channel_facebook.png" class="imgChannel" alt="">페이스북페이스북페이스북페이스북페이스북</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="gLabel">
+                                    <input type="radio">
+                                    <span class="fLabel"><img src="images/ico_channel_facebook.png" class="imgChannel" alt="">페이스북</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="gLabel">
+                                    <input type="radio" disabled="">
+                                    <span class="fLabel"><img src="images/ico_channel_facebook.png" class="imgChannel" alt="">주문</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="gLabel">
+                                    <input type="radio" disabled="">
+                                    <span class="fLabel"><img src="images/ico_channel_facebook.png" class="imgChannel" alt="">인스타그램</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mChannel">
+                    <div class="head">
+                        <div class="txtStrong">mForm typeEdit</div>
+                        <a href="register/register.html" target="_blank" class="btnOrigin">레시피 등록 &gt; 등록 &gt; 채널연결</a><br>
+                        <a href="search/other_modify.html" target="_blank" class="btnOrigin">레시피 검색 &gt; 레시피 상세(others) &gt; 레시피 사용하기</a><br>
+                        <a href="my/my.html" target="_blank" class="btnOrigin">MY레시피 &gt; 레시피 관리 &gt; 그룹</a><br>
+                        <a href="setting/channel.html" target="_blank" class="btnOrigin">환경설정 &gt; 채널 연결 관리 &gt; mConnect</a><br>
+                    </div>
+                    <div class="inner">
+                        <ul class="mForm typeEdit">
+                            <li class="edit"><!-- 참고: btnEdit 클릭시 .edit 부여, 저장버튼 클릭시 .edit 삭제  -->
+                                <div class="gForm">
+                                    <label class="gLabel">
+                                        <input type="radio">
+                                        <span class="fLabel">한국어몰</span>
+                                    </label>
+                                    <button type="button" class="btnEdit eEdit"></button>
+                                    <span class="txtEm"><span class="icoSFIX icoCheck"></span> 정상</span>
+                                </div>
+                                <div class="gEdit">
+                                    <input type="text" class="fText" value="한국어몰">
+                                    <button type="button" class="btnNormal mini eSave">저장</button>
+                                    <button type="button" class="btnNormal mini eSave">취소</button>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="gForm">
+                                    <label class="gLabel">
+                                        <input type="radio">
+                                        <span class="fLabel">한국어몰</span>
+                                    </label>
+                                    <button type="button" class="btnEdit eEdit"></button>
+                                    <button type="button" class="btnNormal mini">연결확인</button>
+                                </div>
+                                <div class="gEdit">
+                                    <input type="text" class="fText" value="한국어몰">
+                                    <button type="button" class="btnNormal mini eSave">저장</button>
+                                    <button type="button" class="btnNormal mini eSave">취소</button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mChannel">
+                    <div class="head">
+                        <div class="txtStrong">mForm typeText</div>
+                    </div>
+                    <div class="inner">
+                        <ul class="mForm typeText">
+                            <li>
+                                <label class="gLabel">
+                                    <input type="radio">
+                                    <span class="fLabel">
+                                        <strong class="title">상품이 등록된 경우</strong>
+                                        <span class="text">
+                                            상품이 등록될 때마다 조건이 충족 됩니다.
+                                        </span>
+                                    </span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="gLabel">
+                                    <input type="radio">
+                                    <span class="fLabel">
+                                        <strong class="title">상품이 수정된 경우</strong>
+                                        <span class="text">
+                                            상품이 수정될 때마다 조건이 충족됩니다.<br>'상품 수정'으로 판단할 기준도 설정할 수 있습니다.
+                                        </span>
+                                    </span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="gLabel">
+                                    <input type="radio">
+                                    <span class="fLabel">
+                                        <strong class="title">상품이 삭제된 경우</strong>
+                                    </span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="gLabel">
+                                    <input type="radio">
+                                    <span class="fLabel">
+                                        <strong class="title">특정 상품이 조회되는 경우</strong>
+                                        <span class="text">
+                                            레시피에 설정한 조건에 부합되는 상품이 조회될 때마다 조건이 충족됩니다.<br>(15분마다 체크)
+                                        </span>
+                                    </span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mChannel">
+                    <div class="head">
+                        <div class="txtStrong">mForm typeBubble</div>
+                    </div>
+                    <div class="inner">
+                        <ul class="mForm typeBubble">
+                            <li>
+                                <label class="gLabel">
+                                    <input type="radio">
+                                    <span class="fLabel">
+                                        처리자명
+                                    </span>
+                                </label>
+                                <span class="value">홍길동</span>
+                            </li>
+                            <li>
+                                <label class="gLabel">
+                                    <input type="radio">
+                                    <span class="fLabel">
+                                        처리자 이메일
+                                    </span>
+                                </label>
+                                <span class="value">honghong@cafe24.com</span>
+                            </li>
+                            <li>
+                                <label class="gLabel">
+                                    <input type="radio">
+                                    <span class="fLabel">
+                                       처리일시
+                                    </span>
+                                </label>
+                                <span class="value">2017-08-10  15:23</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mChannel">
+                    <div class="head">
+                        <div class="txtStrong">mForm typeButton</div>
+                    </div>
+                    <div class="inner">
+                        <ul class="mForm typeButton">
+                            <li>
+                                <label class="gLabel">
+                                    <input type="checkbox">
+                                    <span class="fLabel">전체</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="gLabel">
+                                    <input type="checkbox">
+                                    <span class="fLabel">레시피 ON</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="gLabel">
+                                    <input type="checkbox">
+                                    <span class="fLabel">레시피 OFF</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="gLabel">
+                                    <input type="checkbox">
+                                    <span class="fLabel">레시피등록</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="gLabel">
+                                    <input type="checkbox">
+                                    <span class="fLabel">레시피수정</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="gLabel">
+                                    <input type="checkbox">
+                                    <span class="fLabel">레시피삭제</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="gLabel">
+                                    <input type="checkbox">
+                                    <span class="fLabel">채널연결</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="gLabel">
+                                    <input type="checkbox">
+                                    <span class="fLabel">연결정보수정</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="gLabel">
+                                    <input type="checkbox">
+                                    <span class="fLabel">채널연결해제</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mChannel">
+                    <div class="head">
+                        <div class="txtStrong">mWrite</div>
+                    </div>
+                    <div class="inner">
+                        <div class="mWrite">
+                            <ul>
+                                <li>
+                                    <div class="item">
+                                        <strong class="title">사진첩</strong>
+                                        <span class="txtReq">(필수)</span>
+                                        <p class="txtInfo">보조설명입니다. 가나다라마바사 아자차차차차차차차차</p>
+                                    </div>
+                                    <div class="detail">
+                                        <select class="fSelect eSelect">
+                                            <option>분류명1</option>
+                                            <option>분류명2</option>
+                                        </select>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="item">
+                                        <strong class="title">내용</strong>
+                                    </div>
+                                    <div class="detail">
+                                        <textarea cols="26" rows="3" class="fTextarea"></textarea>
+                                        <div class="mButton">
+                                            <div class="left">
+                                                <a href="#layerSample" class="btnNormal mini eLayerClick"><span class="icoSFIX icoAdd"></span> 재료</a><!-- 참고: 클릭시 .active 추가 -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="item">
+                                        <strong class="title">공개범위</strong>
+                                    </div>
+                                    <div class="detail">
+                                        <select class="fSelect eSelect">
+                                            <option>전체</option>
+                                            <option>친구의 친구</option>
+                                            <option>친구만</option>
+                                            <option>나만</option>
+                                        </select>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="item">
+                                        <strong class="title">실행시점</strong>
+                                    </div>
+                                    <div class="detail">
+                                        <div class="gridSet">
+                                            <span class="bRightS">조건발생</span>
+                                            <div class="grid">
+                                                <select class="fSelect eSelect">
+                                                    <option>즉시</option>
+                                                    <option>30분 후</option>
+                                                    <option>1시간 후</option>
+                                                    <option>1시간 30분 후</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mChannel">
+                    <div class="head">
+                        <div class="txtStrong">팝업 | mLayer</div>
+                    </div>
+                    <div class="inner">
+                        <a href="#layerFilter" class="btnNormal eModal">모달팝업</a>
+                    </div>
+                </div>
+
+                <div class="mChannel">
+                    <div class="head">
+                        <div class="txtStrong">mDeveloper</div>
+                    </div>
+                    <div class="inner">
+                        <div class="mDeveloper">
+                            <span class="thumb">
+                                <img src="images/bg_thumb.png" alt="imgThumb">
+                            </span>
+                            <div class="info">
+                                <strong class="name">홍길동</strong>
+                                <p class="text">소개글소개글소개글소개글소개글소개글소개글소개글</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mChannel">
+                    <div class="head">
+                        <div class="txtStrong">mSetting</div>
+                    </div>
+                    <ul class="mSetting">
+                        <li>
+                            <strong class="title">사용여부</strong>
+                            <label class="gSwitch">
+                                <input type="checkbox" class="fSwitch">
+                                <span class="fLabel"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <strong class="title">실행 알림</strong>
+                            <label class="gSwitch">
+                                <input type="checkbox" class="fSwitch">
+                                <span class="fLabel"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <strong class="title">검색 공개여부</strong>
+                            <label class="gSwitch">
+                                <input type="checkbox" class="fSwitch">
+                                <span class="fLabel"></span>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mChannel">
+                    <div class="head">
+                        <div class="txtStrong">mInfo</div>
+                        <a href="search/search_empty.html" target="_blank" class="btnOrigin">레시피 검색_결과 없음</a><br>
+                        <a href="setting/channel_empty.html" target="_blank" class="btnOrigin">환경설정 &gt; 채널 연결 관리 &gt; 연결된 채널 없음</a><br>
+                        <a href="customer/guide.html" target="_blank" class="btnOrigin">고객센터 &gt; 이용가이드</a>
+                        <a href="error/error403.html" target="_blank" class="btnOrigin">error</a>
+                    </div>
+                    <div class="inner">
+                        <div class="mInfo">
+                            <img src="images/img_exclaim.png" alt="" width="120" class="imgInfo">
+                            <strong class="txtStrong">찾고있는 레시피가 없습니다.</strong>
+                            원하는 레시피를 직접 만들어보세요!
+                            <div class="mButton bTopL">
+                                <a href="#none" class="btnEm">레시피 만들기</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mChannel">
+                    <div class="head">
+                        <div class="txtStrong">mInfo typeFull</div>
+                        <p class="txtInfo">알림, 히스토리의 검색결과 없음에서 쓰이는 typeFull은 상단에 검색, 셀렉트 박스가 있어서 수직(vertical)중앙정렬을 위해 <span class="txtWarn">top값</span>이 다릅니다.</p>
+                        <p class="txtInfo"><span class="txtWarn">gClearTop</span>을 넣으면 top값이 조정됩니다.</p>
+                        <a href="alarm/alarm_empty.html" target="_blank" class="btnOrigin">알림 &gt; 검색결과 없음</a>
+                        <a href="common/loading_fail.html" target="_blank" class="btnOrigin">공통 &gt; 페이지 로딩중 &gt; 불러오기 실패</a>
+                    </div>
+                    <div class="inner" style="height:500px;">
+                        <style>
+                            .mInfo.typeFull { bottom:0; }
+                        </style>
+                        <div class="mInfo typeFull">
+                            <img src="images/img_exclaim.png" alt="" width="120" class="imgInfo">
+                            <strong class="txtStrong">찾고있는 레시피가 없습니다.</strong>
+                            원하는 레시피를 직접 만들어보세요!
+                            <div class="mButton bTopL">
+                                <a href="#none" class="btnEm">레시피 만들기</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mChannel">
+                    <div class="head">
+                        <div class="txtStrong">mInfo typeError</div>
+                        <a href="error/error403.html" target="_blank" class="btnOrigin">error</a>
+                    </div>
+                    <div class="inner">
+                        <div class="mInfo typeError">
+                            <img src="images/error/img_error403.png" alt="error403" width="340" class="imgInfo RW">
+                            <img src="images/error/img_error403_m.png" alt="error403" width="193" class="imgInfo RMB">
+                            <strong class="txtStrong">접근할 수 없는 페이지를<br class="RMB"> 요청하셨습니다.</strong>
+                            이곳에 접근하려면 권한이 필요합니다.<br>레시피 서비스로 이동하여 원하는 내용을 탐색해보세요.
+                            <div class="mButton bTopL">
+                                <a href="#none" class="btnStrong">레시피 메인화면 <span class="icoSFIX icoDirect2"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mChannel">
+                    <div class="head">
+                        <div class="txtStrong">mInfo typeText</div>
+                        <a href="alarm/alarm.html" target="_blank" class="btnOrigin">알림 &gt; 알림</a>
+                    </div>
+                    <div class="inner">
+                        <div class="mInfo typeText">
+                            <span class="text">
+                                <strong class="txtStrong txtEm">레시피 실행 내역이 없습니다.</strong>
+                                등록된 레시피의 사용여부를 확인해보세요.
+                            </span>
+                            <div class="button">
+                                <a href="#none" class="btnStrong mini">레시피관리 바로가기 <span class="icoSFIX icoDirect"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mChannel">
+                    <div class="head">
+                        <div class="txtStrong">mGroup</div>
+                        <a href="my/my.html" target="_blank" class="btnOrigin">MY레시피 &gt; 레시피 관리</a>
+                    </div>
+                    <div class="inner">
+                        <style>
+                            .groupArea { position:static; }
+                        </style>
+                        <div class="groupArea" >
+                            <button type="button" class="btnSetting eSetting">설정</button>
+                            <div class="mGroup">
+                            <div class="head">
+                                <strong class="name">전체 그룹</strong>
+                                <span class="count">15</span>
+                                <button type="button" class="btnCover eGroup"></button>
+                            </div>
+                            <div class="content">
+                                <ul class="mForm typeEdit">
+                                    <li>
+                                    <span class="gForm">
+                                        <label class="gLabel">
+                                            <input type="radio">
+                                            <span class="fLabel">
+                                                <span class="name">기본 그룹</span>
+                                                <span class="count">15</span>
+                                            </span>
+                                        </label>
+                                        <button type="button" class="btnEdit eEdit">수정</button>
+                                        <button type="button" class="btnDiscard">삭제</button>
+                                    </span>
+                                        <span class="gEdit">
+                                        <span class="fText" contenteditable="true">기본 그룹</span>
+                                        <button type="button" class="btnNormal mini eSave">저장</button>
+                                    </span>
+                                    </li>
+                                    <li>
+                                    <span class="gForm">
+                                        <label class="gLabel">
+                                            <input type="radio">
+                                            <span class="fLabel">
+                                                <span class="name">기본 그룹</span>
+                                                <span class="count">15</span>
+                                            </span>
+                                        </label>
+                                        <button type="button" class="btnEdit eEdit">수정</button>
+                                        <button type="button" class="btnDiscard">삭제</button>
+                                    </span>
+                                        <span class="gEdit">
+                                        <span class="fText" contenteditable="true">기본 그룹</span>
+                                        <button type="button" class="btnNormal mini eSave">저장</button>
+                                    </span>
+                                    </li>
+                                </ul>
+                                <button type="button" class="btnRegister"><span class="icoSFIX icoAdd"></span> 그룹 추가</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mChannel">
+                    <div class="head">
+                        <div class="txtStrong">mGroup typeGuide </div>
+                        <a href="customer/guide_detail.html" target="_blank" class="btnOrigin">고객센터 &gt; 이용가이드 &gt; 이용가이드 상세</a>
+                    </div>
+                    <div class="inner">
+                        <style>
+                            .groupArea { position:static; }
+                        </style>
+                        <div class="groupArea">
+                            <div class="mGroup typeGuide"><!-- 참고:btnCover 클릭시 .selected 추가 -->
+                                <div class="head">
+                                    <strong class="name">이용가이드</strong>
+                                    <button type="button" class="btnCover eGroup"></button>
+                                </div>
+                                <div class="content">
+                                    <div class="mSearch mini selected"><!-- 참고: 텍스트 입력중일 때 selected 추가 -->
+                                        <input type="search" class="fSearch" placeholder="가이드 찾기">
+                                        <button type="submit" class="btnSearch">검색</button>
+                                    </div>
+                                    PC에서는 열려있는것이 default, 모바일에서는 닫혀있는것이 default
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="mChannel">
+                    <div class="head">
+                        <div class="txtStrong">mGuide typeContent</div>
+                        <a href="customer/guide.html" target="_blank" class="btnOrigin">고객센터 &gt; 이용가이드</a>
+                    </div>
+                    <div class="inner">
+                        <nav class="mGuide typeContent">
+                            <div class="guide">
+                                <strong class="title">기본 가이드</strong>
+                                <div class="menu">
+                                    <ul>
+                                        <li class="selected"><a href="#none" class="link">레시피 서비스 소개</a></li><!-- 참고: 현재 페이지 selected 클래스 부여 -->
+                                        <li><a href="#none" class="link">레시피 만들기</a></li>
+                                        <li><a href="#none" class="link">레시피 관리</a></li>
+                                        <li><a href="#none" class="link">알림</a></li>
+                                        <li><a href="#none" class="link">히스토리</a></li>
+                                        <li><a href="#none" class="link">프로필</a></li>
+                                        <li><a href="#none" class="link">채널 연결 관리</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="guide">
+                                <strong class="title">채널 가이드</strong>
+                                <div class="menu">
+                                    <strong class="subject">카페24 솔루션</strong>
+                                    <ul>
+                                        <li><a href="#none" class="link">상품 관리</a></li>
+                                        <li><a href="#none" class="link">디자인 관리</a></li>
+                                        <li><a href="#none" class="link">고객 관리</a></li>
+                                    </ul>
+                                    <strong class="subject">Others</strong>
+                                    <ul>
+                                        <li><a href="#none" class="link">구글 Sheet</a></li>
+                                        <li><a href="#none" class="link">페이스북</a></li>
+                                        <li><a href="#none" class="link">텔레그램</a></li>
+                                        <li><a href="#none" class="link">날짜 &amp; 시간</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="mChannel">
+                    <div class="head">
+                        <div class="txtStrong">mGuide typeSnb</div>
+                        <a href="customer/guide_detail.html" target="_blank" class="btnOrigin">고객센터 &gt; 이용가이드 &gt; 이용가이드 상세</a>
+                    </div>
+                    <div class="inner">
+                        <nav class="mGuide typeSnb">
+                            <div class="guide">
+                                <strong class="title">기본 가이드</strong>
+                                <div class="menu">
+                                    <ul>
+                                        <li class="selected"><a href="#none" class="link">레시피 서비스 소개</a></li><!-- 참고: 현재 페이지 selected 클래스 부여 -->
+                                        <li><a href="#none" class="link">레시피 만들기</a></li>
+                                        <li><a href="#none" class="link">레시피 관리</a></li>
+                                        <li><a href="#none" class="link">알림</a></li>
+                                        <li><a href="#none" class="link">히스토리</a></li>
+                                        <li><a href="#none" class="link">프로필</a></li>
+                                        <li><a href="#none" class="link">채널 연결 관리</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="guide">
+                                <strong class="title">채널 가이드</strong>
+                                <div class="menu">
+                                    <strong class="subject">카페24 솔루션</strong>
+                                    <ul>
+                                        <li><a href="#none" class="link">상품 관리</a></li>
+                                        <li><a href="#none" class="link">디자인 관리</a></li>
+                                        <li><a href="#none" class="link">고객 관리</a></li>
+                                    </ul>
+                                    <strong class="subject">Others</strong>
+                                    <ul>
+                                        <li><a href="#none" class="link">구글 Sheet</a></li>
+                                        <li><a href="#none" class="link">페이스북</a></li>
+                                        <li><a href="#none" class="link">텔레그램</a></li>
+                                        <li><a href="#none" class="link">날짜 &amp; 시간</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="mChannel">
+                    <div class="head">
+                        <div class="txtStrong">mPaginate typeBoard</div>
+                        <a href="customer/guide.html" target="_blank" class="btnOrigin">고객센터 &gt; 이용가이드</a>
+                    </div>
+                    <div class="inner">
+                        <nav class="mGuide typeContent">
+                            <div class="guide">
+                                <strong class="title">기본 가이드</strong>
+                                <div class="menu">
+                                    <ul>
+                                        <li class="selected"><a href="#none" class="link">레시피 서비스 소개</a></li><!-- 참고: 현재 페이지 selected 클래스 부여 -->
+                                        <li><a href="#none" class="link">레시피 만들기</a></li>
+                                        <li><a href="#none" class="link">레시피 관리</a></li>
+                                        <li><a href="#none" class="link">알림</a></li>
+                                        <li><a href="#none" class="link">히스토리</a></li>
+                                        <li><a href="#none" class="link">프로필</a></li>
+                                        <li><a href="#none" class="link">채널 연결 관리</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="guide">
+                                <strong class="title">채널 가이드</strong>
+                                <div class="menu">
+                                    <strong class="subject">카페24 솔루션</strong>
+                                    <ul>
+                                        <li><a href="#none" class="link">상품 관리</a></li>
+                                        <li><a href="#none" class="link">디자인 관리</a></li>
+                                        <li><a href="#none" class="link">고객 관리</a></li>
+                                    </ul>
+                                    <strong class="subject">Others</strong>
+                                    <ul>
+                                        <li><a href="#none" class="link">구글 Sheet</a></li>
+                                        <li><a href="#none" class="link">페이스북</a></li>
+                                        <li><a href="#none" class="link">텔레그램</a></li>
+                                        <li><a href="#none" class="link">날짜 &amp; 시간</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="mChannel">
+                    <div class="head">
+                        <div class="txtStrong">mPaginate typeBoard</div>
+                        <a href="customer/guide_detail.html" target="_blank" class="btnOrigin">고객센터 &gt; 이용가이드 &gt; 이용가이드 상세</a><br>
+                        <a href="customer/notice_detail.html" target="_blank" class="btnOrigin">고객센터 &gt; 공지사항 &gt; 공지사항 상세</a>
+                    </div>
+                    <div class="inner">
+                        <div class="mPaginate typeBoard">
+                            <table border="1">
+                                <caption>가이드 상세 이전 다음</caption>
+                                <colgroup>
+                                    <col class="col">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                <tr>
+                                    <td><span class="icoSFIX icoPrev"></span> 이전</td>
+                                    <td>
+                                        <span class="page">
+                                            <span class="txtLabel success">안내</span>
+                                            <a href="#none">서버교체 작업에 따로 서비스 일시 중단 안내의 건서버교체 작업에 따로 서비스 일시 중단 안내의 건서버교체 작업에 따로 서비스 일시 중단 안내의 건</a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="icoSFIX icoNext"></span> 다음</td>
+                                    <td>
+                                        <span class="page">
+                                            <span class="txtLabel success">안내</span>
+                                            <a href="#none">서버교체 작업에 따로 서비스 일시 중단 안내의 건</a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mChannel">
+                    <div class="head">
+                        <div class="txtStrong">mList typeInfo</div>
+                        <a href="search/channel_detail.html" target="_blank" class="btnOrigin">레시피 검색_검색 전 &gt; 채널 상세</a><br>
+                        <a href="customer/guide_detail.html" target="_blank" class="btnOrigin">고객센터 &gt; 이용가이드 &gt; 이용가이드 상세</a><br>
+                        <a href="policy/privacy.html" target="_blank" class="btnOrigin">약관 &gt; 개인정보 처리방침</a><br>
+                        <a href="policy/policy.html" target="_blank" class="btnOrigin">약관 &gt; 이용약관</a>
+                    </div>
+                    <div class="inner">
+                        <ul class="mList typeInfo">
+                            <li>상품(Products) 정보를 조회/생성/수정/삭제 할 수 있습니다.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mChannel">
+                    <div class="head">
+                        <div class="txtStrong">mList typeBullet</div>
+                        <a href="my/my.html" target="_blank" class="btnOrigin">MY레시피 &gt; 레시피 관리</a><br>
+                        <a href="search/channel_detail.html" target="_blank" class="btnOrigin">레시피 검색_검색 전 &gt; 채널 상세</a>
+                    </div>
+                    <div class="inner">
+                        <ul class="mList typeBullet">
+                            <li>상품이 등록된 경우</li>
+                            <li>상품이 수정된 경우</li>
+                            <li>특정 상품이 조회되는 경우라는 트리거명이 노출되는 공간 여기는 최대 50글자까지 가능해요</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mChannel">
+                    <div class="head">
+                        <div class="txtStrong">mList typeTitle</div>
+                        <a href="common/layer.html" target="_blank" class="btnOrigin">재료추가 레이어팝업</a>
+                    </div>
+                    <div class="inner">
+                        <div class="mList typeTitle">
+                            <ul>
+                                <li>
+                                    <strong class="title">상품코드</strong>
+                                    <span class="value">P000000A</span>
+                                </li>
+                                <li>
+                                    <strong class="title">상품번호</strong>
+                                    <span class="value">5</span>
+                                </li>
+                                <li>
+                                    <strong class="title">상품 URL</strong>
+                                    <span class="value">http://bloomingjena.cafe24.com/product/detail.html?product_no=126&amp;cate_no=1&amp;display_group=2</span>
+                                </li>
+                                <li>
+                                    <strong class="title">상품 요약설명</strong>
+                                    <span class="value">상품 요약설명입니다. 상품 요약설명입니다. 상품 요약설명입니다. 상품 요약설명입니다. 상품 요약설명입니다.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mChannel">
+                    <div class="head">
+                        <div class="txtStrong">mList typeNotice</div>
+                        <a href="customer/customer.html" target="_blank" class="btnOrigin">고객센터</a><br>
+                        <a href="customer/notice.html" target="_blank" class="btnOrigin">고객센터 &gt; 공지사항</a><br>
+                        <a href="customer/faq.html" target="_blank" class="btnOrigin">고객센터 &gt; FAQ</a>
+                    </div>
+                    <div class="inner">
+                        <div class="mList typeNotice">
+                            <ul class="notice">
+                                <li>
+                                    <a href="#none" class="link">
+                                        <span class="txtLabel success">안내</span>
+                                        <span class="column">
+                                            <span class="text">공지사항 제목이 노출되고 있는 영역입니다 제목이 너무너무너무너무 길면 말줄임표를 붙이는데 목록만이고, 상세는 길면 긴대로 쭉 노출합니다</span>
+                                            <span class="date">2017.03.05</span>
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mList typeNotice bTopM">
+                            <ul class="notice">
+                                <li>
+                                    <a href="#none" class="link">
+                                        <span class="number">1.</span>
+                                        <span class="text">레시피 서비스가 무엇인가요?aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span>
+                                        <span class="icoSFIX icoDirect5"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mChannel">
+                    <div class="head">
+                        <div class="txtStrong">mNotice</div>
+                        <a href="customer/customer.html" target="_blank" class="btnOrigin">고객센터</a>
+                    </div>
+                    <div class="inner">
+                        <div class="mNotice">
+                            <ul class="notice">
+                                <li>
+                                    <span class="txtLabel success">안내</span>
+                                    <span class="description">
+                                        <a href="#none" class="link">공지사항 입니다  공지사항 입니다 공지사항 입니다 공지사항 입니다 공지사항 입니다 공지사항 입니다 공지사항 입니다 공지사항 입니다 공지사항 입니다</a>
+                                        <span class="date">2018.04.18</span>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="txtLabel success">안내</span>
+                                    <span class="description">
+                                        <a href="#none" class="link">공지사항 입니다  공지사항 입니다 공지사항 입니다 공지사항 입니다 공지사항 입니다 공지사항 입니다 공지사항 입니다 공지사항 입니다 공지사항 입니다</a>
+                                        <span class="date">2018.04.18</span>
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mChannel">
+                    <div class="head">
+                        <div class="txtStrong">mItem</div>
+                        <a href="customer/customer.html" target="_blank" class="btnOrigin">고객센터</a>
+                    </div>
+                    <div class="inner">
+                        <div class="mItem">
+                            <ul class="item">
+                                <li>
+                                    <a href="#none" class="link">
+                                        <span class="icoSFIX icoGlobal"></span>
+                                        <span class="text">레시피 사용방법</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none" class="link">
+                                        <span class="icoSFIX icoGlobal"></span>
+                                        <span class="text">채널 개발자 문서</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mChannel">
+                    <div class="head">
+                        <div class="txtStrong">mLoading typeAll</div>
+                        <a href="common/loading.html" target="_blank" class="btnOrigin">로딩중</a>
+                    </div>
+                    <div class="inner" style="position:relative; height:500px;">
+                        <style>
+                            .mLoading.typeAll { margin:0; }
+                        </style>
+                        <div class="mLoading typeAll">
+                            <div class="inner">
+                                <img src="images/img_loading.gif" alt="loading" width="66" class="imgLoading">
+                                설정을 불러오는 중입니다. <br>잠시만 기다려주세요.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mChannel">
+                    <div class="head">
+                        <div class="txtStrong">항목 로딩 mLoading typePart</div>
+                    </div>
+                    <div class="content">
+                        <div class="mWrite">
+                            <ul>
+                                <li style="height:270px;">
+                                    <div class="item">
+                                        <strong class="title">항목 로딩 > 불러오기 중</strong>
+                                    </div>
+                                    <div class="detail">
+                                        <div class="gSelect">
+                                            <select class="fSelect eSelect show">
+                                                <option>기본(디폴트) (한국어)</option>
+                                                <option>한국어서브몰 (한국어)</option>
+                                            </select>
+                                            <div class="mLoading typePart"><!-- 참고 :  mInfo.typeLoading.gPart 가 나오는 경우 selectpack.js에 의해 만들어지는 fOption는 display:none되고, mInfo.typeLoading.gPart 가 사라지면 fOption은 display:block화 되게 해주세요 -->
+                                                <div class="inner">
+                                                    <img src="images/img_loading.gif" alt="loading" width="66" class="imgLoading">
+                                                    설정을 불러오는 중입니다.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li style="height:290px;">
+                                    <div class="item">
+                                        <strong class="title">항목 로딩 > 불러오기 실패</strong>
+                                    </div>
+                                    <div class="detail">
+                                        <div class="gSelect">
+                                            <select class="fSelect eSelect show">
+                                                <option>기본(디폴트) (한국어)</option>
+                                                <option>한국어서브몰 (한국어)</option>
+                                            </select>
+                                            <div class="mLoading typePart">
+                                                <div class="inner">
+                                                    오류가 발생하여 설정을 불러오지 못했습니다.<br>
+                                                    <button type="button" class="btnLine"><span class="text">이곳을 클릭</span></button>하시면 재시도 합니다.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li style="height:340px">
+                                    <div class="item">
+                                        <strong class="title">항목로딩 셀렉트박스의 너비값이 작을 때</strong>
+                                    </div>
+                                    <div class="detail">
+                                        <div class="settingGroup">
+                                            <strong class="title">그룹1</strong>
+                                            <ul class="option">
+                                                <li class="modify"><!-- .btnEdit클릭시 .modify 클래스 추가  -->
+                                                    <div class="gridSet">
+                                                        <div class="grid">
+                                                            <div class="gSelect">
+                                                                <select class="fSelect eSelect">
+                                                                    <option>상품분류</option>
+                                                                    <option>상품명</option>
+                                                                    <option>모델명</option>
+                                                                    <option>해시태그</option>
+                                                                    <option>상품설명</option>
+                                                                    <option>판매가</option>
+                                                                    <option>등등</option>
+                                                                </select>
+                                                                <div class="mLoading typePart">
+                                                                    <div class="inner">
+                                                                        <img src="images/img_loading.gif" alt="loading" width="66" class="imgLoading">
+                                                                        설정을 불러오는 중입니다.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="grid bLeftS">
+                                                            <div class="gSelect">
+                                                                <select class="fSelect eSelect">
+                                                                    <option>포함</option>
+                                                                    <option>미포함</option>
+                                                                    <option>일치</option>
+                                                                    <option>비일치</option>
+                                                                </select>
+                                                                <div class="mLoading typePart">
+                                                                    <div class="inner">
+                                                                        오류가 발생하여 설정을 불러오지 못했습니다.<br>
+                                                                        <button type="button" class="btnLine"><span class="text">이곳을 클릭</span></button>하시면 재시도 합니다.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <button type="button" class="btnNormal full">
+                                                <span class="icoSFIX icoAdd"></span> 설정 추가
+                                            </button>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <hr class="layout">
+    <footer id="footer">
+        <div class="inner">
+            <div class="util">
+                <a href="#none" class="menu">이용약관</a>
+                <span class="bar"></span>
+                <a href="#none" class="menu"><strong>개인정보처리방침</strong></a>
+                <span class="bar"></span>
+                <a href="#none" class="menu">이용가이드</a>
+                <span class="bar"></span>
+                <a href="#none" class="menu">고객센터</a>
+                <span class="bar"></span>
+                <a href="#none" class="menu">채널제휴</a>
+                <span class="bar RWIB"></span>
+                <div class="menu familySite">
+                    <a href="#none" class="name eDropDown">관련사이트</a>
+                    <ul class="site">
+                        <li><a href="#none" class="link" target="_blank">My 쇼핑몰</a></li>
+                        <li><a href="#none" class="link" target="_blank">쇼핑몰관리자</a></li>
+                        <li><a href="#none" class="link" target="_blank">개발자센터</a></li>
+                        <li><a href="#none" class="link" target="_blank">마케팅센터</a></li>
+                        <li><a href="#none" class="link" target="_blank">교육센터</a></li>
+                    </ul>
+                </div>
+                <span class="bar RWIB"></span>
+                <a href="#layerLanguage" class="menu language eModal" title="언어변경"><span class="icoSFIX icoGlobal"></span> KOREAN</a>
+            </div>
+            <p class="copyright">Copyright&copy; Cafe24 corp. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <!-- 참고: 레시피 만들기 > 도움말 -->
+    <div id="layerRegister" class="mLayer gLarge">
+        <h2>도움말</h2>
+        <div class="wrap registerHelp">
+            <div class="mTab typeVer eTab">
+                <ul>
+                    <li class="selected"><a href="#tabCont1_1">레시피란?</a></li>
+                    <li><a href="#tabCont1_2">1. 조건 채널</a></li>
+                    <li><a href="#tabCont1_3">2. 조건 계정</a></li>
+                    <li><a href="#tabCont1_4">3. 조건 선택</a></li>
+                    <li><a href="#tabCont1_5">4. 필터</a></li>
+                    <li><a href="#tabCont1_6">5. 실행 채널</a></li>
+                    <li><a href="#tabCont1_7">6. 실행 계정</a></li>
+                    <li><a href="#tabCont1_8">7. 실행 선택</a></li>
+                </ul>
+            </div>
+            <div id="tabCont1_1" class="tabCont" style="display:block;">
+                <strong class="title">레시피(Recipe)란?</strong>
+                <span class="thumbnail">
+                    <img src="/img.echosting.cafe24.com/api/recipe/img_help_register1.jpg" class="RW" alt="">
+                    <img src="/img.echosting.cafe24.com/api/recipe/img_help_register1_m.jpg" class="RMB" alt="">
+                </span>
+                <p class="text">특정 "조건"이 발생될 때 원하는 동작을<br>"실행"하도록 만들어 놓은 지시문입니다.</p>
+            </div>
+            <div id="tabCont1_2" class="tabCont" style="display:none;">
+                <strong class="title">1. 조건 채널선택</strong>
+                <span class="thumbnail">
+                    <img src="/img.echosting.cafe24.com/api/recipe/img_help_register2.jpg" class="RW" alt="">
+                    <img src="/img.echosting.cafe24.com/api/recipe/img_help_register2_m.jpg" class="RMB" alt="">
+                </span>
+                <p class="text">조건이 발생될 곳을 선택합니다.</p>
+            </div>
+            <div id="tabCont1_3" class="tabCont" style="display:none;">
+                <strong class="title">2. 조건 계정선택</strong>
+                <span class="thumbnail">
+                    <img src="/img.echosting.cafe24.com/api/recipe/img_help_register3.jpg" class="RW" alt="">
+                    <img src="/img.echosting.cafe24.com/api/recipe/img_help_register3_m.jpg" class="RMB" alt="">
+                </span>
+                <p class="text">채널에 사용할 계정을 연결후 선택합니다.<br>계정이 필요 없는 채널은 이 단계가 생략될 수 있습니다.</p>
+            </div>
+            <div id="tabCont1_4" class="tabCont" style="display:none;">
+                <strong class="title">3. 조건 선택</strong>
+                <span class="thumbnail">
+                    <img src="/img.echosting.cafe24.com/api/recipe/img_help_register4.jpg" class="RW" alt="">
+                    <img src="/img.echosting.cafe24.com/api/recipe/img_help_register4_m.jpg" class="RMB" alt="">
+                </span>
+                <p class="text">원하는 동작을 위하여 사전에 필요한 조건이 무엇인지 선택합니다.</p>
+            </div>
+            <div id="tabCont1_5" class="tabCont" style="display:none;">
+                <strong class="title">4. 필터</strong>
+                <span class="thumbnail">
+                    <img src="/img.echosting.cafe24.com/api/recipe/img_help_register5.jpg" class="RW" alt="">
+                    <img src="/img.echosting.cafe24.com/api/recipe/img_help_register5_m.jpg" class="RMB" alt="">
+                </span>
+                <p class="text">필터를 설정할 경우, 설정에 맞을 때에만 조건이 발생된 것으로 처리됩니다. 웹 사이트에서 어떤 내용을 검색할 때 원하는 결과를 얻기 위해 검색 조건을 강화하는 과정과 동일합니다.</p>
+            </div>
+            <div id="tabCont1_6" class="tabCont" style="display:none;">
+                <strong class="title">5. 실행 채널선택</strong>
+                <span class="thumbnail">
+                    <img src="/img.echosting.cafe24.com/api/recipe/img_help_register6.jpg" class="RW" alt="">
+                    <img src="/img.echosting.cafe24.com/api/recipe/img_help_register6_m.jpg" class="RMB" alt="">
+                </span>
+                <p class="text">원하는 동작이 실행될 곳을 선택합니다.</p>
+            </div>
+            <div id="tabCont1_7" class="tabCont" style="display:none;">
+                <strong class="title">6. 실행 계정</strong>
+                <span class="thumbnail">
+                    <img src="/img.echosting.cafe24.com/api/recipe/img_help_register7.jpg" class="RW" alt="">
+                    <img src="/img.echosting.cafe24.com/api/recipe/img_help_register7_m.jpg" class="RMB" alt="">
+                </span>
+                <p class="text">채널에 사용할 계정을 연결후 선택합니다.<br>계정이 필요 없는 채널은 이 단계가 생략될 수 있습니다.</p>
+            </div>
+            <div id="tabCont1_8" class="tabCont" style="display:none;">
+                <strong class="title">7. 실행 선택</strong>
+                <span class="thumbnail">
+                    <img src="/img.echosting.cafe24.com/api/recipe/img_help_register8.jpg" class="RW" alt="">
+                    <img src="/img.echosting.cafe24.com/api/recipe/img_help_register8_m.jpg" class="RMB" alt="">
+                </span>
+                <p class="text">해당 채널에서 실행 할 내용이 무엇인지 선택합니다.</p>
+            </div>
+            <div class="pager">
+                <button type="button" class="btnPrev">이전</button>
+                <button type="button" class="btnNext">다음</button>
+            </div>
+        </div>
+        <button type="button" class="btnClose eClose">닫기</button>
+    </div><!-- 참고: 레시피 만들기 > 도움말 -->
+
+    <!-- 참고: 채널 연결 관리 > 연결정보 등록 -->
+    <div id="layerContact" class="mLayer" style="width:780px;">
+        <h2>채널 추가</h2>
+        <div class="wrap">
+            <div class="mSearch typeBg selected"><!-- 참고: 텍스트 입력중일 때 selected 추가 -->
+                <input type="search" class="fSearch" placeholder="채널 검색">
+                <button type="button" class="btnDel">검색어 삭제</button>
+                <button type="submit" class="btnSearch">검색</button>
+            </div>
+            <ul class="mForm typeThumb scroll2">
+                <li>
+                    <a href="#none" class="gLabel">
+                        <span class="fLabel"><img src="images/ico_channel_product.png" class="imgChannel" alt="">상품</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#none" class="gLabel">
+                        <span class="fLabel"><img src="images/ico_channel_facebook.png" class="imgChannel" alt="">페이스북</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#none" class="gLabel">
+                        <span class="fLabel"><img src="images/ico_channel_instagram.png" class="imgChannel" alt="">인스타그램</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#none" class="gLabel">
+                        <span class="fLabel"><img src="images/ico_channel_kakaotalk.png" class="imgChannel" alt="">카카오톡</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#none" class="gLabel">
+                        <span class="fLabel"><img src="images/ico_channel_pinterest.png" class="imgChannel" alt="">핀터레스트</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#none" class="gLabel">
+                        <span class="fLabel"><img src="images/ico_channel_tumblr.png" class="imgChannel" alt="">텀블러</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#none" class="gLabel">
+                        <span class="fLabel"><img src="images/ico_channel_slack.png" class="imgChannel" alt="">슬랙</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#none" class="gLabel">
+                        <span class="fLabel"><img src="images/ico_channel_kakaostory.png" class="imgChannel" alt="">카카오스토리</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#none" class="gLabel">
+                        <span class="fLabel"><img src="images/ico_channel_kakaostory.png" class="imgChannel" alt="">카카오스토리</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#none" class="gLabel">
+                        <span class="fLabel"><img src="images/ico_channel_kakaostory.png" class="imgChannel" alt="">카카오스토리</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <button type="button" class="btnClose eClose">닫기</button>
+    </div><!-- //참고: 채널 연결 관리 > 연결정보 등록 -->
+
+    <!-- 참고: 등록 > 필터 설정 도움말 -->
+    <div id="layerFilter3" class="mLayer typeModal gLarge">
+        <h2>필터 설정 도움말</h2>
+        <div class="wrap filterHelp">
+            <div class="item">
+                <div class="gridSet top">
+                    <div class="grid">
+                        <strong class="title">1. 설정추가 (AND) </strong>
+                        <p class="text">해당 설정까지 모두 부합되는 데이터가 <br class="RMB">있을 때만 <br class="RW">조건이 발생한 것으로 처리</p>
+                    </div>
+                    <img src="/img.echosting.cafe24.com/api/recipe/img_diagram_and.png" alt="" class="diagram">
+                </div>
+                <div class="figure">
+                    <img src="/img.echosting.cafe24.com/api/recipe/img_filter_and.jpg" width="598" height="247" alt="" class="imgHelp RWF">
+                    <img src="/img.echosting.cafe24.com/api/recipe/img_filter_and_m.jpg" width="313" height="174" alt="" class="imgHelp RMF">
+                    설정A : 다리가 4개인 동물 토끼, 거북이, 개
+                    설정B : 종류가 파충류인 동물 거북이, 뱀
+                    결과 C : 설정A와 설정B를 모두 만족하는 것은 거북이 입니다.
+                </div>
+            </div>
+            <div class="item">
+                <div class="gridSet top">
+                    <div class="grid">
+                        <strong class="title">2. 그룹추가 (OR)</strong>
+                        <p class="text">각 그룹 중에서 부합된 결과가 <br class="RMB">단 하나라도 있을 때 <br class="RW">조건 발생으로 처리</p>
+                    </div>
+                    <img src="/img.echosting.cafe24.com/api/recipe/img_diagram_or.png" alt="" class="diagram">
+                </div>
+                <div class="figure">
+                    <img src="/img.echosting.cafe24.com/api/recipe/img_filter_or.jpg" width="598" height="247" alt="" class="imgHelp RWF">
+                    <img src="/img.echosting.cafe24.com/api/recipe/img_filter_or_m.jpg" width="313" height="174" alt="" class="imgHelp RMF">
+                    그룹A : 다리가 4개인 동물 토끼, 거북이, 개
+                    그룹B : 종류가 파충류인 동물 거북이, 뱀
+                    결과 C : 그룹A 또는 그룹B에 해당하는 것은 토끼, 거북이, 개, 뱀 입니다.
+                </div>
+            </div>
+            <div class="item addition">
+                <strong class="title">참고사항</strong>
+                <ul class="mList typeInfo">
+                    <li>필수 조건을 만족한 데이터에 필터 설정이 적용됩니다.</li>
+                    <li>그룹 내의 항목간에도 1번과 같이 AND 조건을 추가할 수 있습니다.</li>
+                </ul>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="mButton typeFlex gBg">
+                <button type="button" class="btnNormal">닫기</button>
+            </div>
+        </footer>
+        <button type="button" class="btnClose eClose">닫기</button>
+    </div><!-- //참고: 알림 > 필터 설정 도움말 -->
+
+    <!-- 참고: 알림 > 필터 설정 -->
+    <div id="layerFilter2" class="mLayer typePopup">
+        <h2>필터 설정</h2>
+        <div class="wrap">
+            <div class="mWrite">
+                <ul>
+                    <li>
+                        <div class="item">
+                            <strong class="title">기간</strong>
+                        </div>
+                        <div class="detail">
+                            <!-- 참고: PC -->
+                            <div class="mForm typeCalendar RWF">
+                                <span class="fCalendar">
+                                    <input type="text" value="2017.08.08" class="datepicker">
+                                </span>
+                                <span class="bar">-</span>
+                                <span class="fCalendar">
+                                    <input type="text" value="2017.08.08" class="datepicker">
+                                </span>
+                            </div><!-- //참고: PC -->
+                            <!-- 참고: 모바일 -->
+                            <div class="mForm typeCalendar RMF">
+                                <span class="fCalendar">
+                                    <input type="date">
+                                </span>
+                                <span class="bar">-</span>
+                                <span class="fCalendar">
+                                    <input type="date">
+                                </span>
+                            </div><!-- //참고: 모바일 -->
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item">
+                            <strong class="title">유형</strong>
+                        </div>
+                        <div class="detail">
+                            <ul class="mForm typeButton">
+                                <li>
+                                    <label class="gLabel">
+                                        <input type="checkbox">
+                                        <span class="fLabel">전체</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="gLabel">
+                                        <input type="checkbox">
+                                        <span class="fLabel">레시피 ON</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="gLabel">
+                                        <input type="checkbox">
+                                        <span class="fLabel">레시피 OFF</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="gLabel">
+                                        <input type="checkbox">
+                                        <span class="fLabel">레시피등록</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="gLabel">
+                                        <input type="checkbox">
+                                        <span class="fLabel">레시피수정</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="gLabel">
+                                        <input type="checkbox">
+                                        <span class="fLabel">레시피삭제</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="gLabel">
+                                        <input type="checkbox">
+                                        <span class="fLabel">채널연결</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="gLabel">
+                                        <input type="checkbox">
+                                        <span class="fLabel">연결정보수정</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="gLabel">
+                                        <input type="checkbox">
+                                        <span class="fLabel">채널연결해제</span>
+                                    </label>
+                                </li>
+                            </ul>
+                            <div class="control">
+                                <div class="mForm">
+                                    <label class="gLabel">
+                                        <input type="checkbox" class="fCheck">
+                                        <span class="fLabel">전체선택</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="mButton typeFlex gBg">
+                <a href="#none" class="btnNormal">초기화</a>
+                <button type="button" class="btnEm">확인</button>
+            </div>
+        </footer>
+        <button type="button" class="btnClose eClose">닫기</button>
+    </div><!-- //참고: 알림 > 필터 설정 -->
+
+    <!-- 참고: 레시피 등록 > 스텝 삭제 -->
+    <div id="layerModal" class="mLayer typeModal">
+        <div class="wrap">
+            <p class="txtMsg">실행 이벤트를 삭제하시겠습니까?</p>
+        </div>
+        <footer class="footer">
+            <div class="mButton typeFlex gBg">
+                <a href="#none" class="btnNormal eClose">취소</a>
+                <button type="button" class="btnEm">삭제</button>
+            </div>
+        </footer>
+    </div><!-- //참고: 레시피 등록 > 스텝 삭제 -->
+    <!-- 참고: header > 이용언어 -->
+    <div id="layerLanguage" class="mLayer typeModal">
+        <h2>이용언어</h2>
+        <div class="wrap useLanguage">
+            <p class="txtNotice">사이트 이용 시 사용할 언어를 선택하세요.<br>사용자가 입력한 문구는 변경되지 않습니다.</p>
+            <ul class="mForm typeLanguage">
+                <li><label class="gLabel"><input type="radio"><span class="fLabel">KOREAN</span></label></li>
+                <li><label class="gLabel"><input type="radio"><span class="fLabel">ENGLISH</span></label></li>
+                <li><label class="gLabel"><input type="radio"><span class="fLabel">JAPANESE</span></label></li>
+                <li><label class="gLabel"><input type="radio"><span class="fLabel">CHINESE (简体)</span></label></li>
+                <li><label class="gLabel"><input type="radio"><span class="fLabel">CHINESE (繁体)</span></label></li>
+            </ul>
+        </div>
+        <button type="button" class="btnClose eClose">닫기</button>
+    </div><!-- //참고: header > 이용언어 -->
+
+    <!-- 참고: 알림 > 타임라인 > 재료 -->
+    <div id="layerMaterial" class="mLayer typePopup">
+        <h2>재료</h2>
+        <div class="wrap">
+            <div class="mList typeTitle">
+                <ul>
+                    <li>
+                        <strong class="title">상품코드</strong>
+                        <span class="value">P000000A</span>
+                    </li>
+                    <li>
+                        <strong class="title">상품번호</strong>
+                        <span class="value">5</span>
+                    </li>
+                    <li>
+                        <strong class="title">상품 URL</strong>
+                        <span class="value">http://bloomingjena.cafe24.com/product/detail.html?product_no=126&cate_no=1&display_group=2</span>
+                    </li>
+                    <li>
+                        <strong class="title">상품 요약설명</strong>
+                        <span class="value">상품 요약설명입니다. 상품 요약설명입니다. 상품 요약설명입니다. 상품 요약설명입니다. 상품 요약설명입니다.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <button type="button" class="btnClose eClose">닫기</button>
+    </div><!-- //참고: 알림 > 타임라인 > 재료 -->
+</div>
+<!-- 참고: UI확인용으로 퍼블리싱 미리보기용 CSS, JS 소스들입니다 -->
+<script type="text/javascript" src="js/jquery-1.12.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+<script type="text/javascript" src="js/lightslider.js"></script>
+<script type="text/javascript" src="js/ui.js"></script>
+<script type="text/javascript" src="js/ui_layout.js"></script>
+<script type="text/javascript" src="js/ui_main.js"></script>
+<script type="text/javascript" src="js/ui_content_register.js"></script>
+<script type="text/javascript" src="js/ui_content_my.js"></script>
+<script type="text/javascript" src="js/ui_content_setting.js"></script>
+<script type="text/javascript" src="js/ui_content_search.js"></script>
+<script type="text/javascript" src="js/ui_content_customer.js"></script>
+<script type="text/javascript" src="https://img.echosting.cafe24.com/js/plugin/selectPack.js"></script>
+
+<script>
+    // ※ 개발작업시 datepicker 플러그인 수정요청: 최상위에 mCalendarRC 클래스를 추가해주세요.
+    $( function() {
+        //한글설정
+        $.datepicker.regional['ko'] = {
+            closeText: '닫기',
+            prevText: '이전달',
+            nextText: '다음달',
+            currentText: '오늘',
+            monthNames: ['1월','2월','3월','4월','5월','6월',
+                '7월','8월','9월','10월','11월','12월'],
+            monthNamesShort: ['1월','2월','3월','4월','5월','6월',
+                '7월','8월','9월','10월','11월','12월'],
+            dayNames: ['일','월','화','수','목','금','토'],
+            dayNamesShort: ['일','월','화','수','목','금','토'],
+            dayNamesMin: ['일','월','화','수','목','금','토'],
+            weekHeader: 'Wk',
+            dateFormat: 'yy.mm.dd',
+            firstDay: 1,
+            isRTL: false,
+            duration:200,
+            showAnim:'show',
+            yearSuffix: ''
+        };
+        $.datepicker.setDefaults($.datepicker.regional['ko']);
+        $( ".datepicker" ).datepicker({
+            changeMonth: true,
+            changeYear: true
+        });
+       $('.typeCalendar .fCalendar').on('click', function() {
+           $(this).find('.datepicker').datepicker('show');
+       });
+
+    } );
+</script>
+</body>
+</html>

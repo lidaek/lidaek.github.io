@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>레시피</title>
+    <link rel="shortcut icon" type="image/x-icon" href="//m-img.cafe24.com/images/bi/cafe24/recipe.ico" />
+    <link rel="stylesheet" type="text/css" href="../css/font/notosans.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../css/common.css" media="all">
+</head>
+<body>
+<div id="wrap" class="signout"><!-- 참고 : 메뉴 버튼 클릭시 .sideExpand 추가 -->
+    <nav id="skipNavigation">
+        <a href="#sidebar">대메뉴 바로가기</a>
+        <a href="#content">본문 바로가기</a>
+    </nav>
+    <hr class="layout">
+    <header id="header" role="banner">
+        <div class="inner">
+            <h1 class="logo">
+                <a href="#none">
+                    <img src="../images/h1_logo_recipe_m.png" width="135" alt="카페24 레시피" class="RMB">
+                    <img src="../images/h1_logo_recipe.png" width="177" alt="카페24 레시피" class="RW">
+                </a>
+            </h1>
+            <a href="#layerLanguage" class="btnLanguage eModal" title="언어선택"><span class="icoSFIX icoGlobal"></span> KOREAN</a>
+        </div>
+    </header>
+    <div id="container" class="">
+        <section id="contents">
+            <div class="innerContents">
+                <div class="mInfo typeError">
+                    <img src="../images/error/img_error500.png" alt="error500" width="340" class="imgInfo RW">
+                    <img src="../images/error/img_error500_m.png" alt="error500" width="193" class="imgInfo RMB">
+                    <strong class="txtStrong">죄송합니다!</strong>
+                    오류를 복원하기 위해 최선을 다하고 있습니다.<br>잠시 후 새로고침 하시거나, 다른 레시피를 찾아보세요.
+                    <div class="mButton bTopL">
+                        <a href="#none" class="btnStrong">다른 레시피 보기 <span class="icoSFIX icoDirect2"></span></a>
+                    </div>
+                    <p class="txtNotice">혹시 도움을 주시려면 <a href="#none" class="btnLine"><span class="text">고객센터</span></a>에 제보해주십시오. 감사합니다.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <hr class="layout">
+    <footer id="footer">
+        <p class="copyright">Copyright&copy; Cafe24 corp. All Rights Reserved.</p>
+    </footer>
+    <!-- 참고: header > 이용언어 -->
+    <div id="layerLanguage" class="mLayer typeModal">
+        <h2>이용언어</h2>
+        <div class="wrap useLanguage">
+            <p class="txtNotice">사이트 이용 시 사용할 언어를 선택하세요.<br>사용자가 입력한 문구는 변경되지 않습니다.</p>
+            <ul class="mForm typeLanguage">
+                <li><label class="gLabel"><input type="radio"><span class="fLabel">KOREAN</span></label></li>
+                <li><label class="gLabel"><input type="radio"><span class="fLabel">ENGLISH</span></label></li>
+                <li><label class="gLabel"><input type="radio"><span class="fLabel">JAPANESE</span></label></li>
+                <li><label class="gLabel"><input type="radio"><span class="fLabel">CHINESE (简体)</span></label></li>
+                <li><label class="gLabel"><input type="radio"><span class="fLabel">CHINESE (繁体)</span></label></li>
+            </ul>
+        </div>
+        <button type="button" class="btnClose eClose">닫기</button>
+    </div><!-- //참고: header > 이용언어 -->
+</div>
+<script type="text/javascript" src="../js/jquery-1.12.1.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui.js"></script>
+<script type="text/javascript" src="../js/lightslider.js"></script>
+<script type="text/javascript" src="../js/ui.js"></script>
+<script type="text/javascript" src="../js/ui_layout.js"></script>
+<script type="text/javascript" src="../js/ui_main.js"></script>
+<script type="text/javascript" src="../js/ui_content_register.js"></script>
+<script type="text/javascript" src="../js/ui_content_my.js"></script>
+<script type="text/javascript" src="../js/ui_content_setting.js"></script>
+<script type="text/javascript" src="../js/ui_content_search.js"></script>
+<script type="text/javascript" src="../js/ui_content_customer.js"></script>
+<script type="text/javascript" src="https://img.echosting.cafe24.com/js/plugin/selectPack.js"></script>
+<script>
+    // ※ 개발작업시 datepicker 플러그인 수정요청: 최상위에 mCalendar 클래스를 추가해주세요.
+    $( function() {
+        //한글설정
+        $.datepicker.regional['ko'] = {
+            closeText: '닫기',
+            prevText: '이전달',
+            nextText: '다음달',
+            currentText: '오늘',
+            monthNames: ['1월','2월','3월','4월','5월','6월',
+                '7월','8월','9월','10월','11월','12월'],
+            monthNamesShort: ['1월','2월','3월','4월','5월','6월',
+                '7월','8월','9월','10월','11월','12월'],
+            dayNames: ['일','월','화','수','목','금','토'],
+            dayNamesShort: ['일','월','화','수','목','금','토'],
+            dayNamesMin: ['일','월','화','수','목','금','토'],
+            weekHeader: 'Wk',
+            dateFormat: 'yy.mm.dd',
+            firstDay: 1,
+            isRTL: false,
+            duration:200,
+            showAnim:'show',
+            yearSuffix: ''
+        };
+        $.datepicker.setDefaults($.datepicker.regional['ko']);
+        $( ".datepicker" ).datepicker({
+            changeMonth: true,
+            changeYear: true
+        });
+       $('.typeCalendar .fCalendar').on('click', function() {
+           $(this).find('.datepicker').datepicker('show');
+       });
+
+    } );
+</script>
+</body>
+</html>
