@@ -3,7 +3,7 @@ layout: post
 title: CSS3 grid
 date: 2019-06-28 00:00:00 +0300
 description: CSS3 grid flex # Add post description (optional)
-img: software.jpg # Add image post (optional)
+img: grid.png # Add image post (optional)
 tags: [css3, grid, flex] # add tag
 ---
 
@@ -26,7 +26,7 @@ flex보다 확장성이 있는것이 grid이지만 grid가 flex의 대체자로�
 
 ## grid 속성
 ***
-![grid column 과 rowgrid.png]({{site.baseurl}}/assets/img/grid.png)
+![grid column 과 rowgrid.png]({{site.baseurl}}/assets/img/gridline.png)
 
 위의 예시 이미지로 설명합니다.
 

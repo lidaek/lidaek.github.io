@@ -1,0 +1,117 @@
+---
+layout: post
+title: CSS3 flex
+date: 2019-06-27 00:00:00 +0300
+description: CSS3 flex # Add post description (optional)
+img: flex.png # Add image post (optional)
+tags: [css3, flex] # add tag
+---
+<style>
+.flex { display:-webkit-flex; display:-ms-flex; display:flex; }
+.child { height:50px; margin:5px; font-size:30px; background:pink; }
+.box { width:50px; height:50px; background:green; }
+
+.flex .child { -webkit-flex:1; -ms-flex:1; flex:1;}
+
+.flex2 { height:100px; outline:1px dashed pink }
+</style>
+
+
+## flex
+***
+flex CSS 속성은 하나의 플렉스 아이템이 자신의 컨테이너가 차지하는 공간에 맞추기 위해 크기를 키우거나 줄이는 방법을 설정하는 속성입니다.
+
+
+### flex-direction(방향)
+```
+<style>
+.flex { display:-webkit-flex; display:-ms-flex; display:flex; } 
+.flex1 .child { -webkit-flex:1; -ms-flex:1; flex:1; }
+</style>
+
+<div class="flex">
+    <div class="child">1</div>
+    <div class="child">2</div>
+    <div class="child">3</div>
+</div>
+```
+flex-direction:row가 default값으로 나타난다
+<div class="flex">
+    <div class="child">1</div>
+    <div class="child">2</div>
+    <div class="child">3</div>
+</div>
+
+flex-direction:row-reverse
+<div class="flex" style="flex-direction:row-reverse">
+    <div class="child">1</div>
+    <div class="child">2</div>
+    <div class="child">3</div>
+</div>
+
+flex-direction:column
+<div class="flex" style="flex-direction:column">
+    <div class="child">1</div>
+    <div class="child">2</div>
+    <div class="child">3</div>
+</div>
+
+flex-direction:column-reverse
+<div class="flex" style="flex-direction:column-reverse">
+    <div class="child">1</div>
+    <div class="child">2</div>
+    <div class="child">3</div>
+</div>
+
+<br><br><br>
+### justify-content 가로 중앙정렬
+flex-direciton이 row일때 가로 중앙정렬이 되며, flex-direciton이 column일떄는 세로 중앙정렬이 된다.
+
+
+justify-content:flex-start가 기본값
+<div class="flex flex2">
+    <div class="box"></div>
+</div>
+
+justify-content:center
+<div class="flex flex2" style="justify-content:center">
+    <div class="box"></div>
+</div>
+
+justify-content:flex-end
+<div class="flex flex2" style="justify-content:flex-end">
+    <div class="box"></div>
+</div>
+
+<br><br><br>
+### align-item 세로 중앙정렬
+flex-direciton이 row일때 세로 중앙정렬이 되며, flex-direciton이 column일떄는 가로 중앙정렬이 된다.
+
+align-item:flex-start가 기본값
+<div class="flex flex2">
+    <div class="box"></div>
+</div>
+
+aligns-items:center
+<div class="flex flex2" style="align-items:center">
+    <div class="box"></div>
+</div>
+
+aligns-items:flex-end
+<div class="flex flex2" style="align-items:flex-end">
+    <div class="box"></div>
+</div>
+
+
+<br><br><br>
+### 가로/세로 중앙정렬
+<div class="flex flex2" style="justify-content:center;align-items:center">
+    <div class="box"></div>
+</div>
+
+
+
+<br><br><br>
+### grid 학습 url
+1. [flexboxfroggy](https://flexboxfroggy.com/#ko)
+
