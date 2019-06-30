@@ -8,10 +8,11 @@ tags: [css3, flex] # add tag
 ---
 <style>
 .flex { display:-webkit-flex; display:-ms-flex; display:flex; }
-.child { height:50px; margin:5px; font-size:30px; background:pink; }
+.child { height:50px; margin:5px; font-size:1.3em; background:pink; }
 .box { width:50px; height:50px; background:green; }
 
 .flex .child { -webkit-flex:1; -ms-flex:1; flex:1;}
+.order .child { order:2;}
 
 .flex2 { height:100px; outline:1px dashed pink }
 </style>
@@ -22,7 +23,8 @@ tags: [css3, flex] # add tag
 flex CSS 속성은 하나의 플렉스 아이템이 자신의 컨테이너가 차지하는 공간에 맞추기 위해 크기를 키우거나 줄이는 방법을 설정하는 속성입니다.
 
 
-### flex-direction(방향)
+### 부모 컨테이너 속성
+#### flex-direction(방향)
 ```
 <style>
 .flex { display:-webkit-flex; display:-ms-flex; display:flex; } 
@@ -64,7 +66,7 @@ flex-direction:column-reverse
 </div>
 
 <br><br><br>
-### justify-content 가로 중앙정렬
+#### justify-content 가로 중앙정렬
 flex-direciton이 row일때 가로 중앙정렬이 되며, flex-direciton이 column일떄는 세로 중앙정렬이 된다.
 
 
@@ -84,7 +86,7 @@ justify-content:flex-end
 </div>
 
 <br><br><br>
-### align-item 세로 중앙정렬
+#### align-item 세로 중앙정렬
 flex-direciton이 row일때 세로 중앙정렬이 되며, flex-direciton이 column일떄는 가로 중앙정렬이 된다.
 
 align-item:flex-start가 기본값
@@ -104,10 +106,53 @@ aligns-items:flex-end
 
 
 <br><br><br>
-### 가로/세로 중앙정렬
+#### 가로/세로 중앙정렬
 <div class="flex flex2" style="justify-content:center;align-items:center">
     <div class="box"></div>
 </div>
+
+
+<br><br><br>
+### 자식 속성
+#### order
+순서를 정할 수 있다.
+자식 child의 기본 order를 2로 두고, 2 자식 아이템을 order:1로 두었을시에 순서가 가장 빠르게 나타난다.
+```
+<style>
+.order .child { order:2;}
+</style>
+
+<div class="flex order">
+    <div class="child">1</div>
+    <div class="child" style="order:1">2</div>
+    <div class="child">3</div>
+</div>
+```
+flex-direction:row
+<div class="flex order">
+    <div class="child">1</div>
+    <div class="child" style="order:1">2</div>
+    <div class="child">3</div>
+</div>
+
+flex-direction:column
+<div class="flex order" style="flex-direction:column">
+    <div class="child">1</div>
+    <div class="child" style="order:1">2</div>
+    <div class="child">3</div>
+</div>
+
+#### justfy-self / align-self
+align-self:center
+<div class="flex flex2">
+    <div class="child"></div>
+    <div class="child box" style="align-self:center">align-self</div>
+</div>
+
+
+
+
+
 
 
 
