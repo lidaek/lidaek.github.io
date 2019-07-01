@@ -39,11 +39,11 @@ tags: [css, font-family] # add tag
 **포털에서 사용하고 있는 font-family 선언**
 ```
 /* PC */
-body,code { font-family:AppleSDGothicNeo-Regular,'Malgun Gothic','맑은 고딕',dotum,'돋움',sans-serif; } /* damu */
+body,code { font-family:AppleSDGothicNeo-Regular,'Malgun Gothic','맑은 고딕',dotum,'돋움',sans-serif; } /* daum */
 body,code { font-family:Dotum,'돋움',Helvetica,"Apple SD Gothic Neo",sans-serif; } /* naver */
 
 /* mobile */
-body,code { font-family:HelveticaNeue-Light,AppleSDGothicNeo-Light,'Malgun Gothic','맑은 고딕',sans-serif; } /* damu */
+body,code { font-family:HelveticaNeue-Light,AppleSDGothicNeo-Light,'Malgun Gothic','맑은 고딕',sans-serif; } /* daum */
 body,code { font-family:HelveticaNeue-Light,AppleSDGothicNeo-Light,sans-serif; } /* naver */
 ```
 
