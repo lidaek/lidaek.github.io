@@ -833,6 +833,8 @@ table {
   border-collapse: collapse;
 }
 
+.highlighter-rouge + table {margin:10px 0 0;}
+
 table td, table.blueTable th {
   border: 1px solid #aaa;
   padding: 3px 2px;
@@ -1451,8 +1453,9 @@ a.newer-posts:hover {
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 480px) {
   .content-box {
-    padding: 10px;
+    padding: 10px 0;
   }
+  .wrap-content {padding:20px 10px;}
   .post {
     width: 98%;
     max-width: 100%;
