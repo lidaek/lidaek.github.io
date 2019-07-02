@@ -67,6 +67,7 @@ body,code { font-family:HelveticaNeue-Light,AppleSDGothicNeo-Light,sans-serif; }
 
 1. OS X 10.11(엘카피탠) 부터 Helvetica Neue를 대체하여 San Francisco가 사용되게 되었다. (영문, 숫자)
     Helvetica Neue은 가독성이 좋지 못하고, 디자인에만 신경쓴다는 비판을 많이 받았고 그로인해 San Francisco로의 전환을 불려왔다.
+    (근데 왜 포털의 모바일에서는 font-family를 HelveticaNeue-Light를 맨처음 선언하여 HelveticaNeue으로 영문을 나타내려는 걸까? 디자이너들이 디자인을 포기하지 못했는지...)
     
 
 
