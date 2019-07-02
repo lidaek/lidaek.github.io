@@ -107,6 +107,7 @@ aligns-items:flex-end
 
 <br><br><br>
 #### 가로/세로 중앙정렬
+justify-content:center; align-items:center
 <div class="flex flex2" style="justify-content:center;align-items:center">
     <div class="box"></div>
 </div>
