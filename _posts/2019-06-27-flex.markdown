@@ -143,8 +143,11 @@ flex-direction:column
     <div class="child">3</div>
 </div>
 
+<br><br><br>
 #### justfy-self / align-self
-align-self:center
+부모컨테이너에서 자식 아이템의 정렬을 정할 수 있지만, 자식 아이템 자체에서 자신의 정렬을 결정할 수 있다.
+
+align-self
 <div class="flex flex2">
     <div class="child"></div>
     <div class="child box" style="align-self:center">align-self</div>
