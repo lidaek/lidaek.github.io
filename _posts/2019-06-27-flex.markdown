@@ -114,7 +114,7 @@ justify-content:center; align-items:center
 
 
 <br><br><br>
-### 자식 속성
+### 자식 아이템 속성
 #### order
 순서를 정할 수 있다.
 자식 child의 기본 order를 2로 두고, 2 자식 아이템을 order:1로 두었을시에 순서가 가장 빠르게 나타난다.
