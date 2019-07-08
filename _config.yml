@@ -11,8 +11,8 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 author: lida # add your name
 author-img: lida.png # add your photo
 about-author: lida 기술 블로그입니다. # add description
-# social-twitter: # add your Twitter handle
-# social-facebook: # add your Facebook handle
+social-twitter: # add your Twitter handle
+social-facebook: # add your Facebook handle
 social-github: lidaek # add your Github handle
 social-email: lidagim84@gmail.com# add your Email address
 
