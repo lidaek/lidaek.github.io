@@ -67,7 +67,7 @@ body,code { font-family:HelveticaNeue-Light,AppleSDGothicNeo-Light,sans-serif; }
     * ExtraBold
     * Heavy
     
-    ![AppleSDGothicNeo]({{site.baseurl}}/assets/img/AppleSDGothicNeo.png)
+    ![AppleSDGothicNeo]({{site.baseurl}}/assets/img/applesdgothicneo.png)
 
 1. OS X 10.11(엘카피탠) 부터 Helvetica Neue를 대체하여 San Francisco가 사용되게 되었다. (영문, 숫자)
     Helvetica Neue은 가독성(작은크기의 텍스트)이 좋지 못하고, 디자인에만 신경쓴다는 비판을 많이 받았고 그로인해 San Francisco로의 전환을 불려왔다.
