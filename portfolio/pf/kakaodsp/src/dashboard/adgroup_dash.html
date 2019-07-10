@@ -1,0 +1,2255 @@
+@@include('../../include/header.html')
+<style>
+    .tab_cont {display:none}
+    .tab_cont.selected {display:block}
+</style>
+<script>  
+$(document).ready(function(){
+  $('.tab_g li').click(function(){
+    var tab_id = $(this).attr('data-tab');
+    var tab_siblings = $(this).siblings('li');
+    var cont_siblings = $(this).parents('.tab_g').siblings('.tab_cont');
+ 
+    tab_siblings.removeClass('on');
+    cont_siblings.removeClass('selected');
+ 
+    $(this).addClass('on');
+    $("#"+tab_id).addClass('selected');
+  })
+ 
+})    
+</script>
+<h2 id="#kakaoBody" class="screen_out">광고그룹관리 본문</h2>
+<div class="dashboard_wrap"><!-- 2016-12-30 뷰모드 2개짜리 layout_db_type1 / 뷰모드 1개짜리 layout_db_type2 -->
+	<div class="dsp_tit">
+		<span class="info_navigation"><a href="#none" class="link_navi">Dashboard</a><span class="img_comm ico_arrow"></span><a href="#none" class="link_navi">캠페인</a><span class="img_comm ico_arrow"></span><em class="current_navi"><span class="screen_out">현재페이지</span>광고그룹</em></span><!-- 2017-03-24 수정 / 현재페이지 em.current_navi 클래스 부여 -->
+		<div class="tit_dsp">
+			<h3 class="tit_subject">30대 남자</h3>
+			<span class="switch_check on"><!-- 스위치켜짐시 on / 비활성화시 in_active 클래스 부여 -->
+				<input type="checkbox" id="inpSwitch" class="inp_check" checked="checked"/><!-- 선택시 checked="checked" / 비활성화시 disabled="disabled" 추가 -->
+				<label for="inpSwitch" class="lab_check">
+					<span class="ico_switch">광고게재</span><!-- 스위치 on/off시 대체텍스트 '광고게재','광고중지' 변경 -->
+				</label>
+			</span>
+		</div>
+		<div class="box_setting">
+			<div class="single_wrap">
+				<div class="btn_gm gm_calendar"><!-- 클릭시 open 클래스 부여 -->
+                    <a href="#none" class="link_calendar">2016.09.06 - 2016.10.06</a>
+                    <!-- 2017-01-31 이전/다음 버튼 삭제
+                    <button type="button" class="btn_move btn_prev">비활성화시 in_active 클래스 부여
+                        <span class="ico_comm ico_arr">이전</span>
+                    </button>
+                    <button type="button" class="btn_move btn_next in_active">비활성화시 in_active 클래스 부여
+                        <span class="ico_comm ico_arr">다음</span>
+                    </button>
+                     -->
+                    <!-- 날짜 선택 달력 레이어 -->
+                    <div class="calendar_layer">
+                        <div class="inner_calendar_layer">
+                            <div class="layer_head">
+                                <strong class="screen_out">날짜 선택 달력</strong>
+                            </div>
+                            <div class="layer_body">
+                                <em class="screen_out">기간 선택</em>
+                                <ul class="list_period">
+                                    <li><a href="#none" class="link_period">전체</a></li><li><a href="#none" class="link_period">오늘</a></li><li><a href="#none" class="link_period">어제</a></li><li><a href="#none" class="link_period">최근 7일</a></li><li><a href="#none" class="link_period">최근 14일</a></li><li class="on"><!-- 선택된 내용일 경우 on 클래스 부여 --><a href="#none" class="link_period">최근 30일</a></li><li><a href="#none" class="link_period">지난달</a></li><li><a href="#none" class="link_period">이번달</a></li><li><a href="#none" class="link_period">직접설정</a></li>
+                                </ul>
+                                <strong class="date_selected"><span class="screen_out">선택된 날짜 : </span>2016.09.06 - 2016.10.06</strong>
+                                <div class="date_calendar">
+                                    <div class="area_calendar"><!-- 비활성화시 in_active 부여 -->
+                                        <em class=tit_date>2016.11</em>
+                                        <table class="tbl_calendar">
+                                            <caption class="hide_caption">날짜 선택 달력 표1</caption>
+                                            <colgroup>
+                                                <col /> 
+                                                <col />
+                                                <col />
+                                                <col />
+                                                <col />
+                                                <col />
+                                                <col />
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">일</th>
+                                                    <th scope="col">월</th>
+                                                    <th scope="col">화</th>
+                                                    <th scope="col">수</th>
+                                                    <th scope="col">목</th>
+                                                    <th scope="col">금</th>
+                                                    <th scope="col">토</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td class="fst"><a href="#none" class="link_day">1</a></td><!-- 1일 td에 fst 클래스 추가  -->
+                                                    <td><a href="#none" class="link_day">2</a></td>
+                                                    <td><a href="#none" class="link_day">3</a></td>
+                                                    <td><a href="#none" class="link_day">4</a></td>
+                                                    <td class="lst"><a href="#none" class="link_day">5</a></td> <!-- 각 tr의 마지막 td와 마지막 날짜 td에 lst 클래스 추가  -->
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="#none" class="link_day">6</a></td>
+                                                    <td><a href="#none" class="link_day">7</a></td>
+                                                    <td><a href="#none" class="link_day">8</a></td>
+                                                    <td class="in_active">
+                                                        <span class="link_day">9</span><!-- 비활성화시 span태그로 변경 -->
+                                                    </td><!-- 비활성화시 td에 in_active 클래스 부여 -->
+                                                    <td class="in_active"><span class="link_day">10</span></td>
+                                                    <td><a href="#none" class="link_day">11</a></td>
+                                                    <td class="lst"><a href="#none" class="link_day">12</a></td>
+                                                </tr>
+                                                <tr>
+                                                   <td><a href="#none" class="link_day">13</a></td>
+                                                   <td class="selected selected_start"><a href="#none" class="link_day"><span class="img_comm">14</span></a></td> 
+                                                   <!-- 선택된 처음 날짜/선택된 마지막 날짜 a.link_day안에 날짜를 감싸는 <span class="img_comm">날짜</span> 추가 -->
+                                                   <!-- 상황별 날짜 선택 클래스 정의
+                                                    선택된 날짜 : selected
+                                                    선택된 처음 날짜 : selected_start
+                                                    선택된 마지막 날짜 : selected_end
+                                                    하루만 선택 : selected_only -->
+                                                   <td class="selected"><a href="#none" class="link_day">15</a></td>
+                                                   <td class="selected"><a href="#none" class="link_day">16</a></td>
+                                                   <td class="selected"><a href="#none" class="link_day">17</a></td>
+                                                   <td class="selected"><a href="#none" class="link_day">18</a></td>
+                                                   <td class="selected lst"><a href="#none" class="link_day">19</a></td>
+                                                </tr>
+                                                <tr>
+                                                   <td class="selected"><a href="#none" class="link_day">20</a></td>
+                                                   <td class="selected"><a href="#none" class="link_day">21</a></td>
+                                                   <td class="selected"><a href="#none" class="link_day">22</a></td>
+                                                   <td class="selected"><a href="#none" class="link_day">23</a></td>
+                                                   <td class="selected"><a href="#none" class="link_day">24</a></td>
+                                                   <td class="selected"><a href="#none" class="link_day">25</a></td>
+                                                   <td class="selected lst"><a href="#none" class="link_day">26</a></td>
+                                                </tr>
+                                                <tr>
+                                                   <td class="selected"><a href="#none" class="link_day">27</a></td>
+                                                   <td class="selected"><a href="#none" class="link_day">28</a></td>
+                                                   <td class="selected"><a href="#none" class="link_day">29</a></td>
+                                                   <td class="selected lst"><a href="#none" class="link_day">30</a></td><!-- 각 tr의 마지막 td와 마지막 날짜 td에 lst 클래스 추가  -->
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="area_calendar"><!-- 비활성화시 in_active 부여 -->
+                                        <em class=tit_date>2016.12</em>
+                                        <table class="tbl_calendar">
+                                            <caption class="hide_caption">날짜 선택 달력 표2</caption>
+                                            <colgroup>
+                                                <col /> 
+                                                <col />
+                                                <col />
+                                                <col />
+                                                <col />
+                                                <col />
+                                                <col />
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">일</th>
+                                                    <th scope="col">월</th>
+                                                    <th scope="col">화</th>
+                                                    <th scope="col">수</th>
+                                                    <th scope="col">목</th>
+                                                    <th scope="col">금</th>
+                                                    <th scope="col">토</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td class="fst selected"><a href="#none" class="link_day">1</a></td>
+                                                    <td class="selected"><a href="#none" class="link_day">2</a></td>
+                                                    <td class="lst selected"><a href="#none" class="link_day">3</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="fst selected"><a href="#none" class="link_day">4</a></td>
+                                                    <td class="selected"><a href="#none" class="link_day">5</a></td>
+                                                    <td class="selected selected_end"><a href="#none" class="link_day"><span class="img_comm">6</span></a></td>
+                                                    <td><a href="#none" class="link_day">7</a></td>
+                                                    <td><a href="#none" class="link_day">8</a></td>
+                                                    <td class=""><a href="#none" class="link_day">9</a></td>
+                                                    <td class="lst"><a href="#none" class="link_day">10</a></td>
+                                                </tr>
+                                                <tr>
+                                                   <td class="fst"><a href="#none" class="link_day">11</a></td>
+                                                   <td><a href="#none" class="link_day">12</a></td>
+                                                   <td><a href="#none" class="link_day">13</a></td>
+                                                   <td><a href="#none" class="link_day">14</a></td>
+                                                   <td><a href="#none" class="link_day">15</a></td>
+                                                   <td><a href="#none" class="link_day">16</a></td>
+                                                   <td class="lst"><a href="#none" class="link_day">17</a></td>
+                                                </tr>
+                                                <tr>
+                                                   <td class="fst"><a href="#none" class="link_day">18</a></td>
+                                                   <td><a href="#none" class="link_day">19</a></td>
+                                                   <td><a href="#none" class="link_day">20</a></td>
+                                                   <td><a href="#none" class="link_day">21</a></td>
+                                                   <td><a href="#none" class="link_day">22</a></td>
+                                                   <td><a href="#none" class="link_day">23</a></td>
+                                                   <td class="lst"><a href="#none" class="link_day">24</a></td>
+                                                </tr>
+                                                <tr>
+                                                   <td class="fst"><a href="#none" class="link_day">25</a></td>
+                                                   <td><a href="#none" class="link_day">26</a></td>
+                                                   <td><a href="#none" class="link_day">27</a></td>
+                                                   <td><a href="#none" class="link_day">28</a></td>
+                                                   <td><a href="#none" class="link_day">29</a></td>
+                                                   <td><a href="#none" class="link_day">30</a></td>
+                                                   <td class="lst"><a href="#none" class="link_day">31</a></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <button type="button" class="btn_move btn_prev"><!-- 비활성화시 in_active 클래스 부여 -->
+                                        <span class="ico_comm ico_arr">이전</span>
+                                    </button>
+                                    <button type="button" class="btn_move btn_next in_active"><!-- 비활성화시 in_active 클래스 부여 -->
+                                        <span class="ico_comm ico_arr">다음</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="layer_foot">
+                                <div class="btn_wrap">
+                                    <button type="button" class="btn_gm gm_bl"><span class="inner_g">적용</span></button>
+                                    <a href="#none" class="btn_gm"><span class="inner_g">취소</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //날짜 선택 달력 레이어 -->
+                </div>
+			</div>
+			<div class="single_wrap">
+				<div class="couple_btn">
+					<a href="#none" class="btn_gm">
+						<span class="inner_g icon_g"><span class="ico_comm ico_modify">편집</span></span>
+					</a>
+					<a href="#none" class="btn_gm">
+						<span class="inner_g icon_g"><span class="ico_comm ico_del">삭제</span></span>
+					</a>
+				</div>
+			</div>
+<script>
+$(document).ready(function(){
+    $(".toggle_radio .inp_radio").click(function(){
+        //alert('ddddd');
+        var layoutChiceId = $(this).attr('id'); 
+        // alert(layoutChiceId);
+    
+        if(layoutChiceId == 'inpLayout2'){
+            $('.dashboard_wrap').removeClass('layout_db_type2').addClass('layout_db_type1');
+        }else if(layoutChiceId == 'inpLayout3'){
+            $('.dashboard_wrap').removeClass('layout_db_type1').addClass('layout_db_type2');
+        }else {
+            $('.dashboard_wrap').removeClass('layout_db_type1 layout_db_type2');
+        }
+
+    });
+});
+</script>
+			<div class="single_wrap">
+				<span class="toggle_radio">
+                    <span class="radio_g"><!-- 선택시, 마우스오버시 on 클래스 추가 -->
+                        <input type="radio" name="inpLayoutSet" id="inpLayout1" class="inp_radio" checked="checked" /><!-- 선택시 checked="checked" 추가 -->
+                        <label for="inpLayout1" class="lab_radio">
+                            <span class="ico_comm ico_layout3">3단형</span>
+                        </label>
+                    </span>
+                    <span class="radio_g"><!-- 선택시, 마우스오버시 on 클래스 추가 -->
+                        <input type="radio" name="inpLayoutSet" id="inpLayout2" class="inp_radio" /><!-- 선택시 checked="checked" 추가 -->
+                        <label for="inpLayout2" class="lab_radio">
+                            <span class="ico_comm ico_layout2">2단형</span>
+                        </label>
+                    </span>
+                    <span class="radio_g"><!-- 선택시, 마우스오버시 on 클래스 추가 -->
+                        <input type="radio" name="inpLayoutSet" id="inpLayout3" class="inp_radio" /><!-- 선택시 checked="checked" 추가 -->
+                        <label for="inpLayout3" class="lab_radio">
+                            <span class="ico_comm ico_layout1">1단형</span>
+                        </label>
+                    </span>
+                </span>
+			</div>	
+		</div>
+	</div>
+
+	<div class="dashboard_top">
+		<!-- 정보요약 -->
+		<div class="box_card card_info"><!-- card_info와 card_graph 높이값 같게 해주세요 -->
+			<strong class="screen_out">정보보기 탭</strong>
+			<ul class="tab_g">
+				<li data-tab="tab-11" class="on"><!-- 마우스오버/선택시 on 클래스 부여 -->
+					<a href="#none" class="link_tab">오늘의 요약</a>
+				</li>
+				<li data-tab="tab-12"><!-- 마우스오버/선택시 on 클래스 부여 -->
+					<a href="#none" class="link_tab">광고그룹 정보</a>
+				</li>
+			</ul>
+			<!-- 오늘의 요약 탭내용 -->
+			<div id="tab-11" class="tab_cont selected">
+				<!-- 로딩중
+				<div class="loading_wrap">
+					<img src="../../images/loading_wh.gif" alt="로딩중" class="img_loading" />
+				</div>
+				 -->
+				<h4 class="screen_out">오늘의 요약</h4><!-- 탭변경시 제목도 변경 -->
+				<ul class="cardinfo_today today_adgroup"><!-- 광고그룹대시보드일때 today_adgroup클래스 부여 -->
+					<li>
+						<strong class="tit_today">예상 객단가 (CPI)</strong>
+						<span class="desc_num">1,200원</span>
+					</li>
+					<li>
+						<strong class="tit_today">도달수</strong>
+						<span class="desc_num">45</span>
+					</li>
+					<li>
+						<strong class="tit_today">지출 광고비</strong>
+						<span class="desc_num">241,055원</span>
+					</li>
+				</ul>
+			</div>
+			<!-- //오늘의 요약 탭내용 -->
+			<!-- 캠페인정보 탭내용 -->
+			<div id="tab-12" class="tab_cont">
+			    <!-- 로딩중
+				<div class="loading_wrap">
+					<img src="../../images/loading_wh.gif" alt="로딩중" class="img_loading" />
+				</div>
+				-->
+				<h4 class="screen_out">광고그룹 정보</h4><!-- 탭변경시 제목도 변경 -->
+				<div class="infosum_dash infosum_type1"><!-- 광고그룹대시보드일때 infosum_type1클래스 부여 -->
+					<ul class="list_infosum">
+						<li>
+							<strong class="tit_infosum">광고그룹명</strong>
+							<p class="desc_infosum">30대 남자</p>
+						</li>
+						<li>
+							<strong class="tit_infosum">광고그룹번호</strong>
+							<p class="desc_infosum">123456</p>
+						</li>
+						<li>
+							<strong class="tit_infosum">상태</strong>
+							<p class="desc_infosum">
+								<span class="txt_state"><span class="ico_on"></span>운영중</span>
+								<!-- 운영중이 아닐때 <span class="txt_state fc_warn"><span class="ico_on"></span>운영중</span> fc_warn 클래스 추가 -->
+							</p>
+						</li>
+						<li>
+							<strong class="tit_infosum">일정</strong>
+							<p class="desc_infosum">2016.11.06 ~ 2016.12.06</p>
+						</li>
+						<li>
+							<strong class="tit_infosum">캠페인명</strong>
+							<a href="#none" class="desc_infosum fc_emph">일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십</a><!-- 2017-01-24 a태그로 변경 / 캠페인명 fc_emph 클래스 추가 -->
+						</li>
+					</ul>
+					<ul class="list_infosum">
+						<li>
+							<strong class="tit_infosum">과금방식</strong>
+							<p class="desc_infosum">CPA</p>
+						</li>
+						<li class="li_budget"><!-- 입찰금액일때 li_budget 클래스 부여 -->
+							<strong class="tit_infosum">입찰금액</strong>
+							<div class="desc_infosum">
+								<!-- 입찰금액인풋 -->
+								<strong class="screen_out">입찰금액설정 입력 폼</strong>
+                                <span class="box_inptxt budget_inp on"><!-- 마우스오버시 over / 입력시 on / 비활성화시 in_active 클래스 부여 -->
+                                    <span class="inner_inp">
+                                        <label for="inpTxt00" class="screen_out">입찰금액입력</label>
+                                        <input type="text" id="inpTxt00" class="inp_txt" value="900000000" /><!-- 2017-01-24 숫자입력폼 콤마제거 / 숫자만 입력 가능하게 해주세요~ -->
+                                    </span>
+                                    <span class="txt_won">원</span>
+                                    <button type="button" class="btn_gm">
+                                        <span class="inner_g icon_g"><span class="ico_comm ico_check">설정</span></span>
+                                    </button>
+                                    <a href="#none" class="link_g link_close"><span class="ico_comm ico_close">닫기</span></a>
+                                </span>
+								<!-- //입찰금액인풋 -->
+								<!--
+								<div class="txt_budget">
+									<span class="txt_set">900,000,000원</span>
+									<button type="button" class="btn_gs">
+										<span class="inner_g icon_g"><span class="ico_comm ico_modify">설정</span></span>
+									</button>
+								</div>	
+								-->
+								<!--
+								<div class="txt_budget">
+									<span class="txt_noset">예산 미설정</span>
+									<button type="button" class="btn_gs">
+										<span class="inner_g icon_g"><span class="ico_comm ico_modify">설정</span></span>
+									</button>
+								</div>
+								-->
+							</div>
+						</li>
+						<li class="li_budget"><!-- 일예산일때 li_budget 클래스 부여 -->
+							<strong class="tit_infosum">일예산</strong>
+							<div class="desc_infosum">
+								<!-- 일예산설정인풋 -->
+								<strong class="screen_out">일예산설정 입력 폼</strong>
+                                <span class="box_inptxt budget_inp on"><!-- 마우스오버시 over / 입력시 on / 비활성화시 in_active 클래스 부여 -->
+                                    <span class="inner_inp">
+                                        <label for="inpTxt2" class="screen_out">일예산입력</label>
+                                        <input type="text" id="inpTxt2" class="inp_txt" value="900000000" /><!-- 2017-01-24 숫자입력폼 콤마제거 / 숫자만 입력 가능하게 해주세요~ -->
+                                    </span>
+                                    <span class="txt_won">원</span>
+                                    <button type="button" class="btn_gm">
+                                        <span class="inner_g icon_g"><span class="ico_comm ico_check">설정</span></span>
+                                    </button>
+                                    <a href="#none" class="link_g link_close"><span class="ico_comm ico_close">닫기</span></a>
+                                </span>
+								<!--
+								<div class="txt_budget">
+									<span class="txt_set">900,000,000원</span>
+									<button type="button" class="btn_gs">
+										<span class="inner_g icon_g"><span class="ico_comm ico_modify">설정</span></span>
+									</button>
+								</div>	
+								-->
+								<!--
+								<div class="txt_budget">
+									<span class="txt_noset">예산 미설정</span>
+									<button type="button" class="btn_gs">
+										<span class="inner_g icon_g"><span class="ico_comm ico_modify">설정</span></span>
+									</button>
+								</div>
+								-->
+							</div>
+						</li>
+					</ul>
+					<ul class="list_infosum">
+						<li>
+							<strong class="tit_infosum">오디언스</strong>
+							<p class="desc_infosum">
+								<a href="#none" class="link_infosum">설정보기</a>
+							</p>
+						</li>
+						<li>
+							<strong class="tit_infosum">디바이스</strong>
+							<p class="desc_infosum">모든기기 자동 노출</p>
+						</li>
+						<li>
+							<strong class="tit_infosum">게재지면</strong>
+							<p class="desc_infosum">카카오톡, 외부네트워크<a href="#none" class="link_infosum">게재지면 제외 설정</a></p>
+						</li>
+						<li class="li_budget"><!-- 게재지면일때 li_budget 클래스 부여 -->
+							<strong class="tit_infosum">게재지면제외</strong>
+							<div class="desc_infosum">
+								<strong class="screen_out">예산설정 입력 폼</strong>
+                                <span class="box_inptxt budget_inp on"><!-- 마우스오버시 over / 입력시 on / 비활성화시 in_active 클래스 부여 -->
+                                    <span class="inner_inp">
+                                        <label for="inpTxt3" class="screen_out">예산입력</label>
+                                        <input type="text" id="inpTxt3" class="inp_txt" value="20" /><!--  숫자만 입력 가능하게 해주세요~ -->
+                                    </span>
+                                    <span class="txt_won">개</span>
+                                    <button type="button" class="btn_gm">
+                                        <span class="inner_g icon_g"><span class="ico_comm ico_check">설정</span></span>
+                                    </button>
+                                    <a href="#none" class="link_g link_close"><span class="ico_comm ico_close">닫기</span></a>
+                                </span>
+								<!-- //예산설정인풋 -->
+								<!--
+								<div class="txt_budget">
+									<span class="txt_set">20개</span>
+									<button type="button" class="btn_gs">
+										<span class="inner_g icon_g"><span class="ico_comm ico_modify">설정</span></span>
+									</button>
+								</div>	
+								-->
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- //캠페인정보 탭내용 -->
+		</div>
+		<!-- //정보요약 -->
+		<!-- 그래프 -->
+		<div class="box_card card_graph">
+			<strong class="screen_out">그래프 상세 탭</strong>
+			<ul class="tab_g">
+				<li data-tab="tab-21" class="on"><!-- 마우스오버/선택시 on 클래스 부여 -->
+					<a href="#none" class="link_tab">광고그룹 성과 분석</a>
+				</li>
+				<li data-tab="tab-22"><!-- 마우스오버/선택시 on 클래스 부여 -->
+					<a href="#none" class="link_tab">소재/게재위치 효과</a>
+				</li>
+			</ul>
+			<!-- 광고그룹 성과 분석 : 탭내용 -->
+			<div id="tab-21" class="tab_cont selected">
+				<h4 class="screen_out">광고그룹 성과 분석</h4><!-- 탭변경시 제목도 변경 -->
+				<div class="graph_wrap" style="height:357px">
+					<!-- 로딩
+					<div class="loading_wrap">
+						<img src="./images/loading_wh.gif" alt="로딩중" class="img_loading" />
+						<p class="txt_loading">잠시만 기다려주세요...</p>
+					</div> -->
+					<!-- 로딩실패
+					<div class="refresh_wrap">
+						<p class="txt_refresh">로딩을 실패하였습니다.</p>
+						<button type="button" class="btn_gm"><span class="inner_g"><span class="img_comm ico_refresh"></span>새로고침</span></button>
+					</div> -->
+					<img src="../../images/temp/ex_graph.png" alt="예시그래프" style="width:100%;opacity:0.3" />
+					<div class="graph_tooltip" style="left:456px;top:51px"><!-- 임시위치값 -->
+						<strong class="tit_date">12.01 (금)<span class="screen_out">광고비,노출수 데이터</span></strong>
+						<table class="tbl_graph">
+							<caption class="hide_caption">광고비,노출수 데이터 테이블</caption>
+							<colgroup>
+								<col />
+								<col />
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row"><span class="ico_on"></span>일이삼사</th>
+									<td>9,999,999,999</td>
+								</tr>
+								<tr class="tr_expo"><!-- 노출수일 경우 tr_expo 클래스 추가 부여 -->
+									<th scope="row"><span class="ico_on"></span>일이삼</th>
+									<td>403,008</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<!-- 소재게재위치 효과 탭내용 -->
+			<div id="tab-22" class="tab_cont">
+				<h4 class="screen_out">소재/게재위치 효과</h4><!-- 탭변경시 제목도 변경 -->
+				<div class="graph_wrap" style="height:357px">
+					<img src="../../images/temp/ex_graph.png" alt="예시그래프" style="width:100%;opacity:0.3" />
+				</div>
+			</div>
+			<!-- //소재게재위치 효과 탭내용 -->
+		</div>	
+		<!-- //그래프 -->
+		<div class="box_setting">
+            <div class="single_wrap">
+                <div class="couple_select">
+                    <div class="opt_select"><!-- 마우스오버시 over / 클릭시 opt_open 클래스 부여 / 비활성화시 in_active 클래스 부여 -->
+                        <div class="screen_out">데이터종류 선택상자</div>
+                        <span class="screen_out">선택내용 : </span>
+                        <a href="#none" class="link_selected"><span class="ico_on on_b"></span>비용</a>
+                        <span class="ico_arr"></span>
+                        <div class="screen_out">선택옵션</div>
+                        <div class="opt_list">
+                            <ul class="list_opt">
+                                <li class="on"><a href="#none" class="link_option">발송수</a></li><!-- 선택된 내용일 경우 on 클래스 부여 -->
+                                <li><a href="#none" class="link_option">열람수</a></li>
+                                <li><a href="#none" class="link_option">전체 클릭수</a></li>
+                                <li><a href="#none" class="link_option">비용</a></li>
+                                <li><a href="#none" class="link_option">발송당 비용</a></li>
+                                <li><a href="#none" class="link_option">열람당 비용</a></li>
+                                <li><a href="#none" class="link_option">전체 클릭당 비용</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="opt_select"><!-- 마우스오버시 over / 클릭시 opt_open 클래스 부여 / 비활성화시 in_active 클래스 부여 -->
+                        <div class="screen_out">데이터종류 선택상자</div>
+                        <span class="screen_out">선택내용 : </span>
+                        <a href="#none" class="link_selected"><span class="ico_on"></span>선택없음</a>
+                        <span class="ico_arr"></span>
+                        <div class="screen_out">선택옵션</div>
+                        <div class="opt_list">
+                            <ul class="list_opt">
+                                <li class="on"><a href="#none" class="link_option">선택없음</a></li><!-- 선택된 내용일 경우 on 클래스 부여 -->
+                            </ul>
+                            <ul class="list_opt">
+                                <li class="on"><a href="#none" class="link_option">발송수</a></li><!-- 선택된 내용일 경우 on 클래스 부여 -->
+                                <li><a href="#none" class="link_option">열람수</a></li>
+                                <li><a href="#none" class="link_option">전체 클릭수</a></li>
+                                <li><a href="#none" class="link_option">비용</a></li>
+                                <li><a href="#none" class="link_option">발송당 비용</a></li>
+                                <li><a href="#none" class="link_option">열람당 비용</a></li>
+                                <li><a href="#none" class="link_option">전체 클릭당 비용</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single_wrap">
+                <a href="#none" class="btn_gm"><span class="inner_g">보고서</span></a><!-- 2016-12-30 수정 -->
+            </div>
+        </div>
+	</div>
+	
+	
+	<!-- 테이블세트 -->
+	<div class="set_table">
+		<!-- 2016-12-30 추가 시작 -->
+		<strong class="screen_out">데이터 테이블 탭 리스트</strong>
+		<ul class="tab_g">
+			<li class="on" data-tab="tab-31"><!-- 마우스오버/선택시 on 클래스 부여 -->
+				<a href="#none" class="link_tab">소재 80</a><!-- 데이터가 없을때 첫번째 탭 이외의 탭은 비활성화로 span태그로 변경 -->
+			</li>
+		</ul>
+		<!-- 소재탭 -->
+		
+		<h4 class="screen_out">소재 탭 내용</h4>
+        <!-- 테이블셋 head -->
+        <div class="set_head">
+            <div class="f_left">
+                <div class="single_wrap">
+                    <a href="#none" class="btn_gm gm_bl">
+                        <span class="inner_g"><span class="img_comm ico_add"></span>새 소재 만들기</span>
+                    </a>
+                </div>
+                <div class="single_wrap">
+                    <div class="couple_btn">
+                        <button type="button" class="btn_gm in_active" disabled="disabled"><span class="inner_g">삭제</span></button>
+                        <button type="button" class="btn_gm in_active" disabled="disabled"><span class="inner_g">수정</span></button>
+                        <button type="button" class="btn_gm in_active" disabled="disabled"><span class="inner_g">복사</span></button>
+                    </div>
+                </div>
+                <div class="single_wrap">
+                    <div class="couple_btn onoff_btn"><!-- 대시보드 온오프버튼의 경우 onoff_btn 클래스 추가 부여 -->
+                        <button type="button" class="btn_gm in_active"><!-- 비활성화시 in_active 클래스 부여 --><span class="inner_g">ON</span></button>
+                        <button type="button" class="btn_gm in_active"><!-- 비활성화시 in_active 클래스 부여 --><span class="inner_g">OFF</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="f_right">
+                <div class="single_wrap">
+                    <!-- 열 설정 셀렉트박스 -->
+                    <div class="opt_select"><!-- 마우스오버시 over / 클릭시 opt_open 클래스 부여 / 비활성화시 in_active 클래스 부여 -->
+                        <div class="screen_out">데이터종류 선택상자</div>
+                        <span class="screen_out">선택내용 : </span>
+                        <a href="#none" class="link_selected">열 : 기본지표</a>
+                        <span class="ico_arr"></span>
+                        <div class="screen_out">선택옵션</div>
+                        <div class="opt_list">
+                            <!-- 2018-01-26 동영상지표 추가 시작 -->
+                            <ul class="list_opt">
+                                <li class="on">
+                                    <span class="box_checkinp"><!-- 마우스오버시 over / 선택시 on 클래스 부여 -->
+                                        <input type="checkbox" name="columCheckSet" id="columCheck1" class="inp_check" /><!-- 선택시 checked="checked" 추가 -->
+                                        <label for="columCheck1" class="lab_check"><span class="img_comm ico_check"></span>기본지표</label>
+                                    </span>
+                                </li><!-- 선택된 내용일 경우 on 클래스 부여 -->
+                                <li>
+                                    <span class="box_checkinp"><!-- 마우스오버시 over / 선택시 on 클래스 부여 -->
+                                        <input type="checkbox" name="columCheckSet" id="columCheck2" class="inp_check" />
+                                        <label for="columCheck2" class="lab_check"><span class="img_comm ico_check"></span>추가지표</label>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="box_checkinp"><!-- 마우스오버시 over / 선택시 on 클래스 부여 -->
+                                        <input type="checkbox" name="columCheckSet" id="columCheck3" class="inp_check" />
+                                        <label for="columCheck3" class="lab_check"><span class="img_comm ico_check"></span>게시물 지표</label>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="box_checkinp"><!-- 마우스오버시 over / 선택시 on 클래스 부여 -->
+                                        <input type="checkbox" name="columCheckSet" id="columCheck4" class="inp_check" />
+                                        <label for="columCheck4" class="lab_check"><span class="img_comm ico_check"></span>메세지 지표</label>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="box_checkinp"><!-- 마우스오버시 over / 선택시 on 클래스 부여 -->
+                                        <input type="checkbox" name="columCheckSet" id="columCheck5" class="inp_check" />
+                                        <label for="columCheck5" class="lab_check"><span class="img_comm ico_check"></span>전환 지표</label>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="box_checkinp"><!-- 마우스오버시 over / 선택시 on 클래스 부여 -->
+                                        <input type="checkbox" name="columCheckSet" id="columCheck6" class="inp_check" />
+                                        <label for="columCheck6" class="lab_check"><span class="img_comm ico_check"></span>동영상지표</label>
+                                    </span>
+                                </li>
+                            </ul>
+                            <ul class="list_opt">
+                                <li class="user_opt">
+                                    <a href="#none" class="link_option">사용자 설정1</a>
+                                    <a href="#none" class="btn_del"><span class="ico_comm ico_del">삭제</span></a>
+                                </li>
+                                <li class="user_opt">
+                                    <a href="#none" class="link_option">사용자 설정2</a>
+                                    <a href="#none" class="btn_del"><span class="ico_comm ico_del">삭제</span></a>
+                                </li>
+                            </ul>
+                            <ul class="list_opt">
+                                <li><a href="#none" class="link_option">열 맞춤 설정</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //열 설정 셀렉트박스 -->
+                </div>
+                <div class="single_wrap">
+                    <!-- 필터 셀렉트박스 -->
+                    <div class="opt_select opt_filter"><!-- 마우스오버시 over / 클릭시 opt_open 클래스 부여 / 비활성화시 in_active 클래스 부여 -->
+                        <div class="screen_out">데이터종류 선택상자</div>
+                        <span class="screen_out">선택내용 : </span>
+                        <a href="#none" class="link_selected">필터</a>
+                        <span class="ico_arr"></span>
+                        <div class="screen_out">선택옵션</div>
+                        <div class="opt_list">
+                            <ul class="list_opt">
+                                <li><!-- 선택된 내용일 경우 on 클래스 부여 -->
+                                    <span class="box_checkinp"><!-- 마우스오버시 over / 선택시 on 클래스 부여 -->
+                                        <input type="checkbox" name="filterCheckSet" id="filterCheck" class="inp_check" /><!-- 선택시 checked="checked" 추가 -->
+                                        <label for="filterCheck" class="lab_check"><span class="img_comm ico_check"></span>운영중인 캠페인</label>
+                                    </span>
+                                </li>
+                            </ul>
+                            <ul class="list_opt">
+                                <li class="on"><!-- 선택된 내용일 경우 on 클래스 부여 -->
+                                    <span class="box_checkinp"><!-- 마우스오버시 over / 선택시 on 클래스 부여 -->
+                                        <input type="checkbox" name="filterCheckSet" id="filterCheck2" class="inp_check" /><!-- 선택시 checked="checked" 추가 -->
+                                        <label for="filterCheck2" class="lab_check"><span class="img_comm ico_check"></span>운영중지된 캠페인</label>
+                                    </span>
+                                    <ul class="list_opt">
+                                        <li class="on">
+                                            <span class="box_checkinp">
+                                                <input type="checkbox" name="filterSubCheck" id="filterSubCheck1" class="inp_check" checked="checked" /><!-- 선택시 checked="checked" 추가 -->
+                                                <label for="filterSubCheck1" class="lab_check"><span class="img_comm ico_check"></span>광고계정 운영중지</label>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span class="box_checkinp">
+                                                <input type="checkbox" name="filterSubCheck" id="filterSubCheck2" class="inp_check" />
+                                                <label for="filterSubCheck2" class="lab_check"><span class="img_comm ico_check"></span>잔액부족</label>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span class="box_checkinp">
+                                                <input type="checkbox" name="filterSubCheck" id="filterSubCheck3" class="inp_check" />
+                                                <label for="filterSubCheck3" class="lab_check"><span class="img_comm ico_check"></span>광고계정 관리자정지</label>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span class="box_checkinp">
+                                                <input type="checkbox" name="filterSubCheck" id="filterSubCheck4" class="inp_check" />
+                                                <label for="filterSubCheck4" class="lab_check"><span class="img_comm ico_check"></span>캠페인 일예산초과</label>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span class="box_checkinp">
+                                                <input type="checkbox" name="filterSubCheck" id="filterSubCheck5" class="inp_check" />
+                                                <label for="filterSubCheck5" class="lab_check"><span class="img_comm ico_check"></span>광고그룹 없음</label>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //필터 셀렉트박스 -->
+
+               
+                </div>
+                <div class="single_wrap">
+                    <a href="#none" class="btn_gm">
+                        <span class="inner_g icon_g">
+                            <span class="ico_comm ico_download">다운로드</span>
+                        </span>
+                    </a>
+                </div>	
+            </div>
+        </div>
+        <!-- //테이블셋 head -->
+        <!-- 데이타테이블 -->
+        <div class="table_wrap =scroll_ing"><!-- 테이블 스크롤시 scroll_ing 클래스 부여 -->
+            <!-- 스크롤시 테이블 고정 영역 -->
+            <div class="table_fixed" style="width:422px"><!-- 소재명과 선택영역까지의 width값을 불러와 인라인스타일로 뿌려주세요 -->
+                <table class="tbl_g">
+                    <caption class="hide_caption">소재 데이터 테이블</caption>
+                    <colgroup>
+                        <col />
+                        <col width="386px"/><!-- 2017-03-11 고정으로 변경 -->
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col" class="th_select align_c">
+                                <div class="inner_tbl">
+                                    <div class="hide_shim" style="width:36px"></div><!-- 최소width값 입력 -->
+                                    <label class="check_inp"><!-- 마우스오버시 over / 선택시 on 클래스 부여 -->
+                                        <input type="checkbox" name="inpCheckSet" class="inp_check" /><!-- 선택시 checked="checked" 추가 -->
+                                        <span class="img_comm ico_check"></span><!-- 정렬기능있는경우 추가 -->
+                                    </label>
+                                </div>
+                            </th>
+                            <th scope="col" class="sortable sort_on sort_up"><!-- 2017-05-11_v2 정렬한경우 내림차순,오름차순에 따라 sort_down, sort_up 클래스 추가 / 정렬기능있는경우 sortable 클래스 부여 / hover시 sort_over 클래스 / 클릭시 정렬되면서 sort_on 클래스 부여 -->
+                                <div class="inner_tbl">
+                                    <div class="hide_shim" style="width:385px"></div><!-- 최소width값 입력 -->
+                                    소재명<a href="#none" class="link_g link_help"><span class="ico_comm ico_help">도움말</span></a>
+                                    <span class="ico_comm ico_sort">정렬</span><!-- 정렬기능있는경우 추가 -->
+                                </div><!-- 2017-05-11_v2 텍스트수정 -->
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="tr_summary">
+                            <td></td>
+                            <td><div class="inner_tbl">전체 소재</div></td>
+                        </tr>
+                        <tr>
+                            <td class="align_c">
+                                <div class="inner_tbl">
+                                    <label class="check_inp"><!-- 마우스오버시 over / 선택시 on 클래스 부여 -->
+                                        <input type="checkbox" name="inpCheckSet" class="inp_check" />
+                                        <span class="img_comm ico_check"></span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td class="td_thumb"><!-- 썸네일이 들어가는 td에 td_thumb 클래스 부여 -->
+                                <div class="inner_tbl">
+                                    <a href="#none" class="link_thumb">
+                                        <span class="inner_thumb" style="background-image:url(../../images/temp/thumb_native.png);"></span>
+                                    </a>
+                                    <span class="thumb_link">
+                                        <a href="#none" class="link_txt">일이삼사오육칠팔구십 일이삼사오육칠팔구십 일이삼사오육칠팔구십 일이삼사오육칠팔구십</a>
+                                        <span class="link_more"><!-- 클릭시 on 클래스 부여 -->
+                                            <a href="#none" class="link_g"><span class="ico_comm ico_more">캠페인 설정</span></a>
+                                            <span class="menu_layer">
+                                                <a href="#none" class="link_menu">소재 삭제</a>
+                                                <a href="#none" class="link_menu">소재 수정</a>
+                                                <a href="#none" class="link_menu">소재 복사</a>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="align_c">
+                                <div class="inner_tbl">
+                                    <label class="check_inp"><!-- 마우스오버시 over / 선택시 on 클래스 부여 -->
+                                        <input type="checkbox" name="inpCheckSet" class="inp_check" />
+                                        <span class="img_comm ico_check"></span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td class="td_thumb"><!-- 썸네일이 들어가는 td에 td_thumb 클래스 부여 -->
+                                <div class="inner_tbl">
+                                    <a href="#none" class="link_thumb">
+                                        <span class="inner_thumb" style="background-image:url(../../images/temp/thumb_native.png);"></span>
+                                    </a>
+                                    <span class="thumb_link">
+                                        <a href="#none" class="link_txt">일이삼사오육칠팔구십 일이삼사오육칠팔구십 일이삼사오육칠팔구십 일이삼사오육칠팔구십</a>
+                                        <span class="link_more"><!-- 클릭시 on 클래스 부여 -->
+                                            <a href="#none" class="link_g"><span class="ico_comm ico_more">캠페인 설정</span></a>
+                                            <span class="menu_layer">
+                                                <a href="#none" class="link_menu">소재 삭제</a>
+                                                <a href="#none" class="link_menu">소재 수정</a>
+                                                <a href="#none" class="link_menu">소재 복사</a>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                         <tr class="over">
+                            <td class="align_c">
+                                <div class="inner_tbl">
+                                    <label class="check_inp"><!-- 마우스오버시 over / 선택시 on 클래스 부여 -->
+                                        <input type="checkbox" name="inpCheckSet" class="inp_check" />
+                                        <span class="img_comm ico_check"></span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td class="td_thumb"><!-- 썸네일이 들어가는 td에 td_thumb 클래스 부여 -->
+                                <div class="inner_tbl">
+                                    <a href="#none" class="link_thumb">
+                                        <span class="inner_thumb" style="background-image:url(../../images/temp/thumb_native.png);"></span>
+                                    </a>
+                                    <span class="thumb_link">
+                                        <a href="#none" class="link_txt">일이삼사오육칠팔구십 일이삼사오육칠팔구십 일이삼사오육칠팔구십 일이삼사오육칠팔구십</a>
+                                        <span class="link_more"><!-- 클릭시 on 클래스 부여 -->
+                                            <a href="#none" class="link_g"><span class="ico_comm ico_more">캠페인 설정</span></a>
+                                            <span class="menu_layer">
+                                                <a href="#none" class="link_menu">소재 삭제</a>
+                                                <a href="#none" class="link_menu">소재 수정</a>
+                                                <a href="#none" class="link_menu">소재 복사</a>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="align_c">
+                                <div class="inner_tbl">
+                                    <label class="check_inp"><!-- 마우스오버시 over / 선택시 on 클래스 부여 -->
+                                        <input type="checkbox" name="inpCheckSet" class="inp_check" />
+                                        <span class="img_comm ico_check"></span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td class="td_thumb"><!-- 썸네일이 들어가는 td에 td_thumb 클래스 부여 -->
+                                <div class="inner_tbl">
+                                    <a href="#none" class="link_thumb">
+                                        <span class="inner_thumb" style="background-image:url(../../images/temp/thumb_native.png);"></span>
+                                    </a>
+                                    <span class="thumb_link">
+                                        <a href="#none" class="link_txt">일이삼사오육칠팔구십 일이삼사오육칠팔구십 일이삼사오육칠팔구십 일이삼사오육칠팔구십</a>
+                                        <span class="link_more"><!-- 클릭시 on 클래스 부여 -->
+                                            <a href="#none" class="link_g"><span class="ico_comm ico_more">캠페인 설정</span></a>
+                                            <span class="menu_layer">
+                                                <a href="#none" class="link_menu">소재 삭제</a>
+                                                <a href="#none" class="link_menu">소재 수정</a>
+                                                <a href="#none" class="link_menu">소재 복사</a>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="on">
+                            <td class="align_c">
+                                <div class="inner_tbl">
+                                    <label class="check_inp"><!-- 마우스오버시 over / 선택시 on 클래스 부여 -->
+                                        <input type="checkbox" name="inpCheckSet" class="inp_check" checked="checked" /><!-- 선택시 checked="checked" 추가 -->
+                                        <span class="img_comm ico_check"></span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td class="td_thumb"><!-- 썸네일이 들어가는 td에 td_thumb 클래스 부여 -->
+                                <div class="inner_tbl">
+                                    <a href="#none" class="link_thumb">
+                                        <span class="inner_thumb" style="background-image:url(../../images/temp/thumb_native.png);"></span>
+                                    </a>
+                                    <span class="thumb_link">
+                                        <a href="#none" class="link_txt">일이삼사오육칠팔구십 일이삼사오육칠팔구십 일이삼사오육칠팔구십 일이삼사오육칠팔구십</a>
+                                        <span class="link_more on"><!-- 클릭시 on 클래스 부여 -->
+                                            <a href="#none" class="link_g"><span class="ico_comm ico_more">캠페인 설정</span></a>
+                                            <span class="menu_layer">
+                                                <a href="#none" class="link_menu">소재 삭제</a>
+                                                <a href="#none" class="link_menu">소재 수정</a>
+                                                <a href="#none" class="link_menu">소재 복사</a>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="align_c">
+                                <div class="inner_tbl">
+                                    <label class="check_inp"><!-- 마우스오버시 over / 선택시 on 클래스 부여 -->
+                                        <input type="checkbox" name="inpCheckSet" class="inp_check" />
+                                        <span class="img_comm ico_check"></span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td class="td_thumb"><!-- 썸네일이 들어가는 td에 td_thumb 클래스 부여 -->
+                                <div class="inner_tbl">
+                                    <a href="#none" class="link_thumb">
+                                        <span class="inner_thumb" style="background-image:url(../../images/temp/thumb_bnr.png);"></span>
+                                    </a>
+                                    <span class="thumb_link">
+                                        <a href="#none" class="link_txt">일이삼사오육칠팔구십 일이삼사오육칠팔구십 일이삼사오육칠팔구십 일이삼사오육칠팔구십</a>
+                                        <span class="link_more"><!-- 클릭시 on 클래스 부여 -->
+                                            <a href="#none" class="link_g"><span class="ico_comm ico_more">캠페인 설정</span></a>
+                                            <span class="menu_layer">
+                                                <a href="#none" class="link_menu">소재 삭제</a>
+                                                <a href="#none" class="link_menu">소재 수정</a>
+                                                <a href="#none" class="link_menu">소재 복사</a>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="align_c">
+                                <div class="inner_tbl">
+                                    <label class="check_inp"><!-- 마우스오버시 over / 선택시 on 클래스 부여 -->
+                                        <input type="checkbox" name="inpCheckSet" class="inp_check" />
+                                        <span class="img_comm ico_check"></span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td class="td_thumb"><!-- 썸네일이 들어가는 td에 td_thumb 클래스 부여 -->
+                                <div class="inner_tbl">
+                                    <a href="#none" class="link_thumb">
+                                        <span class="inner_thumb" style="background-image:url(../../images/temp/thumb_native.png);">
+                                            <span class="ico_comm ico_mov">동영상형</span>
+                                        </span>
+                                    </a>
+                                    <span class="thumb_link">
+                                        <a href="#none" class="link_txt">일이삼사오육칠팔구십 일이삼사오육칠팔구십 일이삼사오육칠팔구십 일이삼사오육칠팔구십</a>
+                                        <span class="link_more"><!-- 클릭시 on 클래스 부여 -->
+                                            <a href="#none" class="link_g"><span class="ico_comm ico_more">캠페인 설정</span></a>
+                                            <span class="menu_layer">
+                                                <a href="#none" class="link_menu">소재 삭제</a>
+                                                <a href="#none" class="link_menu">소재 수정</a>
+                                                <a href="#none" class="link_menu">소재 복사</a>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="align_c">
+                                <div class="inner_tbl">
+                                    <label class="check_inp"><!-- 마우스오버시 over / 선택시 on 클래스 부여 -->
+                                        <input type="checkbox" name="inpCheckSet" class="inp_check" />
+                                        <span class="img_comm ico_check"></span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td class="td_thumb"><!-- 썸네일이 들어가는 td에 td_thumb 클래스 부여 -->
+                                <div class="inner_tbl">
+                                    <a href="#none" class="link_thumb">
+                                        <span class="inner_thumb" style="background-image:url(../../images/temp/thumb_msg.png);">
+                                            <span class="ico_comm ico_mov">메세지형</span>
+                                        </span>
+                                    </a>
+                                    <span class="thumb_link">
+                                        <a href="#none" class="link_txt">일이삼사오육칠팔구십 일이삼사오육칠팔구십 일이삼사오육칠팔구십 일이삼사오육칠팔구십</a>
+                                        <span class="link_more"><!-- 클릭시 on 클래스 부여 -->
+                                            <a href="#none" class="link_g"><span class="ico_comm ico_more">캠페인 설정</span></a>
+                                            <span class="menu_layer">
+                                                <a href="#none" class="link_menu">소재 삭제</a>
+                                                <a href="#none" class="link_menu">소재 수정</a>
+                                                <a href="#none" class="link_menu">소재 복사</a>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="align_c">
+                                <div class="inner_tbl">
+                                    <label class="check_inp"><!-- 마우스오버시 over / 선택시 on 클래스 부여 -->
+                                        <input type="checkbox" name="inpCheckSet" class="inp_check" />
+                                        <span class="img_comm ico_check"></span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td class="td_thumb"><!-- 썸네일이 들어가는 td에 td_thumb 클래스 부여 -->
+                                <div class="inner_tbl">
+                                    <a href="#none" class="link_thumb">
+                                        <span class="inner_thumb" style="background-image:url(../../images/temp/thumb_plus.png);">
+                                            <span class="ico_comm ico_mov">플러스친구형</span>
+                                        </span>
+                                    </a>
+                                    <span class="thumb_link">
+                                        <a href="#none" class="link_txt">일이삼사오육칠팔구십 일이삼사오육칠팔구십 일이삼사오육칠팔구십 일이삼사오육칠팔구십</a>
+                                        <span class="link_more"><!-- 클릭시 on 클래스 부여 -->
+                                            <a href="#none" class="link_g"><span class="ico_comm ico_more">캠페인 설정</span></a>
+                                            <span class="menu_layer">
+                                                <a href="#none" class="link_menu">소재 삭제</a>
+                                                <a href="#none" class="link_menu">소재 수정</a>
+                                                <a href="#none" class="link_menu">소재 복사</a>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="align_c">
+                                <div class="inner_tbl">
+                                    <label class="check_inp"><!-- 마우스오버시 over / 선택시 on 클래스 부여 -->
+                                        <input type="checkbox" name="inpCheckSet" class="inp_check" />
+                                        <span class="img_comm ico_check"></span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td class="td_thumb"><!-- 썸네일이 들어가는 td에 td_thumb 클래스 부여 -->
+                                <div class="inner_tbl">
+                                    <a href="#none" class="link_thumb">
+                                        <span class="inner_thumb" style="background-image:url(../../images/temp/thumb_board.png);">
+                                            <span class="ico_comm ico_mov">게시글형</span>
+                                        </span>
+                                    </a>
+                                    <span class="thumb_link">
+                                        <a href="#none" class="link_txt">일이삼사오육칠팔구십 일이삼사오육칠팔구십 일이삼사오육칠팔구십 일이삼사오육칠팔구십</a>
+                                        <span class="link_more"><!-- 클릭시 on 클래스 부여 -->
+                                            <a href="#none" class="link_g"><span class="ico_comm ico_more">캠페인 설정</span></a>
+                                            <span class="menu_layer">
+                                                <a href="#none" class="link_menu">소재 삭제</a>
+                                                <a href="#none" class="link_menu">소재 수정</a>
+                                                <a href="#none" class="link_menu">소재 복사</a>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="tr_inactive"><!-- 비활성화시 tr_inactive 클래스 부여 / check_inp에 in_active 클래스 부여 -->
+                            <td class="align_c">
+                                <div class="inner_tbl">
+                                    <!-- 테이블안에 들어있는 체크박스의 경우 테이블행 전체가 비활성화시 tr에 tr_inactive가 붙으면 따로 in_active 클래스 넣지 않으셔도 됩니다~ 개별제어시에만 넣으셔도 됩니다! -->
+                                    <label class="check_inp"><!-- 마우스오버시 over / 선택시 on 클래스 부여 / 비활성화시 in_active -->
+                                        <input type="checkbox" name="inpCheckSet" class="inp_check"/><!-- 선택시 checked="checked" 추가 / 비활성화시 disabled="disabled" 추가 -->
+                                        <span class="img_comm ico_check"></span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td class="td_thumb"><!-- 썸네일이 들어가는 td에 td_thumb 클래스 부여 -->
+                                <div class="inner_tbl">
+                                    <a href="#none" class="link_thumb">
+                                        <img src="../../images/temp/thumb_native.png" width="60" height="47" alt="일반형" class="img_thumb"/><!-- 소재형에 맞게 alt값 넣어주세요 / 일반형은 일반형/전면형/게시글로 분류해서 넣어주세요 -->
+                                    </a>
+                                    <span class="thumb_link">
+                                        <a href="#none" class="link_txt">일이삼사오육칠팔구십 일이삼사오육칠팔구십 일이삼사오육칠팔구십 일이삼사오육칠팔구십</a><!-- tr_inactive시(비활성화시) span태그로 변경 -->
+                                        <span class="link_more #if($i==5)on#end"><!-- 클릭시 on 클래스 부여 -->
+                                            <a href="#none" class="link_g"><span class="ico_comm ico_more">캠페인 설정</span></a>
+                                            <span class="menu_layer">
+                                                <a href="#none" class="link_menu">소재 삭제</a>
+                                                <a href="#none" class="link_menu">소재 수정</a>
+                                                <a href="#none" class="link_menu">소재 복사</a>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- //스크롤시 테이블 고정 영역 -->
+            <div class="inner_table">
+                <table class="tbl_g">
+                    <caption class="hide_caption">소재 데이터 테이블</caption>
+                    <colgroup>
+                        <!-- 2017-03-11 수정 시작 -->
+                        <col />
+                        <col width="386px"/><!-- 2017-03-11 고정으로 변경 -->
+                        <col width="70px"/><!-- 2017-03-11 고정으로 변경 -->
+                        <col />
+                        <col />
+                        <col />
+                        <col />
+                        <col />
+                        <col />
+                        <!-- //2017-03-11 수정 종료 -->
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col" class="th_select align_c">
+                                <div class="inner_tbl">
+                                    <div class="hide_shim" style="width:36px"></div><!-- 최소width값 입력 -->
+                                    <label class="check_inp"><!-- 마우스오버시 over / 선택시 on 클래스 부여 -->
+                                        <input type="checkbox" name="inpCheckSet" class="inp_check" /><!-- 선택시 checked="checked" 추가 -->
+                                        <span class="img_comm ico_check"></span><!-- 정렬기능있는경우 추가 -->
+                                    </label>
+                                </div>
+                            </th>
+                            <th scope="col" class="sortable sort_on sort_up"><!-- 정렬한경우 내림차순,오름차순에 따라 sort_down, sort_up 클래스 추가 / 정렬기능있는경우 sortable 클래스 부여 / hover시 sort_over 클래스 / 클릭시 정렬되면서 sort_on 클래스 부여 -->
+                                <div class="inner_tbl">
+                                    <div class="hide_shim" style="width:385px"></div><!-- 최소width값 입력 -->
+                                    소재명<a href="#none" class="link_g link_help"><span class="ico_comm ico_help">도움말</span></a>
+                                    <span class="ico_comm ico_sort">정렬</span><!-- 정렬기능있는경우 추가 -->
+                                </div>
+                            </th>
+                            <th scope="col" class="align_c"><!-- 정렬기능있는경우 sortable 클래스 부여 -->
+                                <div class="inner_tbl">
+                                    <div class="hide_shim" style="width:69px"></div>
+                                    ON/OFF
+                                </div>
+                            </th>
+                            <th scope="col">
+                                <div class="inner_tbl">
+                                    <div class="hide_shim" style="width:230px"></div>
+                                    상태<a href="#none" class="link_g link_help"><span class="ico_comm ico_help">도움말</span></a>
+                                    <!-- 2017-03-11 삭제 <span class="ico_comm ico_sort">정렬</span>정렬기능있는경우 추가 -->
+                                </div>
+                            </th>
+                            <th scope="col" class="sortable"><!-- 정렬기능있는경우 sortable 클래스 부여 -->
+                                <div class="inner_tbl">
+                                    <div class="hide_shim" style="width:110px"></div>
+                                    입찰금액<a href="#none" class="link_g link_help"><span class="ico_comm ico_help">도움말</span></a>
+                                    <span class="ico_comm ico_sort">정렬</span><!-- 정렬기능있는경우 추가 -->
+                                </div>
+                            </th>
+                            <th scope="col" class="sortable sort_up"><!-- 정렬한경우 내림차순,오름차순에 따라 sort_down, sort_up 클래스 추가 / 정렬기능있는경우 sortable 클래스 부여 -->
+                                <div class="inner_tbl">
+                                    <div class="hide_shim" style="width:110px"></div>
+                                    노출수<a href="#none" class="link_g link_help"><span class="ico_comm ico_help">도움말</span></a>
+                                    <span class="ico_comm ico_sort">정렬</span><!-- 정렬기능있는경우 추가 -->
+                                </div>
+                            </th>
+                            <th scope="col" class="sortable"><!-- 정렬기능있는경우 sortable 클래스 부여 -->
+                                <div class="inner_tbl">
+                                    <div class="hide_shim" style="width:110px"></div>
+                                    클릭수<a href="#none" class="link_g link_help"><span class="ico_comm ico_help">도움말</span></a>
+                                    <span class="ico_comm ico_sort">정렬</span><!-- 정렬기능있는경우 추가 -->
+                                </div>
+                            </th>
+                            <th scope="col" class="sortable"><!-- 정렬기능있는경우 sortable 클래스 부여 -->
+                                <div class="inner_tbl">
+                                    <div class="hide_shim" style="width:100px"></div>
+                                    클릭률<a href="#none" class="link_g link_help"><span class="ico_comm ico_help">도움말</span></a>
+                                    <span class="ico_comm ico_sort">정렬</span><!-- 정렬기능있는경우 추가 -->
+                                </div>
+                            </th>
+                            <th scope="col" class="sortable"><!-- 정렬기능있는경우 sortable 클래스 부여 -->
+                                <div class="inner_tbl">
+                                    <div class="hide_shim" style="width:140px"></div>
+                                    총지출 광고비<a href="#none" class="link_g link_help"><span class="ico_comm ico_help">도움말</span></a>
+                                    <span class="ico_comm ico_sort">정렬</span><!-- 정렬기능있는경우 추가 -->
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--  데이터 없을때 
+                        <tr class="tr_nodata">
+                            <td colspan="10">
+                                <div class="inner_tbl">
+                                    <p class="desc_nodata">
+                                        등록한 소재가 없습니다.<br/><a href="#none" class="fc_empty">새 소재 만들기</a>를 선택하여 새로운 소재를 등록해주세요.
+                                    </p>
+                                </div>
+                            </td>
+                        </tr>
+                         -->
+                        <!-- 로딩
+                        <tr class="tr_loading">
+                            <td colspan="10">
+                                <div class="loading_wrap">
+                                    <img src="./images/loading_wh.gif" alt="로딩중" class="img_loading" />
+                                    <p class="txt_loading">잠시만 기다려주세요...</p>
+                                </div>
+                            </td>
+                        </tr>
+                         -->
+                        <!-- 로딩실패
+                        <tr class="tr_refresh">
+                            <td colspan="10">
+                                <div class="refresh_wrap">
+                                    <p class="txt_refresh">로딩을 실패하였습니다.</p>
+                                    <button type="button" class="btn_gm"><span class="inner_g"><span class="img_comm ico_refresh"></span>새로고침</span></button>
+                                </div>
+                            </td>
+                        </tr>
+                        -->
+                        <tr class="tr_summary">
+                            <td></td>
+                            <td><div class="inner_tbl">전체 소재</div></td>
+                            <td></td>
+                            <td></td>
+                            <td class="align_r"><div class="inner_tbl">507,000</div></td>
+                            <td class="align_r"><div class="inner_tbl">9,999,999,999</div></td>
+                            <td class="align_r"><div class="inner_tbl">4.0</div></td>
+                            <td class="align_r"><div class="inner_tbl">3.95</div></td>
+                            <td class="align_r"><div class="inner_tbl">1,280</div></td>
+                        </tr>
+                        <tr><!-- 1 -->
+                            <td class="align_c">
+                                <div class="inner_tbl">
+                                    <label class="check_inp"><!-- 마우스오버시 over / 선택시 on 클래스 부여 -->
+                                        <input type="checkbox" name="inpCheckSet" class="inp_check" />
+                                        <span class="img_comm ico_check"></span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td class="td_thumb"><!-- 썸네일이 들어가는 td에 td_thumb 클래스 부여 -->
+                                <div class="inner_tbl">
+                                    <a href="#none" class="link_thumb">
+                                        <span class="inner_thumb" style="background-image:url(../../images/temp/thumb_native.png);"></span>
+                                    </a>
+                                    <span class="thumb_link">
+                                        <a href="#none" class="link_txt">일이삼사오육칠팔구십 일이삼사오육칠팔구십 일이삼사오육칠팔구십 일이삼사오육칠팔구십</a>
+                                        <span class="link_more"><!-- 클릭시 on 클래스 부여 -->
+                                            <a href="#none" class="link_g"><span class="ico_comm ico_more">캠페인 설정</span></a>
+                                            <span class="menu_layer">
+                                                <a href="#none" class="link_menu">소재 삭제</a>
+                                                <a href="#none" class="link_menu">소재 수정</a>
+                                                <a href="#none" class="link_menu">소재 복사</a>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="align_c">
+                                <div class="inner_tbl">
+                                    <span class="switch_check">
+                                        <input type="checkbox" id="inpSwitch1" class="inp_check"/>
+                                        <label for="inpSwitch1" class="lab_check">
+                                            <span class="ico_switch">광고게재</span><!-- 스위치 on/off시 대체텍스트 '광고게재','광고중지' 변경 -->
+                                        </label>
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="inner_tbl">
+                                    <p class="ad_state"><span class="ico_on">on</span>운영중</p>
+                                </div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">
+                                    <!-- 일예산 수정 인풋박스 레이어 -->
+                                    <div class="modify_budget"><!-- 클릭시 on 클래스 부여 -->
+                                        <a href="#none" class="link_budget">999,999,999</a>
+                                        <div class="tooltip_budget">
+                                            <div class="fld_budget">
+                                                <strong class="screen_out">일예산 입력 폼</strong>
+                                                <div class="budget_cheking">
+                                                    <span class="box_inptxt"><!-- 마우스오버시 over / 입력시 on / 비활성화시 in_active 클래스 부여 -->
+                                                        <span class="inner_inp">
+                                                            <label for="inpTxt1" class="screen_out">일예산 변경</label>
+                                                            <input type="text" id="inpTxt1" class="inp_txt" value="9999999999" />
+                                                        </span>
+                                                    </span>
+                                                    <span class="box_checkinp"><!-- 마우스오버시 over / 선택시 on / 비활성화시 in_active 클래스 부여 -->
+                                                        <input type="checkbox" name="checkBudjetSet" id="checkBudjet1" class="inp_check" ><!-- 선택시 checked="checked" 추가 -->
+                                                        <label for="checkBudjet1" class="lab_check"><span class="img_comm ico_check"></span>미설정</label>
+                                                    </span>
+                                                </div>
+                                                <button type="submit" class="btn_gm gm_bl"><span class="inner_g">변경</span></button>
+                                                <a href="#none" class="btn_gm"><span class="inner_g">취소</span></a>
+                                            </div>
+                                            <span class="img_comm ico_arr"></span>
+                                        </div>
+                                    </div>
+                                    <!-- 일예산 수정 인풋박스 레이어 -->	
+                                </div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">9,999,999,999</div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">9,999,999,999</div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">100,00</div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">9,999,999,999</div>
+                            </td>
+                        </tr>
+                        <tr><!-- 2 -->
+                            <td class="align_c">
+                                <div class="inner_tbl">
+                                    <label class="check_inp"><!-- 마우스오버시 over / 선택시 on 클래스 부여 -->
+                                        <input type="checkbox" name="inpCheckSet" class="inp_check" />
+                                        <span class="img_comm ico_check"></span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td class="td_thumb"><!-- 썸네일이 들어가는 td에 td_thumb 클래스 부여 -->
+                                <div class="inner_tbl">
+                                    <a href="#none" class="link_thumb">
+                                        <span class="inner_thumb" style="background-image:url(../../images/temp/thumb_native.png);"></span>
+                                    </a>
+                                    <span class="thumb_link">
+                                        <a href="#none" class="link_txt">일이삼사오육칠팔구십 일이삼사오육칠팔구십 일이삼사오육칠팔구십 일이삼사오육칠팔구십</a>
+                                        <span class="link_more"><!-- 클릭시 on 클래스 부여 -->
+                                            <a href="#none" class="link_g"><span class="ico_comm ico_more">캠페인 설정</span></a>
+                                            <span class="menu_layer">
+                                                <a href="#none" class="link_menu">소재 삭제</a>
+                                                <a href="#none" class="link_menu">소재 수정</a>
+                                                <a href="#none" class="link_menu">소재 복사</a>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="align_c">
+                                <div class="inner_tbl">
+                                    <span class="switch_check"><!-- 스위치켜짐시 on / 비활성화시 in_active 클래스 부여 -->
+                                        <input type="checkbox" id="inpSwitch2" class="inp_check" />
+                                        <label for="inpSwitch2" class="lab_check">
+                                            <span class="ico_switch">광고게재</span><!-- 스위치 on/off시 대체텍스트 '광고게재','광고중지' 변경 -->
+                                        </label>
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="inner_tbl">
+                                    <p class="ad_state"><span class="ico_on">on</span>운영중 (수정사항 심사보류)</p>
+                                </div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">
+                                    <!-- 일예산 수정 인풋박스 레이어 -->
+                                    <div class="modify_budget"><!-- 클릭시 on 클래스 부여 -->
+                                        <a href="#none" class="link_budget">999,999,999</a>
+                                        <div class="tooltip_budget">
+                                            <div class="fld_budget">
+                                                <strong class="screen_out">일예산 입력 폼</strong>
+                                                <div class="budget_cheking">
+                                                    <span class="box_inptxt"><!-- 마우스오버시 over / 입력시 on / 비활성화시 in_active 클래스 부여 -->
+                                                        <span class="inner_inp">
+                                                            <label for="inpTxt2" class="screen_out">일예산 변경</label>
+                                                            <input type="text" id="inpTxt2" class="inp_txt" value="9999999999" />
+                                                        </span>
+                                                    </span>
+                                                    <span class="box_checkinp"><!-- 마우스오버시 over / 선택시 on / 비활성화시 in_active 클래스 부여 -->
+                                                        <input type="checkbox" name="checkBudjetSet" id="checkBudjet2" class="inp_check" ><!-- 선택시 checked="checked" 추가 -->
+                                                        <label for="checkBudjet2" class="lab_check"><span class="img_comm ico_check"></span>미설정</label>
+                                                    </span>
+                                                </div>
+                                                <button type="submit" class="btn_gm gm_bl"><span class="inner_g">변경</span></button>
+                                                <a href="#none" class="btn_gm"><span class="inner_g">취소</span></a>
+                                            </div>
+                                            <span class="img_comm ico_arr"></span>
+                                        </div>
+                                    </div>
+                                    <!-- 일예산 수정 인풋박스 레이어 -->	
+                                </div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">9,999,999,999</div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">9,999,999,999</div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">100,00</div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">9,999,999,999</div>
+                            </td>
+                        </tr>
+                         <tr class="over"><!-- 3 -->
+                            <td class="align_c">
+                                <div class="inner_tbl">
+                                    <label class="check_inp"><!-- 마우스오버시 over / 선택시 on 클래스 부여 -->
+                                        <input type="checkbox" name="inpCheckSet" class="inp_check" />
+                                        <span class="img_comm ico_check"></span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td class="td_thumb"><!-- 썸네일이 들어가는 td에 td_thumb 클래스 부여 -->
+                                <div class="inner_tbl">
+                                    <a href="#none" class="link_thumb">
+                                        <span class="inner_thumb" style="background-image:url(../../images/temp/thumb_native.png);"></span>
+                                    </a>
+                                    <span class="thumb_link">
+                                        <a href="#none" class="link_txt">일이삼사오육칠팔구십 일이삼사오육칠팔구십 일이삼사오육칠팔구십 일이삼사오육칠팔구십</a>
+                                        <span class="link_more"><!-- 클릭시 on 클래스 부여 -->
+                                            <a href="#none" class="link_g"><span class="ico_comm ico_more">캠페인 설정</span></a>
+                                            <span class="menu_layer">
+                                                <a href="#none" class="link_menu">소재 삭제</a>
+                                                <a href="#none" class="link_menu">소재 수정</a>
+                                                <a href="#none" class="link_menu">소재 복사</a>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </div>
+                            </td>
+                            
+                            <td class="align_c">
+                                <div class="inner_tbl">
+                                    <span class="switch_check"><!-- 스위치켜짐시 on / 비활성화시 in_active 클래스 부여 -->
+                                        <input type="checkbox" id="inpSwitch3" class="inp_check" />
+                                        <label for="inpSwitch3" class="lab_check">
+                                            <span class="ico_switch">광고게재</span><!-- 스위치 on/off시 대체텍스트 '광고게재','광고중지' 변경 -->
+                                        </label>
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="inner_tbl">
+                                    <p class="ad_state"><span class="ico_on">on</span>운영중</p>
+                                </div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">
+                                    <!-- 일예산 수정 인풋박스 레이어 -->
+                                    <div class="modify_budget"><!-- 클릭시 on 클래스 부여 -->
+                                        <a href="#none" class="link_budget">999,999,999</a>
+                                        <div class="tooltip_budget">
+                                            <div class="fld_budget">
+                                                <strong class="screen_out">일예산 입력 폼</strong>
+                                                <div class="budget_cheking">
+                                                    <span class="box_inptxt"><!-- 마우스오버시 over / 입력시 on / 비활성화시 in_active 클래스 부여 -->
+                                                        <span class="inner_inp">
+                                                            <label for="inpTxt3" class="screen_out">일예산 변경</label>
+                                                            <input type="text" id="inpTxt3" class="inp_txt" value="9999999999" />
+                                                        </span>
+                                                    </span>
+                                                    <span class="box_checkinp"><!-- 마우스오버시 over / 선택시 on / 비활성화시 in_active 클래스 부여 -->
+                                                        <input type="checkbox" name="checkBudjetSet" id="checkBudjet3" class="inp_check" ><!-- 선택시 checked="checked" 추가 -->
+                                                        <label for="checkBudjet3" class="lab_check"><span class="img_comm ico_check"></span>미설정</label>
+                                                    </span>
+                                                </div>
+                                                <button type="submit" class="btn_gm gm_bl"><span class="inner_g">변경</span></button>
+                                                <a href="#none" class="btn_gm"><span class="inner_g">취소</span></a>
+                                            </div>
+                                            <span class="img_comm ico_arr"></span>
+                                        </div>
+                                    </div>
+                                    <!-- 일예산 수정 인풋박스 레이어 -->	
+                                </div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">9,999,999,999</div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">9,999,999,999</div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">100,00</div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">9,999,999,999</div>
+                            </td>
+                        </tr>
+                        <tr><!-- 4 -->
+                            <td class="align_c">
+                                <div class="inner_tbl">
+                                    <label class="check_inp"><!-- 마우스오버시 over / 선택시 on 클래스 부여 -->
+                                        <input type="checkbox" name="inpCheckSet" class="inp_check" />
+                                        <span class="img_comm ico_check"></span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td class="td_thumb"><!-- 썸네일이 들어가는 td에 td_thumb 클래스 부여 -->
+                                <div class="inner_tbl">
+                                    <a href="#none" class="link_thumb">
+                                        <span class="inner_thumb" style="background-image:url(../../images/temp/thumb_native.png);"></span>
+                                    </a>
+                                    <span class="thumb_link">
+                                        <a href="#none" class="link_txt">일이삼사오육칠팔구십 일이삼사오육칠팔구십 일이삼사오육칠팔구십 일이삼사오육칠팔구십</a>
+                                        <span class="link_more"><!-- 클릭시 on 클래스 부여 -->
+                                            <a href="#none" class="link_g"><span class="ico_comm ico_more">캠페인 설정</span></a>
+                                            <span class="menu_layer">
+                                                <a href="#none" class="link_menu">소재 삭제</a>
+                                                <a href="#none" class="link_menu">소재 수정</a>
+                                                <a href="#none" class="link_menu">소재 복사</a>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </div>
+                            </td>
+                            
+                            <td class="align_c">
+                                <div class="inner_tbl">
+                                    <span class="switch_check on"><!-- 스위치켜짐시 on / 비활성화시 in_active 클래스 부여 -->
+                                        <input type="checkbox" id="inpSwitch4" class="inp_check" checked="checked" /><!-- 선택시 checked="checked" / 비활성화시 disabled="disabled" 추가 -->
+                                        <label for="inpSwitch4" class="lab_check">
+                                            <span class="ico_switch">광고게재</span><!-- 스위치 on/off시 대체텍스트 '광고게재','광고중지' 변경 -->
+                                        </label>
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="inner_tbl">
+                                    <p class="ad_state"><span class="ico_off">off</span>운영중지</p>
+                                </div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">
+                                    <!-- 일예산 수정 인풋박스 레이어 -->
+                                    <div class="modify_budget"><!-- 클릭시 on 클래스 부여 -->
+                                        <a href="#none" class="link_budget">999,999,999</a>
+                                        <div class="tooltip_budget">
+                                           <div class="fld_budget">
+                                                <strong class="screen_out">일예산 입력 폼</strong>
+                                                <div class="budget_cheking">
+                                                    <span class="box_inptxt"><!-- 마우스오버시 over / 입력시 on / 비활성화시 in_active 클래스 부여 -->
+                                                        <span class="inner_inp">
+                                                            <label for="inpTxt4" class="screen_out">일예산 변경</label>
+                                                            <input type="text" id="inpTxt4" class="inp_txt" value="9999999999" />
+                                                        </span>
+                                                    </span>
+                                                    <span class="box_checkinp"><!-- 마우스오버시 over / 선택시 on / 비활성화시 in_active 클래스 부여 -->
+                                                        <input type="checkbox" name="checkBudjetSet" id="checkBudjet4" class="inp_check" ><!-- 선택시 checked="checked" 추가 -->
+                                                        <label for="checkBudjet4" class="lab_check"><span class="img_comm ico_check"></span>미설정</label>
+                                                    </span>
+                                                </div>
+                                                <button type="submit" class="btn_gm gm_bl"><span class="inner_g">변경</span></button>
+                                                <a href="#none" class="btn_gm"><span class="inner_g">취소</span></a>
+                                            </div>
+                                            <span class="img_comm ico_arr"></span>
+                                        </div>
+                                    </div>
+                                    <!-- 일예산 수정 인풋박스 레이어 -->	
+                                </div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">9,999,999,999</div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">9,999,999,999</div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">100,00</div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">9,999,999,999</div>
+                            </td>
+                        </tr>
+                        <tr class="on"><!-- 5 -->
+                            <td class="align_c">
+                                <div class="inner_tbl">
+                                    <label class="check_inp"><!-- 마우스오버시 over / 선택시 on 클래스 부여 -->
+                                        <input type="checkbox" name="inpCheckSet" class="inp_check" checked="checked" /><!-- 선택시 checked="checked" 추가 -->
+                                        <span class="img_comm ico_check"></span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td class="td_thumb"><!-- 썸네일이 들어가는 td에 td_thumb 클래스 부여 -->
+                                <div class="inner_tbl">
+                                    <a href="#none" class="link_thumb">
+                                        <span class="inner_thumb" style="background-image:url(../../images/temp/thumb_native.png);"></span>
+                                    </a>
+                                    <span class="thumb_link">
+                                        <a href="#none" class="link_txt">일이삼사오육칠팔구십 일이삼사오육칠팔구십 일이삼사오육칠팔구십 일이삼사오육칠팔구십</a>
+                                        <span class="link_more on"><!-- 클릭시 on 클래스 부여 -->
+                                            <a href="#none" class="link_g"><span class="ico_comm ico_more">캠페인 설정</span></a>
+                                            <span class="menu_layer">
+                                                <a href="#none" class="link_menu">소재 삭제</a>
+                                                <a href="#none" class="link_menu">소재 수정</a>
+                                                <a href="#none" class="link_menu">소재 복사</a>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </div>
+                            </td>
+                            
+                            <td class="align_c">
+                                <div class="inner_tbl">
+                                    <span class="switch_check"><!-- 스위치켜짐시 on / 비활성화시 in_active 클래스 부여 -->
+                                        <input type="checkbox" id="inpSwitch5" class="inp_check" />
+                                        <label for="inpSwitch5" class="lab_check">
+                                            <span class="ico_switch">광고게재</span><!-- 스위치 on/off시 대체텍스트 '광고게재','광고중지' 변경 -->
+                                        </label>
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="inner_tbl">
+                                    <p class="ad_state">
+                                        <span class="ico_off">off</span><span class="fc_warn">관리자정지 (수정사항 심사보류)</span>
+                                    </p>
+                                </div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">
+                                    <!-- 일예산 수정 인풋박스 레이어 -->
+                                    <div class="modify_budget"><!-- 클릭시 on 클래스 부여 -->
+                                        <a href="#none" class="link_budget">999,999,999</a>
+                                        <div class="tooltip_budget">
+                                            <div class="fld_budget">
+                                                <strong class="screen_out">일예산 입력 폼</strong>
+                                                <div class="budget_cheking">
+                                                    <span class="box_inptxt"><!-- 마우스오버시 over / 입력시 on / 비활성화시 in_active 클래스 부여 -->
+                                                        <span class="inner_inp">
+                                                            <label for="inpTxt5" class="screen_out">일예산 변경</label>
+                                                            <input type="text" id="inpTxt5" class="inp_txt" value="9999999999" />
+                                                        </span>
+                                                    </span>
+                                                    <span class="box_checkinp"><!-- 마우스오버시 over / 선택시 on / 비활성화시 in_active 클래스 부여 -->
+                                                        <input type="checkbox" name="checkBudjetSet" id="checkBudjet5" class="inp_check" ><!-- 선택시 checked="checked" 추가 -->
+                                                        <label for="checkBudjet5" class="lab_check"><span class="img_comm ico_check"></span>미설정</label>
+                                                    </span>
+                                                </div>
+                                                <button type="submit" class="btn_gm gm_bl"><span class="inner_g">변경</span></button>
+                                                <a href="#none" class="btn_gm"><span class="inner_g">취소</span></a>
+                                            </div>
+                                            <span class="img_comm ico_arr"></span>
+                                        </div>
+                                    </div>
+                                    <!-- 일예산 수정 인풋박스 레이어 -->	
+                                </div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">9,999,999,999</div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">9,999,999,999</div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">100,00</div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">9,999,999,999</div>
+                            </td>
+                        </tr>
+                        <tr><!-- 6 -->
+                            <td class="align_c">
+                                <div class="inner_tbl">
+                                    <label class="check_inp"><!-- 마우스오버시 over / 선택시 on 클래스 부여 -->
+                                        <input type="checkbox" name="inpCheckSet" class="inp_check" />
+                                        <span class="img_comm ico_check"></span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td class="td_thumb"><!-- 썸네일이 들어가는 td에 td_thumb 클래스 부여 -->
+                                <div class="inner_tbl">
+                                    <a href="#none" class="link_thumb">
+                                        <span class="inner_thumb" style="background-image:url(../../images/temp/thumb_bnr.png);"></span>
+                                    </a>
+                                    <span class="thumb_link">
+                                        <a href="#none" class="link_txt">일이삼사오육칠팔구십 일이삼사오육칠팔구십 일이삼사오육칠팔구십 일이삼사오육칠팔구십</a>
+                                        <span class="link_more"><!-- 클릭시 on 클래스 부여 -->
+                                            <a href="#none" class="link_g"><span class="ico_comm ico_more">캠페인 설정</span></a>
+                                            <span class="menu_layer">
+                                                <a href="#none" class="link_menu">소재 삭제</a>
+                                                <a href="#none" class="link_menu">소재 수정</a>
+                                                <a href="#none" class="link_menu">소재 복사</a>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </div>
+                            </td>
+                            
+                            <td class="align_c">
+                                <div class="inner_tbl">
+                                    <span class="switch_check"><!-- 스위치켜짐시 on / 비활성화시 in_active 클래스 부여 -->
+                                        <input type="checkbox" id="inpSwitch6" class="inp_check" />
+                                        <label for="inpSwitch6" class="lab_check">
+                                            <span class="ico_switch">광고게재</span><!-- 스위치 on/off시 대체텍스트 '광고게재','광고중지' 변경 -->
+                                        </label>
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="inner_tbl">
+                                    <p class="ad_state">
+                                        <span class="ico_off">off</span><span class="fc_warn">수정심사보류</span>
+                                    </p>
+                                </div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">
+                                    <!-- 일예산 수정 인풋박스 레이어 -->
+                                    <div class="modify_budget"><!-- 클릭시 on 클래스 부여 -->
+                                        <a href="#none" class="link_budget">999,999,999</a>
+                                        <div class="tooltip_budget">
+                                            <div class="fld_budget">
+                                                <strong class="screen_out">일예산 입력 폼</strong>
+                                                <div class="budget_cheking">
+                                                    <span class="box_inptxt"><!-- 마우스오버시 over / 입력시 on / 비활성화시 in_active 클래스 부여 -->
+                                                        <span class="inner_inp">
+                                                            <label for="inpTxt6" class="screen_out">일예산 변경</label>
+                                                            <input type="text" id="inpTxt6" class="inp_txt" value="9999999999" />
+                                                        </span>
+                                                    </span>
+                                                    <span class="box_checkinp"><!-- 마우스오버시 over / 선택시 on / 비활성화시 in_active 클래스 부여 -->
+                                                        <input type="checkbox" name="checkBudjetSet" id="checkBudjet6" class="inp_check" ><!-- 선택시 checked="checked" 추가 -->
+                                                        <label for="checkBudjet6" class="lab_check"><span class="img_comm ico_check"></span>미설정</label>
+                                                    </span>
+                                                </div>
+                                                <button type="submit" class="btn_gm gm_bl"><span class="inner_g">변경</span></button>
+                                                <a href="#none" class="btn_gm"><span class="inner_g">취소</span></a>
+                                            </div>
+                                            <span class="img_comm ico_arr"></span>
+                                        </div>
+                                    </div>
+                                    <!-- 일예산 수정 인풋박스 레이어 -->	
+                                </div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">9,999,999,999</div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">9,999,999,999</div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">100,00</div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">9,999,999,999</div>
+                            </td>
+                        </tr>
+                        <tr><!-- 7 -->
+                            <td class="align_c">
+                                <div class="inner_tbl">
+                                    <label class="check_inp"><!-- 마우스오버시 over / 선택시 on 클래스 부여 -->
+                                        <input type="checkbox" name="inpCheckSet" class="inp_check" />
+                                        <span class="img_comm ico_check"></span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td class="td_thumb"><!-- 썸네일이 들어가는 td에 td_thumb 클래스 부여 -->
+                                <div class="inner_tbl">
+                                    <a href="#none" class="link_thumb">
+                                        <span class="inner_thumb" style="background-image:url(../../images/temp/thumb_native.png);">
+                                            <span class="ico_comm ico_mov">동영상형</span>
+                                        </span>
+                                    </a>
+                                    <span class="thumb_link">
+                                        <a href="#none" class="link_txt">일이삼사오육칠팔구십 일이삼사오육칠팔구십 일이삼사오육칠팔구십 일이삼사오육칠팔구십</a>
+                                        <span class="link_more"><!-- 클릭시 on 클래스 부여 -->
+                                            <a href="#none" class="link_g"><span class="ico_comm ico_more">캠페인 설정</span></a>
+                                            <span class="menu_layer">
+                                                <a href="#none" class="link_menu">소재 삭제</a>
+                                                <a href="#none" class="link_menu">소재 수정</a>
+                                                <a href="#none" class="link_menu">소재 복사</a>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </div>
+                            </td>
+                            
+                            <td class="align_c">
+                                <div class="inner_tbl">
+                                    <span class="switch_check"><!-- 스위치켜짐시 on / 비활성화시 in_active 클래스 부여 -->
+                                        <input type="checkbox" id="inpSwitch7" class="inp_check" />
+                                        <label for="inpSwitch7" class="lab_check">
+                                            <span class="ico_switch">광고게재</span><!-- 스위치 on/off시 대체텍스트 '광고게재','광고중지' 변경 -->
+                                        </label>
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="inner_tbl">
+                                    <p class="ad_state">
+                                        <span class="ico_off">off</span><span class="fc_warn">소재 일예산초과 (3)</span>
+                                    </p>
+                                </div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">
+                                    <!-- 일예산 수정 인풋박스 레이어 -->
+                                    <div class="modify_budget"><!-- 클릭시 on 클래스 부여 -->
+                                        <a href="#none" class="link_budget">999,999,999</a>
+                                        <div class="tooltip_budget">
+                                            <div class="fld_budget">
+                                                <strong class="screen_out">일예산 입력 폼</strong>
+                                                <div class="budget_cheking">
+                                                    <span class="box_inptxt"><!-- 마우스오버시 over / 입력시 on / 비활성화시 in_active 클래스 부여 -->
+                                                        <span class="inner_inp">
+                                                            <label for="inpTxt7" class="screen_out">일예산 변경</label>
+                                                            <input type="text" id="inpTxt7" class="inp_txt" value="9999999999" />
+                                                        </span>
+                                                    </span>
+                                                    <span class="box_checkinp"><!-- 마우스오버시 over / 선택시 on / 비활성화시 in_active 클래스 부여 -->
+                                                        <input type="checkbox" name="checkBudjetSet" id="checkBudjet7" class="inp_check" ><!-- 선택시 checked="checked" 추가 -->
+                                                        <label for="checkBudjet7" class="lab_check"><span class="img_comm ico_check"></span>미설정</label>
+                                                    </span>
+                                                </div>
+                                                <button type="submit" class="btn_gm gm_bl"><span class="inner_g">변경</span></button>
+                                                <a href="#none" class="btn_gm"><span class="inner_g">취소</span></a>
+                                            </div>
+                                            <span class="img_comm ico_arr"></span>
+                                        </div>
+                                    </div>
+                                    <!-- 일예산 수정 인풋박스 레이어 -->	
+                                </div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">9,999,999,999</div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">9,999,999,999</div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">100,00</div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">9,999,999,999</div>
+                            </td>
+                        </tr>
+                        <tr><!-- 8 -->
+                            <td class="align_c">
+                                <div class="inner_tbl">
+                                    <label class="check_inp"><!-- 마우스오버시 over / 선택시 on 클래스 부여 -->
+                                        <input type="checkbox" name="inpCheckSet" class="inp_check" />
+                                        <span class="img_comm ico_check"></span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td class="td_thumb"><!-- 썸네일이 들어가는 td에 td_thumb 클래스 부여 -->
+                                <div class="inner_tbl">
+                                    <a href="#none" class="link_thumb">
+                                        <span class="inner_thumb" style="background-image:url(../../images/temp/thumb_msg.png);">
+                                            <span class="ico_comm ico_mov">메세지형</span>
+                                        </span>
+                                    </a>
+                                    <span class="thumb_link">
+                                        <a href="#none" class="link_txt">일이삼사오육칠팔구십 일이삼사오육칠팔구십 일이삼사오육칠팔구십 일이삼사오육칠팔구십</a>
+                                        <span class="link_more"><!-- 클릭시 on 클래스 부여 -->
+                                            <a href="#none" class="link_g"><span class="ico_comm ico_more">캠페인 설정</span></a>
+                                            <span class="menu_layer">
+                                                <a href="#none" class="link_menu">소재 삭제</a>
+                                                <a href="#none" class="link_menu">소재 수정</a>
+                                                <a href="#none" class="link_menu">소재 복사</a>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </div>
+                            </td>
+                            
+                            <td class="align_c">
+                                <div class="inner_tbl">
+                                    <span class="switch_check"><!-- 스위치켜짐시 on / 비활성화시 in_active 클래스 부여 -->
+                                        <input type="checkbox" id="inpSwitch8" class="inp_check" />
+                                        <label for="inpSwitch8" class="lab_check">
+                                            <span class="ico_switch">광고게재</span><!-- 스위치 on/off시 대체텍스트 '광고게재','광고중지' 변경 -->
+                                        </label>
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="inner_tbl">
+                                    <p class="ad_state">
+                                        <span class="ico_off">off</span><span class="fc_warn">사용자OFF (2)</span>
+                                    </p>
+                                </div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">
+                                    <!-- 일예산 수정 인풋박스 레이어 -->
+                                    <div class="modify_budget"><!-- 클릭시 on 클래스 부여 -->
+                                        <a href="#none" class="link_budget">999,999,999</a>
+                                        <div class="tooltip_budget">
+                                            <div class="fld_budget">
+                                                <strong class="screen_out">일예산 입력 폼</strong>
+                                                <div class="budget_cheking">
+                                                    <span class="box_inptxt"><!-- 마우스오버시 over / 입력시 on / 비활성화시 in_active 클래스 부여 -->
+                                                        <span class="inner_inp">
+                                                            <label for="inpTxt8" class="screen_out">일예산 변경</label>
+                                                            <input type="text" id="inpTxt8" class="inp_txt" value="9999999999" />
+                                                        </span>
+                                                    </span>
+                                                    <span class="box_checkinp"><!-- 마우스오버시 over / 선택시 on / 비활성화시 in_active 클래스 부여 -->
+                                                        <input type="checkbox" name="checkBudjetSet" id="checkBudjet8" class="inp_check" ><!-- 선택시 checked="checked" 추가 -->
+                                                        <label for="checkBudjet8" class="lab_check"><span class="img_comm ico_check"></span>미설정</label>
+                                                    </span>
+                                                </div>
+                                                <button type="submit" class="btn_gm gm_bl"><span class="inner_g">변경</span></button>
+                                                <a href="#none" class="btn_gm"><span class="inner_g">취소</span></a>
+                                            </div>
+                                            <span class="img_comm ico_arr"></span>
+                                        </div>
+                                    </div>
+                                    <!-- 일예산 수정 인풋박스 레이어 -->	
+                                </div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">9,999,999,999</div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">9,999,999,999</div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">100,00</div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">9,999,999,999</div>
+                            </td>
+                        </tr>
+                        <tr><!-- 9 -->
+                            <td class="align_c">
+                                <div class="inner_tbl">
+                                    <label class="check_inp"><!-- 마우스오버시 over / 선택시 on 클래스 부여 -->
+                                        <input type="checkbox" name="inpCheckSet" class="inp_check" />
+                                        <span class="img_comm ico_check"></span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td class="td_thumb"><!-- 썸네일이 들어가는 td에 td_thumb 클래스 부여 -->
+                                <div class="inner_tbl">
+                                    <a href="#none" class="link_thumb">
+                                        <span class="inner_thumb" style="background-image:url(../../images/temp/thumb_plus.png);">
+                                            <span class="ico_comm ico_mov">플러스친구형</span>
+                                        </span>
+                                    </a>
+                                    <span class="thumb_link">
+                                        <a href="#none" class="link_txt">일이삼사오육칠팔구십 일이삼사오육칠팔구십 일이삼사오육칠팔구십 일이삼사오육칠팔구십</a>
+                                        <span class="link_more"><!-- 클릭시 on 클래스 부여 -->
+                                            <a href="#none" class="link_g"><span class="ico_comm ico_more">캠페인 설정</span></a>
+                                            <span class="menu_layer">
+                                                <a href="#none" class="link_menu">소재 삭제</a>
+                                                <a href="#none" class="link_menu">소재 수정</a>
+                                                <a href="#none" class="link_menu">소재 복사</a>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </div>
+                            </td>
+                            
+                            <td class="align_c">
+                                <div class="inner_tbl">
+                                    <span class="switch_check"><!-- 스위치켜짐시 on / 비활성화시 in_active 클래스 부여 -->
+                                        <input type="checkbox" id="inpSwitch9" class="inp_check" />
+                                        <label for="inpSwitch9" class="lab_check">
+                                            <span class="ico_switch">광고게재</span><!-- 스위치 on/off시 대체텍스트 '광고게재','광고중지' 변경 -->
+                                        </label>
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="inner_tbl">
+                                    <p class="ad_state">
+                                        <span class="ico_off">off</span><span class="fc_warn">심사보류</span>
+                                    </p>
+                                </div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">
+                                    <!-- 일예산 수정 인풋박스 레이어 -->
+                                    <div class="modify_budget"><!-- 클릭시 on 클래스 부여 -->
+                                        <a href="#none" class="link_budget">999,999,999</a>
+                                        <div class="tooltip_budget">
+                                            <div class="fld_budget">
+                                                <strong class="screen_out">일예산 입력 폼</strong>
+                                                <div class="budget_cheking">
+                                                    <span class="box_inptxt"><!-- 마우스오버시 over / 입력시 on / 비활성화시 in_active 클래스 부여 -->
+                                                        <span class="inner_inp">
+                                                            <label for="inpTxt9" class="screen_out">일예산 변경</label>
+                                                            <input type="text" id="inpTxt9" class="inp_txt" value="9999999999" />
+                                                        </span>
+                                                    </span>
+                                                    <span class="box_checkinp"><!-- 마우스오버시 over / 선택시 on / 비활성화시 in_active 클래스 부여 -->
+                                                        <input type="checkbox" name="checkBudjetSet" id="checkBudjet9" class="inp_check" ><!-- 선택시 checked="checked" 추가 -->
+                                                        <label for="checkBudjet9" class="lab_check"><span class="img_comm ico_check"></span>미설정</label>
+                                                    </span>
+                                                </div>
+                                                <button type="submit" class="btn_gm gm_bl"><span class="inner_g">변경</span></button>
+                                                <a href="#none" class="btn_gm"><span class="inner_g">취소</span></a>
+                                            </div>
+                                            <span class="img_comm ico_arr"></span>
+                                        </div>
+                                    </div>
+                                    <!-- 일예산 수정 인풋박스 레이어 -->	
+                                </div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">9,999,999,999</div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">9,999,999,999</div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">100,00</div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">9,999,999,999</div>
+                            </td>
+                        </tr>
+                        <tr><!-- 10 -->
+                            <td class="align_c">
+                                <div class="inner_tbl">
+                                    <label class="check_inp"><!-- 마우스오버시 over / 선택시 on 클래스 부여 -->
+                                        <input type="checkbox" name="inpCheckSet" class="inp_check" />
+                                        <span class="img_comm ico_check"></span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td class="td_thumb"><!-- 썸네일이 들어가는 td에 td_thumb 클래스 부여 -->
+                                <div class="inner_tbl">
+                                    <a href="#none" class="link_thumb">
+                                        <span class="inner_thumb" style="background-image:url(../../images/temp/thumb_board.png);">
+                                            <span class="ico_comm ico_mov">게시글형</span>
+                                        </span>
+                                    </a>
+                                    <span class="thumb_link">
+                                        <a href="#none" class="link_txt">일이삼사오육칠팔구십 일이삼사오육칠팔구십 일이삼사오육칠팔구십 일이삼사오육칠팔구십</a>
+                                        <span class="link_more"><!-- 클릭시 on 클래스 부여 -->
+                                            <a href="#none" class="link_g"><span class="ico_comm ico_more">캠페인 설정</span></a>
+                                            <span class="menu_layer">
+                                                <a href="#none" class="link_menu">소재 삭제</a>
+                                                <a href="#none" class="link_menu">소재 수정</a>
+                                                <a href="#none" class="link_menu">소재 복사</a>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </div>
+                            </td>
+                            
+                            <td class="align_c">
+                                <div class="inner_tbl">
+                                    <span class="switch_check"><!-- 스위치켜짐시 on / 비활성화시 in_active 클래스 부여 -->
+                                        <input type="checkbox" id="inpSwitch10" class="inp_check" />
+                                        <label for="inpSwitch10" class="lab_check">
+                                            <span class="ico_switch">광고게재</span><!-- 스위치 on/off시 대체텍스트 '광고게재','광고중지' 변경 -->
+                                        </label>
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="inner_tbl">
+                                    <p class="ad_state"><span class="ico_on">on</span>운영중</p>
+                                </div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">
+                                    <!-- 일예산 수정 인풋박스 레이어 -->
+                                    <div class="modify_budget"><!-- 클릭시 on 클래스 부여 -->
+                                        <a href="#none" class="link_budget">999,999,999</a>
+                                        <div class="tooltip_budget">
+                                            <div class="fld_budget">
+                                                <strong class="screen_out">일예산 입력 폼</strong>
+                                                <div class="budget_cheking">
+                                                    <span class="box_inptxt"><!-- 마우스오버시 over / 입력시 on / 비활성화시 in_active 클래스 부여 -->
+                                                        <span class="inner_inp">
+                                                            <label for="inpTxt10" class="screen_out">일예산 변경</label>
+                                                            <input type="text" id="inpTxt10" class="inp_txt" value="9999999999" />
+                                                        </span>
+                                                    </span>
+                                                    <span class="box_checkinp"><!-- 마우스오버시 over / 선택시 on / 비활성화시 in_active 클래스 부여 -->
+                                                        <input type="checkbox" name="checkBudjetSet" id="checkBudjet10" class="inp_check" ><!-- 선택시 checked="checked" 추가 -->
+                                                        <label for="checkBudjet10" class="lab_check"><span class="img_comm ico_check"></span>미설정</label>
+                                                    </span>
+                                                </div>
+                                                <button type="submit" class="btn_gm gm_bl"><span class="inner_g">변경</span></button>
+                                                <a href="#none" class="btn_gm"><span class="inner_g">취소</span></a>
+                                            </div>
+                                            <span class="img_comm ico_arr"></span>
+                                        </div>
+                                    </div>
+                                    <!-- 일예산 수정 인풋박스 레이어 -->	
+                                </div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">9,999,999,999</div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">9,999,999,999</div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">100,00</div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">9,999,999,999</div>
+                            </td>
+                        </tr>
+ 
+                
+                        <!-- 비활성화 시작 -->
+                        <tr class="tr_inactive"><!-- 비활성화시 tr_inactive 클래스 부여 / check_inp에 in_active 클래스 부여 -->
+                            <td class="align_c">
+                                <div class="inner_tbl">
+                                    <!-- 테이블안에 들어있는 체크박스의 경우 테이블행 전체가 비활성화시 tr에 tr_inactive가 붙으면 따로 in_active 클래스 넣지 않으셔도 됩니다~ 개별제어시에만 넣으셔도 됩니다! -->
+                                    <label class="check_inp"><!-- 마우스오버시 over / 선택시 on 클래스 부여 / 비활성화시 in_active -->
+                                        <input type="checkbox" name="inpCheckSet" class="inp_check" disabled="disabled"/><!-- 선택시 checked="checked" 추가 / 비활성화시 disabled="disabled" 추가 -->
+                                        <span class="img_comm ico_check"></span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td class="td_thumb"><!-- 썸네일이 들어가는 td에 td_thumb 클래스 부여 -->
+                                <div class="inner_tbl">
+                                    <span class="link_thumb">
+                                        <img src="../../images/temp/thumb_native.png" width="60" height="47" alt="일반형" class="img_thumb"/><!-- 소재형에 맞게 alt값 넣어주세요 / 일반형은 일반형/전면형/게시글로 분류해서 넣어주세요 -->
+                                    </span><!-- tr_inactive시(비활성화시) span태그로 변경 -->
+                                    <span class="thumb_link">
+                                        <a href="#none" class="link_txt">일이삼사오육칠팔구십 일이삼사오육칠팔구십 일이삼사오육칠팔구십 일이삼사오육칠팔구십</a><!-- tr_inactive시(비활성화시) span태그로 변경 -->
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="align_c">
+                                <div class="inner_tbl">
+                                    <span class="switch_check in_active"><!-- 스위치켜짐시 on / 비활성화시 in_active 클래스 부여 -->
+                                        <input type="checkbox" id="inpSwitch11" class="inp_check" disabled="disabled" /><!-- 선택시 checked="checked" / 비활성화시 disabled="disabled" 추가 -->
+                                        <label for="inpSwitch11" class="lab_check">
+                                            <span class="ico_switch">광고중지</span><!-- 스위치 on/off시 대체텍스트 '광고게재','광고중지' 변경 -->
+                                        </label>
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="inner_tbl">
+                                    <p class="ad_state"><span class="ico_off">off</span>삭제됨</p>
+                                </div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">
+                                    <!-- 일예산 수정 인풋박스 레이어 -->
+                                    <div class="modify_budget"><!-- 클릭시 on 클래스 부여 -->
+                                        <span class="link_budget">999,999,999</span><!-- 테이블에서 비활성행일경우 span태그로 변경 -->
+                                        <div class="tooltip_budget">
+                                            <div class="fld_budget">
+                                                <strong class="screen_out">일예산 입력 폼</strong>
+                                                <div class="budget_cheking">
+                                                    <span class="box_inptxt"><!-- 마우스오버시 over / 입력시 on / 비활성화시 in_active 클래스 부여 -->
+                                                        <span class="inner_inp">
+                                                            <label for="inpTxt1" class="screen_out">일예산 변경</label>
+                                                            <input type="text" id="inpTxt1" class="inp_txt" value="9999999999" />
+                                                        </span>
+                                                    </span>
+                                                    <span class="box_checkinp"><!-- 마우스오버시 over / 선택시 on / 비활성화시 in_active 클래스 부여 -->
+                                                        <input type="checkbox" name="checkBudjetSet" id="checkBudjet" class="inp_check" ><!-- 선택시 checked="checked" 추가 -->
+                                                        <label for="checkBudjet" class="lab_check"><span class="img_comm ico_check"></span>미설정</label>
+                                                    </span>
+                                                </div>
+                                                <button type="submit" class="btn_gm gm_bl"><span class="inner_g">변경</span></button>
+                                                <a href="#none" class="btn_gm"><span class="inner_g">취소</span></a>
+                                            </div>
+                                            <span class="img_comm ico_arr"></span>
+                                        </div>
+                                    </div>
+                                    <!-- 일예산 수정 인풋박스 레이어 -->	
+                                </div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">9,999,999,999</div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">9,999,999,999</div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">100,00</div>
+                            </td>
+                            <td class="align_r">
+                                <div class="inner_tbl">9,999,999,999</div>
+                            </td>
+                        </tr>
+                        <!-- //비활성화 종료 -->	
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- //데이타테이블 -->
+        <!-- 테이블셋 foot -->
+        <div class="set_foot">
+            <div class="paging_wrap">
+                <div class="inner_paging">
+                    <span class="num_paging"><span class="ico_comm ico_prevs">맨처음</span></span><!-- 맨처음/이전/다음/맨끝 비활성화시 span태그로 변경 -->
+                    <span class="num_paging"><span class="ico_comm ico_prev">이전</span></span>
+                    <em class="num_paging"><span class="screen_out">현재페이지</span>1</em><!-- 선택된페이지일경우 em태그로 변경 및 대체텍스트 추가 -->
+                    <a href="#none" class="num_paging">2</a>
+                    <a href="#none" class="num_paging">3</a>
+                    <a href="#none" class="num_paging">4</a>
+                    <a href="#none" class="num_paging">5</a>
+                    <a href="#none" class="num_paging">6</a>
+                    <a href="#none" class="num_paging">7</a>
+                    <a href="#none" class="num_paging">8</a>
+                    <a href="#none" class="num_paging">9</a>
+                    <a href="#none" class="num_paging">10</a>
+                    <a href="#none" class="num_paging"><span class="ico_comm ico_next">다음</span></a>
+                    <a href="#none" class="num_paging"><span class="ico_comm ico_nexts">맨끝</span></a>
+                    <div class="single_wrap">
+                        <div class="opt_select opt_row"><!-- 마우스오버시 over / 클릭시 opt_open 클래스 부여 / 비활성화시 in_active 클래스 부여 -->
+                            <div class="screen_out">데이터종류 선택상자</div>
+                            <span class="screen_out">선택내용 : </span>
+                            <a href="#none" class="link_selected">행 : 100개</a>
+                            <span class="ico_arr"></span>
+                            <div class="screen_out">선택옵션</div>
+                            <div class="opt_list">
+                                <ul class="list_opt">
+                                    <li><a href="#none" class="link_option">15개</a></li>
+                                    <li><a href="#none" class="link_option">30개</a></li>
+                                    <li class="on"><a href="#none" class="link_option">50개</a></li><!-- 선택된 내용일 경우 on 클래스 부여 -->
+                                    <li><a href="#none" class="link_option">100개</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //테이블셋 foot -->
+       
+        <div class="tooltip_basic show place-bottom ly_tooltip ly_tooltip_type2" style="position:absolute;left:524px;top:874px"><!-- 임시값 인라인으로 위치 잡아주세요 -->
+            <p class="txt_tooltip">수정사항이 심사 가이드에 맞지 않아 보류되었습니다. 수정 이전 소재로 노출 가능합니다.<br/>심사 보류 사유를 확인하신 후 재수정하시기 바랍니다.</p>
+            <span class="img_comm ico_arrtip"></span>
+        </div>
+        <div class="tooltip_basic show place-bottom ly_tooltip ly_tooltip_type2" style="position:absolute;left:524px;top:1018px"><!-- 임시값 인라인으로 위치 잡아주세요 -->
+            <p class="txt_tooltip">모니터링에 의해 이전 소재가 보류되었습니다.<br/>수정사항 역시 심사 가이드에 맞지 않아 보류되었습니다.</p>
+            <span class="img_comm ico_arrtip"></span>
+        </div>
+        <div class="tooltip_basic show place-bottom ly_tooltip ly_tooltip_type2" style="position:absolute;left:524px;top:1162px"><!-- 임시값 인라인으로 위치 잡아주세요 -->
+            <strong class="tit_tooltip">사용자OFF</strong>
+            <p class="txt_tooltip2">소재 상태가 OFF로 변경되어, 소재 노출이 일시 중지되었습니다.</p>
+            <strong class="tit_tooltip">운영중(수정사항 심사보류)</strong>
+            <p class="txt_tooltip2">수정사항이 심사 가이드에 맞지 않아 보류되었습니다. 수정 이전 소재로 노출 가능합니다.<br/>심사 보류 사유를 확인하신 후 재수정하시기 바랍니다.</p>
+            <span class="img_comm ico_arrtip"></span>
+        </div>
+
+	</div>
+	<!-- //테이블세트 -->
+</div>
+@@include('../../include/footer.html')

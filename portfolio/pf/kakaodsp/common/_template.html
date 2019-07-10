@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="ko"><!-- mac브라우저일경우 os_mac 클래스 부여 -->
+<head>
+<meta charset="utf-8">
+<title>카카오dsp</title>
+	<!--[if lt IE 9]>
+	<script src="http://m2.daumcdn.net/svc/original/U03/cssjs/sizzle/sizzle-1.10.7.min.js"></script>
+	<script src="http://m2.daumcdn.net/svc/original/U0301/cssjs/JSON-js/fc535e9cc8/json2.min.js"></script>
+	<script src="http://m2.daumcdn.net/svc/original/U03/cssjs/html5shiv/html5shiv-3.7.0.min.js"></script>
+	<![endif]--> 
+	<link rel="stylesheet" type="text/css" href="../css/rangeslider.css"><!-- 임시:타겟매니저 범위슬라이드 라이브러리 CSS -->
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<link rel="stylesheet" type="text/css" href="../css/common2.css"><!-- 2018-02-07 css 2개로 분리 -->
+	<script src="http://s1.daumcdn.net/svc/original/U03/cssjs/jquery/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="./js/script.js" charset="utf-8"></script>
+</head>
+<body>
+    <div id="kakaoIndex">
+	     <a href="#kakaoBody">본문 바로가기</a>
+	     <a href="#kakaoGnb">메뉴 바로가기</a>   
+	</div>   
+	<div id="kakaoWrap">
+		<!-- 레이아웃 타입 클래스 정의 
+			왼쪽메뉴 고정 : layout_type1
+			오른쪽메뉴 고정 : layout_type2
+			양쪽메뉴 고정 : layout_type3
+			가운데 고정 : layout_fix
+			왼쪽메뉴 열기닫기 : lnb_on
+			딤드레이어 : layer_on (요건 body 태그에 붙여주세요~)
+			로그인페이지 : login_type
+			GNB 1depth 타입 : gnb_type1
+		 -->
+		<header id="kakaoHead" class="kakao_head">
+            <div class="head_wrap">
+                <h1>
+                    <a href="http://www.kakaocorp.com/main" target="_blank" id="kakaoLogo"><span class="ir_wa">Kakao</span></a>
+                    <a href="#none" id="kakaoServiceLogo"><span class="ir_wa">광고</span></a><!-- 2017-10-10 텍스트 수정 -->
+                </h1>
+
+                <!-- 사용자메뉴 -->
+                <strong class="screen_out">유저 정보</strong>
+                <ul class="list_userinfo">
+                    <li class="menu_my"><!-- 클릭시 on 클래스 부여 -->
+                        <a href="#none" class="link_gnb">abcdefg123456@hanmail.net</a>
+                        <ul class="gnbsub_comm">
+                            <li><a href="#none" class="link_sub on">내 정보 관리</a><!-- 클릭/선택시 on 클래스 부여 --></li>
+                            <li><a href="#none" class="link_sub">내 픽셀&amp;SDK 관리</a></li><!-- 2018-01-18 추가 -->
+                            <li><a href="#none" class="link_sub">내 광고계정 관리</a></li>
+                            <li><a href="#none" class="link_sub">로그아웃</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu_noti">
+                        <a href="#none" class="link_gnb">
+                            <span class="noti_num num_long"><!-- 숫자 2자리수 이상부터 num_long 클래스 추가 부여 -->			
+                                <span class="screen_out">새 알림</span>
+                                <span class="txt_num">99+</span>
+                            </span>
+                        </a>
+                        <!-- 2017-09-22 수정 시작 -->
+                        <div class="newnoti_layer">
+                            <div class="layer_head">
+                                <strong class="tit_newnoti">공지사항</strong>
+                            </div>
+                            <div class="layer_body">
+                                <!-- 내용없을때 
+                                <p class="txt_nodata">등록된 공지사항이 없습니다.</p>
+                                 -->
+                                <div class="fake_scroll">
+                                    <ul class="list_newnoti">
+                                        <li class="new_on"><!-- 새글일경우 new_on 클래스 부여 -->
+                                            <span class="desc_newnoti">
+                                                <span class="txt_newnoti">일이삼사오육칠팔구십일이삼사오육칠</span><span class="ico_comm ico_new">NEW</span>
+                                            </span>
+                                        </li>
+                                        <li class="new_on"><!-- 새글일경우 new_on 클래스 부여 -->
+                                            <span class="desc_newnoti">
+                                                <span class="txt_newnoti">일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구</span><span class="ico_comm ico_new">NEW</span>
+                                            </span>
+                                            <span class="txt_date">1시간전</span>
+                                        </li>
+                                        <li class="on"><!-- 선택된 내용일 경우 on 클래스 부여 -->
+                                            <span class="desc_newnoti">
+                                                <span class="txt_newnoti">일이삼사오육칠팔구십일이삼사오육칠팔구십일이</span>
+                                            </span>
+                                            <span class="txt_date">2016.12.12</span>
+                                        </li>
+                                        <li>
+                                            <span class="desc_newnoti">
+                                                <span class="txt_newnoti">일이삼사오육칠팔구십일이삼사오육칠팔구십일이</span>
+                                            </span>
+                                            <span class="txt_date">2016.12.12</span>
+                                        </li>
+                                        <li>
+                                            <span class="desc_newnoti">
+                                                <span class="txt_newnoti">일이삼사오육칠팔구십일이삼사오육칠팔구십일이</span>
+                                            </span>
+                                            <span class="txt_date">2016.12.12</span>
+                                        </li>
+                                        <li>
+                                            <span class="desc_newnoti">
+                                                <span class="txt_newnoti">일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사</span>
+                                            </span>
+                                            <span class="txt_date">30분 전</span>
+                                        </li>
+                                        <li>
+                                            <span class="desc_newnoti">
+                                                <span class="txt_newnoti">일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사</span>
+                                            </span>
+                                            <span class="txt_date">30분 전</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <a href="#none" class="link_allview">전체보기</a>
+                            </div>
+                            <span class="img_comm ico_tip"></span>
+                        </div>
+                        <!-- 2017-09-22 수정 종료 -->
+                    </li>
+                    <li>
+                        <a href="#none" class="link_gnb"><span class="ico_comm ico_help">도움말</span></a>
+                    </li>
+                </ul>
+                <!-- //사용자메뉴 -->
+            </div>
+            <div class="gnb_wrap">
+                <!-- 광고계정 선택 상자 -->
+                <div class="select_account">
+                    <h2 class="screen_out">광고계정 선택상자</h2>
+                    <span class="screen_out">선택된 계정 : </span>
+                    <a href="#none" class="link_selected"><span class="ico_on">운영중</span>일이삼사오육칠팔구십일이삼사오육칠팔구십</a><!-- 셀렉트박스의 선택된 텍스트로 입력 -->
+                    <div class="screen_out">선택옵션</div>
+                    <div class="opt_layer">
+                        <!-- 스크롤영역 -->
+                        <div class="fake_scroll">
+                            <ul class="list_opt">
+                                <li class="on">
+                                    <a href="#none" class="link_option">
+                                        <span class="ico_comm ico_master">마스터</span>
+                                        <span class="txt_option"><span class="ico_on">운영중</span>쿠팡광고계정</span>
+                                    </a>
+                                </li><!-- 선택된 내용일 경우 on 클래스 부여 -->
+                                <li>
+                                   <a href="#none" class="link_option">
+                                        <span class="ico_comm ico_master">마스터</span>
+                                        <span class="txt_option"><span class="ico_on">운영중지</span>일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십</span>
+                                    </a> 
+                                </li>
+                                <li>
+                                    <a href="#none" class="link_option">
+                                        <span class="txt_option"><span class="ico_off">운영중지</span>일이삼사오육칠</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none" class="link_option">
+                                        <span class="txt_option"><span class="ico_off">운영중지</span>일이삼사오육칠</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none" class="link_option">
+                                        <span class="txt_option"><span class="ico_off">운영중지</span>일이삼사오육칠</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- //스크롤영역 -->
+                        <div class="opt_tool">
+                            <a href="#none" class="link_all">광고계정 전체보기 (100)</a>
+                            <div class="btn_group">
+                                <a href="#none" class="btn_gs">
+                                    <span class="inner_g icon_g">
+                                        <span class="ico_comm ico_add">광고계정 만들기</span>
+                                    </span>
+                                </a>
+                                <a href="#none" class="btn_gs">
+                                    <span class="inner_g icon_g">
+                                        <span class="ico_comm ico_tool">설정</span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //광고계정 선택 상자 -->
+                <nav id="kakaoGnb">
+                    <h2 class="screen_out">메인메뉴</h2>
+                    <ul class="gnb_comm">
+                        <li class="on"><!-- 2017-09-04 선택된 서브메뉴 해당페이지의 메인메뉴에 on 클래스 부여 / 메뉴클릭시 open 클래스 추가 부여 -->
+                            <a href="#none" class="link_gnb">광고관리</a>
+                            <ul class="gnbsub_comm">
+                                <li><a href="#none" class="link_sub on">Dashboard</a><!-- 클릭/선택시 on 클래스 부여 --></li>
+                                <li><a href="#none" class="link_sub">광고만들기</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#none" class="link_gnb">보고서</a>
+                            <ul class="gnbsub_comm">
+                                <li><a href="#none" class="link_sub">맞춤보고서</a><!-- 클릭/선택시 on 클래스 부여 --></li>
+                                <li><a href="#none" class="link_sub">카카오 인사이트</a></li>
+                            </ul>
+                        </li>
+                        <!-- 2018-01-12 수정 시작 -->
+                        <li>
+                            <a href="#none" class="link_gnb">타겟 관리</a>
+                            <ul class="gnbsub_comm">
+                                <li><a href="#none" class="link_sub">광고 반응 타겟 관리</a><!-- 클릭/선택시 on 클래스 부여 --></li>
+                                <li><a href="#none" class="link_sub">고객파일 관리</a></li>
+                                <li><a href="#none" class="link_sub">픽셀&amp;SDK 연동 관리</a></li>
+                                <li><a href="#none" class="link_sub">MAT 연동 관리</a></li>
+                                <li><a href="#none" class="link_sub">유사타겟 관리</a></li>
+                            </ul>
+                        </li>
+                        <!-- //2018-01-12 수정 종료 -->
+                        <li>
+                            <a href="#none" class="link_gnb">설정</a>
+                            <ul class="gnbsub_comm">
+                                <li><a href="#none" class="link_sub">계정관리</a><!-- 클릭/선택시 on 클래스 부여 --></li>
+                                <li><a href="#none" class="link_sub">캐쉬관리</a></li>
+                                <li><a href="#none" class="link_sub">카드관리</a></li>
+                                <li><a href="#none" class="link_sub">변경이력</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+		<!-- // kakaoHead -->
+		<hr class="hide"/>
+		<main id="kakaoContent">
+		    <article id="mArticle">
+		
+		
+            </article>
+        </main>
+
+        <hr class="hide"/>
+
+        <footer id="kakaoFoot" class="kakao_foot"><!-- 2016-12-22 태그변경 -->
+            <h2 class="screen_out">서비스 이용정보</h2>
+            <a href="http://www.kakaocorp.com/main" class="link_copyright">&copy; <strong>Kakao Corp</strong></a>
+            <strong class="screen_out">광고 약관 및 정책</strong>
+            <ul class="list_policy">
+                <li><a href="#none" class="link_policy">광고주 약관 및 정책</a></li>
+                <li><a href="#none" class="link_policy">개인정보처리방침</a></li>
+                <li><a href="#none" class="link_policy">광고상품 소개</a></li>
+                <li><a href="#none" class="link_policy">광고캐쉬 약관</a></li>
+                <li><a href="#none" class="link_policy">공지사항</a></li>
+                <li><a href="#none" class="link_policy">고객센터</a></li>
+            </ul>
+        </footer>
+    </div>
+</body>
+</html>
